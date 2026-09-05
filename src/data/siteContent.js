@@ -245,8 +245,8 @@ export const services = [
 export const team = [
   {
     id: 1,
-    nameEn: 'Shushila Singhwa',
-    nameNp: 'शुशिला सिंहवा',
+    nameEn: 'Shushila Simkhada',
+    nameNp: 'शुशिला सिंखडा',
     positionEn: 'Chairperson',
     positionNp: 'अध्यक्ष',
     phone: '+977-XXXXXXXXXX',  // ← UPDATE
@@ -285,8 +285,8 @@ export const team = [
   },
   {
     id: 5,
-    nameEn: 'Binu Singhwa Khan Thakuri',
-    nameNp: 'बिनु सिंहवा खान ठकुरी',
+    nameEn: 'Binu Simkhada',
+    nameNp: 'बिनु सिंखडा',
     positionEn: 'Member',
     positionNp: 'सदस्य',
     phone: '+977-XXXXXXXXXX',
