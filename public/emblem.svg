@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <circle cx="50" cy="50" r="48" fill="#0C2264" stroke="#BE1A22" stroke-width="3"/>
+  <!-- Balance scale (justice) -->
+  <line x1="50" y1="22" x2="50" y2="65" stroke="white" stroke-width="2"/>
+  <line x1="28" y1="35" x2="72" y2="35" stroke="white" stroke-width="2"/>
+  <circle cx="28" cy="43" r="8" fill="none" stroke="white" stroke-width="1.5"/>
+  <circle cx="72" cy="43" r="8" fill="none" stroke="white" stroke-width="1.5"/>
+  <!-- Dove (peace) -->
+  <ellipse cx="50" cy="18" rx="6" ry="4" fill="white" transform="rotate(-20 50 18)"/>
+  <path d="M44 16 Q38 12 42 8 Q46 10 48 14" fill="white"/>
+  <!-- Handshake (cooperation) -->
+  <path d="M32 72 Q40 68 50 70 Q60 68 68 72" stroke="white" stroke-width="2" fill="none"/>
+  <!-- Org name ring -->
+  <text x="50" y="92" text-anchor="middle" fill="white" font-size="5" font-family="Arial">REPC-NEPAL 2083</text>
+</svg>

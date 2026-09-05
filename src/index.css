@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply text-gray-800 bg-gray-50;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  .font-nepali {
+    font-family: 'Noto Sans Devanagari', 'Hind', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  /* Marquee container */
+  .marquee-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-content {
+    display: inline-block;
+    animation: marquee 35s linear infinite;
+  }
+  .marquee-content:hover {
+    animation-play-state: paused;
+  }
+
+  /* Dropdown menu */
+  .nav-dropdown {
+    @apply absolute left-0 top-full z-50 min-w-[220px] bg-white shadow-lg border-t-2 border-redc;
+    display: none;
+  }
+  .nav-item:hover .nav-dropdown {
+    display: block;
+  }
+
+  /* Hero slide */
+  .hero-slide {
+    @apply absolute inset-0 transition-opacity duration-700;
+  }
+  .hero-slide.active {
+    @apply opacity-100 z-10;
+  }
+  .hero-slide.inactive {
+    @apply opacity-0 z-0;
+  }
+
+  /* Notice tab */
+  .tab-btn {
+    @apply px-4 py-2 text-sm font-medium border-b-2 border-transparent text-gray-600 hover:text-navy transition-colors cursor-pointer whitespace-nowrap;
+  }
+  .tab-btn.active {
+    @apply border-redc text-redc font-semibold;
+  }
+
+  /* Service card */
+  .service-card {
+    @apply flex flex-col items-center p-4 bg-white border border-gray-100 rounded-sm hover:shadow-md hover:border-navy transition-all cursor-pointer text-center;
+  }
+
+  /* Page header banner */
+  .page-banner {
+    @apply bg-navy text-white py-8 px-4;
+  }
+
+  /* Notice item */
+  .notice-item {
+    @apply flex items-start gap-3 py-3 border-b border-gray-100 last:border-0 hover:bg-gray-50 transition-colors px-2;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #0C2264;
+  border-radius: 3px;
+}
