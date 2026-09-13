@@ -2,3 +2,5 @@ node_modules/
 dist/
 .env
 INFO.md
+README_APPSSCRIPT.md
+Code.gs
