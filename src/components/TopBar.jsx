@@ -1,6 +1,6 @@
 import { useLang } from '../context/LanguageContext';
 import { topNotices } from '../data/siteContent';
-import { FaFacebook, FaTwitter, FaYoutube, FaEnvelope } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaYoutube, FaEnvelope, FaWhatsapp } from 'react-icons/fa';
 import { siteInfo } from '../data/siteContent';
 
 const TopBar = () => {
@@ -38,6 +38,10 @@ const TopBar = () => {
           <a href={siteInfo.youtube} target="_blank" rel="noopener noreferrer"
              className="hover:text-white/70 transition-colors" aria-label="YouTube">
             <FaYoutube size={13} />
+          </a>
+          <a href={`https://wa.me/${siteInfo.whatsapp}`} target="_blank" rel="noopener noreferrer"
+             className="hover:text-green-300 transition-colors" aria-label="WhatsApp">
+            <FaWhatsapp size={13} />
           </a>
           <a href={`mailto:${siteInfo.email}`}
              className="hover:text-white/70 transition-colors" aria-label="Email">

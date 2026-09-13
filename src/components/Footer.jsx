@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import { siteInfo, importantLinks } from '../data/siteContent';
 import {
-  FaFacebook, FaTwitter, FaYoutube,
+  FaFacebook, FaTwitter, FaYoutube, FaWhatsapp,
   FaEnvelope, FaPhone, FaMapMarkerAlt,
   FaClock,
 } from 'react-icons/fa';
@@ -54,6 +54,10 @@ const Footer = () => {
             <a href={siteInfo.youtube} target="_blank" rel="noopener noreferrer"
                className="w-8 h-8 rounded-full bg-white/10 hover:bg-redc flex items-center justify-center transition-colors" aria-label="YouTube">
               <FaYoutube size={14} />
+            </a>
+            <a href={`https://wa.me/${siteInfo.whatsapp}`} target="_blank" rel="noopener noreferrer"
+               className="w-8 h-8 rounded-full bg-white/10 hover:bg-green-500 flex items-center justify-center transition-colors" aria-label="WhatsApp">
+              <FaWhatsapp size={14} />
             </a>
           </div>
         </div>

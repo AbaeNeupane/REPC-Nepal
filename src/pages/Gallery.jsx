@@ -80,15 +80,18 @@ const Gallery = () => {
           ))}
         </div>
 
-        {/* Note */}
-        <div className="mt-8 bg-blue-50 border border-blue-100 rounded-sm p-4 text-center">
-          <p className={`text-blue-700 text-sm ${lang === 'np' ? 'font-nepali' : ''}`}>
-            {t(
-              '📷 To add real photos: replace placeholder items in src/pages/Gallery.jsx with your image paths.',
-              '📷 वास्तविक फोटो थप्न: src/pages/Gallery.jsx मा placeholder items लाई आफ्नो इमेज पाथले प्रतिस्थापन गर्नुहोस्।'
-            )}
-          </p>
-        </div>
+        {/* Upload prompt — shown only when all gallery items are placeholders */}
+        {galleryItems.every(item => !item.src) && (
+          <div className="mt-8 bg-gray-50 border border-gray-200 rounded-sm p-6 text-center">
+            <FaImages className="mx-auto text-gray-300 mb-3" size={32} />
+            <p className={`text-gray-500 text-sm ${lang === 'np' ? 'font-nepali' : ''}`}>
+              {t(
+                'Photos from our events and programs will appear here soon.',
+                'हाम्रा कार्यक्रम तथा गतिविधिहरूका फोटोहरू चाँडै यहाँ प्रकाशित हुनेछन्।'
+              )}
+            </p>
+          </div>
+        )}
       </div>
 
       {/* Lightbox */}

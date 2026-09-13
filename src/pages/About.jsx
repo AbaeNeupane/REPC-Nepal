@@ -131,8 +131,11 @@ const About = () => {
                 <div className="bg-navy/5 p-5 flex justify-center">
                   {member.photo ? (
                     <img src={member.photo} alt={member.nameEn}
-                      className="w-20 h-20 rounded-full object-cover border-4 border-white shadow" />
-                  ) : (
+                      className="w-20 h-20 rounded-full object-cover border-4 border-white shadow"
+                      onError={e => { e.target.style.display='none'; e.target.nextSibling.style.display='flex'; }}
+                    />
+                  ) : null}
+                  {(!member.photo) && (
                     <div className="w-20 h-20 rounded-full bg-navy/20 flex items-center justify-center border-4 border-white shadow">
                       <FaUserCircle className="text-navy/50" size={44} />
                     </div>

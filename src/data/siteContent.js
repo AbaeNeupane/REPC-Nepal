@@ -13,9 +13,10 @@ export const siteInfo = {
   parentNp: 'गैर सरकारी संस्था',
   addressEn: 'Ward No. 11, Thapathali, Kathmandu, Nepal',
   addressNp: 'वडा नं. ११, थापाथली, काठमाण्डौं, नेपाल',
-  phone: '+977-01-XXXXXXX',        // ← UPDATE THIS
-  email: 'info@repcnepal.org.np',  // ← UPDATE THIS
-  website: 'www.repcnepal.org.np', // ← UPDATE THIS
+  phone: '+977 9768571643',
+  whatsapp: '+9779768571643',       // used for wa.me link (no spaces/dashes)
+  email: 'repcnepal2083@gmail.com',
+  website: 'www.repcnepal.org.np',
   facebook: 'https://facebook.com/repcnepal',  // ← UPDATE THIS
   twitter: 'https://twitter.com/repcnepal',    // ← UPDATE THIS
   youtube: 'https://youtube.com/@repcnepal',   // ← UPDATE THIS
@@ -251,7 +252,7 @@ export const team = [
     positionNp: 'अध्यक्ष',
     phone: '+977-9841641920',  
     email: 'chair@repcnepal.org.np',
-    photo: 'public/images/team/sushila.png',
+    photo: '/images/team/sushila.png',
   },
   {
     id: 2,
@@ -271,7 +272,7 @@ export const team = [
     positionNp: 'सचिव',
     phone: '+977-XXXXXXXXXX',
     email: 'secretary@repcnepal.org.np',
-    photo: 'public/images/team/tikaram.png',
+    photo: '/images/team/tikaram.png',
   },
   {
     id: 4,
@@ -281,7 +282,7 @@ export const team = [
     positionNp: 'कोषाध्यक्ष',
     phone: '+977-XXXXXXXXXX',
     email: 'treasurer@repcnepal.org.np',
-    photo: 'public/images/team/himal.png',
+    photo: '/images/team/himal.png',
   },
   {
     id: 5,
@@ -311,7 +312,7 @@ export const team = [
     positionNp: 'सदस्य',
     phone: '+977-9851436436',
     email: '',
-    photo: 'public/images/team/binu.png',
+    photo: '/images/team/binu.png',
   },
   {
     id: 8,
@@ -331,7 +332,7 @@ export const team = [
     positionNp: 'सदस्य',
     phone: '+977-9861997464',
     email: '',
-    photo: 'public/images/team/abae.jpeg',
+    photo: '/images/team/abae.jpeg',
   },
 ];
 

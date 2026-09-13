@@ -27,8 +27,10 @@ const TeamSection = () => {
                   src={member.photo}
                   alt={lang === 'en' ? member.nameEn : member.nameNp}
                   className="w-12 h-12 rounded-full object-cover border-2 border-navy/20"
+                  onError={e => { e.target.style.display='none'; e.target.nextSibling.style.display='flex'; }}
                 />
-              ) : (
+              ) : null}
+              {(!member.photo) && (
                 <div className="w-12 h-12 rounded-full bg-navy/10 flex items-center justify-center">
                   <FaUserCircle className="text-navy/40" size={32} />
                 </div>
