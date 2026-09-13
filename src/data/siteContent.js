@@ -305,8 +305,8 @@ export const team = [
   },
   {
     id: 7,
-    nameEn: 'Binu Simkhada',
-    nameNp: 'बिनु सिंखडा',
+    nameEn: 'Binu Simkhada Khan Thaquri',
+    nameNp: 'बिनु सिंखडा खान ठकुरी',
     positionEn: 'Member',
     positionNp: 'सदस्य',
     phone: '+977-XXXXXXXXXX',

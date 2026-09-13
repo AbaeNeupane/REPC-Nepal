@@ -53,7 +53,7 @@ const About = () => {
                 <p className={`text-sm text-gray-500 mt-1 ${lang === 'np' ? 'font-nepali' : ''}`}>{t('Headquarters', 'मुख्यालय')}</p>
               </div>
               <div className="text-center">
-                <p className="text-2xl font-bold text-redc">7</p>
+                <p className="text-2xl font-bold text-redc">9</p>
                 <p className={`text-sm text-gray-500 mt-1 ${lang === 'np' ? 'font-nepali' : ''}`}>{t('Executive Members', 'कार्य समिति सदस्य')}</p>
               </div>
             </div>
