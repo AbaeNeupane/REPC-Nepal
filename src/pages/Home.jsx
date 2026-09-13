@@ -21,7 +21,7 @@ const Home = () => {
         {/* Right: Services + Team (takes 1/3) */}
         <div className="lg:col-span-1 flex flex-col gap-0">
           <ServicesSection />
-          <TeamSection />
+         
         </div>
       </div>
 

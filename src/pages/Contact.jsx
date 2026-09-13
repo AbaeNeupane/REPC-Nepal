@@ -105,7 +105,7 @@ const Contact = () => {
               <div className="flex gap-3">
                 <a href={siteInfo.facebook} target="_blank" rel="noopener noreferrer"
                    className="w-9 h-9 rounded-full bg-navy flex items-center justify-center text-white hover:bg-redc transition-colors" aria-label="Facebook">
-                  <FaFacebook size={15} />
+                  <FaFacebook sThapaize={15} />
                 </a>
                 <a href={siteInfo.twitter} target="_blank" rel="noopener noreferrer"
                    className="w-9 h-9 rounded-full bg-navy flex items-center justify-center text-white hover:bg-redc transition-colors" aria-label="Twitter">
