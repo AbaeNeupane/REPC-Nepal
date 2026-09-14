@@ -15,6 +15,17 @@ const iconMap = {
   peace: FaDove,
 };
 
+// Maps each service's icon key to the anchor id used by the nav dropdown links
+// (/services#legal, /services#mediation, etc.) — these don't match the icon keys 1:1.
+const anchorMap = {
+  scale: 'legal',
+  handshake: 'mediation',
+  training: 'training',
+  research: 'research',
+  advocacy: 'advocacy',
+  peace: 'peace',
+};
+
 const PageBanner = ({ titleEn, titleNp }) => {
   const { lang } = useLang();
   return (
@@ -58,7 +69,7 @@ const Services = () => {
           {services.map((svc, i) => {
             const Icon = iconMap[svc.icon] || FaBalanceScale;
             return (
-              <div key={i} id={svc.icon} className="bg-white border border-gray-200 rounded-sm shadow-sm overflow-hidden hover:shadow-md transition-shadow scroll-mt-20">
+              <div key={i} id={anchorMap[svc.icon] || svc.icon} className="bg-white border border-gray-200 rounded-sm shadow-sm overflow-hidden hover:shadow-md transition-shadow scroll-mt-20">
                 <div className="flex items-center gap-4 p-5 border-b border-gray-100 bg-gray-50">
                   <div className="w-12 h-12 rounded-full bg-navy flex items-center justify-center shrink-0">
                     <Icon className="text-white" size={22} />

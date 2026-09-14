@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import { heroSlides } from '../data/siteContent';
@@ -13,14 +13,17 @@ const gradients = [
 const HeroCarousel = () => {
   const { lang } = useLang();
   const [current, setCurrent] = useState(0);
-  const [animating, setAnimating] = useState(false);
+  const animatingRef = useRef(false);
 
+  // animatingRef is a plain guard against overlapping transitions — it doesn't
+  // need to trigger a re-render, so a ref keeps goTo/next/prev stable and
+  // prevents the 6s auto-advance interval below from resetting on every transition.
   const goTo = useCallback((idx) => {
-    if (animating) return;
-    setAnimating(true);
+    if (animatingRef.current) return;
+    animatingRef.current = true;
     setCurrent(idx);
-    setTimeout(() => setAnimating(false), 600);
-  }, [animating]);
+    setTimeout(() => { animatingRef.current = false; }, 600);
+  }, []);
 
   const next = useCallback(() => goTo((current + 1) % heroSlides.length), [current, goTo]);
   const prev = useCallback(() => goTo((current - 1 + heroSlides.length) % heroSlides.length), [current, goTo]);

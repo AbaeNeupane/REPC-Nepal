@@ -97,7 +97,12 @@ const Gallery = () => {
       {/* Lightbox */}
       {lightbox && (
         <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4" onClick={() => setLightbox(null)}>
-          <button className="absolute top-4 right-4 text-white hover:text-gray-300" aria-label="Close">
+          <button
+            type="button"
+            onClick={() => setLightbox(null)}
+            className="absolute top-4 right-4 text-white hover:text-gray-300"
+            aria-label="Close"
+          >
             <FaTimes size={24} />
           </button>
           <div className="max-w-2xl w-full" onClick={e => e.stopPropagation()}>

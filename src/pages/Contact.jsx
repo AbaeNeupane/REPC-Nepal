@@ -41,6 +41,15 @@ const Contact = () => {
     e.preventDefault();
     setSending(true);
     setError('');
+
+    if (!SCRIPT_URL || SCRIPT_URL === 'PASTE_YOUR_APPS_SCRIPT_URL_HERE') {
+      setError(lang === 'en'
+        ? `The contact form isn't set up yet. Please email us directly at ${siteInfo.email}.`
+        : `सम्पर्क फारम अझै सेटअप भएको छैन। कृपया ${siteInfo.email} मा सिधै इमेल गर्नुहोस्।`);
+      setSending(false);
+      return;
+    }
+
     try {
       // Google Apps Script requires no-cors mode from the browser.
       // The email IS sent — we just can't read the response body (that's fine).

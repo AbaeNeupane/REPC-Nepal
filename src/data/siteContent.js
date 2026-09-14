@@ -14,7 +14,7 @@ export const siteInfo = {
   addressEn: 'Ward No. 11, Thapathali, Kathmandu, Nepal',
   addressNp: 'वडा नं. ११, थापाथली, काठमाण्डौं, नेपाल',
   phone: '+977 9768571643',
-  whatsapp: '+9779768571643',      
+  whatsapp: '9779768571643',      
   email: 'repcnepal2083@gmail.com',
   website: 'www.repcnepal.org.np',
   facebook: 'https://www.facebook.com/share/1DBHcrxqnP/', 
@@ -303,7 +303,7 @@ export const team = [
     positionNp: 'सदस्य',
     phone: '+977-9857833579',
     email: '',
-    photo: '',
+    photo: 'images/team/sirjansil.jpeg',
   },
   {
     id: 7,

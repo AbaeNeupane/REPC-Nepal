@@ -1,7 +1,6 @@
 import HeroCarousel from '../components/HeroCarousel';
 import NoticesSection from '../components/NoticesSection';
 import ServicesSection from '../components/ServicesSection';
-import TeamSection from '../components/TeamSection';
 import HighlightsSection from '../components/HighlightsSection';
 import GalleryPreview from '../components/GalleryPreview';
 
@@ -18,10 +17,9 @@ const Home = () => {
           <NoticesSection />
         </div>
 
-        {/* Right: Services + Team (takes 1/3) */}
+        {/* Right: Services (takes 1/3) */}
         <div className="lg:col-span-1 flex flex-col gap-0">
           <ServicesSection />
-         
         </div>
       </div>
 

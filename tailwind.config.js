@@ -1,3 +1,5 @@
+import colors from 'tailwindcss/colors';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -18,6 +20,9 @@ export default {
           dark: '#8f1219',
         },
         amber: {
+          // Keep Tailwind's full default amber-50..amber-900 scale (used by
+          // amber-600/amber-700 elsewhere) and just alias DEFAULT to the brand color.
+          ...colors.amber,
           DEFAULT: '#F59E0B',
         },
       },

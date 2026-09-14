@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import { about, team, siteInfo } from '../data/siteContent';
 import { FaUserCircle, FaPhone, FaEnvelope, FaBullseye, FaEye, FaBuilding } from 'react-icons/fa';
@@ -8,7 +9,7 @@ const PageBanner = ({ titleEn, titleNp }) => {
     <div className="bg-navy text-white py-10 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center gap-2 text-white/60 text-sm mb-2">
-          <a href="/" className="hover:text-white transition-colors">Home</a>
+          <Link to="/" className="hover:text-white transition-colors">Home</Link>
           <span>/</span>
           <span className="text-white">{lang === 'en' ? titleEn : titleNp}</span>
         </div>

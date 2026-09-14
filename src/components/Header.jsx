@@ -1,13 +1,51 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useMemo } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
-import { siteInfo } from '../data/siteContent';
-import { FaSearch } from 'react-icons/fa';
+import { siteInfo, services, notices } from '../data/siteContent';
+import { FaSearch, FaTimes } from 'react-icons/fa';
+
+// Static pages + services + notices, searched by title in either language.
+const staticPages = [
+  { titleEn: 'Home', titleNp: 'गृह पृष्ठ', link: '/' },
+  { titleEn: 'About Us', titleNp: 'हाम्रोबारे', link: '/about' },
+  { titleEn: 'Services', titleNp: 'सेवाहरू', link: '/services' },
+  { titleEn: 'Programs', titleNp: 'कार्यक्रमहरू', link: '/programs' },
+  { titleEn: 'Notices', titleNp: 'सूचना', link: '/notices' },
+  { titleEn: 'Publications', titleNp: 'प्रकाशनहरू', link: '/publications' },
+  { titleEn: 'Gallery', titleNp: 'ग्यालरी', link: '/gallery' },
+  { titleEn: 'Contact', titleNp: 'सम्पर्क', link: '/contact' },
+];
 
 const Header = () => {
   const { lang, toggleLang, t } = useLang();
+  const navigate = useNavigate();
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+
+  const searchIndex = useMemo(() => [
+    ...staticPages,
+    ...services.map(s => ({ titleEn: s.titleEn, titleNp: s.titleNp, link: s.link })),
+    ...notices.map(n => ({ titleEn: n.titleEn, titleNp: n.titleNp, link: '/notices' })),
+  ], []);
+
+  const matches = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase();
+    if (!q) return [];
+    return searchIndex
+      .filter(item => item.titleEn.toLowerCase().includes(q) || item.titleNp.includes(searchQuery.trim()))
+      .slice(0, 6);
+  }, [searchQuery, searchIndex]);
+
+  const goToResult = (link) => {
+    navigate(link);
+    setSearchQuery('');
+    setSearchOpen(false);
+  };
+
+  const handleSearchSubmit = e => {
+    e.preventDefault();
+    if (matches.length > 0) goToResult(matches[0].link);
+  };
 
   return (
     <header className="bg-white border-b border-gray-200 shadow-sm">
@@ -58,21 +96,47 @@ const Header = () => {
           {/* Search */}
           <div className="relative">
             {searchOpen ? (
-              <div className="flex items-center border border-gray-300 rounded overflow-hidden">
-                <input
-                  autoFocus
-                  type="text"
-                  value={searchQuery}
-                  onChange={e => setSearchQuery(e.target.value)}
-                  placeholder={t('Search...', 'खोज्नुहोस्...')}
-                  className="px-3 py-1.5 text-sm outline-none w-44"
-                  onKeyDown={e => e.key === 'Escape' && setSearchOpen(false)}
-                />
+              <div className="flex items-center gap-1.5">
+                <form onSubmit={handleSearchSubmit} className="relative flex items-center border border-gray-300 rounded overflow-hidden">
+                  <input
+                    autoFocus
+                    type="text"
+                    value={searchQuery}
+                    onChange={e => setSearchQuery(e.target.value)}
+                    placeholder={t('Search...', 'खोज्नुहोस्...')}
+                    className="px-3 py-1.5 text-sm outline-none w-44"
+                    onKeyDown={e => e.key === 'Escape' && setSearchOpen(false)}
+                  />
+                  <button
+                    type="submit"
+                    className="px-3 py-1.5 bg-navy text-white hover:bg-navy-light transition-colors"
+                    aria-label={t('Search', 'खोज्नुहोस्')}
+                  >
+                    <FaSearch size={13} />
+                  </button>
+
+                  {/* Suggestions */}
+                  {matches.length > 0 && (
+                    <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-sm shadow-lg overflow-hidden z-50">
+                      {matches.map((item, i) => (
+                        <button
+                          type="button"
+                          key={i}
+                          onClick={() => goToResult(item.link)}
+                          className={`block w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-navy transition-colors ${lang === 'np' ? 'font-nepali' : ''}`}
+                        >
+                          {lang === 'en' ? item.titleEn : item.titleNp}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </form>
                 <button
-                  onClick={() => setSearchOpen(false)}
-                  className="px-3 py-1.5 bg-navy text-white hover:bg-navy-light transition-colors"
+                  onClick={() => { setSearchOpen(false); setSearchQuery(''); }}
+                  className="p-2 text-gray-400 hover:text-redc transition-colors"
+                  aria-label={t('Close search', 'खोज बन्द गर्नुहोस्')}
                 >
-                  <FaSearch size={13} />
+                  <FaTimes size={14} />
                 </button>
               </div>
             ) : (
