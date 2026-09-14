@@ -76,6 +76,8 @@ const Footer = () => {
               { en: 'Programs', np: 'कार्यक्रमहरू', to: '/programs' },
               { en: 'Publications', np: 'प्रकाशनहरू', to: '/publications' },
               { en: 'Gallery', np: 'ग्यालरी', to: '/gallery' },
+              { en: 'Volunteer', np: 'स्वयंसेवा', to: '/volunteer' },
+              { en: 'Support Us', np: 'सहयोग गर्नुहोस्', to: '/support' },
               { en: 'Contact Us', np: 'सम्पर्क', to: '/contact' },
             ].map((l, i) => (
               <li key={i}>

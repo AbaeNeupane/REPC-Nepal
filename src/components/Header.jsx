@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import { siteInfo, services, notices } from '../data/siteContent';
-import { FaSearch, FaTimes } from 'react-icons/fa';
+import { FaSearch, FaTimes, FaHandHoldingHeart } from 'react-icons/fa';
 
 // Static pages + services + notices, searched by title in either language.
 const staticPages = [
@@ -13,6 +13,8 @@ const staticPages = [
   { titleEn: 'Notices', titleNp: 'सूचना', link: '/notices' },
   { titleEn: 'Publications', titleNp: 'प्रकाशनहरू', link: '/publications' },
   { titleEn: 'Gallery', titleNp: 'ग्यालरी', link: '/gallery' },
+  { titleEn: 'Volunteer', titleNp: 'स्वयंसेवा', link: '/volunteer' },
+  { titleEn: 'Support Us', titleNp: 'सहयोग गर्नुहोस्', link: '/support' },
   { titleEn: 'Contact', titleNp: 'सम्पर्क', link: '/contact' },
 ];
 
@@ -90,8 +92,17 @@ const Header = () => {
           </div>
         </Link>
 
-        {/* Right: Language Toggle + Search */}
+        {/* Right: Support CTA + Language Toggle + Search */}
         <div className="flex items-center gap-3 shrink-0">
+
+          {/* Support CTA */}
+          <Link
+            to="/support"
+            className="hidden sm:inline-flex items-center gap-1.5 bg-redc hover:bg-redc-light text-white text-xs font-semibold px-3.5 py-2 rounded-sm transition-colors shadow-sm hover:shadow-md"
+          >
+            <FaHandHoldingHeart size={12} />
+            <span className={lang === 'np' ? 'font-nepali' : ''}>{t('Support Us', 'सहयोग गर्नुहोस्')}</span>
+          </Link>
 
           {/* Search */}
           <div className="relative">

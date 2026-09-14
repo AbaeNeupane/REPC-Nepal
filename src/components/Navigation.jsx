@@ -43,6 +43,13 @@ const navItems = [
       { en: 'Legal Documents',np: 'कानुनी दस्तावेज',   link: '/publications#legal' },
     ],
   },
+  {
+    en: 'Get Involved', np: 'सहभागी हुनुहोस्', link: '/volunteer',
+    children: [
+      { en: 'Volunteer',   np: 'स्वयंसेवा',        link: '/volunteer' },
+      { en: 'Support Us',  np: 'सहयोग गर्नुहोस्',   link: '/support' },
+    ],
+  },
   { en: 'Gallery', np: 'ग्यालरी', link: '/gallery' },
   { en: 'Contact', np: 'सम्पर्क', link: '/contact' },
 ];
@@ -74,10 +81,11 @@ const Navigation = () => {
     return () => { document.body.style.overflow = ''; };
   }, [mobileOpen]);
 
-  const isActive = (link) =>
-    link === '/'
-      ? location.pathname === '/'
-      : location.pathname.startsWith(link);
+  const isActive = (item) => {
+    const path = location.pathname;
+    if (item.children?.some(c => path === c.link.split('?')[0].split('#')[0])) return true;
+    return item.link === '/' ? path === '/' : path.startsWith(item.link);
+  };
 
   return (
     <nav
@@ -93,7 +101,7 @@ const Navigation = () => {
               <Link
                 to={item.link}
                 className={`flex items-center gap-1.5 px-3 py-4 text-sm font-medium transition-all duration-150 whitespace-nowrap
-                  ${isActive(item.link)
+                  ${isActive(item)
                     ? 'bg-redc text-white'
                     : 'text-white/90 hover:bg-white/10 hover:text-white'}
                   ${lang === 'np' ? 'font-nepali text-base' : ''}`}
@@ -171,7 +179,7 @@ const Navigation = () => {
                   to={item.link}
                   onClick={() => !item.children && setMobileOpen(false)}
                   className={`flex-1 px-5 py-3.5 text-sm font-medium transition-colors
-                    ${isActive(item.link) ? 'text-amber' : 'text-white/90 hover:text-white hover:bg-white/5'}
+                    ${isActive(item) ? 'text-amber' : 'text-white/90 hover:text-white hover:bg-white/5'}
                     ${lang === 'np' ? 'font-nepali' : ''}`}
                 >
                   {lang === 'en' ? item.en : item.np}
