@@ -214,8 +214,8 @@ const About = () => {
                 className="w-full object-contain max-h-[520px] bg-gray-50"
               />
               <figcaption className={`text-center text-sm text-gray-500 py-3 px-4 bg-gray-50 ${lang === 'np' ? 'font-nepali' : ''}`}>
-                📷 {t(
-                  'Official registration at District Administration Office, Kathmandu, 4 Bhadra 2083. Organization Registration Certificate Issued by the Chief District Officer',
+                {t(
+                  'Registered with Chief District Officer, Kathmandu on 4 Bhadra 2083. Registration certificate issued by the District Administration Officer.',
                   'जिल्ला प्रशासन कार्यालय, काठमाण्डौंमा ४ भदौ २०८३ मा दर्ता। जिल्ला प्रशासन अधिकृतद्वारा जारी गरिएको संस्था दर्ता प्रमाणपत्र'
                 )}
               </figcaption>
