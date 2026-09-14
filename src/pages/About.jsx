@@ -216,7 +216,7 @@ const About = () => {
               <figcaption className={`text-center text-sm text-gray-500 py-3 px-4 bg-gray-50 ${lang === 'np' ? 'font-nepali' : ''}`}>
                 {t(
                   'Registered with the Chief District Officer, Kathmandu, on 4 Bhadra 2083. The registration certificate was issued by the District Administration Office.',
-                  'काठमाण्डौं जिल्ला प्रमुखको कार्यालयमा २०८३ साल भदौ ४ गते दर्ता गरिएको। दर्ता प्रमाणपत्र जिल्ला प्रशासन कार्यालयबाट जारी गरिएको।'
+                  'जिल्ला प्रशासन कार्यालय काठमाडौंमा संस्था दर्ता गरे पश्चात प्रमुख जिल्ला अधिकारी ईश्वर राज पाैडेलबाट संस्था दर्ता प्रमाणपत्र ग्रहण गर्दै अधिकार, समता, शान्ति अभियान- नेपालकी अध्यक्ष अधिवक्ता शुसिला सिंखडा ।'
                 )}
               </figcaption>
             </figure>

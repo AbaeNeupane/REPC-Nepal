@@ -5,7 +5,7 @@ import { FaImages } from 'react-icons/fa';
 
 // To add more: insert { src: '/images/gallery/domain/your-photo.jpg', ... } at the TOP of the array.
 const galleryItems = [
-  { id: 1, src: '/images/gallery/milestone/cdo-registration.jpeg', altEn: 'Official Registration with CDO, 4 Bhadra 2083', altNp: 'मुख्य जिल्ला अधिकारीसँग दर्ता, ४ भाद्र २०८३', color: 'bg-navy/80' },
+  { id: 1, src: '/images/gallery/milestone/cdo-registration.jpeg', altEn: 'Official Registration with CDO, 4 Bhadra 2083', altNp: 'जिल्ला प्रशासन कार्यालय काठमाडौंमा संस्था दर्ता गरे पश्चात प्रमुख जिल्ला अधिकारी ईश्वर राज पाैडेलबाट संस्था दर्ता प्रमाणपत्र ग्रहण गर्दै अधिकार, समता, शान्ति अभियान- नेपालकी अध्यक्ष अधिवक्ता शुसिला सिंखडा ।', color: 'bg-navy/80' },
   { id: 2, src: null, altEn: 'Mediation Workshop', altNp: 'मेलमिलाप कार्यशाला', color: 'bg-redc/80' },
   { id: 3, src: null, altEn: 'Community Awareness Program', altNp: 'सामुदायिक सचेतना कार्यक्रम', color: 'bg-slate-600/80' },
   { id: 4, src: null, altEn: 'Legal Aid Camp', altNp: 'कानुनी सहायता शिविर', color: 'bg-amber/80' },
