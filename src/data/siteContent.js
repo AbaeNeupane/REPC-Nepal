@@ -303,7 +303,7 @@ export const team = [
     positionNp: 'सदस्य',
     phone: '+977-9857833579',
     email: '',
-    photo: 'images/team/sirjansil.jpeg',
+    photo: '/images/team/sirjansil.jpeg',
   },
   {
     id: 7,

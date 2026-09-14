@@ -36,8 +36,8 @@ const Footer = () => {
 
           <p className={`text-white/70 text-xs leading-relaxed mb-4 ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t(
-              'A non-profit NGO dedicated to human rights, mediation, and building a just and peaceful society in Nepal.',
-              'मानव अधिकार, मेलमिलाप र नेपालमा न्यायपूर्ण तथा शान्तिपूर्ण समाज निर्माणका लागि समर्पित गैर सरकारी संस्था।'
+              "Working toward a Nepal where rights are protected, conflicts are resolved with dignity, and peace is within everyone's reach.",
+              'अधिकार सुरक्षित हुने, द्वन्द्वहरू मर्यादापूर्वक समाधान हुने, र शान्ति सबैको पहुँचमा हुने नेपाल निर्माणतर्फ काम गर्दै।'
             )}
           </p>
 
