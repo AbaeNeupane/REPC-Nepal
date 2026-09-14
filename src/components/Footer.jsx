@@ -161,6 +161,8 @@ const Footer = () => {
           </p>
           <p className={`text-white/40 text-xs ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t(`Reg. No: ${siteInfo.registrationNo}`, `दर्ता नं: ${siteInfo.registrationNo}`)}
+            <span className="mx-2 opacity-50">|</span>
+            {t(`PAN: ${siteInfo.panNo}`, `स्थायी लेखा नं: ${siteInfo.panNo}`)}
           </p>
         </div>
       </div>

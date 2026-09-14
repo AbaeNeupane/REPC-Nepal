@@ -22,7 +22,8 @@ export const siteInfo = {
   youtube: 'https://youtube.com/@repcnepal',   // ← UPDATE THIS
   officeHoursEn: 'Sunday – Friday: 10:00 AM – 5:00 PM',
   officeHoursNp: 'आइतबार – शुक्रबार: बिहान १०:०० – साँझ ५:००',
-  registrationNo: 'KA-XX-XXX/XXXX', // ← UPDATE THIS
+  registrationNo: 'CDO, 25/2083/084',
+  panNo: '624980586',
 };
 
 // ─── TOP BAR NOTICES (scrolling ticker) ─────────────────────

@@ -206,6 +206,20 @@ const About = () => {
             {t('Organizational Information', 'संस्थागत जानकारी')}
           </h2>
           <div className="bg-white border border-gray-200 rounded-sm shadow-sm overflow-hidden">
+            {/* CDO Registration Photo */}
+            <figure className="border-b border-gray-100">
+              <img
+                src="/images/cdo-registration.jpeg"
+                alt="Registration with Chief District Officer — 4 Bhadra 2083"
+                className="w-full object-contain max-h-[520px] bg-gray-50"
+              />
+              <figcaption className={`text-center text-sm text-gray-500 py-3 px-4 bg-gray-50 ${lang === 'np' ? 'font-nepali' : ''}`}>
+                📷 {t(
+                  'Official registration with the Chief District Officer, 4 Bhadra 2083',
+                  'मुख्य जिल्ला अधिकारीसँग आधिकारिक दर्ता, ४ भाद्र २०८३'
+                )}
+              </figcaption>
+            </figure>
             <table className="w-full text-sm">
               <tbody className="divide-y divide-gray-100">
                 {[
@@ -214,6 +228,7 @@ const About = () => {
                   { labelEn: 'Motto', labelNp: 'आदर्श वाक्य', valueEn: siteInfo.mottoEn, valueNp: siteInfo.mottoNp },
                   { labelEn: 'Office Address', labelNp: 'कार्यालय ठेगाना', valueEn: siteInfo.addressEn, valueNp: siteInfo.addressNp },
                   { labelEn: 'Registration No.', labelNp: 'दर्ता नं.', valueEn: siteInfo.registrationNo, valueNp: siteInfo.registrationNo },
+                  { labelEn: 'PAN Number', labelNp: 'स्थायी लेखा नं. (PAN)', valueEn: siteInfo.panNo, valueNp: siteInfo.panNo },
                   { labelEn: 'Phone', labelNp: 'फोन', valueEn: siteInfo.phone, valueNp: siteInfo.phone },
                   { labelEn: 'Email', labelNp: 'इमेल', valueEn: siteInfo.email, valueNp: siteInfo.email },
                   { labelEn: 'Office Hours', labelNp: 'कार्यालय समय', valueEn: siteInfo.officeHoursEn, valueNp: siteInfo.officeHoursNp },
