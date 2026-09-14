@@ -61,7 +61,7 @@ const About = () => {
         </section>
 
         {/* Mission & Vision */}
-        <section id="mission" className="mb-12 scroll-mt-24">
+        <section id="mission" className="mb-12 scroll-mt-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Mission */}
             <div className="bg-white border border-gray-200 rounded-sm shadow-sm overflow-hidden">
@@ -121,7 +121,7 @@ const About = () => {
         </section>
 
         {/* Executive Committee */}
-        <section id="team" className="mb-12 scroll-mt-24">
+        <section id="team" className="mb-12 scroll-mt-20">
           <h2 className={`text-xl font-bold text-navy mb-4 ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t('Executive Committee', 'कार्य समिति')}
           </h2>
@@ -166,8 +166,42 @@ const About = () => {
           </div>
         </section>
 
+        {/* Organisation Structure */}
+        <section id="structure" className="mb-12 scroll-mt-20">
+          <h2 className={`text-xl font-bold text-navy mb-6 pb-2 border-b-2 border-redc inline-block ${lang === 'np' ? 'font-nepali' : ''}`}>
+            {t('Organisation Structure', 'संगठन संरचना')}
+          </h2>
+          <div className="bg-white border border-gray-200 rounded-sm shadow-sm overflow-hidden">
+            <div className="p-8 flex flex-col items-center">
+              <div className="bg-navy text-white text-sm font-semibold px-8 py-3 rounded-sm shadow text-center min-w-[220px]">
+                {t('General Assembly', 'साधारण सभा')}
+              </div>
+              <div className="w-px h-8 bg-gray-300" />
+              <div className="bg-redc text-white text-sm font-semibold px-8 py-3 rounded-sm shadow text-center min-w-[220px]">
+                {t('Executive Committee', 'कार्य समिति')}
+              </div>
+              <div className="w-px h-8 bg-gray-300" />
+              <div className="flex flex-wrap justify-center gap-3">
+                {[t('Chairperson','अध्यक्ष'), t('Vice-Chairperson','उपाध्यक्ष'), t('Secretary','सचिव'), t('Treasurer','कोषाध्यक्ष')].map((label, i) => (
+                  <div key={i} className="bg-navy/80 text-white text-xs font-medium px-5 py-2.5 rounded-sm shadow">
+                    {label}
+                  </div>
+                ))}
+              </div>
+              <div className="w-px h-8 bg-gray-300" />
+              <div className="bg-gray-100 border border-gray-300 text-gray-700 text-sm font-medium px-8 py-3 rounded-sm text-center min-w-[220px]">
+                {t('Sub-Committees & Members', 'उपसमितिहरू र सदस्यहरू')}
+              </div>
+            </div>
+            <p className={`text-xs text-gray-400 text-center pb-5 ${lang === 'np' ? 'font-nepali' : ''}`}>
+              {t('Registered under Association Registration Act 2034 · Affiliated with Samaj Kalyan Parishad',
+                 'संस्था दर्ता ऐन २०३४ अन्तर्गत दर्ता · समाज कल्याण परिषदसँग आबद्ध')}
+            </p>
+          </div>
+        </section>
+
         {/* Organization Info */}
-        <section id="constitution" className="scroll-mt-24">
+        <section id="constitution" className="scroll-mt-20">
           <h2 className={`text-xl font-bold text-navy mb-4 ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t('Organizational Information', 'संस्थागत जानकारी')}
           </h2>

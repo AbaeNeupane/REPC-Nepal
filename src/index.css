@@ -2,85 +2,225 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─────────────────────────────────────────────────────────────
+   BASE
+───────────────────────────────────────────────────────────── */
 @layer base {
   html {
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
   }
+
   body {
     @apply text-gray-800 bg-gray-50;
     font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+
   .font-nepali {
     font-family: 'Noto Sans Devanagari', 'Hind', system-ui, sans-serif;
   }
+
+  /* Better text selection */
+  ::selection {
+    background: #0C2264;
+    color: #fff;
+  }
+
+  /* Accessible focus rings — only for keyboard nav */
+  :focus-visible {
+    @apply outline-none ring-2 ring-redc ring-offset-2;
+  }
+  button:focus:not(:focus-visible),
+  a:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Smooth image loading */
+  img {
+    @apply transition-opacity duration-300;
+  }
+  img.loading { opacity: 0; }
+  img.loaded  { opacity: 1; }
+
+  /* Headings */
+  h1, h2, h3, h4 {
+    @apply tracking-tight;
+  }
 }
 
+/* ─────────────────────────────────────────────────────────────
+   COMPONENTS
+───────────────────────────────────────────────────────────── */
 @layer components {
-  /* Marquee container */
-  .marquee-wrapper {
-    overflow: hidden;
-    white-space: nowrap;
+
+  /* Page transitions — enter & exit */
+  .page-enter {
+    animation: pageEnter 0.38s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
+  .page-exit {
+    animation: pageExit 0.18s ease-in both;
+    pointer-events: none;
+  }
+  @keyframes pageEnter {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pageExit {
+    from { opacity: 1; transform: translateY(0) scale(1); }
+    to   { opacity: 0; transform: translateY(-8px) scale(0.99); }
+  }
+
+  /* ── Marquee ──────────────────────────────────────────── */
+  .marquee-wrapper { overflow: hidden; white-space: nowrap; }
   .marquee-content {
     display: inline-block;
     animation: marquee 35s linear infinite;
   }
-  .marquee-content:hover {
-    animation-play-state: paused;
-  }
+  .marquee-content:hover { animation-play-state: paused; }
 
-  /* Dropdown menu */
+  /* ── Navigation dropdown (CSS-hover, animated) ─────────── */
   .nav-dropdown {
-    @apply absolute left-0 top-full z-50 min-w-[220px] bg-white shadow-lg border-t-2 border-redc;
-    display: none;
+    @apply absolute left-0 top-full z-50 min-w-[220px] bg-white shadow-xl border-t-2 border-redc;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+    pointer-events: none;
   }
-  .nav-item:hover .nav-dropdown {
-    display: block;
-  }
-
-  /* Hero slide */
-  .hero-slide {
-    @apply absolute inset-0 transition-opacity duration-700;
-  }
-  .hero-slide.active {
-    @apply opacity-100 z-10;
-  }
-  .hero-slide.inactive {
-    @apply opacity-0 z-0;
+  .nav-item:hover .nav-dropdown,
+  .nav-item:focus-within .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 
-  /* Notice tab */
+  /* ── Sticky nav scroll shadow ─────────────────────────── */
+  .nav-sticky {
+    @apply shadow-lg;
+    backdrop-filter: blur(4px);
+  }
+
+  /* ── Hero slide ──────────────────────────────────────── */
+  .hero-slide       { @apply absolute inset-0 transition-opacity duration-700; }
+  .hero-slide.active   { @apply opacity-100 z-10; }
+  .hero-slide.inactive { @apply opacity-0 z-0; }
+
+  /* ── Notice tab ──────────────────────────────────────── */
   .tab-btn {
-    @apply px-4 py-2 text-sm font-medium border-b-2 border-transparent text-gray-600 hover:text-navy transition-colors cursor-pointer whitespace-nowrap;
+    @apply px-4 py-2 text-sm font-medium border-b-2 border-transparent text-gray-600
+           hover:text-navy transition-all cursor-pointer whitespace-nowrap;
   }
-  .tab-btn.active {
-    @apply border-redc text-redc font-semibold;
-  }
+  .tab-btn.active { @apply border-redc text-redc font-semibold; }
 
-  /* Service card */
+  /* ── Service card ─────────────────────────────────────── */
   .service-card {
-    @apply flex flex-col items-center p-4 bg-white border border-gray-100 rounded-sm hover:shadow-md hover:border-navy transition-all cursor-pointer text-center;
+    @apply flex flex-col items-center p-4 bg-white border border-gray-100 rounded-sm
+           hover:shadow-lg hover:border-navy hover:-translate-y-1
+           transition-all duration-200 cursor-pointer text-center;
   }
 
-  /* Page header banner */
+  /* ── Generic content card ────────────────────────────── */
+  .content-card {
+    @apply bg-white border border-gray-100 rounded-sm shadow-sm
+           hover:shadow-md hover:-translate-y-0.5
+           transition-all duration-200;
+  }
+
+  /* ── Page header banner ───────────────────────────────── */
   .page-banner {
-    @apply bg-navy text-white py-8 px-4;
+    @apply bg-navy text-white py-10 px-4 relative overflow-hidden;
+  }
+  .page-banner::before {
+    content: '';
+    @apply absolute inset-0 opacity-5;
+    background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0);
+    background-size: 28px 28px;
   }
 
-  /* Notice item */
+  /* ── Notice item ──────────────────────────────────────── */
   .notice-item {
-    @apply flex items-start gap-3 py-3 border-b border-gray-100 last:border-0 hover:bg-gray-50 transition-colors px-2;
+    @apply flex items-start gap-3 py-3 border-b border-gray-100 last:border-0
+           hover:bg-gray-50 transition-colors px-2 rounded;
   }
+
+  /* ── Primary button ────────────────────────────────────── */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-navy hover:bg-navy-light active:scale-95
+           text-white font-semibold px-6 py-2.5 rounded-sm
+           transition-all duration-150 shadow-sm hover:shadow-md;
+  }
+  .btn-danger {
+    @apply inline-flex items-center gap-2 bg-redc hover:bg-redc-light active:scale-95
+           text-white font-semibold px-6 py-2.5 rounded-sm
+           transition-all duration-150 shadow-sm hover:shadow-md;
+  }
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border-2 border-navy text-navy
+           hover:bg-navy hover:text-white active:scale-95
+           font-semibold px-6 py-2.5 rounded-sm
+           transition-all duration-150;
+  }
+
+  /* ── Form inputs ──────────────────────────────────────── */
+  .form-input {
+    @apply w-full border border-gray-300 rounded-sm px-3 py-2.5 text-sm bg-white
+           transition-all duration-150
+           focus:outline-none focus:border-navy focus:ring-2 focus:ring-navy/15
+           placeholder:text-gray-400;
+  }
+  .form-input:hover:not(:focus) {
+    @apply border-gray-400;
+  }
+
+  /* ── Section title ────────────────────────────────────── */
+  .section-title {
+    @apply text-xl font-bold text-navy pb-2 border-b-2 border-redc inline-block mb-6;
+  }
+
+  /* ── Scroll-to-top button ─────────────────────────────── */
+  .scroll-top-btn {
+    @apply fixed bottom-24 right-6 z-50 w-10 h-10 bg-navy hover:bg-navy-light
+           text-white rounded-full shadow-lg hover:shadow-xl
+           flex items-center justify-center
+           transition-all duration-300;
+  }
+
+  /* ── Stagger animation helpers ────────────────────────── */
+  .stagger-1 { animation-delay: 0.05s; }
+  .stagger-2 { animation-delay: 0.10s; }
+  .stagger-3 { animation-delay: 0.15s; }
+  .stagger-4 { animation-delay: 0.20s; }
+  .stagger-5 { animation-delay: 0.25s; }
+  .stagger-6 { animation-delay: 0.30s; }
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
+/* ─────────────────────────────────────────────────────────────
+   KEYFRAMES (non-Tailwind)
+───────────────────────────────────────────────────────────── */
+@keyframes marquee {
+  0%   { transform: translateX(100vw); }
+  100% { transform: translateX(-100%); }
 }
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-::-webkit-scrollbar-thumb {
-  background: #0C2264;
-  border-radius: 3px;
+
+/* ─────────────────────────────────────────────────────────────
+   SCROLLBAR
+───────────────────────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #0C2264; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #1a3a8f; }
+
+/* ─────────────────────────────────────────────────────────────
+   PRINT
+───────────────────────────────────────────────────────────── */
+@media print {
+  .no-print { display: none !important; }
 }

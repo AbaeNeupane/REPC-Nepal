@@ -14,7 +14,7 @@ export const siteInfo = {
   addressEn: 'Ward No. 11, Thapathali, Kathmandu, Nepal',
   addressNp: 'वडा नं. ११, थापाथली, काठमाण्डौं, नेपाल',
   phone: '+977 9768571643',
-  whatsapp: '+9779768571643',       // used for wa.me link (no spaces/dashes)
+  whatsapp: '+9779768571643',      
   email: 'repcnepal2083@gmail.com',
   website: 'www.repcnepal.org.np',
   facebook: 'https://facebook.com/repcnepal',  // ← UPDATE THIS

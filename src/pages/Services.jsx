@@ -54,11 +54,11 @@ const Services = () => {
         </div>
 
         {/* Services Grid */}
-        <div id="legal" className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
           {services.map((svc, i) => {
             const Icon = iconMap[svc.icon] || FaBalanceScale;
             return (
-              <div key={i} id={svc.icon} className="bg-white border border-gray-200 rounded-sm shadow-sm overflow-hidden hover:shadow-md transition-shadow scroll-mt-24">
+              <div key={i} id={svc.icon} className="bg-white border border-gray-200 rounded-sm shadow-sm overflow-hidden hover:shadow-md transition-shadow scroll-mt-20">
                 <div className="flex items-center gap-4 p-5 border-b border-gray-100 bg-gray-50">
                   <div className="w-12 h-12 rounded-full bg-navy flex items-center justify-center shrink-0">
                     <Icon className="text-white" size={22} />

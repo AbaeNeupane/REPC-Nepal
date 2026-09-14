@@ -216,7 +216,7 @@ const Contact = () => {
                         {t('Full Name', 'पूरा नाम')} <span className="text-redc">*</span>
                       </label>
                       <input type="text" name="name" required value={form.name} onChange={handleChange}
-                        className="w-full border border-gray-300 rounded-sm px-3 py-2 text-sm focus:outline-none focus:border-navy transition-colors"
+                        className="form-input"
                         placeholder={lang === 'en' ? 'Your full name' : 'तपाईंको पूरा नाम'} />
                     </div>
                     <div>
@@ -224,7 +224,7 @@ const Contact = () => {
                         {t('Email', 'इमेल')} <span className="text-redc">*</span>
                       </label>
                       <input type="email" name="email" required value={form.email} onChange={handleChange}
-                        className="w-full border border-gray-300 rounded-sm px-3 py-2 text-sm focus:outline-none focus:border-navy transition-colors"
+                        className="form-input"
                         placeholder="example@email.com" />
                     </div>
                   </div>
@@ -234,7 +234,7 @@ const Contact = () => {
                         {t('Phone Number', 'फोन नम्बर')}
                       </label>
                       <input type="tel" name="phone" value={form.phone} onChange={handleChange}
-                        className="w-full border border-gray-300 rounded-sm px-3 py-2 text-sm focus:outline-none focus:border-navy transition-colors"
+                        className="form-input"
                         placeholder="+977-XXXXXXXXXX" />
                     </div>
                     <div>
@@ -242,7 +242,7 @@ const Contact = () => {
                         {t('Subject', 'विषय')} <span className="text-redc">*</span>
                       </label>
                       <select name="subject" required value={form.subject} onChange={handleChange}
-                        className="w-full border border-gray-300 rounded-sm px-3 py-2 text-sm focus:outline-none focus:border-navy transition-colors bg-white">
+                        className="form-input">
                         <option value="">{t('Select subject', 'विषय छान्नुहोस्')}</option>
                         <option value="legal">{t('Free Legal Aid', 'निःशुल्क कानुनी सहायता')}</option>
                         <option value="mediation">{t('Mediation Services', 'मेलमिलाप सेवा')}</option>
@@ -257,7 +257,7 @@ const Contact = () => {
                       {t('Message', 'सन्देश')} <span className="text-redc">*</span>
                     </label>
                     <textarea name="message" required rows={5} value={form.message} onChange={handleChange}
-                      className="w-full border border-gray-300 rounded-sm px-3 py-2 text-sm focus:outline-none focus:border-navy transition-colors resize-none"
+                      className="form-input resize-none"
                       placeholder={lang === 'en' ? 'Write your message here...' : 'यहाँ आफ्नो सन्देश लेख्नुहोस्...'} />
                   </div>
                   {error && (

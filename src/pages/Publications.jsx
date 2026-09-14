@@ -61,7 +61,7 @@ const Publications = () => {
 
       <div className="max-w-7xl mx-auto px-4 py-10 space-y-10">
         {publications.map((section, si) => (
-          <div key={si} id={si === 0 ? 'annual' : si === 1 ? 'legal' : 'downloads'} className="scroll-mt-24">
+          <div key={si} id={si === 0 ? 'annual' : si === 1 ? 'legal' : 'downloads'} className="scroll-mt-20">
             <h2 className={`text-lg font-bold text-navy mb-4 flex items-center gap-2 ${lang === 'np' ? 'font-nepali' : ''}`}>
               <span className="w-1 h-6 bg-redc rounded inline-block" />
               {lang === 'en' ? section.category.en : section.category.np}
