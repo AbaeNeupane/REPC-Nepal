@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { LanguageProvider } from './context/LanguageContext';
 import { FaWhatsapp, FaArrowUp } from 'react-icons/fa';
 import { siteInfo } from './data/siteContent';
@@ -16,6 +16,8 @@ import Notices      from './pages/Notices';
 import Programs     from './pages/Programs';
 import Publications from './pages/Publications';
 import Gallery      from './pages/Gallery';
+import Support      from './pages/Support';
+import Volunteer    from './pages/Volunteer';
 import Contact      from './pages/Contact';
 
 /* ─────────────────────────────────────────────────────────────
@@ -104,6 +106,8 @@ const PageTransition = () => {
         <Route path="/programs"     element={<Programs />}     />
         <Route path="/publications" element={<Publications />} />
         <Route path="/gallery"      element={<Gallery />}      />
+        <Route path="/support"      element={<Support />}      />
+        <Route path="/volunteer"    element={<Volunteer />}    />
         <Route path="/contact"      element={<Contact />}      />
         <Route path="*"             element={<NotFound />}     />
       </Routes>
@@ -115,8 +119,8 @@ const PageTransition = () => {
    Floating WhatsApp
 ───────────────────────────────────────────────────────────── */
 const FloatingWhatsApp = () => (
-  <a
-    href={`https://wa.me/${siteInfo.whatsapp}?text=${encodeURIComponent(
+  
+    <a href={`https://wa.me/${siteInfo.whatsapp}?text=${encodeURIComponent(
       'Hello REPC-Nepal, I would like to inquire about your services.'
     )}`}
     target="_blank"
@@ -166,7 +170,7 @@ const NotFound = () => (
     <div className="w-20 h-1 bg-redc mx-auto mb-8 rounded" />
     <h1 className="text-7xl font-bold text-navy mb-2">404</h1>
     <p className="text-gray-400 text-lg mb-8">Page not found</p>
-    <a href="/" className="btn-primary">← Back to Home</a>
+    <Link to="/" className="btn-primary">← Back to Home</Link>
   </div>
 );
 

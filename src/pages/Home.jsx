@@ -1,4 +1,5 @@
 import HeroCarousel from '../components/HeroCarousel';
+import ImpactStats from '../components/ImpactStats';
 import NoticesSection from '../components/NoticesSection';
 import ServicesSection from '../components/ServicesSection';
 import HighlightsSection from '../components/HighlightsSection';
@@ -9,6 +10,9 @@ const Home = () => {
     <div>
       {/* Hero */}
       <HeroCarousel />
+
+      {/* Impact stats */}
+      <ImpactStats />
 
       {/* Main two-column content */}
       <div className="max-w-7xl mx-auto px-4 py-6 grid grid-cols-1 lg:grid-cols-3 gap-6">

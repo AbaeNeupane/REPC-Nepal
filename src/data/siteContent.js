@@ -360,3 +360,38 @@ REPC-Nepal मानव अधिकारको संरक्षण र प�
   visionEn: 'A Nepal where every citizen enjoys their fundamental rights with dignity, disputes are resolved through dialogue and mediation, and peace prevails at every level of society.',
   visionNp: 'एक नेपाल जहाँ प्रत्येक नागरिकले आफ्नो मौलिक अधिकार मर्यादापूर्वक उपभोग गर्छ, विवादहरू संवाद र मेलमिलापद्वारा समाधान हुन्छन्, र समाजका प्रत्येक तहमा शान्ति कायम रहन्छ।',
 };
+
+// ─── IMPACT STATS (homepage) ───────────────────────────────────
+// ⚠ Placeholder figures — replace with REPC-Nepal's real, current numbers
+// before publishing. Overstating impact undermines the credibility this
+// section is meant to build.
+export const impactStats = [
+  { icon: 'legal', value: '500+', labelEn: 'Legal Aid Cases', labelNp: 'कानुनी सहायता मुद्दाहरू' },
+  { icon: 'mediation', value: '150+', labelEn: 'Mediations Resolved', labelNp: 'समाधान भएका मेलमिलापहरू' },
+  { icon: 'training', value: '1,200+', labelEn: 'People Trained', labelNp: 'तालिम प्राप्त व्यक्तिहरू' },
+  { icon: 'community', value: '20+', labelEn: 'Communities Reached', labelNp: 'पुगिएका समुदायहरू' },
+];
+
+// ─── SUPPORT / DONATE ───────────────────────────────────────────
+// ⚠ Bank/account fields are placeholders — fill in real details before launch.
+export const donationInfo = {
+  bankNameEn: 'To be added', bankNameNp: 'थप्न बाँकी',
+  accountNameEn: 'Rights, Equity and Peace Campaign – Nepal', accountNameNp: 'अधिकार, समता र शान्ति अधियान, नेपाल',
+  accountNo: 'To be added',
+  branchEn: 'To be added', branchNp: 'थप्न बाँकी',
+  waysToGive: [
+    { icon: 'bank', titleEn: 'Bank Transfer', titleNp: 'बैंक स्थानान्तरण', descEn: 'Direct deposit to our organizational bank account (details below).', descNp: 'हाम्रो संस्थागत बैंक खातामा प्रत्यक्ष जम्मा गर्नुहोस् (विवरण तल)।' },
+    { icon: 'wallet', titleEn: 'eSewa / Khalti', titleNp: 'eSewa / Khalti', descEn: 'Digital wallet transfer — contact us for our QR code and ID.', descNp: 'डिजिटल वालेट स्थानान्तरण — QR कोड र ID का लागि हामीलाई सम्पर्क गर्नुहोस्।' },
+    { icon: 'member', titleEn: 'Become a Member', titleNp: 'सदस्य बन्नुहोस्', descEn: 'Support our work year-round with an annual membership contribution.', descNp: 'वार्षिक सदस्यता योगदानद्वारा वर्षभरि हाम्रो कामलाई सहयोग गर्नुहोस्।' },
+    { icon: 'partner', titleEn: 'In-Kind & Partnership', titleNp: 'वस्तुगत सहयोग तथा साझेदारी', descEn: 'Offer equipment, venue space, or a program partnership instead of cash.', descNp: 'नगदको सट्टा उपकरण, स्थान, वा कार्यक्रम साझेदारी प्रदान गर्नुहोस्।' },
+  ],
+};
+
+// ─── VOLUNTEER / GET INVOLVED ───────────────────────────────────
+export const volunteerAreas = [
+  { id: 'legal', titleEn: 'Legal Volunteer', titleNp: 'कानुनी स्वयंसेवक', descEn: 'For law students and practicing advocates — support our free legal aid clinics.', descNp: 'कानून विद्यार्थी र अभ्यासरत अधिवक्ताका लागि — हाम्रो निःशुल्क कानुनी सहायता शिविरलाई सहयोग गर्नुहोस्।' },
+  { id: 'mediation', titleEn: 'Mediator / Peacebuilder', titleNp: 'मेलमिलापकर्ता / शान्ति निर्माता', descEn: 'Get trained and help resolve community disputes through mediation.', descNp: 'तालिम लिनुहोस् र मेलमिलापमार्फत सामुदायिक विवाद समाधानमा सहयोग गर्नुहोस्।' },
+  { id: 'outreach', titleEn: 'Community Outreach', titleNp: 'सामुदायिक पहुँच', descEn: 'Help raise awareness of rights and services in your community.', descNp: 'आफ्नो समुदायमा अधिकार र सेवाहरूबारे सचेतना फैलाउन सहयोग गर्नुहोस्।' },
+  { id: 'events', titleEn: 'Events & Admin Support', titleNp: 'कार्यक्रम तथा प्रशासनिक सहयोग', descEn: 'Assist with program logistics, documentation, and office work.', descNp: 'कार्यक्रम व्यवस्थापन, अभिलेखीकरण र कार्यालय कामकाजमा सहयोग गर्नुहोस्।' },
+  { id: 'professional', titleEn: 'Pro Bono Professional', titleNp: 'नि:शुल्क व्यावसायिक सेवा', descEn: 'Offer design, IT, finance, or research skills to the organization pro bono.', descNp: 'संस्थालाई डिजाइन, IT, वित्त, वा अनुसन्धान सीप नि:शुल्क रूपमा प्रदान गर्नुहोस्।' },
+];
