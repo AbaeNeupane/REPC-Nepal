@@ -24,7 +24,7 @@ const PageBanner = ({ titleEn, titleNp }) => {
 
 // Replace `src: null` with real image paths like '/images/gallery/img1.jpg'
 const galleryItems = [
-  { id: 1, src: '/images/cdo-registration.jpeg', altEn: 'Official Registration with Chief District Officer, 4 Bhadra 2083', altNp: 'मुख्य जिल्ला अधिकारीसँग आधिकारिक दर्ता, ४ भाद्र २०८३', color: 'from-navy to-navy-light', categoryEn: 'Milestone', categoryNp: 'उपलब्धि' },
+  { id: 1, src: '/images/gallery/milestone/cdo-registration.jpeg', altEn: 'Registered with the Chief District Officer, Kathmandu, on 4 Bhadra 2083. The registration certificate was issued by the District Administration Office.', altNp: 'काठमाण्डौं जिल्ला प्रमुखको कार्यालयमा २०८३ साल भदौ ४ गते दर्ता गरिएको। दर्ता प्रमाणपत्र जिल्ला प्रशासन कार्यालयबाट जारी गरिएको।', color: 'from-navy to-navy-light', categoryEn: 'Milestone', categoryNp: 'उपलब्धि' },
   { id: 2, src: null, altEn: 'Mediation Workshop 2083', altNp: 'मेलमिलाप कार्यशाला २०८३', color: 'from-redc to-redc-light', categoryEn: 'Workshop', categoryNp: 'कार्यशाला' },
   { id: 3, src: null, altEn: 'Community Awareness Program', altNp: 'सामुदायिक सचेतना कार्यक्रम', color: 'from-slate-600 to-slate-500', categoryEn: 'Awareness', categoryNp: 'सचेतना' },
   { id: 4, src: null, altEn: 'Free Legal Aid Camp', altNp: 'निःशुल्क कानुनी सहायता शिविर', color: 'from-amber-600 to-amber-500', categoryEn: 'Legal Aid', categoryNp: 'कानुनी सहायता' },

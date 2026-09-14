@@ -209,7 +209,7 @@ const About = () => {
             {/* CDO Registration Photo */}
             <figure className="border-b border-gray-100">
               <img
-                src="/images/cdo-registration.jpeg"
+                src="/images/gallery/milestone/cdo-registration.jpeg"
                 alt="Registration with Chief District Officer — 4 Bhadra 2083"
                 className="w-full object-contain max-h-[520px] bg-gray-50"
               />

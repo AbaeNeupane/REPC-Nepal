@@ -19,7 +19,7 @@ const Header = () => {
           <div className="w-16 h-16 md:w-20 md:h-20 shrink-0 flex items-center justify-center">
             <img
               src="/emblem.png"
-              alt="REPC-Nepal Emblem"
+              alt="REPC-Nepal Logo"
               className="w-full h-full object-contain"
               onError={(e) => {
                 // Fallback emblem if image not found

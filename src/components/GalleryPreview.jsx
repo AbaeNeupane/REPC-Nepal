@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import { FaImages } from 'react-icons/fa';
 
-// Real photos first, placeholders fill remaining slots.
-// To add more: insert { src: '/images/your-photo.jpg', ... } at the TOP of the array.
+
+// To add more: insert { src: '/images/gallery/domain/your-photo.jpg', ... } at the TOP of the array.
 const galleryItems = [
-  { id: 1, src: '/images/cdo-registration.jpeg', altEn: 'Official Registration with CDO, 4 Bhadra 2083', altNp: 'मुख्य जिल्ला अधिकारीसँग दर्ता, ४ भाद्र २०८३', color: 'bg-navy/80' },
+  { id: 1, src: '/images/gallery/milestone/cdo-registration.jpeg', altEn: 'Official Registration with CDO, 4 Bhadra 2083', altNp: 'मुख्य जिल्ला अधिकारीसँग दर्ता, ४ भाद्र २०८३', color: 'bg-navy/80' },
   { id: 2, src: null, altEn: 'Mediation Workshop', altNp: 'मेलमिलाप कार्यशाला', color: 'bg-redc/80' },
   { id: 3, src: null, altEn: 'Community Awareness Program', altNp: 'सामुदायिक सचेतना कार्यक्रम', color: 'bg-slate-600/80' },
   { id: 4, src: null, altEn: 'Legal Aid Camp', altNp: 'कानुनी सहायता शिविर', color: 'bg-amber/80' },
