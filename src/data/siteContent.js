@@ -17,7 +17,7 @@ export const siteInfo = {
   whatsapp: '+9779768571643',      
   email: 'repcnepal2083@gmail.com',
   website: 'www.repcnepal.org.np',
-  facebook: 'https://facebook.com/repcnepal',  // ← UPDATE THIS
+  facebook: 'https://www.facebook.com/share/1DBHcrxqnP/', 
   twitter: 'https://twitter.com/repcnepal',    // ← UPDATE THIS
   youtube: 'https://youtube.com/@repcnepal',   // ← UPDATE THIS
   officeHoursEn: 'Sunday – Friday: 10:00 AM – 5:00 PM',
