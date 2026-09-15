@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import { siteInfo } from '../data/siteContent';
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaFacebook, FaTwitter, FaYoutube, FaPaperPlane, FaWhatsapp } from 'react-icons/fa';
@@ -23,6 +23,9 @@ const PageBanner = ({ titleEn, titleNp }) => {
   );
 };
 
+// Subjects the dropdown actually supports — used to validate the ?subject= param.
+const VALID_SUBJECTS = ['legal', 'mediation', 'training', 'membership', 'general'];
+
 // ─── APPS SCRIPT CONFIG ──────────────────────────────────────
 // After deploying Code.gs as a Web App, paste the URL below.
 // See README_APPSSCRIPT.md for the full 5-minute setup guide.
@@ -30,7 +33,9 @@ const SCRIPT_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE'; // ← UPDATE THIS
 
 const Contact = () => {
   const { lang, t } = useLang();
-  const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
+  const [searchParams] = useSearchParams();
+  const prefilledSubject = VALID_SUBJECTS.includes(searchParams.get('subject')) ? searchParams.get('subject') : '';
+  const [form, setForm] = useState({ name: '', email: '', phone: '', subject: prefilledSubject, message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState('');
@@ -114,8 +119,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className={`font-semibold text-navy text-sm ${lang === 'np' ? 'font-nepali' : ''}`}>{t('WhatsApp', 'ह्वाट्सएप')}</p>
-                  <a
-                    href={`https://wa.me/${siteInfo.whatsapp}?text=${encodeURIComponent(lang === 'en' ? 'Hello REPC-Nepal, I would like to inquire about your services.' : 'नमस्ते REPC-Nepal, म तपाईंको सेवाहरूबारे जानकारी लिन चाहन्छु।')}`}
+                  
+                    <a href={`https://wa.me/${siteInfo.whatsapp}?text=${encodeURIComponent(lang === 'en' ? 'Hello REPC-Nepal, I would like to inquire about your services.' : 'नमस्ते REPC-Nepal, म तपाईंको सेवाहरूबारे जानकारी लिन चाहन्छु।')}`}
                     target="_blank" rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 mt-1 bg-green-500 hover:bg-green-600 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors"
                   >
@@ -181,8 +186,8 @@ const Contact = () => {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
-            <a
-              href="https://maps.google.com/?q=Thapathali+Kathmandu+Nepal"
+            
+              <a href="https://maps.google.com/?q=Thapathali+Kathmandu+Nepal"
               target="_blank"
               rel="noopener noreferrer"
               className={`absolute bottom-2 right-2 bg-white text-xs text-navy hover:text-redc border border-gray-200 shadow px-2 py-1 rounded transition-colors ${lang === 'np' ? 'font-nepali' : ''}`}
