@@ -27,7 +27,7 @@ const PageBanner = ({ titleEn, titleNp }) => {
 const VALID_SUBJECTS = ['legal', 'mediation', 'training', 'membership', 'general'];
 
 
-const SCRIPT_URL = import.meta.env.VITE_APPS_SCRIPT_URL || ''; 
+const SCRIPT_URL = import.meta.env.APPS_SCRIPT_URL || ''; 
 
 const Contact = () => {
   const { lang, t } = useLang();
@@ -45,7 +45,7 @@ const Contact = () => {
     setSending(true);
     setError('');
 
-    if (!SCRIPT_URL || SCRIPT_URL === 'PASTE_YOUR_APPS_SCRIPT_URL_HERE') {
+    if (!SCRIPT_URL) {
       setError(lang === 'en'
         ? `The contact form isn't set up yet. Please email us directly at ${siteInfo.email}.`
         : `सम्पर्क फारम अझै सेटअप भएको छैन। कृपया ${siteInfo.email} मा सिधै इमेल गर्नुहोस्।`);
