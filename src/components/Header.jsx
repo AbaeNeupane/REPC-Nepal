@@ -58,7 +58,7 @@ const Header = () => {
           {/* Emblem placeholder — replace public/emblem.png with real logo */}
           <div className="w-16 h-16 md:w-20 md:h-20 shrink-0 flex items-center justify-center">
             <img
-              src="/emblem.png"
+              src={lang === 'en' ? '/emblem.jpeg' : '/emblem.png'}
               alt="REPC-Nepal Logo"
               className="w-full h-full object-contain"
               onError={(e) => {
