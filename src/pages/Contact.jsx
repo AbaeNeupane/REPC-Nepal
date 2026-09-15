@@ -26,10 +26,8 @@ const PageBanner = ({ titleEn, titleNp }) => {
 // Subjects the dropdown actually supports — used to validate the ?subject= param.
 const VALID_SUBJECTS = ['legal', 'mediation', 'training', 'membership', 'general'];
 
-// ─── APPS SCRIPT CONFIG ──────────────────────────────────────
-// After deploying Code.gs as a Web App, paste the URL below.
-// See README_APPSSCRIPT.md for the full 5-minute setup guide.
-const SCRIPT_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE'; // ← UPDATE THIS
+
+const SCRIPT_URL = import.meta.env.VITE_APPS_SCRIPT_URL || ''; 
 
 const Contact = () => {
   const { lang, t } = useLang();

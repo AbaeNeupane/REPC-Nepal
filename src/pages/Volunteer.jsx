@@ -34,9 +34,8 @@ const areaIconMap = {
   professional: FaBriefcase,
 };
 
-// ─── APPS SCRIPT CONFIG ──────────────────────────────────────
-// Same deployment as the Contact form — see README_APPSSCRIPT.md.
-const SCRIPT_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE'; // ← UPDATE THIS
+
+const SCRIPT_URL = import.meta.env.VITE_APPS_SCRIPT_URL || '';
 
 const Volunteer = () => {
   const { lang, t } = useLang();
@@ -52,7 +51,7 @@ const Volunteer = () => {
     setSending(true);
     setError('');
 
-    if (!SCRIPT_URL || SCRIPT_URL === 'PASTE_YOUR_APPS_SCRIPT_URL_HERE') {
+    if (!SCRIPT_URL) {
       setError(lang === 'en'
         ? `The volunteer form isn't set up yet. Please email us directly at ${siteInfo.email}.`
         : `स्वयंसेवक फारम अझै सेटअप भएको छैन। कृपया ${siteInfo.email} मा सिधै इमेल गर्नुहोस्।`);
