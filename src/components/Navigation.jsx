@@ -57,9 +57,8 @@ const navItems = [
   { en: 'Contact', np: 'सम्पर्क', link: '/contact' },
 ];
 
-const Navigation = () => {
+const Navigation = ({ mobileOpen, setMobileOpen }) => {
   const { lang, t } = useLang();
-  const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState([]);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -102,7 +101,7 @@ const Navigation = () => {
   return (
     <nav
       ref={navRef}
-      className={`bg-navy relative z-[60] transition-shadow duration-300 ${scrolled ? 'shadow-xl' : 'shadow-md'}`}
+      className={`lg:bg-navy lg:relative lg:z-[60] max-lg:fixed max-lg:inset-0 max-lg:z-[70] max-lg:pointer-events-none transition-shadow duration-300 ${scrolled ? 'lg:shadow-xl' : 'lg:shadow-md'}`}
     >
       <div className="max-w-7xl mx-auto px-4">
 
@@ -149,7 +148,7 @@ const Navigation = () => {
         </ul>
 
         {/* ── Mobile toggle ──────────────────────────────── */}
-        <div className="lg:hidden flex items-center justify-end py-3">
+        <div className="hidden lg:flex items-center justify-end py-3">
           <button
             onClick={() => setMobileOpen(o => !o)}
             className="text-white p-2.5 rounded-md hover:bg-white/10 transition-colors"
@@ -166,7 +165,7 @@ const Navigation = () => {
       {/* ── Mobile menu overlay ────────────────────────── */}
       {mobileOpen && (
         <div
-          className="fixed inset-0 z-30 bg-black/45 lg:hidden"
+          className="fixed inset-0 z-30 bg-black/45 lg:hidden pointer-events-auto"
           onClick={() => {
             if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
             closeTimerRef.current = setTimeout(() => setMobileOpen(false), 120);
@@ -177,7 +176,7 @@ const Navigation = () => {
 
       {/* ── Mobile menu drawer ─────────────────────────── */}
       <div
-        className={`lg:hidden fixed top-0 right-0 z-40 h-screen w-[82%] max-w-sm bg-navy text-white shadow-2xl border-l border-white/10 transform transition-transform duration-300 ease-in-out
+        className={`lg:hidden pointer-events-auto fixed top-0 right-0 z-40 h-screen w-[82%] max-w-sm bg-navy text-white shadow-2xl border-l border-white/10 transform transition-transform duration-300 ease-in-out
           ${mobileOpen ? 'translate-x-0' : 'translate-x-full'}`}
       >
         <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">

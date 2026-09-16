@@ -10,10 +10,10 @@ const AboutIntro = () => {
   const { lang, t } = useLang();
 
   return (
-    <section className="bg-gradient-to-b from-white to-slate-50 py-16">
+    <section className="bg-gradient-to-b from-white to-slate-50 py-10 sm:py-12 lg:py-16">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="grid items-center gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-          <div className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-[0_20px_50px_rgba(15,23,42,0.05)] md:p-8">
+        <div className="grid items-center gap-5 sm:gap-6 lg:gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+          <div className="rounded-2xl sm:rounded-[30px] border border-slate-200 bg-white p-5 sm:p-6 shadow-[0_20px_50px_rgba(15,23,42,0.05)] md:p-8">
             <div className="inline-flex items-center gap-2 rounded-full bg-sky/10 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-sky">
               <FaCompass size={12} />
               {t('Our mission', 'हाम्रो उद्देश्य')}
@@ -46,7 +46,7 @@ const AboutIntro = () => {
             </div>
           </div>
 
-          <div className="rounded-[30px] border border-slate-200 bg-white p-6 md:p-8 shadow-[0_20px_60px_rgba(15,23,42,0.05)]">
+          <div className="rounded-2xl sm:rounded-[30px] border border-slate-200 bg-white p-5 sm:p-6 md:p-8 shadow-[0_20px_60px_rgba(15,23,42,0.05)]">
             <p className={`text-base leading-relaxed text-gray-700 md:text-lg ${lang === 'np' ? 'font-nepali' : ''}`}>
               {lang === 'en' ? abstractEn : abstractNp}
             </p>

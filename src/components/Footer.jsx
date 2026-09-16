@@ -9,6 +9,8 @@ import {
   FaClock,
 } from 'react-icons/fa';
 
+const toNepaliDigits = value => String(value).replace(/[0-9]/g, digit => '०१२३४५६७८९'[digit]);
+
 const Footer = () => {
   const { lang, t } = useLang();
 
@@ -166,9 +168,15 @@ const Footer = () => {
             )}
           </p>
           <p className={`text-white/40 text-xs ${lang === 'np' ? 'font-nepali' : ''}`}>
-            {t(`Reg. No: ${siteInfo.registrationNo}`, `दर्ता नं: ${siteInfo.registrationNo}`)}
+            {t(
+              `Reg. No: ${siteInfo.registrationNo}`,
+              `दर्ता नं: ${toNepaliDigits(siteInfo.registrationNo)}`
+            )}
             <span className="mx-2 opacity-50">|</span>
-            {t(`PAN: ${siteInfo.panNo}`, `स्थायी लेखा नं: ${siteInfo.panNo}`)}
+            {t(
+              `PAN: ${siteInfo.panNo}`,
+              `स्थायी लेखा नं: ${toNepaliDigits(siteInfo.panNo)}`
+            )}
           </p>
         </div>
       </div>

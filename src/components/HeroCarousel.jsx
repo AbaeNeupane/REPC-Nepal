@@ -33,7 +33,7 @@ const HeroCarousel = () => {
   const slide = heroSlides[current];
 
   return (
-    <section className="relative h-[480px] sm:h-[440px] md:h-[520px] overflow-hidden bg-slate-950 select-none">
+    <section className="relative h-[390px] sm:h-[370px] md:h-[520px] overflow-hidden bg-slate-950 select-none">
       {heroSlides.map((s, i) => (
         <div
           key={i}
@@ -59,36 +59,36 @@ const HeroCarousel = () => {
       <div className="relative z-[3] h-full">
         <div className="max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8">
           <div className="flex h-full items-center">
-            <div className="max-w-2xl pt-10 md:pt-0" key={current} style={{ animation: 'fadeSlideIn 0.7s ease forwards' }}>
+            <div className="max-w-2xl pt-4 sm:pt-6 md:pt-0" key={current} style={{ animation: 'fadeSlideIn 0.7s ease forwards' }}>
               <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1.5 text-[10px] md:text-xs font-semibold uppercase tracking-[0.18em] text-white/80 backdrop-blur-sm">
                 <FaAward className="text-sky" size={12} />
                 {lang === 'en' ? 'Peace • Rights • Justice' : 'शान्ति • अधिकार • न्याय'}
               </div>
 
-              <h1 className={`mt-5 text-white font-black leading-[1.04] drop-shadow-lg ${lang === 'np' ? 'font-nepali text-3xl md:text-5xl' : 'text-3xl md:text-5xl lg:text-6xl'}`}>
+              <h1 className={`mt-3 sm:mt-4 text-white font-black leading-[1.04] drop-shadow-lg ${lang === 'np' ? 'font-nepali text-2xl sm:text-3xl md:text-5xl' : 'text-2xl sm:text-3xl md:text-5xl lg:text-6xl'}`}>
                 {lang === 'en' ? slide.titleEn : slide.titleNp}
               </h1>
 
-              <p className={`mt-5 max-w-xl text-white/85 leading-relaxed ${lang === 'np' ? 'font-nepali text-base md:text-lg' : 'text-base md:text-lg'}`}>
+              <p className={`mt-3 sm:mt-4 max-w-xl text-sm sm:text-base text-white/85 leading-relaxed md:text-lg ${lang === 'np' ? 'font-nepali' : ''}`}>
                 {lang === 'en' ? slide.subtitleEn : slide.subtitleNp}
               </p>
 
-              <div className="mt-8 flex flex-col sm:flex-row items-start gap-3">
+              <div className="mt-5 sm:mt-6 flex flex-row items-start gap-2 sm:gap-3">
                 <Link
                   to={slide.ctaLink}
-                  className={`inline-flex items-center justify-center bg-sky hover:bg-sky-light text-white font-semibold px-7 py-3 rounded-full shadow-lg transition-all hover:-translate-y-0.5 ${lang === 'np' ? 'font-nepali' : ''}`}
+                  className={`inline-flex items-center justify-center bg-sky hover:bg-sky-light text-white text-xs sm:text-sm font-semibold px-4 sm:px-6 py-2.5 sm:py-3 rounded-full shadow-lg transition-all hover:-translate-y-0.5 ${lang === 'np' ? 'font-nepali' : ''}`}
                 >
                   {lang === 'en' ? slide.ctaEn : slide.ctaNp}
                 </Link>
                 <Link
                   to="/about"
-                  className="inline-flex items-center justify-center border border-white/40 bg-white/5 text-white hover:bg-white/10 font-semibold px-7 py-3 rounded-full backdrop-blur-sm transition-all"
+                  className="inline-flex items-center justify-center border border-white/40 bg-white/5 text-white hover:bg-white/10 text-xs sm:text-sm font-semibold px-4 sm:px-6 py-2.5 sm:py-3 rounded-full backdrop-blur-sm transition-all"
                 >
                   {lang === 'en' ? 'Learn More' : 'थप जान्नुहोस्'}
                 </Link>
               </div>
 
-              <div className="mt-8 flex flex-wrap gap-4 text-white/80">
+              <div className="hidden sm:flex mt-6 flex-wrap gap-3 text-white/80">
                 <div className="flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-2 backdrop-blur-sm">
                   <FaUsers size={12} />
                   <span className={`text-sm ${lang === 'np' ? 'font-nepali' : ''}`}>

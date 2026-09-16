@@ -181,19 +181,23 @@ const NotFound = () => (
 /* ─────────────────────────────────────────────────────────────
    Layout
 ───────────────────────────────────────────────────────────── */
-const Layout = ({ children }) => (
-  <div className="flex flex-col min-h-screen">
-    <TopBar />
-    <Header />
-    <Navigation />
-    <main className="flex-1 bg-gray-50">
-      {children}
-    </main>
-    <Footer />
-    <FloatingWhatsApp />
-    <ScrollToTop />
-  </div>
-);
+const Layout = ({ children }) => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  return (
+    <div className="flex flex-col min-h-screen">
+      <TopBar />
+      <Header mobileOpen={mobileOpen} onMobileToggle={() => setMobileOpen(open => !open)} />
+      <Navigation mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
+      <main className="flex-1 bg-gray-50">
+        {children}
+      </main>
+      <Footer />
+      <FloatingWhatsApp />
+      <ScrollToTop />
+    </div>
+  );
+};
 
 /* ─────────────────────────────────────────────────────────────
    AppInner  (must be inside BrowserRouter to use useLocation)
