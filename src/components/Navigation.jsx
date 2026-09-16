@@ -64,7 +64,6 @@ const Navigation = ({ mobileOpen, setMobileOpen }) => {
   const location = useLocation();
   const navRef = useRef(null);
   const closeTimerRef = useRef(null);
-  const submenuTimerRef = useRef(null);
 
   useEffect(() => {
     if (mobileOpen) {
@@ -200,8 +199,6 @@ const Navigation = ({ mobileOpen, setMobileOpen }) => {
             <div
               key={i}
               className="border-b border-white/5 last:border-0"
-              onMouseEnter={() => item.children && setMobileExpanded(prev => prev.includes(i) ? prev : [...prev, i])}
-              onFocus={() => item.children && setMobileExpanded(prev => prev.includes(i) ? prev : [...prev, i])}
             >
               <div className="flex items-center">
                 <Link
@@ -217,17 +214,10 @@ const Navigation = ({ mobileOpen, setMobileOpen }) => {
                   <button
                     type="button"
                     onClick={() => {
-                      if (submenuTimerRef.current) clearTimeout(submenuTimerRef.current);
                       setMobileExpanded(prev => {
-                        if (prev.includes(i)) {
-                          submenuTimerRef.current = setTimeout(() => {
-                            setMobileExpanded(current => current.filter(index => index !== i));
-                          }, 180);
-                          return prev;
-                        }
-
-                        setMobileExpanded([]);
-                        return [i];
+                        return prev.includes(i)
+                          ? prev.filter(index => index !== i)
+                          : [...prev, i];
                       });
                     }}
                     className="px-5 py-3.5 text-white/60 hover:text-white hover:bg-white/5 transition-colors"
