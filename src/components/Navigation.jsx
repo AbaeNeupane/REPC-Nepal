@@ -11,18 +11,20 @@ const navItems = [
       { en: 'Introduction',        np: 'परिचय',            link: '/about' },
       { en: 'Mission & Vision',    np: 'लक्ष्य र दृष्टि',   link: '/about#mission' },
       { en: 'Executive Committee', np: 'कार्य समिति',       link: '/about#team' },
-      { en: 'Organization Structure', np: 'संगठन संरचना',   link: '/about#structure' },
-      { en: 'Constitution 2083',   np: 'विधान २०८३',        link: '/about#constitution' },
+      { en: 'Organization Structure', np: 'संस्था संरचना',   link: '/about#structure' },
+      { en: 'Organization Information',   np: 'संस्थागत जानकारी',    link: '/about#organization-info' },
+      { en: 'Legal Framework',     np: 'कानुनी संरचना',     link: '/legal-framework' },
     ],
   },
   {
     en: 'Services', np: 'सेवाहरू', link: '/services',
     children: [
-      { en: 'Free Legal Aid',          np: 'निःशुल्क कानुनी सहायता', link: '/services#legal' },
-      { en: 'Mediation & Arbitration', np: 'मेलमिलाप र मध्यस्थता',   link: '/services#mediation' },
-      { en: 'Training & Workshops',    np: 'तालिम र कार्यशाला',       link: '/services#training' },
-      { en: 'Research & Documentation',np: 'अनुसन्धान र अभिलेखीकरण', link: '/services#research' },
-      { en: 'Peace Building',          np: 'शान्ति निर्माण',          link: '/services#peace' },
+      { en: 'Mediation',        np: 'मेलमिलाप',      link: '/services#mediation' },
+      { en: 'Arbitration',      np: 'मध्यस्थता',      link: '/services#arbitration' },
+      { en: 'Compromise',       np: 'सम्झौता',        link: '/services#compromise' },
+      { en: 'Negotiation',      np: 'वार्ता',          link: '/services#negotiation' },
+      { en: 'Judicial Justice & Free Legal Aid', np: 'न्यायिक न्याय तथा निःशुल्क कानुनी सहायता', link: '/services#judicial-legal-aid' },
+      { en: 'All Services',     np: 'सबै सेवाहरू',    link: '/services' },
     ],
   },
   { en: 'Programs', np: 'कार्यक्रमहरू', link: '/programs' },
@@ -48,6 +50,7 @@ const navItems = [
     children: [
       { en: 'Volunteer',   np: 'स्वयंसेवा',        link: '/volunteer' },
       { en: 'Support Us',  np: 'सहयोग गर्नुहोस्',   link: '/support' },
+      { en: 'Membership',  np: 'सदस्यता',           link: '/membership' },
     ],
   },
   { en: 'Gallery', np: 'ग्यालरी', link: '/gallery' },
@@ -56,16 +59,25 @@ const navItems = [
 
 const Navigation = () => {
   const { lang, t } = useLang();
-  const [mobileOpen, setMobileOpen]     = useState(false);
-  const [mobileExpanded, setMobileExpanded] = useState(null);
-  const [scrolled, setScrolled]         = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileExpanded, setMobileExpanded] = useState([]);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navRef = useRef(null);
+  const closeTimerRef = useRef(null);
+  const submenuTimerRef = useRef(null);
+
+  useEffect(() => {
+    if (mobileOpen) {
+      setMobileExpanded([]);
+      if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+    }
+  }, [mobileOpen]);
 
   /* Close mobile menu on route change */
   useEffect(() => {
     setMobileOpen(false);
-    setMobileExpanded(null);
+    setMobileExpanded([]);
   }, [location.pathname, location.search]);
 
   /* Sticky shadow on scroll */
@@ -95,7 +107,7 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4">
 
         {/* ── Desktop nav ────────────────────────────────── */}
-        <ul className="hidden md:flex items-center">
+        <ul className="hidden lg:flex items-center">
           {navItems.map((item, i) => (
             <li key={i} className="nav-item relative group">
               <Link
@@ -137,19 +149,16 @@ const Navigation = () => {
         </ul>
 
         {/* ── Mobile toggle ──────────────────────────────── */}
-        <div className="md:hidden flex items-center justify-between py-3">
-          <span className={`text-white font-semibold text-sm ${lang === 'np' ? 'font-nepali' : ''}`}>
-            {t('Menu', 'मेनु')}
-          </span>
+        <div className="lg:hidden flex items-center justify-end py-3">
           <button
             onClick={() => setMobileOpen(o => !o)}
-            className="text-white p-2 rounded hover:bg-white/10 transition-colors"
+            className="text-white p-2.5 rounded-md hover:bg-white/10 transition-colors"
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileOpen}
           >
             {mobileOpen
-              ? <FaTimes size={20} className="animate-scaleIn" />
-              : <FaBars  size={20} />}
+              ? <FaTimes size={18} className="animate-scaleIn" />
+              : <FaBars size={18} />}
           </button>
         </div>
       </div>
@@ -157,62 +166,96 @@ const Navigation = () => {
       {/* ── Mobile menu overlay ────────────────────────── */}
       {mobileOpen && (
         <div
-          className="fixed inset-0 z-30 bg-black/50 md:hidden"
-          onClick={() => setMobileOpen(false)}
+          className="fixed inset-0 z-30 bg-black/45 lg:hidden"
+          onClick={() => {
+            if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+            closeTimerRef.current = setTimeout(() => setMobileOpen(false), 120);
+          }}
           aria-hidden="true"
         />
       )}
 
       {/* ── Mobile menu drawer ─────────────────────────── */}
       <div
-        className={`md:hidden absolute top-full left-0 right-0 z-40
-          bg-navy-dark border-t border-white/10 shadow-2xl
-          transition-all duration-300 ease-in-out origin-top
-          ${mobileOpen ? 'opacity-100 scale-y-100 pointer-events-auto' : 'opacity-0 scale-y-95 pointer-events-none'}`}
-        style={{ transformOrigin: 'top' }}
+        className={`lg:hidden fixed top-0 right-0 z-40 h-screen w-[82%] max-w-sm bg-navy text-white shadow-2xl border-l border-white/10 transform transition-transform duration-300 ease-in-out
+          ${mobileOpen ? 'translate-x-0' : 'translate-x-full'}`}
       >
-        <div className="max-h-[75vh] overflow-y-auto">
+        <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
+          <span className={`font-semibold ${lang === 'np' ? 'font-nepali' : ''}`}>
+            {t('Menu', 'मेनु')}
+          </span>
+          <button
+            onClick={() => {
+              if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
+              closeTimerRef.current = setTimeout(() => setMobileOpen(false), 120);
+            }}
+            className="p-2 rounded-full hover:bg-white/10 transition-colors"
+            aria-label={t('Close menu', 'मेनु बन्द गर्नुहोस्')}
+          >
+            <FaTimes size={16} />
+          </button>
+        </div>
+
+        <div className="h-[calc(100vh-72px)] overflow-y-auto">
           {navItems.map((item, i) => (
-            <div key={i} className="border-b border-white/5 last:border-0">
+            <div
+              key={i}
+              className="border-b border-white/5 last:border-0"
+              onMouseEnter={() => item.children && setMobileExpanded(prev => prev.includes(i) ? prev : [...prev, i])}
+              onMouseLeave={() => item.children && setMobileExpanded(prev => prev.filter(index => index !== i))}
+              onFocus={() => item.children && setMobileExpanded(prev => prev.includes(i) ? prev : [...prev, i])}
+            >
               <div className="flex items-center">
                 <Link
                   to={item.link}
                   onClick={() => !item.children && setMobileOpen(false)}
                   className={`flex-1 px-5 py-3.5 text-sm font-medium transition-colors
-                    ${isActive(item) ? 'text-amber' : 'text-white/90 hover:text-white hover:bg-white/5'}
+                    ${isActive(item) ? 'text-redc bg-white/5' : 'text-white/90 hover:text-white hover:bg-white/5'}
                     ${lang === 'np' ? 'font-nepali' : ''}`}
                 >
                   {lang === 'en' ? item.en : item.np}
                 </Link>
                 {item.children && (
                   <button
-                    onClick={() => setMobileExpanded(mobileExpanded === i ? null : i)}
+                    type="button"
+                    onClick={() => {
+                      if (submenuTimerRef.current) clearTimeout(submenuTimerRef.current);
+                      setMobileExpanded(prev => {
+                        if (prev.includes(i)) {
+                          submenuTimerRef.current = setTimeout(() => {
+                            setMobileExpanded(current => current.filter(index => index !== i));
+                          }, 180);
+                          return prev;
+                        }
+
+                        setMobileExpanded([]);
+                        return [i];
+                      });
+                    }}
                     className="px-5 py-3.5 text-white/60 hover:text-white hover:bg-white/5 transition-colors"
                     aria-label="Toggle submenu"
                   >
                     <FaChevronDown
                       size={12}
-                      className={`transition-transform duration-200 ${mobileExpanded === i ? 'rotate-180' : ''}`}
+                      className={`transition-transform duration-200 ${mobileExpanded.includes(i) ? 'rotate-180' : ''}`}
                     />
                   </button>
                 )}
               </div>
 
-              {/* Submenu */}
               {item.children && (
                 <div
-                  className={`overflow-hidden transition-all duration-250
-                    ${mobileExpanded === i ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'}`}
+                  className={`overflow-hidden transition-all duration-300 ${
+                    mobileExpanded.includes(i) ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'}
+                  `}
                 >
-                  <div className="bg-black/20 border-l-2 border-redc ml-5 mb-1">
+                  <div className="bg-black/15 border-l-2 border-redc ml-5 mr-3 my-1 rounded-r-sm">
                     {item.children.map((child, j) => (
                       <Link
                         key={j}
                         to={child.link}
                         onClick={() => setMobileOpen(false)}
-                        className={`block px-4 py-2.5 text-sm text-white/70 hover:text-white hover:bg-white/5
-                          transition-colors
-                          ${lang === 'np' ? 'font-nepali' : ''}`}
+                        className={`block px-4 py-2.5 text-sm text-white/75 hover:text-white hover:bg-white/5 transition-colors ${lang === 'np' ? 'font-nepali' : ''}`}
                       >
                         {lang === 'en' ? child.en : child.np}
                       </Link>

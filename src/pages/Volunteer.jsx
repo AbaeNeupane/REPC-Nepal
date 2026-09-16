@@ -34,8 +34,10 @@ const areaIconMap = {
   professional: FaBriefcase,
 };
 
-
-const SCRIPT_URL = import.meta.env.APPS_SCRIPT_URL || '';
+// ─── APPS SCRIPT CONFIG ──────────────────────────────────────
+// Set VITE_APPS_SCRIPT_URL in your .env file (see .env.example).
+// Same deployment as the Contact form — see README_APPSSCRIPT.md.
+const SCRIPT_URL = import.meta.env.VITE_APPS_SCRIPT_URL || '';
 
 const Volunteer = () => {
   const { lang, t } = useLang();

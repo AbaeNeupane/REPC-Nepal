@@ -2,28 +2,22 @@ import { useLang } from '../context/LanguageContext';
 import { services } from '../data/siteContent';
 import { Link } from 'react-router-dom';
 import {
-  FaBalanceScale, FaHandshake, FaChalkboardTeacher,
-  FaSearch, FaBullhorn, FaDove, FaPhoneAlt,
+  FaHandshake, FaGavel, FaComments, FaExchangeAlt, FaBalanceScale,
+  FaFileSignature, FaUserTie, FaUsersCog, FaChalkboardTeacher, FaSearch,
+  FaDove, FaPhoneAlt,
 } from 'react-icons/fa';
 
 const iconMap = {
-  scale: FaBalanceScale,
-  handshake: FaHandshake,
+  mediation: FaHandshake,
+  arbitration: FaGavel,
+  compromise: FaComments,
+  negotiation: FaExchangeAlt,
+  judicial: FaBalanceScale,
+  drafting: FaFileSignature,
+  advisory: FaUserTie,
+  hr: FaUsersCog,
   training: FaChalkboardTeacher,
   research: FaSearch,
-  advocacy: FaBullhorn,
-  peace: FaDove,
-};
-
-// Maps each service's icon key to the anchor id used by the nav dropdown links
-// (/services#legal, /services#mediation, etc.) — these don't match the icon keys 1:1.
-const anchorMap = {
-  scale: 'legal',
-  handshake: 'mediation',
-  training: 'training',
-  research: 'research',
-  advocacy: 'advocacy',
-  peace: 'peace',
 };
 
 const PageBanner = ({ titleEn, titleNp }) => {
@@ -45,8 +39,32 @@ const PageBanner = ({ titleEn, titleNp }) => {
   );
 };
 
+const ServiceCard = ({ svc, lang }) => {
+  const Icon = iconMap[svc.icon] || FaBalanceScale;
+  const anchorId = svc.link.split('#')[1];
+  return (
+    <div id={anchorId} className="bg-white border border-gray-200 rounded-sm shadow-sm overflow-hidden hover:shadow-md transition-shadow scroll-mt-20">
+      <div className="flex items-center gap-4 p-5 border-b border-gray-100 bg-gray-50">
+        <div className="w-12 h-12 rounded-full bg-navy flex items-center justify-center shrink-0">
+          <Icon className="text-white" size={20} />
+        </div>
+        <h2 className={`font-bold text-navy text-lg ${lang === 'np' ? 'font-nepali' : ''}`}>
+          {lang === 'en' ? svc.titleEn : svc.titleNp}
+        </h2>
+      </div>
+      <div className="p-5">
+        <p className={`text-gray-600 leading-relaxed ${lang === 'np' ? 'font-nepali text-base' : 'text-sm'}`}>
+          {lang === 'en' ? svc.descEn : svc.descNp}
+        </p>
+      </div>
+    </div>
+  );
+};
+
 const Services = () => {
   const { lang, t } = useLang();
+  const peaceServices = services.filter(s => s.group === 'peace');
+  const legalServices = services.filter(s => s.group === 'legal');
 
   return (
     <div>
@@ -64,29 +82,28 @@ const Services = () => {
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-          {services.map((svc, i) => {
-            const Icon = iconMap[svc.icon] || FaBalanceScale;
-            return (
-              <div key={i} id={anchorMap[svc.icon] || svc.icon} className="bg-white border border-gray-200 rounded-sm shadow-sm overflow-hidden hover:shadow-md transition-shadow scroll-mt-20">
-                <div className="flex items-center gap-4 p-5 border-b border-gray-100 bg-gray-50">
-                  <div className="w-12 h-12 rounded-full bg-navy flex items-center justify-center shrink-0">
-                    <Icon className="text-white" size={22} />
-                  </div>
-                  <h2 className={`font-bold text-navy text-lg ${lang === 'np' ? 'font-nepali' : ''}`}>
-                    {lang === 'en' ? svc.titleEn : svc.titleNp}
-                  </h2>
-                </div>
-                <div className="p-5">
-                  <p className={`text-gray-600 leading-relaxed ${lang === 'np' ? 'font-nepali text-base' : 'text-sm'}`}>
-                    {lang === 'en' ? svc.descEn : svc.descNp}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        {/* Peace Through... */}
+        <section className="mb-12">
+          <div className="flex items-center gap-2 mb-5">
+            <FaDove className="text-redc" size={20} />
+            <h2 className={`text-xl font-bold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
+              {t('Peace Through...', 'यसमार्फत शान्ति...')}
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {peaceServices.map((svc, i) => <ServiceCard key={i} svc={svc} lang={lang} />)}
+          </div>
+        </section>
+
+        {/* Legal & Professional Services */}
+        <section className="mb-12">
+          <h2 className={`text-xl font-bold text-navy mb-5 ${lang === 'np' ? 'font-nepali' : ''}`}>
+            {t('Legal & Professional Services', 'कानुनी तथा पेशागत सेवाहरू')}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {legalServices.map((svc, i) => <ServiceCard key={i} svc={svc} lang={lang} />)}
+          </div>
+        </section>
 
         {/* Free Legal Aid CTA */}
         <div className="bg-redc text-white rounded-sm p-8 text-center">

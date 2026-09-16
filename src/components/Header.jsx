@@ -1,8 +1,8 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import { siteInfo, services, notices } from '../data/siteContent';
-import { FaSearch, FaTimes, FaHandHoldingHeart } from 'react-icons/fa';
+import { FaSearch, FaHandHoldingHeart } from 'react-icons/fa';
 
 // Static pages + services + notices, searched by title in either language.
 const staticPages = [
@@ -12,6 +12,7 @@ const staticPages = [
   { titleEn: 'Programs', titleNp: 'कार्यक्रमहरू', link: '/programs' },
   { titleEn: 'Notices', titleNp: 'सूचना', link: '/notices' },
   { titleEn: 'Publications', titleNp: 'प्रकाशनहरू', link: '/publications' },
+  { titleEn: 'Legal Framework', titleNp: 'कानुनी संरचना', link: '/legal-framework' },
   { titleEn: 'Gallery', titleNp: 'ग्यालरी', link: '/gallery' },
   { titleEn: 'Volunteer', titleNp: 'स्वयंसेवा', link: '/volunteer' },
   { titleEn: 'Support Us', titleNp: 'सहयोग गर्नुहोस्', link: '/support' },
@@ -21,8 +22,24 @@ const staticPages = [
 const Header = () => {
   const { lang, toggleLang, t } = useLang();
   const navigate = useNavigate();
+  const searchRef = useRef(null);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+
+  useEffect(() => {
+    if (!searchOpen) return;
+
+    const handleClickOutside = (event) => {
+      const isInsideSearch = searchRef.current && searchRef.current.contains(event.target);
+      if (!isInsideSearch) {
+        setSearchOpen(false);
+        setSearchQuery('');
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [searchOpen]);
 
   const searchIndex = useMemo(() => [
     ...staticPages,
@@ -50,15 +67,67 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white border-b border-gray-200 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+    <header className="bg-white border-b border-gray-200 shadow-sm relative z-30">
+      {searchOpen && (
+        <div className="md:hidden fixed inset-0 bg-black/30 backdrop-blur-[1px] z-40" onClick={() => { setSearchOpen(false); setSearchQuery(''); }} aria-hidden="true" />
+      )}
+
+      {searchOpen && (
+        <div className="md:hidden fixed inset-x-0 top-4 z-50 flex justify-center px-4 pointer-events-none">
+          <div ref={searchRef} className="pointer-events-auto w-full max-w-md">
+            <form
+              onSubmit={handleSearchSubmit}
+              className="relative flex items-center border border-gray-300 bg-white rounded-xl shadow-2xl overflow-hidden focus-within:border-navy focus-within:ring-2 focus-within:ring-navy/10"
+            >
+              <input
+                autoFocus
+                type="text"
+                value={searchQuery}
+                onChange={e => setSearchQuery(e.target.value)}
+                placeholder={t('Search...', 'खोज्नुहोस्...')}
+                className="px-4 py-3 text-sm text-gray-700 placeholder:text-gray-400 outline-none w-full"
+                onKeyDown={e => {
+                  if (e.key === 'Escape') {
+                    setSearchOpen(false);
+                    setSearchQuery('');
+                  }
+                }}
+              />
+              <button
+                type="submit"
+                className="h-12 w-12 flex items-center justify-center bg-navy text-white hover:bg-navy/90 transition-colors border-l border-navy/20"
+                aria-label={t('Search', 'खोज्नुहोस्')}
+              >
+                <FaSearch size={13} />
+              </button>
+
+              {matches.length > 0 && (
+                <div className="absolute left-0 right-0 top-full mt-2 bg-white border border-gray-200 rounded-lg shadow-xl overflow-hidden z-[60]">
+                  {matches.map((item, i) => (
+                    <button
+                      type="button"
+                      key={i}
+                      onClick={() => goToResult(item.link)}
+                      className={`block w-full text-left px-3 py-2.5 text-sm text-gray-700 hover:bg-navy/5 hover:text-navy transition-colors ${lang === 'np' ? 'font-nepali' : ''}`}
+                    >
+                      {lang === 'en' ? item.titleEn : item.titleNp}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </form>
+          </div>
+        </div>
+      )}
+
+      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4 relative z-10">
 
         {/* Left: Emblem + Org Name */}
         <Link to="/" className="flex items-center gap-4 min-w-0">
           {/* Emblem placeholder — replace public/emblem.png with real logo */}
-          <div className="w-16 h-16 md:w-20 md:h-20 shrink-0 flex items-center justify-center">
+          <div className="w-24 h-24 md:w-28 md:h-28 shrink-0 flex items-center justify-center">
             <img
-              src={lang === 'en' ? '/emblem.jpeg' : '/emblem.png'}
+              src="/emblem.png"
               alt="REPC-Nepal Logo"
               className="w-full h-full object-contain"
               onError={(e) => {
@@ -69,7 +138,7 @@ const Header = () => {
             />
             {/* SVG Fallback Emblem */}
             <div
-              className="w-16 h-16 md:w-20 md:h-20 rounded-full border-4 border-navy bg-navy hidden items-center justify-center"
+              className="w-24 h-24 md:w-28 md:h-28 rounded-full border-4 border-navy bg-navy hidden items-center justify-center"
               aria-label="REPC-Nepal Logo Placeholder"
             >
               <span className="text-white font-bold text-xs text-center leading-tight px-1 select-none">
@@ -80,19 +149,16 @@ const Header = () => {
 
           {/* Org Name Block */}
           <div className="min-w-0">
-            <p className="text-xs text-gray-500 font-medium tracking-wide">
-              {t(siteInfo.parentEn, siteInfo.parentNp)}
-            </p>
-            <h1 className={`font-bold text-navy leading-tight ${lang === 'np' ? 'font-nepali text-base md:text-xl' : 'text-sm md:text-lg'}`}>
+            <h1 className={`font-bold text-navy leading-tight ${lang === 'np' ? 'font-nepali text-xl md:text-3xl' : 'text-lg md:text-2xl'}`}>
               {t(siteInfo.nameEn, siteInfo.nameNp)}
             </h1>
-            <p className={`text-redc text-xs md:text-sm font-medium mt-0.5 ${lang === 'np' ? 'font-nepali' : ''}`}>
+            <p className={`text-redc text-sm md:text-base font-medium mt-1 ${lang === 'np' ? 'font-nepali' : ''}`}>
               {t(siteInfo.mottoEn, siteInfo.mottoNp)}
             </p>
           </div>
         </Link>
 
-        {/* Right: Support CTA + Language Toggle + Search */}
+        {/*Language Toggle + Search */}
         <div className="flex items-center gap-3 shrink-0">
 
           {/* Support CTA */}
@@ -105,56 +171,54 @@ const Header = () => {
           </Link>
 
           {/* Search */}
-          <div className="relative">
+          <div className="relative shrink-0 z-20">
             {searchOpen ? (
-              <div className="flex items-center gap-1.5">
-                <form onSubmit={handleSearchSubmit} className="relative flex items-center border border-gray-300 rounded overflow-hidden">
-                  <input
-                    autoFocus
-                    type="text"
-                    value={searchQuery}
-                    onChange={e => setSearchQuery(e.target.value)}
-                    placeholder={t('Search...', 'खोज्नुहोस्...')}
-                    className="px-3 py-1.5 text-sm outline-none w-44"
-                    onKeyDown={e => e.key === 'Escape' && setSearchOpen(false)}
-                  />
-                  <button
-                    type="submit"
-                    className="px-3 py-1.5 bg-navy text-white hover:bg-navy-light transition-colors"
-                    aria-label={t('Search', 'खोज्नुहोस्')}
-                  >
-                    <FaSearch size={13} />
-                  </button>
-
-                  {/* Suggestions */}
-                  {matches.length > 0 && (
-                    <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-sm shadow-lg overflow-hidden z-50">
-                      {matches.map((item, i) => (
-                        <button
-                          type="button"
-                          key={i}
-                          onClick={() => goToResult(item.link)}
-                          className={`block w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-navy transition-colors ${lang === 'np' ? 'font-nepali' : ''}`}
-                        >
-                          {lang === 'en' ? item.titleEn : item.titleNp}
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                </form>
+              <form
+                onSubmit={handleSearchSubmit}
+                className="hidden md:flex items-center border border-gray-300 bg-white rounded-md shadow-sm overflow-hidden transition-all focus-within:border-navy focus-within:ring-2 focus-within:ring-navy/10"
+              >
+                <input
+                  autoFocus
+                  type="text"
+                  value={searchQuery}
+                  onChange={e => setSearchQuery(e.target.value)}
+                  placeholder={t('Search...', 'खोज्नुहोस्...')}
+                  className="px-3 py-2 text-sm text-gray-700 placeholder:text-gray-400 outline-none w-36 sm:w-52"
+                  onKeyDown={e => {
+                    if (e.key === 'Escape') {
+                      setSearchOpen(false);
+                      setSearchQuery('');
+                    }
+                  }}
+                />
                 <button
-                  onClick={() => { setSearchOpen(false); setSearchQuery(''); }}
-                  className="p-2 text-gray-400 hover:text-redc transition-colors"
-                  aria-label={t('Close search', 'खोज बन्द गर्नुहोस्')}
+                  type="submit"
+                  className="h-10 w-10 flex items-center justify-center bg-navy text-white hover:bg-navy/90 transition-colors border-l border-navy/20"
+                  aria-label={t('Search', 'खोज्नुहोस्')}
                 >
-                  <FaTimes size={14} />
+                  <FaSearch size={13} />
                 </button>
-              </div>
+
+                {matches.length > 0 && (
+                  <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-200 rounded-md shadow-xl overflow-hidden z-50">
+                    {matches.map((item, i) => (
+                      <button
+                        type="button"
+                        key={i}
+                        onClick={() => goToResult(item.link)}
+                        className={`block w-full text-left px-3 py-2.5 text-sm text-gray-700 hover:bg-navy/5 hover:text-navy transition-colors ${lang === 'np' ? 'font-nepali' : ''}`}
+                      >
+                        {lang === 'en' ? item.titleEn : item.titleNp}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </form>
             ) : (
               <button
                 onClick={() => setSearchOpen(true)}
-                className="p-2 text-navy hover:text-redc transition-colors"
-                aria-label="Open Search"
+                className="h-10 w-10 flex items-center justify-center rounded-md text-navy hover:text-redc hover:bg-navy/5 transition-colors shadow-sm border border-transparent hover:border-navy/10"
+                aria-label={t('Open Search', 'खोज खोल्नुहोस्')}
               >
                 <FaSearch size={16} />
               </button>

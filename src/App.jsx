@@ -15,9 +15,11 @@ import Services     from './pages/Services';
 import Notices      from './pages/Notices';
 import Programs     from './pages/Programs';
 import Publications from './pages/Publications';
+import LegalFramework from './pages/LegalFramework';
 import Gallery      from './pages/Gallery';
 import Support      from './pages/Support';
 import Volunteer    from './pages/Volunteer';
+import Membership   from './pages/Membership';
 import Contact      from './pages/Contact';
 
 /* ─────────────────────────────────────────────────────────────
@@ -105,9 +107,11 @@ const PageTransition = () => {
         <Route path="/notices"      element={<Notices />}      />
         <Route path="/programs"     element={<Programs />}     />
         <Route path="/publications" element={<Publications />} />
+        <Route path="/legal-framework" element={<LegalFramework />} />
         <Route path="/gallery"      element={<Gallery />}      />
         <Route path="/support"      element={<Support />}      />
         <Route path="/volunteer"    element={<Volunteer />}    />
+        <Route path="/membership"   element={<Membership />}   />
         <Route path="/contact"      element={<Contact />}      />
         <Route path="*"             element={<NotFound />}     />
       </Routes>
@@ -119,8 +123,8 @@ const PageTransition = () => {
    Floating WhatsApp
 ───────────────────────────────────────────────────────────── */
 const FloatingWhatsApp = () => (
-  
-    <a href={`https://wa.me/${siteInfo.whatsapp}?text=${encodeURIComponent(
+  <a
+    href={`https://wa.me/${siteInfo.whatsapp}?text=${encodeURIComponent(
       'Hello REPC-Nepal, I would like to inquire about your services.'
     )}`}
     target="_blank"

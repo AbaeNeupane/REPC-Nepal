@@ -20,29 +20,36 @@ const dataMap = {
 
 const NoticeItem = ({ item }) => {
   const { lang } = useLang();
+
   return (
-    <div className="notice-item group cursor-pointer">
-      <FaCalendarAlt className="text-redc shrink-0 mt-0.5" size={12} />
-      <div className="flex-1 min-w-0">
-        <p className={`text-xs text-gray-400 mb-0.5 ${lang === 'np' ? 'font-nepali' : ''}`}>
-          {lang === 'en' ? item.date : item.dateNp}
-        </p>
-        <p className={`text-sm text-gray-700 group-hover:text-navy transition-colors leading-snug ${lang === 'np' ? 'font-nepali' : ''}`}>
-          {lang === 'en' ? item.titleEn : item.titleNp}
-        </p>
+    <div className="group rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-all duration-200 hover:border-navy/30 hover:bg-white hover:shadow-[0_12px_30px_rgba(15,23,42,0.06)]">
+      <div className="flex items-start gap-3">
+        <div className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-redc/10 text-redc">
+          <FaCalendarAlt size={12} />
+        </div>
+
+        <div className="min-w-0 flex-1">
+          <p className={`text-[11px] uppercase tracking-[0.14em] text-slate-500 ${lang === 'np' ? 'font-nepali' : ''}`}>
+            {lang === 'en' ? item.date : item.dateNp}
+          </p>
+          <p className={`mt-1 text-sm font-medium leading-relaxed text-slate-700 transition-colors group-hover:text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
+            {lang === 'en' ? item.titleEn : item.titleNp}
+          </p>
+        </div>
+
+        {item.downloadUrl && item.downloadUrl !== '#' && (
+          <a
+            href={item.downloadUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-1 shrink-0 text-navy transition-colors hover:text-redc"
+            aria-label="Download"
+            onClick={e => e.stopPropagation()}
+          >
+            <FaDownload size={12} />
+          </a>
+        )}
       </div>
-      {item.downloadUrl && item.downloadUrl !== '#' && (
-        <a
-          href={item.downloadUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="shrink-0 text-navy hover:text-redc transition-colors"
-          aria-label="Download"
-          onClick={e => e.stopPropagation()}
-        >
-          <FaDownload size={12} />
-        </a>
-      )}
     </div>
   );
 };
@@ -53,16 +60,14 @@ const NoticesSection = () => {
   const items = dataMap[activeTab] || [];
 
   return (
-    <div className="bg-white border border-gray-200 rounded-sm shadow-sm">
-      {/* Section header */}
-      <div className="bg-navy px-4 py-3">
-        <h2 className={`text-white font-bold text-base ${lang === 'np' ? 'font-nepali' : ''}`}>
+    <div className="overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_20px_45px_rgba(15,23,42,0.04)]">
+      <div className="bg-[#07163d] px-5 py-4">
+        <h2 className={`text-lg font-bold text-white ${lang === 'np' ? 'font-nepali' : ''}`}>
           {t('Latest Updates', 'ताजा अपडेटहरू')}
         </h2>
       </div>
 
-      {/* Tabs */}
-      <div className="flex overflow-x-auto border-b border-gray-200 bg-gray-50">
+      <div className="flex overflow-x-auto border-b border-slate-200 bg-slate-50 px-3 py-2">
         {tabs.map(tab => (
           <button
             key={tab.key}
@@ -74,10 +79,9 @@ const NoticesSection = () => {
         ))}
       </div>
 
-      {/* Items */}
-      <div className="divide-y divide-gray-100 min-h-[260px]">
+      <div className="space-y-3 p-4">
         {items.length === 0 ? (
-          <p className="text-center text-gray-400 py-10 text-sm">
+          <p className="py-10 text-center text-sm text-gray-400">
             {t('No items found.', 'कुनै सामग्री भेटिएन।')}
           </p>
         ) : (
@@ -85,11 +89,10 @@ const NoticesSection = () => {
         )}
       </div>
 
-      {/* View All */}
-      <div className="px-4 py-3 border-t border-gray-100 bg-gray-50">
+      <div className="border-t border-slate-200 bg-slate-50 px-5 py-4">
         <Link
           to="/notices"
-          className={`flex items-center gap-1.5 text-xs font-semibold text-navy hover:text-redc transition-colors ${lang === 'np' ? 'font-nepali' : ''}`}
+          className={`inline-flex items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-redc ${lang === 'np' ? 'font-nepali' : ''}`}
         >
           {t('View All', 'सबै हेर्नुहोस्')} <FaArrowRight size={10} />
         </Link>

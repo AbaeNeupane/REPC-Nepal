@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import { siteInfo, importantLinks } from '../data/siteContent';
+
+
 import {
   FaFacebook, FaTwitter, FaYoutube, FaWhatsapp,
   FaEnvelope, FaPhone, FaMapMarkerAlt,
@@ -75,6 +77,7 @@ const Footer = () => {
               { en: 'Notices', np: 'सूचनाहरू', to: '/notices' },
               { en: 'Programs', np: 'कार्यक्रमहरू', to: '/programs' },
               { en: 'Publications', np: 'प्रकाशनहरू', to: '/publications' },
+              { en: 'Legal Framework', np: 'कानुनी संरचना', to: '/legal-framework' },
               { en: 'Gallery', np: 'ग्यालरी', to: '/gallery' },
               { en: 'Volunteer', np: 'स्वयंसेवा', to: '/volunteer' },
               { en: 'Support Us', np: 'सहयोग गर्नुहोस्', to: '/support' },
@@ -152,13 +155,14 @@ const Footer = () => {
         </div>
       </div>
 
+
       {/* Bottom Bar */}
       <div className="border-t border-white/10 py-4">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className={`text-white/50 text-xs ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t(
               `© 2083 Rights, Equity and Peace Campaign – Nepal. All rights reserved.`,
-              `© २०८३ अधिकार, समता र शान्ति अधियान, नेपाल। सर्वाधिकार सुरक्षित।`
+              `© २०८३ अधिकार, समता र शान्ति अभियान–नेपाल। सर्वाधिकार सुरक्षित।`
             )}
           </p>
           <p className={`text-white/40 text-xs ${lang === 'np' ? 'font-nepali' : ''}`}>

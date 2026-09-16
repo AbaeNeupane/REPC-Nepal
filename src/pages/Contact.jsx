@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
-import { siteInfo } from '../data/siteContent';
+import { membershipInfo, siteInfo } from '../data/siteContent';
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaFacebook, FaTwitter, FaYoutube, FaPaperPlane, FaWhatsapp } from 'react-icons/fa';
 
 const PageBanner = ({ titleEn, titleNp }) => {
@@ -26,14 +26,17 @@ const PageBanner = ({ titleEn, titleNp }) => {
 // Subjects the dropdown actually supports — used to validate the ?subject= param.
 const VALID_SUBJECTS = ['legal', 'mediation', 'training', 'membership', 'general'];
 
-
-const SCRIPT_URL = import.meta.env.APPS_SCRIPT_URL || ''; 
+// ─── APPS SCRIPT CONFIG ──────────────────────────────────────
+// Set VITE_APPS_SCRIPT_URL in your .env file (see .env.example).
+// After deploying Code.gs as a Web App, paste that URL there —
+// one place, shared by both the Contact and Volunteer forms.
+const SCRIPT_URL = import.meta.env.VITE_APPS_SCRIPT_URL || '';
 
 const Contact = () => {
   const { lang, t } = useLang();
   const [searchParams] = useSearchParams();
   const prefilledSubject = VALID_SUBJECTS.includes(searchParams.get('subject')) ? searchParams.get('subject') : '';
-  const [form, setForm] = useState({ name: '', email: '', phone: '', subject: prefilledSubject, message: '' });
+  const [form, setForm] = useState({ name: '', email: '', phone: '', subject: prefilledSubject, membershipType: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState('');
@@ -63,7 +66,7 @@ const Contact = () => {
         body: JSON.stringify(form),
       });
       setSubmitted(true);
-      setForm({ name: '', email: '', phone: '', subject: '', message: '' });
+      setForm({ name: '', email: '', phone: '', subject: '', membershipType: '', message: '' });
     } catch {
       setError(lang === 'en'
         ? 'Network error. Please check your connection and try again.'
@@ -117,8 +120,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className={`font-semibold text-navy text-sm ${lang === 'np' ? 'font-nepali' : ''}`}>{t('WhatsApp', 'ह्वाट्सएप')}</p>
-                  
-                    <a href={`https://wa.me/${siteInfo.whatsapp}?text=${encodeURIComponent(lang === 'en' ? 'Hello REPC-Nepal, I would like to inquire about your services.' : 'नमस्ते REPC-Nepal, म तपाईंको सेवाहरूबारे जानकारी लिन चाहन्छु।')}`}
+                  <a
+                    href={`https://wa.me/${siteInfo.whatsapp}?text=${encodeURIComponent(lang === 'en' ? 'Hello REPC-Nepal, I would like to inquire about your services.' : 'नमस्ते REPC-Nepal, म तपाईंको सेवाहरूबारे जानकारी लिन चाहन्छु।')}`}
                     target="_blank" rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 mt-1 bg-green-500 hover:bg-green-600 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors"
                   >
@@ -184,8 +187,8 @@ const Contact = () => {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
-            
-              <a href="https://maps.google.com/?q=Thapathali+Kathmandu+Nepal"
+            <a
+              href="https://maps.google.com/?q=Thapathali+Kathmandu+Nepal"
               target="_blank"
               rel="noopener noreferrer"
               className={`absolute bottom-2 right-2 bg-white text-xs text-navy hover:text-redc border border-gray-200 shadow px-2 py-1 rounded transition-colors ${lang === 'np' ? 'font-nepali' : ''}`}
@@ -256,7 +259,7 @@ const Contact = () => {
                       <select name="subject" required value={form.subject} onChange={handleChange}
                         className="form-input">
                         <option value="">{t('Select subject', 'विषय छान्नुहोस्')}</option>
-                        <option value="legal">{t('Free Legal Aid', 'निःशुल्क कानुनी सहायता')}</option>
+                        <option value="legal">{t('Legal Aid', 'कानुनी सहायता')}</option>
                         <option value="mediation">{t('Mediation Services', 'मेलमिलाप सेवा')}</option>
                         <option value="training">{t('Training Programs', 'तालिम कार्यक्रम')}</option>
                         <option value="membership">{t('Membership', 'सदस्यता')}</option>
@@ -264,6 +267,29 @@ const Contact = () => {
                       </select>
                     </div>
                   </div>
+                  {form.subject === 'membership' && (
+                    <div>
+                      <label className={`block text-sm font-medium text-gray-700 mb-1 ${lang === 'np' ? 'font-nepali' : ''}`}>
+                        {t('Membership Type', 'सदस्यताको प्रकार')} <span className="text-redc">*</span>
+                      </label>
+                      <select name="membershipType" required value={form.membershipType} onChange={handleChange}
+                        className="form-input">
+                        <option value="">{t('Select membership type', 'सदस्यताको प्रकार छान्नुहोस्')}</option>
+                        {membershipInfo.categories.filter(category => category.id !== 'founder').map(category => (
+                          <option key={category.id} value={category.id}>
+                            {lang === 'en' ? category.titleEn : category.titleNp}
+                          </option>
+                        ))}
+                      </select>
+                      <p className={`mt-1 text-xs italic text-gray-500 ${lang === 'np' ? 'font-nepali' : ''}`}>
+                        {t('Want information about membership types? ', 'सदस्यताको प्रकारबारे जानकारी चाहनुहुन्छ? ')}
+                        <Link to="/membership" className="underline hover:text-navy">
+                          {t('click here', 'यहाँ क्लिक गर्नुहोस्')}
+                        </Link>
+                        {t('.', '।')}
+                      </p>
+                    </div>
+                  )}
                   <div>
                     <label className={`block text-sm font-medium text-gray-700 mb-1 ${lang === 'np' ? 'font-nepali' : ''}`}>
                       {t('Message', 'सन्देश')} <span className="text-redc">*</span>

@@ -2,45 +2,47 @@ import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import { services } from '../data/siteContent';
 import {
-  FaBalanceScale, FaHandshake, FaChalkboardTeacher,
-  FaSearch, FaBullhorn, FaDove,
+  FaHandshake, FaGavel, FaComments, FaExchangeAlt, FaBalanceScale,
+  FaFileSignature, FaUserTie, FaUsersCog, FaChalkboardTeacher, FaSearch,
 } from 'react-icons/fa';
 
 const iconMap = {
-  scale: FaBalanceScale,
-  handshake: FaHandshake,
+  mediation: FaHandshake,
+  arbitration: FaGavel,
+  compromise: FaComments,
+  negotiation: FaExchangeAlt,
+  judicial: FaBalanceScale,
+  drafting: FaFileSignature,
+  advisory: FaUserTie,
+  hr: FaUsersCog,
   training: FaChalkboardTeacher,
   research: FaSearch,
-  advocacy: FaBullhorn,
-  peace: FaDove,
 };
 
 const ServicesSection = () => {
   const { lang, t } = useLang();
 
   return (
-    <div className="bg-white border border-gray-200 rounded-sm shadow-sm">
-      {/* Header */}
-      <div className="bg-redc px-4 py-3">
-        <h2 className={`text-white font-bold text-base ${lang === 'np' ? 'font-nepali' : ''}`}>
+    <div className="overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_20px_45px_rgba(15,23,42,0.04)]">
+      <div className="bg-redc px-5 py-4">
+        <h2 className={`text-lg font-bold text-white ${lang === 'np' ? 'font-nepali' : ''}`}>
           {t('Our Services', 'हाम्रा सेवाहरू')}
         </h2>
       </div>
 
-      {/* Services grid */}
-      <div className="grid grid-cols-2 gap-px bg-gray-100">
-        {services.map((svc, i) => {
+      <div className="grid grid-cols-2 gap-3 p-3">
+        {services.slice(0, 6).map((svc, i) => {
           const Icon = iconMap[svc.icon] || FaBalanceScale;
           return (
             <Link
               key={i}
               to={svc.link}
-              className="service-card rounded-none gap-2 bg-white hover:bg-navy group transition-all p-4"
+              className="group rounded-2xl border border-slate-200 bg-slate-50 p-4 text-center transition-all duration-200 hover:-translate-y-1 hover:border-navy/30 hover:bg-navy hover:text-white"
             >
-              <div className="w-10 h-10 rounded-full bg-navy/10 group-hover:bg-white/20 flex items-center justify-center transition-colors">
-                <Icon className="text-navy group-hover:text-white transition-colors" size={18} />
+              <div className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-xl bg-navy/10 text-navy transition-colors group-hover:bg-white/15 group-hover:text-white">
+                <Icon size={18} />
               </div>
-              <p className={`text-xs font-semibold text-gray-700 group-hover:text-white transition-colors leading-tight text-center ${lang === 'np' ? 'font-nepali text-sm' : ''}`}>
+              <p className={`text-xs font-semibold leading-relaxed transition-colors group-hover:text-white ${lang === 'np' ? 'font-nepali text-sm' : ''}`}>
                 {lang === 'en' ? svc.titleEn : svc.titleNp}
               </p>
             </Link>
@@ -48,13 +50,12 @@ const ServicesSection = () => {
         })}
       </div>
 
-      {/* View All */}
-      <div className="px-4 py-3 border-t border-gray-100 bg-gray-50">
+      <div className="border-t border-slate-200 bg-slate-50 px-5 py-4">
         <Link
           to="/services"
-          className={`text-xs font-semibold text-navy hover:text-redc transition-colors ${lang === 'np' ? 'font-nepali' : ''}`}
+          className={`inline-flex items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-redc ${lang === 'np' ? 'font-nepali' : ''}`}
         >
-          {t('View All Services →', 'सबै सेवाहरू हेर्नुहोस् →')}
+          {t('View All Services', 'सबै सेवाहरू हेर्नुहोस्')}
         </Link>
       </div>
     </div>

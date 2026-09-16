@@ -41,28 +41,33 @@ const HighlightsSection = () => {
   const { lang, t } = useLang();
 
   return (
-    <section className="py-10 bg-gray-50 border-t border-gray-200">
+    <section className="bg-slate-50 py-16">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-8">
-          <h2 className={`text-2xl font-bold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
+        <div className="mb-10 text-center">
+          <p className={`text-xs font-semibold uppercase tracking-[0.2em] text-redc ${lang === 'np' ? 'font-nepali' : ''}`}>
+            {t('What we do', 'हामी के गर्छौं')}
+          </p>
+          <h2 className={`mt-3 text-3xl font-bold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t('Our Focus Areas', 'हाम्रा प्राथमिकता क्षेत्रहरू')}
           </h2>
-          <div className="w-16 h-1 bg-redc mx-auto mt-3 rounded" />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {highlights.map((item, i) => {
             const Icon = item.icon;
             return (
-              <div key={i} className="bg-white rounded-sm shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow group">
-                <div className={`${item.color} p-5 flex items-center justify-center`}>
-                  <Icon className="text-white" size={36} />
+              <div key={i} className="group overflow-hidden rounded-[26px] border border-slate-200 bg-white p-0 shadow-[0_18px_40px_rgba(15,23,42,0.05)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_22px_45px_rgba(15,23,42,0.12)]">
+                <div className={`${item.color} flex items-center justify-between p-5`}>
+                  <span className={`text-xs font-semibold uppercase tracking-[0.18em] text-white/80 ${lang === 'np' ? 'font-nepali' : ''}`}>
+                    {t('Focus', 'प्राथमिकता')}
+                  </span>
+                  <Icon className="text-white" size={22} />
                 </div>
-                <div className="p-4">
-                  <h3 className={`font-bold text-navy mb-2 ${lang === 'np' ? 'font-nepali text-lg' : 'text-base'}`}>
+                <div className="p-6">
+                  <h3 className={`text-xl font-bold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
                     {lang === 'en' ? item.en : item.np}
                   </h3>
-                  <p className={`text-gray-600 text-sm leading-relaxed ${lang === 'np' ? 'font-nepali' : ''}`}>
+                  <p className={`mt-3 text-sm leading-relaxed text-gray-600 ${lang === 'np' ? 'font-nepali' : ''}`}>
                     {lang === 'en' ? item.descEn : item.descNp}
                   </p>
                 </div>
@@ -71,10 +76,10 @@ const HighlightsSection = () => {
           })}
         </div>
 
-        <div className="text-center mt-8">
+        <div className="mt-10 text-center">
           <Link
             to="/services"
-            className={`inline-block border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold px-8 py-2.5 rounded-sm transition-all ${lang === 'np' ? 'font-nepali' : ''}`}
+            className={`inline-flex items-center justify-center rounded-full border-2 border-navy px-8 py-3 text-sm font-semibold text-navy transition-all hover:bg-navy hover:text-white ${lang === 'np' ? 'font-nepali' : ''}`}
           >
             {t('Learn More About Our Work', 'हाम्रो कार्यबारे थप जान्नुहोस्')}
           </Link>

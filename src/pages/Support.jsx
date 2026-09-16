@@ -49,8 +49,8 @@ const Support = () => {
           </h2>
           <p className={`text-gray-600 leading-relaxed ${lang === 'np' ? 'font-nepali text-base' : 'text-sm'}`}>
             {t(
-              'Every contribution, whether financial, in-kind, or of your time, helps us provide free legal aid, mediate disputes, and build a more just and peaceful Nepal. REPC-Nepal is a registered non-profit organization; your support goes directly to our programs and the communities we serve.',
-              'हरेक योगदान, आर्थिक, वस्तुगत, वा तपाईंको समय ले हामीलाई निःशुल्क कानुनी सहायता प्रदान गर्न, विवाद मेलमिलाप गर्न, र थप न्यायपूर्ण र शान्तिपूर्ण नेपाल निर्माण गर्न मद्दत गर्छ। REPC-Nepal एक दर्ता भएको गैर-नाफामूलक संस्था हो; तपाईंको सहयोग सिधै हाम्रा कार्यक्रम र हामीले सेवा गर्ने समुदायमा जान्छ।'
+              'Every contribution — financial, in-kind, or your time — helps us provide free legal aid, mediate disputes, and build a more just and peaceful Nepal. REPC-Nepal is a registered non-profit; your support goes directly toward our programs and the communities we serve.',
+              'हरेक योगदान — आर्थिक, वस्तुगत, वा तपाईंको समय — ले हामीलाई निःशुल्क कानुनी सहायता प्रदान गर्न, विवाद मेलमिलाप गर्न, र थप न्यायपूर्ण र शान्तिपूर्ण नेपाल निर्माण गर्न मद्दत गर्छ। REPC-Nepal एक दर्ता भएको गैर-नाफामूलक संस्था हो; तपाईंको सहयोग सिधै हाम्रा कार्यक्रम र हामीले सेवा गर्ने समुदायमा जान्छ।'
             )}
           </p>
         </section>
@@ -106,7 +106,7 @@ const Support = () => {
           </div>
           <p className={`text-gray-400 text-xs mt-2 ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t(
-              'Bank details are being finalized, please contact us directly to confirm before transferring.',
+              'Bank details are being finalized — please contact us directly to confirm before transferring.',
               'बैंक विवरण अन्तिम रूप दिइँदैछ — स्थानान्तरण गर्नुअघि कृपया पुष्टिका लागि हामीलाई सिधै सम्पर्क गर्नुहोस्।'
             )}
           </p>
@@ -121,11 +121,11 @@ const Support = () => {
             {t('Talk to us about membership, partnerships, or large donations.', 'सदस्यता, साझेदारी, वा ठूला दानबारे हामीसँग कुरा गर्नुहोस्।')}
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
-            <Link to="/contact?subject=membership" className="btn-primary bg-redc hover:bg-redc-dark">
+            <Link to="/membership" className="btn-primary bg-redc hover:bg-redc-dark">
               <FaIdCard className="inline mr-2" size={13} /> {t('Become a Member', 'सदस्य बन्नुहोस्')}
             </Link>
-            
-              <a href={`https://wa.me/${siteInfo.whatsapp}?text=${encodeURIComponent('Hello REPC-Nepal, I would like to know more about supporting your work.')}`}
+            <a
+              href={`https://wa.me/${siteInfo.whatsapp}?text=${encodeURIComponent('Hello REPC-Nepal, I would like to know more about supporting your work.')}`}
               target="_blank" rel="noopener noreferrer"
               className="btn-outline border-white text-white hover:bg-white hover:text-navy"
             >

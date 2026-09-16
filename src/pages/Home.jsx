@@ -1,8 +1,10 @@
 import HeroCarousel from '../components/HeroCarousel';
+import AboutIntro from '../components/AboutIntro';
 import ImpactStats from '../components/ImpactStats';
 import NoticesSection from '../components/NoticesSection';
 import ServicesSection from '../components/ServicesSection';
 import HighlightsSection from '../components/HighlightsSection';
+import CampaignHighlights from '../components/CampaignHighlights';
 import GalleryPreview from '../components/GalleryPreview';
 
 const Home = () => {
@@ -10,6 +12,9 @@ const Home = () => {
     <div>
       {/* Hero */}
       <HeroCarousel />
+
+      {/* Abstract / Introduction */}
+      <AboutIntro />
 
       {/* Impact stats */}
       <ImpactStats />
@@ -29,6 +34,9 @@ const Home = () => {
 
       {/* Full-width highlights */}
       <HighlightsSection />
+
+      {/* Campaign highlights */}
+      <CampaignHighlights />
 
       {/* Gallery preview */}
       <GalleryPreview />

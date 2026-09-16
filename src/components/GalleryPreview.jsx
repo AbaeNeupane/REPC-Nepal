@@ -2,61 +2,61 @@ import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import { FaImages } from 'react-icons/fa';
 
-
-// To add more: insert { src: '/images/gallery/domain/your-photo.jpg', ... } at the TOP of the array.
 const galleryItems = [
-  { id: 1, src: '/images/gallery/milestone/cdo-registration.jpeg', altEn: 'Official Registration with CDO, 4 Bhadra 2083', altNp: 'जिल्ला प्रशासन कार्यालय काठमाडौंमा संस्था दर्ता गरे पश्चात प्रमुख जिल्ला अधिकारी ईश्वर राज पाैडेलबाट संस्था दर्ता प्रमाणपत्र ग्रहण गर्दै अधिकार, समता, शान्ति अभियान- नेपालकी अध्यक्ष अधिवक्ता शुसिला सिंखडा ।', color: 'bg-navy/80' },
+  { id: 1, src: '/images/gallery/milestone/cdo-registration.jpeg', altEn: 'Official Registration with CDO, 4 Bhadra 2083', altNp: 'जिल्ला प्रशासन कार्यालय काठमाडौंमा संस्था दर्ता गरे पश्चात...', color: 'bg-navy/80' },
   { id: 2, src: null, altEn: 'Mediation Workshop', altNp: 'मेलमिलाप कार्यशाला', color: 'bg-redc/80' },
   { id: 3, src: null, altEn: 'Community Awareness Program', altNp: 'सामुदायिक सचेतना कार्यक्रम', color: 'bg-slate-600/80' },
   { id: 4, src: null, altEn: 'Legal Aid Camp', altNp: 'कानुनी सहायता शिविर', color: 'bg-amber/80' },
   { id: 5, src: null, altEn: 'Peace Campaign 2083', altNp: 'शान्ति अभियान २०८३', color: 'bg-green-700/80' },
   { id: 6, src: null, altEn: 'Annual General Meeting', altNp: 'वार्षिक साधारण सभा', color: 'bg-purple-700/80' },
-].sort((a, b) => (b.src ? 1 : 0) - (a.src ? 1 : 0)); // real photos always first
+].sort((a, b) => (b.src ? 1 : 0) - (a.src ? 1 : 0));
 
 const GalleryPreview = () => {
   const { lang, t } = useLang();
 
   return (
-    <section className="py-10 bg-white border-t border-gray-200">
+    <section className="bg-slate-50 py-16">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between mb-6">
+        <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h2 className={`text-xl font-bold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
+            <p className={`text-xs font-semibold uppercase tracking-[0.2em] text-redc ${lang === 'np' ? 'font-nepali' : ''}`}>
+              {t('Moments', 'झलकहरू')}
+            </p>
+            <h2 className={`mt-2 text-3xl font-bold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
               {t('Photo Gallery', 'फोटो ग्यालरी')}
             </h2>
-            <div className="w-10 h-0.5 bg-redc mt-2 rounded" />
           </div>
+
           <Link
             to="/gallery"
-            className={`text-sm font-semibold text-navy hover:text-redc transition-colors flex items-center gap-1 ${lang === 'np' ? 'font-nepali' : ''}`}
+            className={`inline-flex items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-redc ${lang === 'np' ? 'font-nepali' : ''}`}
           >
             <FaImages size={14} /> {t('View All', 'सबै हेर्नुहोस्')}
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
           {galleryItems.map((item) => (
             <Link
               key={item.id}
               to="/gallery"
-              className="relative aspect-square overflow-hidden group rounded-sm"
+              className="group relative aspect-square overflow-hidden rounded-[22px] border border-slate-200 bg-white shadow-[0_12px_28px_rgba(15,23,42,0.04)]"
             >
               {item.src ? (
                 <img
                   src={item.src}
                   alt={lang === 'en' ? item.altEn : item.altNp}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               ) : (
-                /* Placeholder until real images are added */
-                <div className={`w-full h-full ${item.color} flex flex-col items-center justify-center gap-2`}>
-                  <FaImages className="text-white/60" size={24} />
-                  <p className={`text-white/80 text-xs text-center px-1 leading-tight ${lang === 'np' ? 'font-nepali' : ''}`}>
+                <div className={`flex h-full w-full flex-col items-center justify-center gap-2 ${item.color}`}>
+                  <FaImages className="text-white/65" size={22} />
+                  <p className={`px-2 text-center text-[10px] leading-relaxed text-white/80 ${lang === 'np' ? 'font-nepali' : ''}`}>
                     {lang === 'en' ? item.altEn : item.altNp}
                   </p>
                 </div>
               )}
-              <div className="absolute inset-0 bg-navy/0 group-hover:bg-navy/30 transition-colors" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#07163d]/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
             </Link>
           ))}
         </div>
