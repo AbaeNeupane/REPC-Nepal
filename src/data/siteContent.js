@@ -69,8 +69,8 @@ export const heroSlides = [
   {
     titleEn: 'Empowering Vulnerable Communities',
     titleNp: 'जोखिममा परेका समुदायको सशक्तिकरण',
-    subtitleEn: 'Free legal counselling for women, children, elderly, and persons with disabilities.',
-    subtitleNp: 'महिला, बालबालिका, ज्येष्ठ नागरिक र अपाङ्गता भएका व्यक्तिलाई निःशुल्क कानुनी परामर्श।',
+    subtitleEn: ' legal counselling for women, children, elderly, and persons with disabilities.',
+    subtitleNp: 'महिला, बालबालिका, ज्येष्ठ नागरिक र अपाङ्गता भएका व्यक्तिलाई  कानुनी परामर्श।',
     ctaEn: 'Legal Aid',
     ctaNp: 'कानुनी सहायता',
     ctaLink: '/services',
@@ -232,8 +232,8 @@ export const services = [
     icon: 'judicial', group: 'peace',
     titleEn: 'Judicial Justice & Legal Aid',
     titleNp: 'न्यायिक न्याय तथा कानुनी सहायता',
-    descEn: 'Free legal counselling and court representation for economically disadvantaged, single women, elderly, and persons with disabilities.',
-    descNp: 'आर्थिक रूपमा विपन्न, एकल महिला, ज्येष्ठ नागरिक र अपाङ्गता भएका व्यक्तिका लागि निःशुल्क कानुनी परामर्श र अदालती प्रतिनिधित्व।',
+    descEn: ' legal counselling and court representation for economically disadvantaged, single women, elderly, and persons with disabilities.',
+    descNp: 'आर्थिक रूपमा विपन्न, एकल महिला, ज्येष्ठ नागरिक र अपाङ्गता भएका व्यक्तिका लागि  कानुनी परामर्श र अदालती प्रतिनिधित्व।',
     link: '/services#judicial-legal-aid',
   },
   // ── Legal & Professional Services ─────────────────────────
@@ -491,8 +491,8 @@ export const campaigns = [
   {
     id: 1, src: null, color: 'from-navy to-navy-light',
     titleEn: 'Legal Aid Campaign', titleNp: 'कानुनी सहायता अभियान',
-    descEn: 'Free legal consultation and representation for vulnerable communities across Nepal.',
-    descNp: 'नेपालभर कमजोर समुदायका लागि निःशुल्क कानुनी परामर्श र प्रतिनिधित्व।',
+    descEn: ' legal consultation and representation for vulnerable communities across Nepal.',
+    descNp: 'नेपालभर कमजोर समुदायका लागि  कानुनी परामर्श र प्रतिनिधित्व।',
   },
   {
     id: 2, src: null, color: 'from-sky to-sky-light',
@@ -588,7 +588,7 @@ export const membershipInfo = {
 
 // ─── VOLUNTEER / GET INVOLVED ───────────────────────────────────
 export const volunteerAreas = [
-  { id: 'legal', titleEn: 'Legal Volunteer', titleNp: 'कानुनी स्वयंसेवक', descEn: 'For law students and practicing advocates — support our free legal aid clinics.', descNp: 'कानून विद्यार्थी र अभ्यासरत अधिवक्ताका लागि — हाम्रो निःशुल्क कानुनी सहायता शिविरलाई सहयोग गर्नुहोस्।' },
+  { id: 'legal', titleEn: 'Legal Volunteer', titleNp: 'कानुनी स्वयंसेवक', descEn: 'For law students and practicing advocates — support our  legal aid clinics.', descNp: 'कानून विद्यार्थी र अभ्यासरत अधिवक्ताका लागि — हाम्रो  कानुनी सहायता शिविरलाई सहयोग गर्नुहोस्।' },
   { id: 'mediation', titleEn: 'Mediator / Peacebuilder', titleNp: 'मेलमिलापकर्ता / शान्ति निर्माता', descEn: 'Get trained and help resolve community disputes through mediation.', descNp: 'तालिम लिनुहोस् र मेलमिलापमार्फत सामुदायिक विवाद समाधानमा सहयोग गर्नुहोस्।' },
   { id: 'outreach', titleEn: 'Community Outreach', titleNp: 'सामुदायिक पहुँच', descEn: 'Help raise awareness of rights and services in your community.', descNp: 'आफ्नो समुदायमा अधिकार र सेवाहरूबारे सचेतना फैलाउन सहयोग गर्नुहोस्।' },
   { id: 'events', titleEn: 'Events & Admin Support', titleNp: 'कार्यक्रम तथा प्रशासनिक सहयोग', descEn: 'Assist with program logistics, documentation, and office work.', descNp: 'कार्यक्रम व्यवस्थापन, अभिलेखीकरण र कार्यालय कामकाजमा सहयोग गर्नुहोस्।' },

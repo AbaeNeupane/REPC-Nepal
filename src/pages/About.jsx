@@ -213,7 +213,7 @@ const About = () => {
             <ul className="list-disc pl-5 space-y-3">
               {[
                 { en: 'To protect and promote human rights, child rights, elderly rights, and the rights of differently abled person.', np: 'मानव अधिकार, बाल अधिकार, ज्येष्ठ नागरिकको अधिकार र अपाङ्गता भएका व्यक्तिको अधिकारको संरक्षण र प्रवर्धन।' },
-                { en: 'To provide free legal consultation, mediation, and legal services to economically disadvantaged groups.', np: 'आर्थिक रूपमा विपन्न समूहलाई निःशुल्क कानुनी परामर्श, मेलमिलाप र कानुनी सेवा उपलब्ध गराउने।' },
+                { en: 'To provide  legal consultation, mediation, and legal services to economically disadvantaged groups.', np: 'आर्थिक रूपमा विपन्न समूहलाई  कानुनी परामर्श, मेलमिलाप र कानुनी सेवा उपलब्ध गराउने।' },
                 { en: 'To conduct training programs on mediation, human rights, child justice, and cyber security.', np: 'मेलमिलाप, मानव अधिकार, बाल न्याय र साइबर सुरक्षामा तालिम कार्यक्रम सञ्चालन।' },
                 { en: 'To study the impacts of climate change on human life and work to reduce those impacts.', np: 'मानव जीवनमा जलवायु परिवर्तनको प्रभावको अध्ययन र त्यसको प्रभाव न्यूनीकरणमा कार्य गर्ने।' },
                 { en: 'To extend peace and reconciliation campaigns from the local level to the provincial and national levels.', np: 'शान्ति तथा पुनर्मिलन अभियानलाई स्थानीय तहदेखि प्रदेश र राष्ट्रिय तहसम्म विस्तार गर्ने।' },

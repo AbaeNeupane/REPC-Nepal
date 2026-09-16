@@ -23,7 +23,7 @@ const navItems = [
       { en: 'Arbitration',      np: 'मध्यस्थता',      link: '/services#arbitration' },
       { en: 'Compromise',       np: 'सम्झौता',        link: '/services#compromise' },
       { en: 'Negotiation',      np: 'वार्ता',          link: '/services#negotiation' },
-      { en: 'Judicial Justice & Free Legal Aid', np: 'न्यायिक न्याय तथा निःशुल्क कानुनी सहायता', link: '/services#judicial-legal-aid' },
+      { en: 'Judicial Justice &  Legal Aid', np: 'न्यायिक न्याय तथा  कानुनी सहायता', link: '/services#judicial-legal-aid' },
       { en: 'All Services',     np: 'सबै सेवाहरू',    link: '/services' },
     ],
   },
