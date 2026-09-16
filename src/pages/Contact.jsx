@@ -30,7 +30,7 @@ const VALID_SUBJECTS = ['legal', 'mediation', 'training', 'membership', 'general
 // Set VITE_APPS_SCRIPT_URL in your .env file (see .env.example).
 // After deploying Code.gs as a Web App, paste that URL there —
 // one place, shared by both the Contact and Volunteer forms.
-const SCRIPT_URL = import.meta.env.VITE_APPS_SCRIPT_URL || '';
+const SCRIPT_URL = import.meta.env.APPS_SCRIPT_URL || '';
 
 const Contact = () => {
   const { lang, t } = useLang();
