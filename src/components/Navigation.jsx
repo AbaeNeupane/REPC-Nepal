@@ -201,7 +201,6 @@ const Navigation = ({ mobileOpen, setMobileOpen }) => {
               key={i}
               className="border-b border-white/5 last:border-0"
               onMouseEnter={() => item.children && setMobileExpanded(prev => prev.includes(i) ? prev : [...prev, i])}
-              onMouseLeave={() => item.children && setMobileExpanded(prev => prev.filter(index => index !== i))}
               onFocus={() => item.children && setMobileExpanded(prev => prev.includes(i) ? prev : [...prev, i])}
             >
               <div className="flex items-center">
