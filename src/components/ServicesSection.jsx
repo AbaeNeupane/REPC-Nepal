@@ -38,7 +38,7 @@ const ServicesSection = () => {
     <div className="overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_20px_45px_rgba(15,23,42,0.04)]">
       <div className="bg-sky px-5 py-4">
         <h2 className={`text-lg font-bold text-white ${lang === 'np' ? 'font-nepali' : ''}`}>
-          {t('Our Services', 'हाम्रा सेवाहरू')}
+          {t('Featured Services', 'प्रमुख सेवाहरू')}
         </h2>
       </div>
 

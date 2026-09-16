@@ -192,24 +192,24 @@ export const activities = [
 ];
 
 // ─── SERVICES ────────────────────────────────────────────────
-// group: 'peace' renders under peace, mediation, and awareness services;
-// group: 'legal' renders under legal, training, research, and cooperation services.
+// These services are derived from the organization's constitution, especially
+// the preamble and sections 4-5 on objectives and operating methods.
 export const services = [
   // ── Peace, mediation, and awareness ───────────────────────
   {
     icon: 'mediation', group: 'peace',
     titleEn: 'Mediation',
     titleNp: 'मेलमिलाप',
-    descEn: 'Mediation support that helps parties resolve disputes through dialogue and mutually acceptable agreements.',
-    descNp: 'संवाद र आपसी सहमतिका माध्यमबाट विवाद समाधान गर्न पक्षहरूलाई प्रदान गरिने मेलमिलाप सहयोग।',
+    descEn: 'Mediation that helps parties resolve disputes through dialogue, cooperation, and mutually acceptable agreements.',
+    descNp: 'संवाद, सहकार्य र आपसी सहमतिका माध्यमबाट विवाद समाधान गर्न प्रदान गरिने मेलमिलाप सेवा।',
     link: '/services#mediation',
   },
   {
     icon: 'arbitration', group: 'peace',
     titleEn: 'Arbitration',
     titleNp: 'मध्यस्थता',
-    descEn: 'Neutral third-party dispute resolution for matters requiring a structured and impartial process.',
-    descNp: 'संरचित र निष्पक्ष प्रक्रियामार्फत विवाद समाधान गर्न प्रदान गरिने तटस्थ तेस्रो पक्षीय सेवा।',
+    descEn: 'Neutral third-party dispute resolution and mediation support for eligible disputes, subject to applicable law and approvals.',
+    descNp: 'प्रचलित कानून र आवश्यक स्वीकृतिको अधीनमा योग्य विवादका लागि प्रदान गरिने तटस्थ तेस्रो पक्षीय विवाद समाधान तथा मध्यस्थता सेवा।',
     link: '/services#arbitration',
   },
   {
@@ -224,32 +224,32 @@ export const services = [
     icon: 'arbitration', group: 'peace',
     titleEn: 'Reconciliation and Dialogue',
     titleNp: 'पुनर्मिलन तथा संवाद',
-    descEn: 'Facilitated dialogue that rebuilds relationships, addresses grievances, and supports peaceful coexistence.',
-    descNp: 'सम्बन्ध सुधार, गुनासा सम्बोधन तथा शान्तिपूर्ण सहअस्तित्वका लागि सहजीकरण गरिएको संवाद।',
+    descEn: 'Dialogue and reconciliation that address grievances, rebuild relationships, and promote peaceful coexistence.',
+    descNp: 'गुनासा सम्बोधन, सम्बन्ध सुधार तथा शान्तिपूर्ण सहअस्तित्व प्रवर्द्धन गर्ने संवाद र पुनर्मिलन।',
     link: '/services#reconciliation',
   },
   {
     icon: 'compromise', group: 'peace',
     titleEn: 'Community Peacebuilding',
     titleNp: 'सामुदायिक शान्ति निर्माण',
-    descEn: 'Community-based initiatives that promote peace, cooperation, reconciliation, and peaceful conflict resolution.',
-    descNp: 'शान्ति, सहकार्य, पुनर्मिलन तथा द्वन्द्वको शान्तिपूर्ण समाधान प्रवर्द्धन गर्ने समुदायमा आधारित पहलहरू।',
+    descEn: 'Community-based initiatives that promote sustainable peace, social harmony, coexistence, reconciliation, and peaceful conflict resolution.',
+    descNp: 'दिगो शान्ति, सामाजिक सद्भाव, सहअस्तित्व, पुनर्मिलन तथा द्वन्द्वको शान्तिपूर्ण समाधान प्रवर्द्धन गर्ने समुदायमा आधारित पहलहरू।',
     link: '/services#community-peacebuilding',
   },
   {
     icon: 'negotiation', group: 'peace',
     titleEn: 'Rights and Legal Awareness',
     titleNp: 'अधिकार तथा कानुनी सचेतना',
-    descEn: 'Awareness programs that help communities understand their rights, available services, and pathways to justice.',
-    descNp: 'समुदायलाई आफ्ना अधिकार, उपलब्ध सेवा तथा न्यायमा पहुँचका उपायबारे जानकारी गराउने सचेतना कार्यक्रम।',
+    descEn: 'Rights and legal awareness programs for communities, institutions, and vulnerable groups.',
+    descNp: 'समुदाय, संस्था तथा जोखिममा रहेका वर्ग र समूहका लागि अधिकार तथा कानुनी सचेतना कार्यक्रम।',
     link: '/services#rights-awareness',
   },
   {
     icon: 'judicial', group: 'legal',
     titleEn: 'Legal Aid and Access to Justice',
     titleNp: 'कानुनी सहायता तथा न्यायमा पहुँच',
-    descEn: 'Legal consultation, assistance, and referrals for disadvantaged and marginalized people seeking to protect their rights.',
-    descNp: 'आफ्ना अधिकारको संरक्षणका लागि सहयोग खोज्ने विपन्न तथा सीमान्तकृत व्यक्तिलाई कानुनी परामर्श, सहायता र आवश्यक समन्वय।',
+    descEn: 'Free legal consultation, mediation, arbitration, and legal services for people who are economically disadvantaged or otherwise in need.',
+    descNp: 'आर्थिक रूपमा विपन्न तथा आवश्यकतामा रहेका व्यक्तिका लागि निःशुल्क कानुनी परामर्श, मेलमिलाप, मध्यस्थता तथा कानुनी सेवा।',
     link: '/services#legal-aid',
   },
   // ── Legal, training, research, and cooperation ────────────

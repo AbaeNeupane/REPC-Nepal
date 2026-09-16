@@ -6,6 +6,7 @@ import ServicesSection from '../components/ServicesSection';
 import HighlightsSection from '../components/HighlightsSection';
 import CampaignHighlights from '../components/CampaignHighlights';
 import GalleryPreview from '../components/GalleryPreview';
+import ScrollReveal from '../components/ScrollReveal';
 
 const Home = () => {
   return (
@@ -14,13 +15,18 @@ const Home = () => {
       <HeroCarousel />
 
       {/* Abstract / Introduction */}
-      <AboutIntro />
+      <ScrollReveal>
+        <AboutIntro />
+      </ScrollReveal>
 
       {/* Chairperson's message */}
-      <ChairpersonMessage />
+      <ScrollReveal delay={60}>
+        <ChairpersonMessage />
+      </ScrollReveal>
 
       {/* Main two-column content */}
-      <div className="max-w-7xl mx-auto px-4 py-4 sm:py-6 grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
+      <ScrollReveal delay={90}>
+        <div className="max-w-7xl mx-auto px-4 py-4 sm:py-6 grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
         {/* Left: Notices (takes 2/3) */}
         <div className="lg:col-span-2">
           <NoticesSection />
@@ -30,16 +36,23 @@ const Home = () => {
         <div className="lg:col-span-1 flex flex-col gap-0">
           <ServicesSection />
         </div>
-      </div>
+        </div>
+      </ScrollReveal>
 
       {/* Full-width highlights */}
-      <HighlightsSection />
+      <ScrollReveal delay={120}>
+        <HighlightsSection />
+      </ScrollReveal>
 
       {/* Campaign highlights */}
-      <CampaignHighlights />
+      <ScrollReveal delay={140}>
+        <CampaignHighlights />
+      </ScrollReveal>
 
       {/* Gallery preview */}
-      <GalleryPreview />
+      <ScrollReveal delay={160}>
+        <GalleryPreview />
+      </ScrollReveal>
     </div>
   );
 };
