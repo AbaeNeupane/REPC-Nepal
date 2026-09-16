@@ -19,8 +19,20 @@ const iconMap = {
   research: FaSearch,
 };
 
+const featuredServiceLinks = [
+  '/services#mediation',
+  '/services#legal-aid',
+  '/services#rights-awareness',
+  '/services#human-rights-advocacy',
+  '/services#training',
+  '/services#research',
+];
+
 const ServicesSection = () => {
   const { lang, t } = useLang();
+  const featuredServices = featuredServiceLinks
+    .map(link => services.find(service => service.link === link))
+    .filter(Boolean);
 
   return (
     <div className="overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_20px_45px_rgba(15,23,42,0.04)]">
@@ -31,7 +43,7 @@ const ServicesSection = () => {
       </div>
 
       <div className="grid grid-cols-2 gap-3 p-3">
-        {services.slice(0, 6).map((svc, i) => {
+        {featuredServices.map((svc, i) => {
           const Icon = iconMap[svc.icon] || FaBalanceScale;
           return (
             <Link

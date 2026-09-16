@@ -76,18 +76,18 @@ const Services = () => {
         <div className="bg-blue-50 border-l-4 border-navy p-5 rounded-sm mb-10">
           <p className={`text-gray-700 leading-relaxed ${lang === 'np' ? 'font-nepali text-base' : 'text-sm'}`}>
             {t(
-              'REPC-Nepal provides a wide range of services focused on human rights protection, legal aid, mediation, training, and peace building. All services are delivered by qualified professionals dedicated to justice and equity.',
-              'REPC-Nepal ले मानव अधिकार संरक्षण, कानुनी सहायता, मेलमिलाप, तालिम र शान्ति निर्माणमा केन्द्रित विभिन्न सेवाहरू प्रदान गर्दछ। सबै सेवाहरू न्याय र समताप्रति समर्पित योग्य पेशेवरहरूद्वारा प्रदान गरिन्छ।'
+              'REPC-Nepal works to protect and promote human rights, improve access to justice, support vulnerable communities, and advance peaceful conflict resolution through mediation, legal support, awareness, training, research, and cooperation.',
+              'REPC-Nepal ले मानव अधिकारको संरक्षण तथा प्रवर्द्धन, न्यायमा पहुँच सुधार, कमजोर समुदायको सहयोग तथा मेलमिलाप, कानुनी सहयोग, सचेतना, तालिम, अनुसन्धान र सहकार्यद्वारा द्वन्द्वको शान्तिपूर्ण समाधानमा काम गर्छ।'
             )}
           </p>
         </div>
 
-        {/* Peace Through... */}
+        {/* Peace, mediation, and awareness */}
         <section className="mb-12">
           <div className="flex items-center gap-2 mb-5">
             <FaDove className="text-sky" size={20} />
             <h2 className={`text-xl font-bold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
-              {t('Peace Through...', 'यसमार्फत शान्ति...')}
+              {t('Peace, Mediation, and Awareness', 'शान्ति, मेलमिलाप तथा सचेतना')}
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -95,10 +95,10 @@ const Services = () => {
           </div>
         </section>
 
-        {/* Legal & Professional Services */}
+        {/* Legal, training, research, and cooperation */}
         <section className="mb-12">
           <h2 className={`text-xl font-bold text-navy mb-5 ${lang === 'np' ? 'font-nepali' : ''}`}>
-            {t('Legal & Professional Services', 'कानुनी तथा पेशागत सेवाहरू')}
+            {t('Legal, Training, Research, and Cooperation', 'कानुनी सेवा, तालिम, अनुसन्धान तथा सहकार्य')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {legalServices.map((svc, i) => <ServiceCard key={i} svc={svc} lang={lang} />)}
@@ -109,12 +109,12 @@ const Services = () => {
         <div className="bg-sky text-white rounded-sm p-8 text-center">
           <FaPhoneAlt className="mx-auto mb-3" size={28} />
           <h3 className={`text-xl font-bold mb-2 ${lang === 'np' ? 'font-nepali' : ''}`}>
-            {t('Need  Legal Assistance?', ' कानुनी सहायता चाहिन्छ?')}
+            {t('Need Legal Assistance?', 'कानुनी सहायता चाहिन्छ?')}
           </h3>
           <p className={`text-white/85 mb-5 text-sm ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t(
-              'We provide  legal aid to economically disadvantaged individuals, single women, children, and persons with disabilities.',
-              'हामी आर्थिक रूपमा विपन्न व्यक्ति, एकल महिला, बालबालिका र अपाङ्गता भएका व्यक्तिलाई  कानुनी सहायता प्रदान गर्दछौं।'
+              'We provide legal consultation, assistance, and referrals to everyone seeking to protect their rights and access justice.',
+              'आफ्ना अधिकारको संरक्षण र न्यायमा पहुँचका लागि सहयोग खोज्ने सबैलाई हामी कानुनी परामर्श, सहायता र आवश्यक समन्वय प्रदान गर्छौं।'
             )}
           </p>
           <Link

@@ -1,6 +1,4 @@
 node_modules/
 dist/
 .env
-INFO.md
-Code.gs
-README_APPSSCRIPT.MD
+resources/

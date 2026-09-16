@@ -17,10 +17,10 @@ const ImpactStats = () => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="mb-8 text-center">
           <p className={`text-xs font-semibold uppercase tracking-[0.2em] text-sky ${lang === 'np' ? 'font-nepali' : ''}`}>
-            {lang === 'en' ? 'Our impact' : 'हाम्रो प्रभाव'}
+            {lang === 'en' ? 'Our constitutional focus' : 'हाम्रो संवैधानिक कार्यक्षेत्र'}
           </p>
           <h2 className={`mt-2 text-3xl font-bold text-white ${lang === 'np' ? 'font-nepali' : ''}`}>
-            {lang === 'en' ? 'Building Peaceful and Just Communities' : 'शान्तिपूर्ण र न्यायपूर्ण समुदाय निर्माण'}
+            {lang === 'en' ? 'Rights, Justice, Peace, and Capacity Building' : 'अधिकार, न्याय, शान्ति तथा क्षमता विकास'}
           </h2>
         </div>
 
@@ -32,7 +32,7 @@ const ImpactStats = () => {
                 <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-sky/15 text-sky">
                   <Icon size={24} />
                 </div>
-                <p className={`text-3xl font-black text-white md:text-4xl ${lang === 'np' ? 'font-nepali' : ''}`}>
+                <p className={`text-2xl font-black text-white md:text-3xl ${lang === 'np' ? 'font-nepali' : ''}`}>
                   {lang === 'en' ? stat.value : stat.valueNp}
                 </p>
                 <p className={`mt-2 text-xs leading-relaxed text-slate-300 md:text-sm ${lang === 'np' ? 'font-nepali' : ''}`}>

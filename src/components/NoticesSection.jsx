@@ -7,8 +7,8 @@ import { FaDownload, FaCalendarAlt, FaArrowRight } from 'react-icons/fa';
 const tabs = [
   { en: 'Notices', np: 'सूचनाहरू', key: 'notices' },
   { en: 'Press Release', np: 'प्रेस विज्ञप्ति', key: 'press' },
-  { en: 'Reports', np: 'प्रतिवेदन', key: 'reports' },
-  { en: 'Activities', np: 'गतिविधि', key: 'activities' },
+  { en: 'Reports', np: 'प्रतिवेदनहरू', key: 'reports' },
+  { en: 'Activities', np: 'गतिविधिहरू', key: 'activities' },
 ];
 
 const dataMap = {
@@ -82,7 +82,7 @@ const NoticesSection = () => {
       <div className="space-y-3 p-4">
         {items.length === 0 ? (
           <p className="py-10 text-center text-sm text-gray-400">
-            {t('No items found.', 'कुनै सामग्री भेटिएन।')}
+            {t('No items found.', 'कुनै सामग्री फेला परेन।')}
           </p>
         ) : (
           items.map(item => <NoticeItem key={item.id} item={item} />)

@@ -1,6 +1,6 @@
 import HeroCarousel from '../components/HeroCarousel';
 import AboutIntro from '../components/AboutIntro';
-import ImpactStats from '../components/ImpactStats';
+import ChairpersonMessage from '../components/ChairpersonMessage';
 import NoticesSection from '../components/NoticesSection';
 import ServicesSection from '../components/ServicesSection';
 import HighlightsSection from '../components/HighlightsSection';
@@ -16,8 +16,8 @@ const Home = () => {
       {/* Abstract / Introduction */}
       <AboutIntro />
 
-      {/* Impact stats */}
-      <ImpactStats />
+      {/* Chairperson's message */}
+      <ChairpersonMessage />
 
       {/* Main two-column content */}
       <div className="max-w-7xl mx-auto px-4 py-4 sm:py-6 grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">

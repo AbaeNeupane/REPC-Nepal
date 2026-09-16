@@ -5,34 +5,34 @@ import { FaGavel, FaPeace, FaUsers, FaLeaf } from 'react-icons/fa';
 const highlights = [
   {
     icon: FaGavel,
-    en: 'Human Rights',
-    np: 'मानव अधिकार',
-    descEn: 'Protecting and promoting the fundamental rights of every citizen.',
-    descNp: 'प्रत्येक नागरिकको मौलिक अधिकारको संरक्षण र प्रवर्धन।',
+    en: 'Human Rights Protection',
+    np: 'मानव अधिकार संरक्षण',
+    descEn: 'Protecting and promoting human rights, equality, dignity, and social justice.',
+    descNp: 'मानव अधिकार, समानता, मर्यादा तथा सामाजिक न्यायको संरक्षण र प्रवर्द्धन।',
     color: 'bg-navy',
   },
   {
     icon: FaPeace,
-    en: 'Mediation',
-    np: 'मेलमिलाप',
-    descEn: 'Training certified mediators and resolving disputes peacefully.',
-    descNp: 'प्रमाणित मेलमिलापकर्ताहरूको तालिम र विवादको शान्तिपूर्ण समाधान।',
+    en: 'Mediation and Reconciliation',
+    np: 'मेलमिलाप तथा पुनर्मिलन',
+    descEn: 'Supporting dialogue, mediation, reconciliation, and peaceful conflict resolution.',
+    descNp: 'संवाद, मेलमिलाप, पुनर्मिलन तथा द्वन्द्वको शान्तिपूर्ण समाधानमा सहयोग।',
     color: 'bg-sky',
   },
   {
     icon: FaUsers,
-    en: 'Community',
-    np: 'समुदाय',
-    descEn: 'Empowering vulnerable communities through awareness and legal access.',
-    descNp: 'सचेतना र कानुनी पहुँचद्वारा कमजोर समुदायको सशक्तिकरण।',
+    en: 'Legal Aid and Access to Justice',
+    np: 'कानुनी सहायता तथा न्यायमा पहुँच',
+    descEn: 'Improving access to legal consultation, assistance, and justice for disadvantaged and marginalized groups.',
+    descNp: 'विपन्न तथा सीमान्तकृत समूहका लागि कानुनी परामर्श, सहायता तथा न्यायमा पहुँच सुधार।',
     color: 'bg-blue-600',
   },
   {
     icon: FaLeaf,
-    en: 'Climate & Rights',
-    np: 'जलवायु र अधिकार',
-    descEn: 'Studying climate change impacts on human rights and livelihoods.',
-    descNp: 'मानव अधिकार र जीविकोपार्जनमा जलवायु परिवर्तनको प्रभावको अध्ययन।',
+    en: 'Awareness, Training, and Research',
+    np: 'सचेतना, तालिम तथा अनुसन्धान',
+    descEn: 'Building knowledge through awareness, training, research, documentation, and institutional cooperation.',
+    descNp: 'सचेतना, तालिम, अनुसन्धान, अभिलेखीकरण तथा संस्थागत सहकार्यद्वारा ज्ञान र क्षमता विकास।',
     color: 'bg-cyan-700',
   },
 ];
@@ -45,10 +45,10 @@ const HighlightsSection = () => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="mb-10 text-center">
           <p className={`text-xs font-semibold uppercase tracking-[0.2em] text-sky ${lang === 'np' ? 'font-nepali' : ''}`}>
-            {t('What we do', 'हामी के गर्छौं')}
+            {t('Our work', 'हाम्रो कार्यक्षेत्र')}
           </p>
           <h2 className={`mt-3 text-3xl font-bold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
-            {t('Our Focus Areas', 'हाम्रा प्राथमिकता क्षेत्रहरू')}
+            {t('Our Areas of Work', 'हाम्रा कार्यक्षेत्रहरू')}
           </h2>
         </div>
 
@@ -59,7 +59,7 @@ const HighlightsSection = () => {
               <div key={i} className="group overflow-hidden rounded-[26px] border border-slate-200 bg-white p-0 shadow-[0_18px_40px_rgba(15,23,42,0.05)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_22px_45px_rgba(15,23,42,0.12)]">
                 <div className={`${item.color} flex items-center justify-between p-5`}>
                   <span className={`text-xs font-semibold uppercase tracking-[0.18em] text-white/80 ${lang === 'np' ? 'font-nepali' : ''}`}>
-                    {t('Focus', 'प्राथमिकता')}
+                    {t('Area of Work', 'कार्य क्षेत्र')}
                   </span>
                   <Icon className="text-white" size={22} />
                 </div>

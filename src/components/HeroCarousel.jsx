@@ -92,13 +92,13 @@ const HeroCarousel = () => {
                 <div className="flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-2 backdrop-blur-sm">
                   <FaUsers size={12} />
                   <span className={`text-sm ${lang === 'np' ? 'font-nepali' : ''}`}>
-                    {lang === 'en' ? 'Community-led' : 'समुदायको नेतृत्वमा'}
+                    {lang === 'en' ? 'Human rights advocacy' : 'मानव अधिकारको वकालत'}
                   </span>
                 </div>
                 <div className="flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-2 backdrop-blur-sm">
                   <FaHandshake size={12} />
                   <span className={`text-sm ${lang === 'np' ? 'font-nepali' : ''}`}>
-                    {lang === 'en' ? 'Conflict resolution' : 'द्वन्द्व समाधान'}
+                    {lang === 'en' ? 'Mediation and legal support' : 'मेलमिलाप तथा कानुनी सहयोग'}
                   </span>
                 </div>
               </div>

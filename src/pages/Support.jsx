@@ -49,8 +49,8 @@ const Support = () => {
           </h2>
           <p className={`text-gray-600 leading-relaxed ${lang === 'np' ? 'font-nepali text-base' : 'text-sm'}`}>
             {t(
-              'Every contribution — financial, in-kind, or your time — helps us provide  legal aid, mediate disputes, and build a more just and peaceful Nepal. REPC-Nepal is a registered non-profit; your support goes directly toward our programs and the communities we serve.',
-              'हरेक योगदान — आर्थिक, वस्तुगत, वा तपाईंको समय — ले हामीलाई  कानुनी सहायता प्रदान गर्न, विवाद मेलमिलाप गर्न, र थप न्यायपूर्ण र शान्तिपूर्ण नेपाल निर्माण गर्न मद्दत गर्छ। REPC-Nepal एक दर्ता भएको गैर-नाफामूलक संस्था हो; तपाईंको सहयोग सिधै हाम्रा कार्यक्रम र हामीले सेवा गर्ने समुदायमा जान्छ।'
+              'Every contribution — financial, in-kind, or your time — helps us provide legal aid, mediate disputes, and build a more just and peaceful Nepal. REPC-Nepal is a registered nonprofit organization; your support goes directly toward our programs and the communities we serve.',
+              'हरेक योगदान — आर्थिक, वस्तुगत वा समयका रूपमा — ले हामीलाई कानुनी सहायता प्रदान गर्न, विवादमा मेलमिलाप गराउन र थप न्यायपूर्ण तथा शान्तिपूर्ण नेपाल निर्माण गर्न सहयोग गर्छ। REPC-Nepal दर्ता भएको गैरनाफामूलक संस्था हो; तपाईंको सहयोग हाम्रा कार्यक्रम र हामीले सेवा गर्ने समुदायका लागि प्रत्यक्ष रूपमा उपयोग हुन्छ।'
             )}
           </p>
         </section>

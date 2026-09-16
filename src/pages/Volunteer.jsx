@@ -93,8 +93,8 @@ const Volunteer = () => {
           </h2>
           <p className={`text-gray-600 leading-relaxed ${lang === 'np' ? 'font-nepali text-base' : 'text-sm'}`}>
             {t(
-              'Whether you have a few hours a month or a professional skill to share, there is a place for you at REPC-Nepal. Tell us where you would like to help and we will follow up with the next steps.',
-              'तपाईंसँग महिनामा केही घण्टा समय होस् वा साझा गर्न व्यावसायिक सीप, REPC-नेपालमा तपाईंको लागि ठाउँ छ। तपाईं कहाँ सहयोग गर्न चाहनुहुन्छ भन्नुहोस्, हामी अर्को चरणसँग सम्पर्क गर्नेछौं।'
+              'Whether you have a few hours a month or a professional skill to share, there is a place for you at REPC-Nepal. Tell us how you would like to contribute, and we will follow up with the next steps.',
+              'तपाईंसँग महिनामा केही घण्टा समय होस् वा साझा गर्न मिल्ने व्यावसायिक सीप, REPC-नेपालमा तपाईंका लागि योगदान गर्ने अवसर छ। तपाईं कुन क्षेत्रमा सहयोग गर्न चाहनुहुन्छ बताउनुहोस्; हामी आगामी प्रक्रियाबारे सम्पर्क गर्नेछौं।'
             )}
           </p>
         </section>

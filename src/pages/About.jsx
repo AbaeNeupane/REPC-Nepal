@@ -212,12 +212,12 @@ const About = () => {
           <div className="bg-white border border-gray-200 rounded-sm shadow-sm p-6">
             <ul className="list-disc pl-5 space-y-3">
               {[
-                { en: 'To protect and promote human rights, child rights, elderly rights, and the rights of differently abled person.', np: 'मानव अधिकार, बाल अधिकार, ज्येष्ठ नागरिकको अधिकार र अपाङ्गता भएका व्यक्तिको अधिकारको संरक्षण र प्रवर्धन।' },
-                { en: 'To provide  legal consultation, mediation, and legal services to economically disadvantaged groups.', np: 'आर्थिक रूपमा विपन्न समूहलाई  कानुनी परामर्श, मेलमिलाप र कानुनी सेवा उपलब्ध गराउने।' },
-                { en: 'To conduct training programs on mediation, human rights, child justice, and cyber security.', np: 'मेलमिलाप, मानव अधिकार, बाल न्याय र साइबर सुरक्षामा तालिम कार्यक्रम सञ्चालन।' },
-                { en: 'To study the impacts of climate change on human life and work to reduce those impacts.', np: 'मानव जीवनमा जलवायु परिवर्तनको प्रभावको अध्ययन र त्यसको प्रभाव न्यूनीकरणमा कार्य गर्ने।' },
-                { en: 'To extend peace and reconciliation campaigns from the local level to the provincial and national levels.', np: 'शान्ति तथा पुनर्मिलन अभियानलाई स्थानीय तहदेखि प्रदेश र राष्ट्रिय तहसम्म विस्तार गर्ने।' },
-                { en: 'To produce and distribute awareness materials on rights, mediation, child justice, and cyber security through appropriate media.', np: 'अधिकार, मेलमिलाप, बाल न्याय र साइबर सुरक्षासम्बन्धी सचेतनामूलक सामग्री निर्माण गरी उपयुक्त सञ्चार माध्यमद्वारा वितरण गर्ने।' },
+                { en: 'To protect and promote human rights, child rights, the rights of older persons, and the rights of persons with disabilities.', np: 'मानव अधिकार, बाल अधिकार, ज्येष्ठ नागरिकका अधिकार तथा अपाङ्गता भएका व्यक्तिका अधिकारको संरक्षण र प्रवर्द्धन गर्ने।' },
+                { en: 'To provide legal consultation, mediation, and other legal services to economically disadvantaged groups.', np: 'आर्थिक रूपमा विपन्न समूहलाई कानुनी परामर्श, मेलमिलाप तथा अन्य कानुनी सेवा उपलब्ध गराउने।' },
+                { en: 'To conduct training programs on mediation, human rights, child justice, and cybersecurity.', np: 'मेलमिलाप, मानव अधिकार, बाल न्याय र साइबर सुरक्षासम्बन्धी तालिम कार्यक्रम सञ्चालन गर्ने।' },
+                { en: 'To study the effects of climate change on human life and work to reduce them.', np: 'मानव जीवनमा जलवायु परिवर्तनका प्रभावको अध्ययन गरी तिनको न्यूनीकरणका लागि काम गर्ने।' },
+                { en: 'To expand peace and reconciliation campaigns from the local level to the provincial and national levels.', np: 'शान्ति तथा पुनर्मिलन अभियानलाई स्थानीय तहदेखि प्रदेश र राष्ट्रिय तहसम्म विस्तार गर्ने।' },
+                { en: 'To produce and distribute awareness materials on rights, mediation, child justice, and cybersecurity through appropriate media.', np: 'अधिकार, मेलमिलाप, बाल न्याय र साइबर सुरक्षासम्बन्धी सचेतनामूलक सामग्री तयार गरी उपयुक्त सञ्चार माध्यमबाट वितरण गर्ने।' },
               ].map((obj, i) => (
                 <li key={i} className={`text-gray-700 text-sm leading-relaxed ${lang === 'np' ? 'font-nepali text-base' : ''}`}>
                   {lang === 'en' ? obj.en : obj.np}

@@ -20,27 +20,30 @@ const AboutIntro = () => {
             </div>
 
             <h2 className={`mt-5 text-2xl font-black leading-tight text-navy md:text-4xl ${lang === 'np' ? 'font-nepali' : ''}`}>
-              {t('A just society begins with peaceful dialogue.', 'न्यायपूर्ण समाज शान्तिपूर्ण संवादबाट सुरु हुन्छ।')}
+              {t('A just and peaceful society is built through rights, dialogue, and cooperation.', 'अधिकार, संवाद र सहकार्यबाट न्यायपूर्ण तथा शान्तिपूर्ण समाज निर्माण हुन्छ।')}
             </h2>
 
             <div className="mt-5 h-1 w-20 rounded-full bg-sky" />
 
             <p className={`mt-6 text-base leading-relaxed text-gray-600 md:text-lg ${lang === 'np' ? 'font-nepali' : ''}`}>
-              {t('We support communities in resolving conflict through rights-based, people-centered, and sustainable solutions.', 'हामी समुदायलाई अधिकार-आधारित, जनकेन्द्रित र दिगो समाधानद्वारा विवाद समाधानमा सहयोग गर्छौं।')}
+              {t(
+                'We protect and promote human rights, improve access to justice, and help communities resolve disputes through mediation, legal support, awareness, and cooperation.',
+                'हामी मानव अधिकारको संरक्षण तथा प्रवर्द्धन गर्छौं, न्यायमा पहुँच सुधार गर्छौं र मेलमिलाप, कानुनी सहयोग, सचेतना तथा सहकार्यद्वारा समुदायलाई विवाद समाधानमा सहयोग गर्छौं।'
+              )}
             </p>
 
             <div className="mt-7 grid gap-3 sm:grid-cols-2">
               <div className="rounded-2xl bg-slate-50 p-4">
                 <FaHeart className="text-sky" />
                 <p className={`mt-3 text-sm font-semibold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
-                  {t('Human rights', 'मानव अधिकार')}
+                  {t('Human rights protection', 'मानव अधिकार संरक्षण')}
                 </p>
               </div>
 
               <div className="rounded-2xl bg-slate-50 p-4">
                 <FaUsers className="text-navy" />
                 <p className={`mt-3 text-sm font-semibold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
-                  {t('Community care', 'समुदाय सेवा')}
+                  {t('Access to justice', 'न्यायमा पहुँच')}
                 </p>
               </div>
             </div>

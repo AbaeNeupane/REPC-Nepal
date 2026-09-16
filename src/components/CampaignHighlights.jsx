@@ -28,7 +28,7 @@ const CampaignHighlights = () => {
                 ) : (
                   <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-white/80">
                     <FaImage size={22} />
-                    <span className="text-xs font-medium">{t('Photo coming soon', 'फोटो चाँडै आउँदैछ')}</span>
+                    <span className="text-xs font-medium">{t('Photo coming soon', 'फोटो चाँडै उपलब्ध हुनेछ')}</span>
                   </div>
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#07163d]/40 to-transparent" />
