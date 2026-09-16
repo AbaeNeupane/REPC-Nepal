@@ -15,9 +15,21 @@ export default {
           dark: '#07163d',
         },
         redc: {
+          // Kept as a semantic alias for genuine "danger" contexts if ever
+          // needed (form errors use Tailwind's stock red-* directly instead).
           DEFAULT: '#BE1A22',
           light: '#d42b33',
           dark: '#8f1219',
+        },
+        // Primary accent — replaces the old red accent site-wide.
+        // Keeps Tailwind's full default sky-50..sky-900 scale (used for
+        // decorative gradients/tints elsewhere) and aliases DEFAULT/light/dark
+        // to the brand's sky-blue accent so bare `bg-sky`/`text-sky` etc. work.
+        sky: {
+          ...colors.sky,
+          DEFAULT: '#0EA5E9',
+          light: '#38BDF8',
+          dark: '#0369A1',
         },
         amber: {
           // Keep Tailwind's full default amber-50..amber-900 scale (used by

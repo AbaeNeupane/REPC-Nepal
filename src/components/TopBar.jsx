@@ -11,11 +11,11 @@ const TopBar = () => {
     .join('   ❖   ');
 
   return (
-    <div className="bg-redc text-white text-xs py-1.5">
+    <div className="bg-sky text-white text-xs py-1.5">
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between gap-4">
         {/* Notice Ticker */}
         <div className="flex items-center gap-2 flex-1 overflow-hidden">
-          <span className="bg-white text-redc font-bold px-2 py-0.5 rounded text-xs shrink-0">
+          <span className="bg-white text-sky font-bold px-2 py-0.5 rounded text-xs shrink-0">
             {t('Notice', 'सूचना')}
           </span>
           <div className="marquee-wrapper flex-1">

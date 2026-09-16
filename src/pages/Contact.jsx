@@ -17,7 +17,7 @@ const PageBanner = ({ titleEn, titleNp }) => {
         <h1 className={`text-2xl md:text-3xl font-bold ${lang === 'np' ? 'font-nepali' : ''}`}>
           {lang === 'en' ? titleEn : titleNp}
         </h1>
-        <div className="w-12 h-1 bg-redc mt-3 rounded" />
+        <div className="w-12 h-1 bg-sky mt-3 rounded" />
       </div>
     </div>
   );
@@ -92,8 +92,8 @@ const Contact = () => {
             </div>
             <div className="p-5 space-y-4">
               <div className="flex items-start gap-3">
-                <div className="w-9 h-9 rounded-full bg-redc/10 flex items-center justify-center shrink-0">
-                  <FaMapMarkerAlt className="text-redc" size={14} />
+                <div className="w-9 h-9 rounded-full bg-sky/10 flex items-center justify-center shrink-0">
+                  <FaMapMarkerAlt className="text-sky" size={14} />
                 </div>
                 <div>
                   <p className={`font-semibold text-navy text-sm ${lang === 'np' ? 'font-nepali' : ''}`}>{t('Address', 'ठेगाना')}</p>
@@ -103,8 +103,8 @@ const Contact = () => {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-9 h-9 rounded-full bg-redc/10 flex items-center justify-center shrink-0">
-                  <FaPhone className="text-redc" size={13} />
+                <div className="w-9 h-9 rounded-full bg-sky/10 flex items-center justify-center shrink-0">
+                  <FaPhone className="text-sky" size={13} />
                 </div>
                 <div>
                   <p className={`font-semibold text-navy text-sm ${lang === 'np' ? 'font-nepali' : ''}`}>{t('Phone', 'फोन')}</p>
@@ -131,8 +131,8 @@ const Contact = () => {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-9 h-9 rounded-full bg-redc/10 flex items-center justify-center shrink-0">
-                  <FaEnvelope className="text-redc" size={13} />
+                <div className="w-9 h-9 rounded-full bg-sky/10 flex items-center justify-center shrink-0">
+                  <FaEnvelope className="text-sky" size={13} />
                 </div>
                 <div>
                   <p className={`font-semibold text-navy text-sm ${lang === 'np' ? 'font-nepali' : ''}`}>{t('Email', 'इमेल')}</p>
@@ -142,8 +142,8 @@ const Contact = () => {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-9 h-9 rounded-full bg-redc/10 flex items-center justify-center shrink-0">
-                  <FaClock className="text-redc" size={13} />
+                <div className="w-9 h-9 rounded-full bg-sky/10 flex items-center justify-center shrink-0">
+                  <FaClock className="text-sky" size={13} />
                 </div>
                 <div>
                   <p className={`font-semibold text-navy text-sm ${lang === 'np' ? 'font-nepali' : ''}`}>{t('Office Hours', 'कार्यालय समय')}</p>
@@ -160,15 +160,15 @@ const Contact = () => {
               <p className={`text-sm font-semibold text-navy mb-3 ${lang === 'np' ? 'font-nepali' : ''}`}>{t('Follow Us', 'हामीलाई फलो गर्नुहोस्')}</p>
               <div className="flex gap-3">
                 <a href={siteInfo.facebook} target="_blank" rel="noopener noreferrer"
-                   className="w-9 h-9 rounded-full bg-navy flex items-center justify-center text-white hover:bg-redc transition-colors" aria-label="Facebook">
+                   className="w-9 h-9 rounded-full bg-navy flex items-center justify-center text-white hover:bg-sky transition-colors" aria-label="Facebook">
                   <FaFacebook size={15} />
                 </a>
                 <a href={siteInfo.twitter} target="_blank" rel="noopener noreferrer"
-                   className="w-9 h-9 rounded-full bg-navy flex items-center justify-center text-white hover:bg-redc transition-colors" aria-label="Twitter">
+                   className="w-9 h-9 rounded-full bg-navy flex items-center justify-center text-white hover:bg-sky transition-colors" aria-label="Twitter">
                   <FaTwitter size={15} />
                 </a>
                 <a href={siteInfo.youtube} target="_blank" rel="noopener noreferrer"
-                   className="w-9 h-9 rounded-full bg-navy flex items-center justify-center text-white hover:bg-redc transition-colors" aria-label="YouTube">
+                   className="w-9 h-9 rounded-full bg-navy flex items-center justify-center text-white hover:bg-sky transition-colors" aria-label="YouTube">
                   <FaYoutube size={15} />
                 </a>
               </div>
@@ -191,7 +191,7 @@ const Contact = () => {
               href="https://maps.google.com/?q=Thapathali+Kathmandu+Nepal"
               target="_blank"
               rel="noopener noreferrer"
-              className={`absolute bottom-2 right-2 bg-white text-xs text-navy hover:text-redc border border-gray-200 shadow px-2 py-1 rounded transition-colors ${lang === 'np' ? 'font-nepali' : ''}`}
+              className={`absolute bottom-2 right-2 bg-white text-xs text-navy hover:text-sky border border-gray-200 shadow px-2 py-1 rounded transition-colors ${lang === 'np' ? 'font-nepali' : ''}`}
             >
               {t('Open in Google Maps ↗', 'गुगल म्यापमा खोल्नुहोस् ↗')}
             </a>
@@ -201,7 +201,7 @@ const Contact = () => {
         {/* Right: Contact Form */}
         <div className="lg:col-span-3">
           <div className="bg-white border border-gray-200 rounded-sm shadow-sm overflow-hidden">
-            <div className="bg-redc px-5 py-4">
+            <div className="bg-sky px-5 py-4">
               <h2 className={`text-white font-bold ${lang === 'np' ? 'font-nepali' : ''}`}>
                 {t('Send Us a Message', 'हामीलाई सन्देश पठाउनुहोस्')}
               </h2>
@@ -219,7 +219,7 @@ const Contact = () => {
                     {t('Thank you for reaching out. We will get back to you soon.', 'हामीलाई सम्पर्क गर्नुभएकोमा धन्यवाद। हामी चाँडै जवाफ दिनेछौं।')}
                   </p>
                   <button onClick={() => setSubmitted(false)}
-                    className={`text-navy hover:text-redc font-medium text-sm underline ${lang === 'np' ? 'font-nepali' : ''}`}>
+                    className={`text-navy hover:text-sky font-medium text-sm underline ${lang === 'np' ? 'font-nepali' : ''}`}>
                     {t('Send Another Message', 'अर्को सन्देश पठाउनुहोस्')}
                   </button>
                 </div>
@@ -228,7 +228,7 @@ const Contact = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className={`block text-sm font-medium text-gray-700 mb-1 ${lang === 'np' ? 'font-nepali' : ''}`}>
-                        {t('Full Name', 'पूरा नाम')} <span className="text-redc">*</span>
+                        {t('Full Name', 'पूरा नाम')} <span className="text-red-600">*</span>
                       </label>
                       <input type="text" name="name" required value={form.name} onChange={handleChange}
                         className="form-input"
@@ -236,7 +236,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <label className={`block text-sm font-medium text-gray-700 mb-1 ${lang === 'np' ? 'font-nepali' : ''}`}>
-                        {t('Email', 'इमेल')} <span className="text-redc">*</span>
+                        {t('Email', 'इमेल')} <span className="text-red-600">*</span>
                       </label>
                       <input type="email" name="email" required value={form.email} onChange={handleChange}
                         className="form-input"
@@ -254,7 +254,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <label className={`block text-sm font-medium text-gray-700 mb-1 ${lang === 'np' ? 'font-nepali' : ''}`}>
-                        {t('Subject', 'विषय')} <span className="text-redc">*</span>
+                        {t('Subject', 'विषय')} <span className="text-red-600">*</span>
                       </label>
                       <select name="subject" required value={form.subject} onChange={handleChange}
                         className="form-input">
@@ -270,7 +270,7 @@ const Contact = () => {
                   {form.subject === 'membership' && (
                     <div>
                       <label className={`block text-sm font-medium text-gray-700 mb-1 ${lang === 'np' ? 'font-nepali' : ''}`}>
-                        {t('Membership Type', 'सदस्यताको प्रकार')} <span className="text-redc">*</span>
+                        {t('Membership Type', 'सदस्यताको प्रकार')} <span className="text-red-600">*</span>
                       </label>
                       <select name="membershipType" required value={form.membershipType} onChange={handleChange}
                         className="form-input">
@@ -292,14 +292,14 @@ const Contact = () => {
                   )}
                   <div>
                     <label className={`block text-sm font-medium text-gray-700 mb-1 ${lang === 'np' ? 'font-nepali' : ''}`}>
-                      {t('Message', 'सन्देश')} <span className="text-redc">*</span>
+                      {t('Message', 'सन्देश')} <span className="text-red-600">*</span>
                     </label>
                     <textarea name="message" required rows={5} value={form.message} onChange={handleChange}
                       className="form-input resize-none"
                       placeholder={lang === 'en' ? 'Write your message here...' : 'यहाँ आफ्नो सन्देश लेख्नुहोस्...'} />
                   </div>
                   {error && (
-                    <p className={`text-redc text-sm bg-red-50 border border-red-200 rounded-sm px-3 py-2 ${lang === 'np' ? 'font-nepali' : ''}`}>
+                    <p className={`text-red-600 text-sm bg-red-50 border border-red-200 rounded-sm px-3 py-2 ${lang === 'np' ? 'font-nepali' : ''}`}>
                       {error}
                     </p>
                   )}

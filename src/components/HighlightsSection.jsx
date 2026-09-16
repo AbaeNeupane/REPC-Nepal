@@ -17,7 +17,7 @@ const highlights = [
     np: 'मेलमिलाप',
     descEn: 'Training certified mediators and resolving disputes peacefully.',
     descNp: 'प्रमाणित मेलमिलापकर्ताहरूको तालिम र विवादको शान्तिपूर्ण समाधान।',
-    color: 'bg-redc',
+    color: 'bg-sky',
   },
   {
     icon: FaUsers,
@@ -25,7 +25,7 @@ const highlights = [
     np: 'समुदाय',
     descEn: 'Empowering vulnerable communities through awareness and legal access.',
     descNp: 'सचेतना र कानुनी पहुँचद्वारा कमजोर समुदायको सशक्तिकरण।',
-    color: 'bg-amber',
+    color: 'bg-blue-600',
   },
   {
     icon: FaLeaf,
@@ -33,7 +33,7 @@ const highlights = [
     np: 'जलवायु र अधिकार',
     descEn: 'Studying climate change impacts on human rights and livelihoods.',
     descNp: 'मानव अधिकार र जीविकोपार्जनमा जलवायु परिवर्तनको प्रभावको अध्ययन।',
-    color: 'bg-green-700',
+    color: 'bg-cyan-700',
   },
 ];
 
@@ -44,7 +44,7 @@ const HighlightsSection = () => {
     <section className="bg-slate-50 py-16">
       <div className="max-w-7xl mx-auto px-4">
         <div className="mb-10 text-center">
-          <p className={`text-xs font-semibold uppercase tracking-[0.2em] text-redc ${lang === 'np' ? 'font-nepali' : ''}`}>
+          <p className={`text-xs font-semibold uppercase tracking-[0.2em] text-sky ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t('What we do', 'हामी के गर्छौं')}
           </p>
           <h2 className={`mt-3 text-3xl font-bold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>

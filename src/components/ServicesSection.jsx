@@ -24,7 +24,7 @@ const ServicesSection = () => {
 
   return (
     <div className="overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_20px_45px_rgba(15,23,42,0.04)]">
-      <div className="bg-redc px-5 py-4">
+      <div className="bg-sky px-5 py-4">
         <h2 className={`text-lg font-bold text-white ${lang === 'np' ? 'font-nepali' : ''}`}>
           {t('Our Services', 'हाम्रा सेवाहरू')}
         </h2>
@@ -53,7 +53,7 @@ const ServicesSection = () => {
       <div className="border-t border-slate-200 bg-slate-50 px-5 py-4">
         <Link
           to="/services"
-          className={`inline-flex items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-redc ${lang === 'np' ? 'font-nepali' : ''}`}
+          className={`inline-flex items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-sky ${lang === 'np' ? 'font-nepali' : ''}`}
         >
           {t('View All Services', 'सबै सेवाहरू हेर्नुहोस्')}
         </Link>

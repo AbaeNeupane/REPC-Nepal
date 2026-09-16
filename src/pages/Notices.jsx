@@ -26,7 +26,7 @@ const PageBanner = ({ titleEn, titleNp }) => {
         <h1 className={`text-2xl md:text-3xl font-bold ${lang === 'np' ? 'font-nepali' : ''}`}>
           {lang === 'en' ? titleEn : titleNp}
         </h1>
-        <div className="w-12 h-1 bg-redc mt-3 rounded" />
+        <div className="w-12 h-1 bg-sky mt-3 rounded" />
       </div>
     </div>
   );
@@ -85,7 +85,7 @@ const Notices = () => {
                 <div className="col-span-1 text-gray-500 text-sm">{i + 1}</div>
                 <div className="col-span-2">
                   <span className="flex items-center gap-1.5 text-xs text-gray-500">
-                    <FaCalendarAlt className="text-redc" size={10} />
+                    <FaCalendarAlt className="text-sky" size={10} />
                     {lang === 'en' ? item.date : item.dateNp}
                   </span>
                 </div>
@@ -97,7 +97,7 @@ const Notices = () => {
                 <div className="col-span-2 flex justify-center">
                   {item.downloadUrl && item.downloadUrl !== '#' ? (
                     <a href={item.downloadUrl} target="_blank" rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-xs text-navy hover:text-redc transition-colors font-medium">
+                      className="flex items-center gap-1 text-xs text-navy hover:text-sky transition-colors font-medium">
                       <FaDownload size={12} /> {t('PDF', 'पिडिएफ')}
                     </a>
                   ) : (

@@ -15,7 +15,7 @@ const PageBanner = ({ titleEn, titleNp }) => {
         <h1 className={`text-2xl md:text-3xl font-bold ${lang === 'np' ? 'font-nepali' : ''}`}>
           {lang === 'en' ? titleEn : titleNp}
         </h1>
-        <div className="w-12 h-1 bg-redc mt-3 rounded" />
+        <div className="w-12 h-1 bg-sky mt-3 rounded" />
       </div>
     </div>
   );
@@ -63,7 +63,7 @@ const Publications = () => {
         {publications.map((section, si) => (
           <div key={si} id={['annual', 'legal', 'training', 'research'][si]} className="scroll-mt-20">
             <h2 className={`text-lg font-bold text-navy mb-4 flex items-center gap-2 ${lang === 'np' ? 'font-nepali' : ''}`}>
-              <span className="w-1 h-6 bg-redc rounded inline-block" />
+              <span className="w-1 h-6 bg-sky rounded inline-block" />
               {lang === 'en' ? section.category.en : section.category.np}
             </h2>
             <div className="bg-white border border-gray-200 rounded-sm shadow-sm overflow-hidden">
@@ -79,7 +79,7 @@ const Publications = () => {
                     </p>
                   </div>
                   <a href={item.url} target="_blank" rel="noopener noreferrer"
-                    className={`flex items-center gap-1.5 text-xs font-semibold text-navy hover:text-redc transition-colors shrink-0 ${lang === 'np' ? 'font-nepali' : ''}`}>
+                    className={`flex items-center gap-1.5 text-xs font-semibold text-navy hover:text-sky transition-colors shrink-0 ${lang === 'np' ? 'font-nepali' : ''}`}>
                     <FaDownload size={12} /> {t('Download', 'डाउनलोड')}
                   </a>
                 </div>

@@ -17,7 +17,7 @@ const PageBanner = ({ titleEn, titleNp }) => {
         <h1 className={`text-2xl font-bold md:text-3xl ${lang === 'np' ? 'font-nepali' : ''}`}>
           {lang === 'en' ? titleEn : titleNp}
         </h1>
-        <div className="mt-3 h-1 w-12 rounded bg-redc" />
+        <div className="mt-3 h-1 w-12 rounded bg-sky" />
       </div>
     </div>
   );
@@ -32,7 +32,7 @@ const Membership = () => {
 
       <div className="mx-auto max-w-7xl px-4 py-10">
         <section className="mx-auto mb-12 max-w-3xl text-center">
-          <FaUsers className="mx-auto mb-4 text-redc" size={34} />
+          <FaUsers className="mx-auto mb-4 text-sky" size={34} />
           <h2 className={`mb-3 text-xl font-bold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t('Join the REPC–NEPAL community', 'REPC–NEPAL समुदायमा जोडिनुहोस्')}
           </h2>
@@ -43,7 +43,7 @@ const Membership = () => {
 
         <section className="mb-12">
           <div className="mb-5 flex items-center gap-2">
-            <FaIdCard className="text-redc" />
+            <FaIdCard className="text-sky" />
             <h2 className={`text-xl font-bold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
               {t('Membership categories and fees', 'सदस्यताका प्रकार र शुल्क')}
             </h2>
@@ -56,9 +56,9 @@ const Membership = () => {
                   <h3 className={`text-lg font-bold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
                     {lang === 'en' ? category.titleEn : category.titleNp}
                   </h3>
-                  <FaCheckCircle className="mt-1 shrink-0 text-redc" size={16} />
+                  <FaCheckCircle className="mt-1 shrink-0 text-sky" size={16} />
                 </div>
-                <p className={`mt-4 font-semibold text-redc ${lang === 'np' ? 'font-nepali' : 'text-sm'}`}>
+                <p className={`mt-4 font-semibold text-sky ${lang === 'np' ? 'font-nepali' : 'text-sm'}`}>
                   {lang === 'en' ? category.feeEn : category.feeNp}
                 </p>
                 <p className={`mt-3 text-sm leading-relaxed text-gray-600 ${lang === 'np' ? 'font-nepali text-base' : ''}`}>

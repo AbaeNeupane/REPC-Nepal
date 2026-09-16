@@ -16,7 +16,7 @@ const PageBanner = ({ titleEn, titleNp }) => {
         <h1 className={`text-2xl md:text-3xl font-bold ${lang === 'np' ? 'font-nepali' : ''}`}>
           {lang === 'en' ? titleEn : titleNp}
         </h1>
-        <div className="w-12 h-1 bg-redc mt-3 rounded" />
+        <div className="w-12 h-1 bg-sky mt-3 rounded" />
       </div>
     </div>
   );
@@ -60,7 +60,7 @@ const LegalFramework = () => {
           return (
             <section key={cat} className="mb-10">
               <div className="flex items-center gap-2 mb-4">
-                <CatIcon className="text-redc" size={18} />
+                <CatIcon className="text-sky" size={18} />
                 <h2 className={`text-lg font-bold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
                   {lang === 'en' ? meta.titleEn : meta.titleNp}
                 </h2>
@@ -75,7 +75,7 @@ const LegalFramework = () => {
                       {law.sourceUrl && (
                         <a
                           href={law.sourceUrl} target="_blank" rel="noopener noreferrer"
-                          className="text-navy/50 hover:text-redc transition-colors shrink-0"
+                          className="text-navy/50 hover:text-sky transition-colors shrink-0"
                           aria-label={t('View source', 'स्रोत हेर्नुहोस्')}
                           title={t('View source', 'स्रोत हेर्नुहोस्')}
                         >

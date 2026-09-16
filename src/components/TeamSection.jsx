@@ -42,7 +42,7 @@ const TeamSection = () => {
               <p className={`font-semibold text-navy text-sm truncate ${lang === 'np' ? 'font-nepali' : ''}`}>
                 {lang === 'en' ? member.nameEn : member.nameNp}
               </p>
-              <p className={`text-xs text-redc font-medium ${lang === 'np' ? 'font-nepali' : ''}`}>
+              <p className={`text-xs text-sky font-medium ${lang === 'np' ? 'font-nepali' : ''}`}>
                 {lang === 'en' ? member.positionEn : member.positionNp}
               </p>
               <div className="flex items-center gap-3 mt-1">
@@ -66,7 +66,7 @@ const TeamSection = () => {
       <div className="px-4 py-3 border-t border-gray-100 bg-gray-50">
         <a
           href="/about#team"
-          className={`text-xs font-semibold text-navy hover:text-redc transition-colors ${lang === 'np' ? 'font-nepali' : ''}`}
+          className={`text-xs font-semibold text-navy hover:text-sky transition-colors ${lang === 'np' ? 'font-nepali' : ''}`}
         >
           {t('View All Members →', 'सबै सदस्यहरू हेर्नुहोस् →')}
         </a>

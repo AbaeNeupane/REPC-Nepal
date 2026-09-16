@@ -14,7 +14,7 @@ const PageBanner = ({ titleEn, titleNp }) => {
         <h1 className={`text-2xl md:text-3xl font-bold ${lang === 'np' ? 'font-nepali' : ''}`}>
           {lang === 'en' ? titleEn : titleNp}
         </h1>
-        <div className="w-12 h-1 bg-redc mt-3 rounded" />
+        <div className="w-12 h-1 bg-sky mt-3 rounded" />
       </div>
     </div>
   );
@@ -37,7 +37,7 @@ const programs = [
     descNp: 'मौलिक मानव अधिकार, कानुनी सुरक्षा र न्यायमा पहुँच बारे जागरुकता बढाउन समुदाय स्तरीय अभियानहरू।',
     statusEn: 'Ongoing',
     statusNp: 'जारी',
-    color: 'bg-redc',
+    color: 'bg-sky',
   },
   {
     titleEn: 'Free Legal Aid Clinics',
@@ -46,7 +46,7 @@ const programs = [
     descNp: 'महिला, बालबालिका, ज्येष्ठ नागरिक र अपाङ्गता भएका व्यक्ति सहित कमजोर समूहका लागि नियमित निःशुल्क कानुनी परामर्श सत्रहरू।',
     statusEn: 'Ongoing',
     statusNp: 'जारी',
-    color: 'bg-green-700',
+    color: 'bg-cyan-700',
   },
   {
     titleEn: 'Gender-Based Violence Prevention Program',
@@ -55,7 +55,7 @@ const programs = [
     descNp: 'लैङ्गिक हिंसा रोकथाम, पीडितहरूलाई सहायता र पीडितहरूलाई कानुनी स्रोतसँग जोड्ने शैक्षिक कार्यक्रमहरू।',
     statusEn: 'Planned',
     statusNp: 'योजनाबद्ध',
-    color: 'bg-amber',
+    color: 'bg-blue-600',
   },
   {
     titleEn: 'Child Rights and Juvenile Justice Program',
@@ -64,7 +64,7 @@ const programs = [
     descNp: 'बाल अधिकार सचेतना, दुर्व्यवहार र शोषणबाट सुरक्षा र कानुनसँग द्वन्द्वमा रहेका बालबालिकालाई सहयोगमा केन्द्रित कार्यक्रमहरू।',
     statusEn: 'Ongoing',
     statusNp: 'जारी',
-    color: 'bg-purple-700',
+    color: 'bg-blue-800',
   },
   {
     titleEn: 'Climate Change & Human Rights Study',
@@ -73,7 +73,7 @@ const programs = [
     descNp: 'नेपालमा जलवायु परिवर्तन र मानव अधिकारको सम्बन्धको अध्ययन गर्ने अनुसन्धान पहल, कमजोर समुदायमा केन्द्रित।',
     statusEn: 'Planned',
     statusNp: 'योजनाबद्ध',
-    color: 'bg-teal-700',
+    color: 'bg-sky-700',
   },
 ];
 
@@ -101,7 +101,7 @@ const Programs = () => {
                   <h3 className={`font-bold text-navy leading-snug ${lang === 'np' ? 'font-nepali text-base' : 'text-sm'}`}>
                     {lang === 'en' ? prog.titleEn : prog.titleNp}
                   </h3>
-                  <span className={`shrink-0 px-2 py-0.5 rounded text-xs font-semibold ${prog.statusEn === 'Ongoing' ? 'bg-green-100 text-green-700' : 'bg-amber/20 text-amber-700'} ${lang === 'np' ? 'font-nepali' : ''}`}>
+                  <span className={`shrink-0 px-2 py-0.5 rounded text-xs font-semibold ${prog.statusEn === 'Ongoing' ? 'bg-green-100 text-green-700' : 'bg-sky-100 text-sky-700'} ${lang === 'np' ? 'font-nepali' : ''}`}>
                     {lang === 'en' ? prog.statusEn : prog.statusNp}
                   </span>
                 </div>

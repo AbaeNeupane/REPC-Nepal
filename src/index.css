@@ -34,7 +34,7 @@
 
   /* Accessible focus rings — only for keyboard nav */
   :focus-visible {
-    @apply outline-none ring-2 ring-redc ring-offset-2;
+    @apply outline-none ring-2 ring-sky ring-offset-2;
   }
   button:focus:not(:focus-visible),
   a:focus:not(:focus-visible) {
@@ -106,7 +106,7 @@
 
   /* ── Navigation dropdown (CSS-hover, animated) ─────────── */
   .nav-dropdown {
-    @apply absolute left-0 top-full z-50 min-w-[220px] bg-white shadow-xl border-t-2 border-redc;
+    @apply absolute left-0 top-full z-50 min-w-[220px] bg-white shadow-xl border-t-2 border-sky;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-6px);
@@ -137,7 +137,7 @@
     @apply px-4 py-2 text-sm font-medium border-b-2 border-transparent text-gray-600
            hover:text-navy transition-all cursor-pointer whitespace-nowrap;
   }
-  .tab-btn.active { @apply border-redc text-redc font-semibold; }
+  .tab-btn.active { @apply border-sky text-sky font-semibold; }
 
   /* ── Service card ─────────────────────────────────────── */
   .service-card {
@@ -177,7 +177,7 @@
            transition-all duration-150 shadow-sm hover:shadow-md;
   }
   .btn-danger {
-    @apply inline-flex items-center gap-2 bg-redc hover:bg-redc-light active:scale-95
+    @apply inline-flex items-center gap-2 bg-sky hover:bg-sky-light active:scale-95
            text-white font-semibold px-6 py-2.5 rounded-sm
            transition-all duration-150 shadow-sm hover:shadow-md;
   }
@@ -201,7 +201,7 @@
 
   /* ── Section title ────────────────────────────────────── */
   .section-title {
-    @apply text-xl font-bold text-navy pb-2 border-b-2 border-redc inline-block mb-6;
+    @apply text-xl font-bold text-navy pb-2 border-b-2 border-sky inline-block mb-6;
   }
 
   /* ── Scroll-to-top button ─────────────────────────────── */

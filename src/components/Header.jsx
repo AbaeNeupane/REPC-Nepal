@@ -67,7 +67,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white border-b border-gray-200 shadow-sm relative z-30">
+    <header className="bg-white border-b border-gray-200 shadow-sm relative z-50">
       {searchOpen && (
         <div className="md:hidden fixed inset-0 bg-black/30 backdrop-blur-[1px] z-40" onClick={() => { setSearchOpen(false); setSearchQuery(''); }} aria-hidden="true" />
       )}
@@ -152,7 +152,7 @@ const Header = () => {
             <h1 className={`font-bold text-navy leading-tight ${lang === 'np' ? 'font-nepali text-xl md:text-3xl' : 'text-lg md:text-2xl'}`}>
               {t(siteInfo.nameEn, siteInfo.nameNp)}
             </h1>
-            <p className={`text-redc text-sm md:text-base font-medium mt-1 ${lang === 'np' ? 'font-nepali' : ''}`}>
+            <p className={`text-sky text-sm md:text-base font-medium mt-1 ${lang === 'np' ? 'font-nepali' : ''}`}>
               {t(siteInfo.mottoEn, siteInfo.mottoNp)}
             </p>
           </div>
@@ -164,7 +164,7 @@ const Header = () => {
           {/* Support CTA */}
           <Link
             to="/support"
-            className="hidden sm:inline-flex items-center gap-1.5 bg-redc hover:bg-redc-light text-white text-xs font-semibold px-3.5 py-2 rounded-sm transition-colors shadow-sm hover:shadow-md"
+            className="hidden sm:inline-flex items-center gap-1.5 bg-sky hover:bg-sky-light text-white text-xs font-semibold px-3.5 py-2 rounded-sm transition-colors shadow-sm hover:shadow-md"
           >
             <FaHandHoldingHeart size={12} />
             <span className={lang === 'np' ? 'font-nepali' : ''}>{t('Support Us', 'सहयोग गर्नुहोस्')}</span>
@@ -183,7 +183,7 @@ const Header = () => {
                   value={searchQuery}
                   onChange={e => setSearchQuery(e.target.value)}
                   placeholder={t('Search...', 'खोज्नुहोस्...')}
-                  className="px-3 py-2 text-sm text-gray-700 placeholder:text-gray-400 outline-none w-36 sm:w-52"
+                  className="px-3 py-2 text-sm text-gray-700 placeholder:text-gray-400 outline-none w-28 lg:w-52"
                   onKeyDown={e => {
                     if (e.key === 'Escape') {
                       setSearchOpen(false);
@@ -217,7 +217,7 @@ const Header = () => {
             ) : (
               <button
                 onClick={() => setSearchOpen(true)}
-                className="h-10 w-10 flex items-center justify-center rounded-md text-navy hover:text-redc hover:bg-navy/5 transition-colors shadow-sm border border-transparent hover:border-navy/10"
+                className="h-10 w-10 flex items-center justify-center rounded-md text-navy hover:text-sky hover:bg-navy/5 transition-colors shadow-sm border border-transparent hover:border-navy/10"
                 aria-label={t('Open Search', 'खोज खोल्नुहोस्')}
               >
                 <FaSearch size={16} />

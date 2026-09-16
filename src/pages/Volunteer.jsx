@@ -20,7 +20,7 @@ const PageBanner = ({ titleEn, titleNp }) => {
         <h1 className={`text-2xl md:text-3xl font-bold ${lang === 'np' ? 'font-nepali' : ''}`}>
           {lang === 'en' ? titleEn : titleNp}
         </h1>
-        <div className="w-12 h-1 bg-redc mt-3 rounded" />
+        <div className="w-12 h-1 bg-sky mt-3 rounded" />
       </div>
     </div>
   );
@@ -87,7 +87,7 @@ const Volunteer = () => {
 
         {/* Intro */}
         <section className="mb-12 text-center max-w-3xl mx-auto">
-          <FaHandsHelping className="text-redc mx-auto mb-4" size={34} />
+          <FaHandsHelping className="text-sky mx-auto mb-4" size={34} />
           <h2 className={`text-xl font-bold text-navy mb-3 ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t('Volunteer With REPC-Nepal', 'REPC-नेपालसँग स्वयंसेवा गर्नुहोस्')}
           </h2>
@@ -109,7 +109,7 @@ const Volunteer = () => {
               const Icon = areaIconMap[area.id] || FaHandsHelping;
               return (
                 <div key={area.id} className="bg-white border border-gray-200 rounded-sm shadow-sm p-5 hover:shadow-md transition-shadow">
-                  <Icon className="text-redc mb-3" size={20} />
+                  <Icon className="text-sky mb-3" size={20} />
                   <h3 className={`font-bold text-navy text-sm mb-1.5 ${lang === 'np' ? 'font-nepali' : ''}`}>
                     {lang === 'en' ? area.titleEn : area.titleNp}
                   </h3>
@@ -172,7 +172,7 @@ const Volunteer = () => {
                     className="form-input resize-none"
                   />
 
-                  {error && <p className="text-redc text-sm">{error}</p>}
+                  {error && <p className="text-red-600 text-sm">{error}</p>}
 
                   <button type="submit" disabled={sending} className="btn-primary w-full justify-center disabled:opacity-60">
                     <FaPaperPlane size={13} />

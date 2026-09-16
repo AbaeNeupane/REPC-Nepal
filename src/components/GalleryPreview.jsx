@@ -4,11 +4,11 @@ import { FaImages } from 'react-icons/fa';
 
 const galleryItems = [
   { id: 1, src: '/images/gallery/milestone/cdo-registration.jpeg', altEn: 'Official Registration with CDO, 4 Bhadra 2083', altNp: 'जिल्ला प्रशासन कार्यालय काठमाडौंमा संस्था दर्ता गरे पश्चात...', color: 'bg-navy/80' },
-  { id: 2, src: null, altEn: 'Mediation Workshop', altNp: 'मेलमिलाप कार्यशाला', color: 'bg-redc/80' },
+  { id: 2, src: null, altEn: 'Mediation Workshop', altNp: 'मेलमिलाप कार्यशाला', color: 'bg-sky/80' },
   { id: 3, src: null, altEn: 'Community Awareness Program', altNp: 'सामुदायिक सचेतना कार्यक्रम', color: 'bg-slate-600/80' },
-  { id: 4, src: null, altEn: 'Legal Aid Camp', altNp: 'कानुनी सहायता शिविर', color: 'bg-amber/80' },
-  { id: 5, src: null, altEn: 'Peace Campaign 2083', altNp: 'शान्ति अभियान २०८३', color: 'bg-green-700/80' },
-  { id: 6, src: null, altEn: 'Annual General Meeting', altNp: 'वार्षिक साधारण सभा', color: 'bg-purple-700/80' },
+  { id: 4, src: null, altEn: 'Legal Aid Camp', altNp: 'कानुनी सहायता शिविर', color: 'bg-blue-600/80' },
+  { id: 5, src: null, altEn: 'Peace Campaign 2083', altNp: 'शान्ति अभियान २०८३', color: 'bg-cyan-700/80' },
+  { id: 6, src: null, altEn: 'Annual General Meeting', altNp: 'वार्षिक साधारण सभा', color: 'bg-blue-800/80' },
 ].sort((a, b) => (b.src ? 1 : 0) - (a.src ? 1 : 0));
 
 const GalleryPreview = () => {
@@ -19,7 +19,7 @@ const GalleryPreview = () => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className={`text-xs font-semibold uppercase tracking-[0.2em] text-redc ${lang === 'np' ? 'font-nepali' : ''}`}>
+            <p className={`text-xs font-semibold uppercase tracking-[0.2em] text-sky ${lang === 'np' ? 'font-nepali' : ''}`}>
               {t('Moments', 'झलकहरू')}
             </p>
             <h2 className={`mt-2 text-3xl font-bold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
@@ -29,7 +29,7 @@ const GalleryPreview = () => {
 
           <Link
             to="/gallery"
-            className={`inline-flex items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-redc ${lang === 'np' ? 'font-nepali' : ''}`}
+            className={`inline-flex items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-sky ${lang === 'np' ? 'font-nepali' : ''}`}
           >
             <FaImages size={14} /> {t('View All', 'सबै हेर्नुहोस्')}
           </Link>

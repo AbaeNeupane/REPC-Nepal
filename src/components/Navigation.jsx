@@ -102,7 +102,7 @@ const Navigation = () => {
   return (
     <nav
       ref={navRef}
-      className={`bg-navy relative z-40 transition-shadow duration-300 ${scrolled ? 'shadow-xl' : 'shadow-md'}`}
+      className={`bg-navy relative z-[60] transition-shadow duration-300 ${scrolled ? 'shadow-xl' : 'shadow-md'}`}
     >
       <div className="max-w-7xl mx-auto px-4">
 
@@ -114,7 +114,7 @@ const Navigation = () => {
                 to={item.link}
                 className={`flex items-center gap-1.5 px-3 py-4 text-sm font-medium transition-all duration-150 whitespace-nowrap
                   ${isActive(item)
-                    ? 'bg-redc text-white'
+                    ? 'bg-sky text-white'
                     : 'text-white/90 hover:bg-white/10 hover:text-white'}
                   ${lang === 'np' ? 'font-nepali text-base' : ''}`}
               >
@@ -135,7 +135,7 @@ const Navigation = () => {
                       to={child.link}
                       className={`flex items-center px-4 py-2.5 text-sm text-gray-700
                         hover:bg-navy hover:text-white
-                        border-l-2 border-transparent hover:border-redc
+                        border-l-2 border-transparent hover:border-sky
                         transition-all duration-100
                         ${lang === 'np' ? 'font-nepali' : ''}`}
                     >
@@ -210,7 +210,7 @@ const Navigation = () => {
                   to={item.link}
                   onClick={() => !item.children && setMobileOpen(false)}
                   className={`flex-1 px-5 py-3.5 text-sm font-medium transition-colors
-                    ${isActive(item) ? 'text-redc bg-white/5' : 'text-white/90 hover:text-white hover:bg-white/5'}
+                    ${isActive(item) ? 'text-sky bg-white/5' : 'text-white/90 hover:text-white hover:bg-white/5'}
                     ${lang === 'np' ? 'font-nepali' : ''}`}
                 >
                   {lang === 'en' ? item.en : item.np}
@@ -249,7 +249,7 @@ const Navigation = () => {
                     mobileExpanded.includes(i) ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'}
                   `}
                 >
-                  <div className="bg-black/15 border-l-2 border-redc ml-5 mr-3 my-1 rounded-r-sm">
+                  <div className="bg-black/15 border-l-2 border-sky ml-5 mr-3 my-1 rounded-r-sm">
                     {item.children.map((child, j) => (
                       <Link
                         key={j}

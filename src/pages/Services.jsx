@@ -33,7 +33,7 @@ const PageBanner = ({ titleEn, titleNp }) => {
         <h1 className={`text-2xl md:text-3xl font-bold ${lang === 'np' ? 'font-nepali' : ''}`}>
           {lang === 'en' ? titleEn : titleNp}
         </h1>
-        <div className="w-12 h-1 bg-redc mt-3 rounded" />
+        <div className="w-12 h-1 bg-sky mt-3 rounded" />
       </div>
     </div>
   );
@@ -85,7 +85,7 @@ const Services = () => {
         {/* Peace Through... */}
         <section className="mb-12">
           <div className="flex items-center gap-2 mb-5">
-            <FaDove className="text-redc" size={20} />
+            <FaDove className="text-sky" size={20} />
             <h2 className={`text-xl font-bold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
               {t('Peace Through...', 'यसमार्फत शान्ति...')}
             </h2>
@@ -106,7 +106,7 @@ const Services = () => {
         </section>
 
         {/* Free Legal Aid CTA */}
-        <div className="bg-redc text-white rounded-sm p-8 text-center">
+        <div className="bg-sky text-white rounded-sm p-8 text-center">
           <FaPhoneAlt className="mx-auto mb-3" size={28} />
           <h3 className={`text-xl font-bold mb-2 ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t('Need Free Legal Assistance?', 'निःशुल्क कानुनी सहायता चाहिन्छ?')}
@@ -119,7 +119,7 @@ const Services = () => {
           </p>
           <Link
             to="/contact"
-            className={`inline-block bg-white text-redc font-bold px-8 py-3 rounded-sm hover:bg-gray-100 transition-colors ${lang === 'np' ? 'font-nepali' : ''}`}
+            className={`inline-block bg-white text-sky font-bold px-8 py-3 rounded-sm hover:bg-gray-100 transition-colors ${lang === 'np' ? 'font-nepali' : ''}`}
           >
             {t('Contact Us', 'सम्पर्क गर्नुहोस्')}
           </Link>

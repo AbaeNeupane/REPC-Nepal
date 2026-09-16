@@ -171,7 +171,7 @@ const ScrollToTop = () => {
 ───────────────────────────────────────────────────────────── */
 const NotFound = () => (
   <div className="flex flex-col items-center justify-center py-28 text-center px-4">
-    <div className="w-20 h-1 bg-redc mx-auto mb-8 rounded" />
+    <div className="w-20 h-1 bg-sky mx-auto mb-8 rounded" />
     <h1 className="text-7xl font-bold text-navy mb-2">404</h1>
     <p className="text-gray-400 text-lg mb-8">Page not found</p>
     <Link to="/" className="btn-primary">← Back to Home</Link>

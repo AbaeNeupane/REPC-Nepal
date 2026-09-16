@@ -19,7 +19,7 @@ const PageBanner = ({ titleEn, titleNp }) => {
         <h1 className={`text-2xl md:text-3xl font-bold ${lang === 'np' ? 'font-nepali' : ''}`}>
           {lang === 'en' ? titleEn : titleNp}
         </h1>
-        <div className="w-12 h-1 bg-redc mt-3 rounded" />
+        <div className="w-12 h-1 bg-sky mt-3 rounded" />
       </div>
     </div>
   );
@@ -43,7 +43,7 @@ const Support = () => {
 
         {/* Why it matters */}
         <section className="mb-12 text-center max-w-3xl mx-auto">
-          <FaHandHoldingHeart className="text-redc mx-auto mb-4" size={34} />
+          <FaHandHoldingHeart className="text-sky mx-auto mb-4" size={34} />
           <h2 className={`text-xl font-bold text-navy mb-3 ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t('Your Support Makes a Difference', 'तपाईंको सहयोगले फरक पार्छ')}
           </h2>
@@ -85,7 +85,7 @@ const Support = () => {
         {/* Bank details */}
         <section className="mb-12">
           <h2 className={`text-xl font-bold text-navy mb-5 flex items-center gap-2 ${lang === 'np' ? 'font-nepali' : ''}`}>
-            <FaFileInvoiceDollar className="text-redc" /> {t('Bank Transfer Details', 'बैंक स्थानान्तरण विवरण')}
+            <FaFileInvoiceDollar className="text-sky" /> {t('Bank Transfer Details', 'बैंक स्थानान्तरण विवरण')}
           </h2>
           <div className="bg-white border border-gray-200 rounded-sm shadow-sm overflow-hidden">
             <table className="w-full text-sm">
@@ -121,7 +121,7 @@ const Support = () => {
             {t('Talk to us about membership, partnerships, or large donations.', 'सदस्यता, साझेदारी, वा ठूला दानबारे हामीसँग कुरा गर्नुहोस्।')}
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
-            <Link to="/membership" className="btn-primary bg-redc hover:bg-redc-dark">
+            <Link to="/membership" className="btn-primary bg-sky hover:bg-sky-dark">
               <FaIdCard className="inline mr-2" size={13} /> {t('Become a Member', 'सदस्य बन्नुहोस्')}
             </Link>
             <a

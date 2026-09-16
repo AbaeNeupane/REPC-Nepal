@@ -17,7 +17,7 @@ const PageBanner = ({ titleEn, titleNp }) => {
         <h1 className={`text-2xl md:text-3xl font-bold ${lang === 'np' ? 'font-nepali' : ''}`}>
           {lang === 'en' ? titleEn : titleNp}
         </h1>
-        <div className="w-12 h-1 bg-redc mt-3 rounded" />
+        <div className="w-12 h-1 bg-sky mt-3 rounded" />
       </div>
     </div>
   );
@@ -25,18 +25,19 @@ const PageBanner = ({ titleEn, titleNp }) => {
 
 const toNepaliDigits = value => String(value).replace(/[0-9]/g, digit => '०१२३४५६७८९'[digit]);
 
-const TeamBioModal = ({ member, onClose }) => {
+const TeamBioModal = ({ member, position, onClose }) => {
   const { lang, t } = useLang();
   const bio = lang === 'en' ? member.bioEn : member.bioNp;
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4"
+      className="absolute z-50 flex w-[min(40rem,calc(100vw-2rem))]"
+      style={{ top: `${position.top}px`, left: `${position.left}px` }}
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-sm shadow-2xl max-w-md w-full overflow-hidden animate-scaleIn"
-        onClick={e => e.stopPropagation()}
+        className="bg-white rounded-sm shadow-2xl w-full max-h-[calc(100vh-2rem)] overflow-y-auto animate-scaleIn"
+        onClick={event => event.stopPropagation()}
       >
         <div className="bg-navy px-5 py-4 flex items-center justify-between">
           <h2 className={`text-white font-bold ${lang === 'np' ? 'font-nepali' : ''}`}>
@@ -68,7 +69,7 @@ const TeamBioModal = ({ member, onClose }) => {
           <h3 className={`font-bold text-navy text-lg mt-4 ${lang === 'np' ? 'font-nepali' : ''}`}>
             {lang === 'en' ? member.nameEn : member.nameNp}
           </h3>
-          <p className={`text-redc text-sm font-semibold mt-1 ${lang === 'np' ? 'font-nepali' : ''}`}>
+          <p className={`text-sky text-sm font-semibold mt-1 ${lang === 'np' ? 'font-nepali' : ''}`}>
             {lang === 'en' ? member.positionEn : member.positionNp}
           </p>
 
@@ -105,6 +106,29 @@ const TeamBioModal = ({ member, onClose }) => {
 const About = () => {
   const { lang, t } = useLang();
   const [selectedMember, setSelectedMember] = useState(null);
+  const [modalPosition, setModalPosition] = useState({ top: 0, left: 0 });
+
+  const openMemberBio = (event, member) => {
+    const card = event.currentTarget.getBoundingClientRect();
+    const panelWidth = Math.min(640, window.innerWidth - 32);
+    const panelHeight = Math.min(560, window.innerHeight - 32);
+    const viewportLeft = Math.min(
+      Math.max(card.left + (card.width - panelWidth) / 2, 16),
+      window.innerWidth - panelWidth - 16,
+    );
+    const viewportTop = Math.min(
+      Math.max(card.top + (card.height - panelHeight) / 2, 16),
+      window.innerHeight - panelHeight - 16,
+    );
+
+    setModalPosition({
+      top: viewportTop - card.top,
+      left: viewportLeft - card.left,
+    });
+    setSelectedMember(member);
+  };
+
+  const closeMemberBio = () => setSelectedMember(null);
 
   return (
     <div>
@@ -115,7 +139,7 @@ const About = () => {
         {/* Introduction */}
         <section className="mb-12">
           <h2 className={`text-xl font-bold text-navy mb-4 flex items-center gap-2 ${lang === 'np' ? 'font-nepali' : ''}`}>
-            <FaBuilding className="text-redc" /> {t('Introduction', 'परिचय')}
+            <FaBuilding className="text-sky" /> {t('Introduction', 'परिचय')}
           </h2>
           <div className="bg-white border border-gray-200 rounded-sm shadow-sm p-6">
             <div className={`text-gray-700 leading-relaxed whitespace-pre-line ${lang === 'np' ? 'font-nepali text-base' : 'text-sm'}`}>
@@ -125,19 +149,19 @@ const About = () => {
             {/* Key Info */}
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-gray-100">
               <div className="text-center">
-                <p className={`text-2xl font-bold text-redc ${lang === 'np' ? 'font-nepali' : ''}`}>
+                <p className={`text-2xl font-bold text-sky ${lang === 'np' ? 'font-nepali' : ''}`}>
                   {lang === 'np' ? toNepaliDigits(2083) : '2083'}
                 </p>
                 <p className={`text-sm text-gray-500 mt-1 ${lang === 'np' ? 'font-nepali' : ''}`}>{t('Established (B.S.)', 'स्थापना (वि.सं.)')}</p>
               </div>
               <div className="text-center">
-                <p className={`text-2xl font-bold text-redc ${lang === 'np' ? 'font-nepali' : ''}`}>
+                <p className={`text-2xl font-bold text-sky ${lang === 'np' ? 'font-nepali' : ''}`}>
                   {t('Kathmandu', 'काठमाडौं')}
                 </p>
                 <p className={`text-sm text-gray-500 mt-1 ${lang === 'np' ? 'font-nepali' : ''}`}>{t('Headquarters', 'मुख्यालय')}</p>
               </div>
               <div className="text-center">
-                <p className={`text-2xl font-bold text-redc ${lang === 'np' ? 'font-nepali' : ''}`}>
+                <p className={`text-2xl font-bold text-sky ${lang === 'np' ? 'font-nepali' : ''}`}>
                   {lang === 'np' ? toNepaliDigits(9) : '9'}
                 </p>
                 <p className={`text-sm text-gray-500 mt-1 ${lang === 'np' ? 'font-nepali' : ''}`}>{t('Executive Members', 'कार्य समिति सदस्य')}</p>
@@ -165,7 +189,7 @@ const About = () => {
             </div>
             {/* Vision */}
             <div className="bg-white border border-gray-200 rounded-sm shadow-sm overflow-hidden">
-              <div className="bg-redc p-4 flex items-center gap-2">
+              <div className="bg-sky p-4 flex items-center gap-2">
                 <FaEye className="text-white" />
                 <h2 className={`text-white font-bold ${lang === 'np' ? 'font-nepali' : ''}`}>
                   {t('Our Vision', 'हाम्रो दृष्टि')}
@@ -208,49 +232,56 @@ const About = () => {
           <h2 className={`text-xl font-bold text-navy mb-4 ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t('Executive Committee', 'कार्य समिति')}
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {team.map((member) => (
               <div
                 key={member.id}
-                onClick={() => setSelectedMember(member)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={e => e.key === 'Enter' && setSelectedMember(member)}
-                className="bg-white border border-gray-200 rounded-sm shadow-sm overflow-hidden hover:shadow-md hover:border-navy/30 transition-all cursor-pointer"
+                className="relative min-w-0"
               >
-                <div className="bg-navy/5 p-5 flex justify-center">
-                  {member.photo ? (
-                    <img src={member.photo} alt={member.nameEn}
-                      className="w-20 h-20 rounded-full object-cover border-4 border-white shadow"
-                      onError={e => { e.target.style.display='none'; e.target.nextSibling.style.display='flex'; }}
-                    />
-                  ) : null}
-                  {(!member.photo) && (
-                    <div className="w-20 h-20 rounded-full bg-navy/20 flex items-center justify-center border-4 border-white shadow">
-                      <FaUserCircle className="text-navy/50" size={44} />
+                <div
+                  onClick={event => openMemberBio(event, member)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={event => event.key === 'Enter' && openMemberBio(event, member)}
+                  className="bg-white border border-gray-200 rounded-sm shadow-sm overflow-hidden hover:shadow-md hover:border-navy/30 transition-all cursor-pointer"
+                >
+                    <div className="bg-navy/5 p-5 flex justify-center">
+                      {member.photo ? (
+                        <img src={member.photo} alt={member.nameEn}
+                          className="w-24 h-24 rounded-full object-cover border-4 border-white shadow"
+                          onError={e => { e.target.style.display='none'; e.target.nextSibling.style.display='flex'; }}
+                        />
+                      ) : null}
+                      {(!member.photo) && (
+                        <div className="w-24 h-24 rounded-full bg-navy/20 flex items-center justify-center border-4 border-white shadow">
+                          <FaUserCircle className="text-navy/50" size={52} />
+                        </div>
+                      )}
                     </div>
-                  )}
+                    <div className="p-6 text-center">
+                      <h3 className={`font-bold text-navy text-base ${lang === 'np' ? 'font-nepali' : ''}`}>
+                        {lang === 'en' ? member.nameEn : member.nameNp}
+                      </h3>
+                      <p className={`text-sky text-xs font-semibold mt-1 ${lang === 'np' ? 'font-nepali' : ''}`}>
+                        {lang === 'en' ? member.positionEn : member.positionNp}
+                      </p>
+                      <div className="mt-3 flex items-center justify-center gap-3">
+                        {member.phone && (
+                          <a href={`tel:${member.phone}`} onClick={e => e.stopPropagation()} className="text-gray-400 hover:text-navy transition-colors" aria-label="Phone">
+                            <FaPhone size={13} />
+                          </a>
+                        )}
+                        {member.email && (
+                          <a href={`mailto:${member.email}`} onClick={e => e.stopPropagation()} className="text-gray-400 hover:text-navy transition-colors" aria-label="Email">
+                            <FaEnvelope size={13} />
+                          </a>
+                        )}
+                      </div>
+                    </div>
                 </div>
-                <div className="p-4 text-center">
-                  <h3 className={`font-bold text-navy text-sm ${lang === 'np' ? 'font-nepali' : ''}`}>
-                    {lang === 'en' ? member.nameEn : member.nameNp}
-                  </h3>
-                  <p className={`text-redc text-xs font-semibold mt-1 ${lang === 'np' ? 'font-nepali' : ''}`}>
-                    {lang === 'en' ? member.positionEn : member.positionNp}
-                  </p>
-                  <div className="mt-3 flex items-center justify-center gap-3">
-                    {member.phone && (
-                      <a href={`tel:${member.phone}`} onClick={e => e.stopPropagation()} className="text-gray-400 hover:text-navy transition-colors" aria-label="Phone">
-                        <FaPhone size={13} />
-                      </a>
-                    )}
-                    {member.email && (
-                      <a href={`mailto:${member.email}`} onClick={e => e.stopPropagation()} className="text-gray-400 hover:text-navy transition-colors" aria-label="Email">
-                        <FaEnvelope size={13} />
-                      </a>
-                    )}
-                  </div>
-                </div>
+                {selectedMember?.id === member.id && (
+                  <TeamBioModal member={member} position={modalPosition} onClose={closeMemberBio} />
+                )}
               </div>
             ))}
           </div>
@@ -267,7 +298,7 @@ const About = () => {
                 {t('General Assembly', 'साधारण सभा')}
               </div>
               <div className="w-px h-8 bg-gray-300" />
-              <div className="bg-redc text-white text-sm font-semibold px-8 py-3 rounded-sm shadow text-center min-w-[220px]">
+              <div className="bg-sky text-white text-sm font-semibold px-8 py-3 rounded-sm shadow text-center min-w-[220px]">
                 {t('Executive Committee', 'कार्य समिति')}
               </div>
               <div className="w-px h-8 bg-gray-300" />
@@ -282,6 +313,7 @@ const About = () => {
               <div className="bg-gray-100 border border-gray-300 text-gray-700 text-sm font-medium px-8 py-3 rounded-sm text-center min-w-[220px]">
                 {t('Sub-Committees & Members', 'उपसमितिहरू र सदस्यहरू')}
               </div>
+
             </div>
             <p className={`text-xs text-gray-400 text-center pb-5 ${lang === 'np' ? 'font-nepali' : ''}`}>
               {t('Registered under Association Registration Act 2034 · Affiliated with Samaj Kalyan Parishad',
@@ -340,8 +372,13 @@ const About = () => {
       </div>
 
       {selectedMember && (
-        <TeamBioModal member={selectedMember} onClose={() => setSelectedMember(null)} />
+        <div
+          className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm"
+          onClick={closeMemberBio}
+          aria-hidden="true"
+        />
       )}
+
     </div>
   );
 };

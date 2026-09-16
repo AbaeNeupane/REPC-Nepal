@@ -24,7 +24,7 @@ const NoticeItem = ({ item }) => {
   return (
     <div className="group rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-all duration-200 hover:border-navy/30 hover:bg-white hover:shadow-[0_12px_30px_rgba(15,23,42,0.06)]">
       <div className="flex items-start gap-3">
-        <div className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-redc/10 text-redc">
+        <div className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-sky/10 text-sky">
           <FaCalendarAlt size={12} />
         </div>
 
@@ -42,7 +42,7 @@ const NoticeItem = ({ item }) => {
             href={item.downloadUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-1 shrink-0 text-navy transition-colors hover:text-redc"
+            className="mt-1 shrink-0 text-navy transition-colors hover:text-sky"
             aria-label="Download"
             onClick={e => e.stopPropagation()}
           >
@@ -92,7 +92,7 @@ const NoticesSection = () => {
       <div className="border-t border-slate-200 bg-slate-50 px-5 py-4">
         <Link
           to="/notices"
-          className={`inline-flex items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-redc ${lang === 'np' ? 'font-nepali' : ''}`}
+          className={`inline-flex items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-sky ${lang === 'np' ? 'font-nepali' : ''}`}
         >
           {t('View All', 'सबै हेर्नुहोस्')} <FaArrowRight size={10} />
         </Link>

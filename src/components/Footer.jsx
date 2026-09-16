@@ -46,15 +46,15 @@ const Footer = () => {
           {/* Social links */}
           <div className="flex items-center gap-3">
             <a href={siteInfo.facebook} target="_blank" rel="noopener noreferrer"
-               className="w-8 h-8 rounded-full bg-white/10 hover:bg-redc flex items-center justify-center transition-colors" aria-label="Facebook">
+               className="w-8 h-8 rounded-full bg-white/10 hover:bg-sky flex items-center justify-center transition-colors" aria-label="Facebook">
               <FaFacebook size={14} />
             </a>
             <a href={siteInfo.twitter} target="_blank" rel="noopener noreferrer"
-               className="w-8 h-8 rounded-full bg-white/10 hover:bg-redc flex items-center justify-center transition-colors" aria-label="Twitter">
+               className="w-8 h-8 rounded-full bg-white/10 hover:bg-sky flex items-center justify-center transition-colors" aria-label="Twitter">
               <FaTwitter size={14} />
             </a>
             <a href={siteInfo.youtube} target="_blank" rel="noopener noreferrer"
-               className="w-8 h-8 rounded-full bg-white/10 hover:bg-redc flex items-center justify-center transition-colors" aria-label="YouTube">
+               className="w-8 h-8 rounded-full bg-white/10 hover:bg-sky flex items-center justify-center transition-colors" aria-label="YouTube">
               <FaYoutube size={14} />
             </a>
             <a href={`https://wa.me/${siteInfo.whatsapp}`} target="_blank" rel="noopener noreferrer"
@@ -86,7 +86,7 @@ const Footer = () => {
               <li key={i}>
                 <Link to={l.to}
                   className={`text-white/70 hover:text-white text-xs flex items-center gap-1.5 transition-colors ${lang === 'np' ? 'font-nepali' : ''}`}>
-                  <span className="text-redc">›</span> {lang === 'en' ? l.en : l.np}
+                  <span className="text-sky">›</span> {lang === 'en' ? l.en : l.np}
                 </Link>
               </li>
             ))}
@@ -103,7 +103,7 @@ const Footer = () => {
               <li key={i}>
                 <a href={l.url} target="_blank" rel="noopener noreferrer"
                   className={`text-white/70 hover:text-white text-xs flex items-start gap-1.5 transition-colors leading-snug ${lang === 'np' ? 'font-nepali' : ''}`}>
-                  <span className="text-redc shrink-0 mt-0.5">›</span>
+                  <span className="text-sky shrink-0 mt-0.5">›</span>
                   {lang === 'en' ? l.en : l.np}
                 </a>
               </li>
@@ -118,19 +118,19 @@ const Footer = () => {
           </h3>
           <ul className="space-y-3">
             <li className="flex items-start gap-2.5">
-              <FaMapMarkerAlt className="text-redc shrink-0 mt-0.5" size={12} />
+              <FaMapMarkerAlt className="text-sky shrink-0 mt-0.5" size={12} />
               <span className={`text-white/70 text-xs leading-relaxed ${lang === 'np' ? 'font-nepali' : ''}`}>
                 {lang === 'en' ? siteInfo.addressEn : siteInfo.addressNp}
               </span>
             </li>
             <li className="flex items-center gap-2.5">
-              <FaPhone className="text-redc shrink-0" size={11} />
+              <FaPhone className="text-sky shrink-0" size={11} />
               <a href={`tel:${siteInfo.phone}`} className="text-white/70 hover:text-white text-xs transition-colors">
                 {siteInfo.phone}
               </a>
             </li>
             <li className="flex items-center gap-2.5">
-              <FaEnvelope className="text-redc shrink-0" size={11} />
+              <FaEnvelope className="text-sky shrink-0" size={11} />
               <a href={`mailto:${siteInfo.email}`} className="text-white/70 hover:text-white text-xs transition-colors">
                 {siteInfo.email}
               </a>
@@ -140,7 +140,7 @@ const Footer = () => {
           {/* Office Hours */}
           <div className="mt-5 p-3 bg-white/5 rounded-sm border border-white/10">
             <div className="flex items-center gap-2 mb-2">
-              <FaClock className="text-amber" size={12} />
+              <FaClock className="text-sky" size={12} />
               <p className={`text-white text-xs font-semibold ${lang === 'np' ? 'font-nepali' : ''}`}>
                 {t('Office Hours', 'कार्यालय समय')}
               </p>

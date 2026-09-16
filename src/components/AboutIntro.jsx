@@ -14,7 +14,7 @@ const AboutIntro = () => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid items-center gap-8 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="rounded-[30px] border border-slate-200 bg-white p-6 shadow-[0_20px_50px_rgba(15,23,42,0.05)] md:p-8">
-            <div className="inline-flex items-center gap-2 rounded-full bg-redc/10 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-redc">
+            <div className="inline-flex items-center gap-2 rounded-full bg-sky/10 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-sky">
               <FaCompass size={12} />
               {t('Our mission', 'हाम्रो उद्देश्य')}
             </div>
@@ -23,7 +23,7 @@ const AboutIntro = () => {
               {t('A just society begins with peaceful dialogue.', 'न्यायपूर्ण समाज शान्तिपूर्ण संवादबाट सुरु हुन्छ।')}
             </h2>
 
-            <div className="mt-5 h-1 w-20 rounded-full bg-redc" />
+            <div className="mt-5 h-1 w-20 rounded-full bg-sky" />
 
             <p className={`mt-6 text-base leading-relaxed text-gray-600 md:text-lg ${lang === 'np' ? 'font-nepali' : ''}`}>
               {t('We support communities in resolving conflict through rights-based, people-centered, and sustainable solutions.', 'हामी समुदायलाई अधिकार-आधारित, जनकेन्द्रित र दिगो समाधानद्वारा विवाद समाधानमा सहयोग गर्छौं।')}
@@ -31,7 +31,7 @@ const AboutIntro = () => {
 
             <div className="mt-7 grid gap-3 sm:grid-cols-2">
               <div className="rounded-2xl bg-slate-50 p-4">
-                <FaHeart className="text-redc" />
+                <FaHeart className="text-sky" />
                 <p className={`mt-3 text-sm font-semibold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
                   {t('Human rights', 'मानव अधिकार')}
                 </p>
@@ -53,7 +53,7 @@ const AboutIntro = () => {
 
             <Link
               to="/about"
-              className={`mt-8 inline-flex items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-redc ${lang === 'np' ? 'font-nepali' : ''}`}
+              className={`mt-8 inline-flex items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-sky ${lang === 'np' ? 'font-nepali' : ''}`}
             >
               {t('Learn more about us', 'हाम्रोबारे थप जान्नुहोस्')} <FaArrowRight size={11} />
             </Link>

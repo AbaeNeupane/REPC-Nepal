@@ -16,7 +16,7 @@ const PageBanner = ({ titleEn, titleNp }) => {
         <h1 className={`text-2xl md:text-3xl font-bold ${lang === 'np' ? 'font-nepali' : ''}`}>
           {lang === 'en' ? titleEn : titleNp}
         </h1>
-        <div className="w-12 h-1 bg-redc mt-3 rounded" />
+        <div className="w-12 h-1 bg-sky mt-3 rounded" />
       </div>
     </div>
   );
@@ -25,14 +25,14 @@ const PageBanner = ({ titleEn, titleNp }) => {
 // Replace `src: null` with real image paths like '/images/gallery/img1.jpg'
 const galleryItems = [
   { id: 1, src: '/images/gallery/milestone/cdo-registration.jpeg', altEn: 'Registered with the Chief District Officer, Kathmandu, on 4 Bhadra 2083. The registration certificate was issued by the District Administration Office.', altNp: 'जिल्ला प्रशासन कार्यालय काठमाडौंमा संस्था दर्ता गरेपश्चात् प्रमुख जिल्ला अधिकारी ईश्वर राज पौडेलबाट संस्था दर्ता प्रमाणपत्र ग्रहण गर्दै अधिकार, समता र शान्ति अभियान–नेपालकी अध्यक्ष अधिवक्ता शुशिला सिंखडा।', color: 'from-navy to-navy-light', categoryEn: 'Milestone', categoryNp: 'उपलब्धि' },
-  { id: 2, src: null, altEn: 'Mediation Workshop 2083', altNp: 'मेलमिलाप कार्यशाला २०८३', color: 'from-redc to-redc-light', categoryEn: 'Workshop', categoryNp: 'कार्यशाला' },
+  { id: 2, src: null, altEn: 'Mediation Workshop 2083', altNp: 'मेलमिलाप कार्यशाला २०८३', color: 'from-sky to-sky-light', categoryEn: 'Workshop', categoryNp: 'कार्यशाला' },
   { id: 3, src: null, altEn: 'Community Awareness Program', altNp: 'सामुदायिक सचेतना कार्यक्रम', color: 'from-slate-600 to-slate-500', categoryEn: 'Awareness', categoryNp: 'सचेतना' },
-  { id: 4, src: null, altEn: 'Free Legal Aid Camp', altNp: 'निःशुल्क कानुनी सहायता शिविर', color: 'from-amber-600 to-amber-500', categoryEn: 'Legal Aid', categoryNp: 'कानुनी सहायता' },
-  { id: 5, src: null, altEn: 'Peace Campaign 2083', altNp: 'शान्ति अभियान २०८३', color: 'from-green-700 to-green-600', categoryEn: 'Campaign', categoryNp: 'अभियान' },
-  { id: 6, src: null, altEn: 'Annual General Meeting 2083', altNp: 'वार्षिक साधारण सभा २०८३', color: 'from-purple-700 to-purple-600', categoryEn: 'Meeting', categoryNp: 'सभा' },
-  { id: 7, src: null, altEn: 'Child Rights Awareness Event', altNp: 'बाल अधिकार सचेतना कार्यक्रम', color: 'from-teal-700 to-teal-600', categoryEn: 'Event', categoryNp: 'कार्यक्रम' },
-  { id: 8, src: null, altEn: 'Women Empowerment Program', altNp: 'महिला सशक्तिकरण कार्यक्रम', color: 'from-rose-700 to-rose-600', categoryEn: 'Program', categoryNp: 'कार्यक्रम' },
-  { id: 9, src: null, altEn: 'Mediation Center Launch', altNp: 'मेलमिलाप केन्द्र उद्घाटन', color: 'from-indigo-700 to-indigo-600', categoryEn: 'Launch', categoryNp: 'उद्घाटन' },
+  { id: 4, src: null, altEn: 'Free Legal Aid Camp', altNp: 'निःशुल्क कानुनी सहायता शिविर', color: 'from-blue-600 to-blue-500', categoryEn: 'Legal Aid', categoryNp: 'कानुनी सहायता' },
+  { id: 5, src: null, altEn: 'Peace Campaign 2083', altNp: 'शान्ति अभियान २०८३', color: 'from-cyan-700 to-cyan-600', categoryEn: 'Campaign', categoryNp: 'अभियान' },
+  { id: 6, src: null, altEn: 'Annual General Meeting 2083', altNp: 'वार्षिक साधारण सभा २०८३', color: 'from-blue-800 to-blue-700', categoryEn: 'Meeting', categoryNp: 'सभा' },
+  { id: 7, src: null, altEn: 'Child Rights Awareness Event', altNp: 'बाल अधिकार सचेतना कार्यक्रम', color: 'from-sky-700 to-sky-600', categoryEn: 'Event', categoryNp: 'कार्यक्रम' },
+  { id: 8, src: null, altEn: 'Women Empowerment Program', altNp: 'महिला सशक्तिकरण कार्यक्रम', color: 'from-slate-700 to-slate-600', categoryEn: 'Program', categoryNp: 'कार्यक्रम' },
+  { id: 9, src: null, altEn: 'Mediation Center Launch', altNp: 'मेलमिलाप केन्द्र उद्घाटन', color: 'from-blue-900 to-blue-800', categoryEn: 'Launch', categoryNp: 'उद्घाटन' },
 ];
 
 const Gallery = () => {
