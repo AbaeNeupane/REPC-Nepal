@@ -1,6 +1,6 @@
 <div align="center">
 
-# अधिकार, समता र शान्ति अधियान, नेपाल
+# अधिकार, समता र शान्ति अभियान - नेपाल
 ## Rights, Equity and Peace Campaign – Nepal
 
 ### *"Respect in Equity, Life in Peace"*
