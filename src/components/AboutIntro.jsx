@@ -177,7 +177,7 @@ const AboutIntro = () => {
                 className={`mt-5 inline-flex items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-sky ${lang === 'np' ? 'font-nepali' : ''}`}
               >
                 {showAllObjectives
-                  ? t('See less', 'कम हेर्नुहोस्')
+                  ? t('See less', 'थोरै')
                   : t('See more', 'थप हेर्नुहोस्')}
                 <FaChevronDown className={`transition-transform duration-300 ${showAllObjectives ? 'rotate-180' : ''}`} size={11} />
               </button>
