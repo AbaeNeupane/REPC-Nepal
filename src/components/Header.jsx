@@ -129,19 +129,23 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
 
         {/* Left: Emblem + Org Name */}
         <Link to="/" className="flex items-center gap-2 sm:gap-3 min-w-0">
-          {/* Emblem placeholder — replace public/emblem.png with real logo */}
+          
+          {/* UPDATED: Dynamic Emblem based on language */}
           <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 shrink-0 flex items-center justify-center">
             <img
-              src="/emblem.png"
+              key={lang} // CRITICAL: Forces React to reset the image element when language changes
+              src={lang === 'np' ? '/emblem.png' : '/emblem.jpeg'}
               alt="REPC-Nepal Logo"
               className="w-full h-full object-contain"
               onError={(e) => {
                 // Fallback emblem if image not found
                 e.target.style.display = 'none';
-                e.target.nextSibling.style.display = 'flex';
+                if (e.target.nextSibling) {
+                  e.target.nextSibling.style.display = 'flex';
+                }
               }}
             />
-            {/* SVG Fallback Emblem */}
+            {/* Fallback Emblem */}
             <div
               className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full border-4 border-navy bg-navy hidden items-center justify-center"
               aria-label="REPC-Nepal Logo Placeholder"
@@ -163,7 +167,7 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
           </div>
         </Link>
 
-        {/*Language Toggle + Search */}
+        {/* Language Toggle + Search */}
         <div className="flex items-center justify-end gap-2 sm:gap-3 shrink-0">
 
           {/* Support CTA */}
