@@ -332,7 +332,7 @@ export const team = [
   {
     id: 3,
     nameEn: ' Tika Ram Pokharel ',
-    nameNp: ' तिकराम पोखरेल',
+    nameNp: 'टिकाराम पोखरेल',
     positionEn: 'Secretary',
     positionNp: 'सचिव',
     phone: '+977 9841205729',
