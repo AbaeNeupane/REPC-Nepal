@@ -1,7 +1,8 @@
+import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import { about } from '../data/siteContent';
-import { FaArrowRight, FaBullseye, FaCompass, FaEye, FaHeart, FaUsers } from 'react-icons/fa';
+import { FaArrowRight, FaBullseye, FaChevronDown, FaCompass, FaEye, FaHeart, FaUsers } from 'react-icons/fa';
 
 const objectives = [
   {
@@ -60,6 +61,34 @@ const objectives = [
 
 const AboutIntro = () => {
   const { lang, t } = useLang();
+  const [showAllObjectives, setShowAllObjectives] = useState(false);
+  const fifthObjectiveRef = useRef(null);
+  const objectiveItem = (objective, index) => (
+    <li
+      key={index}
+      ref={index === 4 ? fifthObjectiveRef : null}
+      className={`list-disc ml-5 text-justify text-sm leading-relaxed text-gray-700 ${lang === 'np' ? 'font-nepali text-base' : ''}`}
+    >
+      {lang === 'en' ? objective.en : objective.np}
+    </li>
+  );
+
+  const toggleObjectives = () => {
+    if (showAllObjectives) {
+      setShowAllObjectives(false);
+      requestAnimationFrame(() => {
+        const objectiveTop = fifthObjectiveRef.current?.getBoundingClientRect().top;
+        if (objectiveTop === undefined) return;
+        window.scrollTo({
+          top: window.scrollY + objectiveTop - 112,
+          behavior: 'smooth',
+        });
+      });
+      return;
+    }
+
+    setShowAllObjectives(true);
+  };
 
   return (
     <section className="bg-gradient-to-b from-white to-slate-50 py-10 sm:py-12 lg:py-16">
@@ -131,12 +160,27 @@ const AboutIntro = () => {
                 {t('Our Objectives', 'हाम्रा उद्देश्यहरू')}
               </h3>
               <ul className="mt-4 grid gap-3 md:grid-cols-2 md:gap-x-8">
-                {objectives.map((objective, index) => (
-                  <li key={index} className={`list-disc ml-5 text-justify text-sm leading-relaxed text-gray-700 ${lang === 'np' ? 'font-nepali text-base' : ''}`}>
-                    {lang === 'en' ? objective.en : objective.np}
-                  </li>
-                ))}
+                {objectives.slice(0, 4).map(objectiveItem)}
               </ul>
+              <div
+                className={`grid overflow-hidden transition-all duration-500 ease-in-out ${showAllObjectives ? 'mt-3 max-h-[1600px] translate-y-0 opacity-100' : 'max-h-0 translate-y-[-8px] opacity-0'}`}
+                aria-hidden={!showAllObjectives}
+              >
+                <ul className="grid gap-3 md:grid-cols-2 md:gap-x-8">
+                  {objectives.slice(4).map((objective, index) => objectiveItem(objective, index + 4))}
+                </ul>
+              </div>
+              <button
+                type="button"
+                onClick={toggleObjectives}
+                aria-expanded={showAllObjectives}
+                className={`mt-5 inline-flex items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-sky ${lang === 'np' ? 'font-nepali' : ''}`}
+              >
+                {showAllObjectives
+                  ? t('See less', 'कम हेर्नुहोस्')
+                  : t('See more', 'थप हेर्नुहोस्')}
+                <FaChevronDown className={`transition-transform duration-300 ${showAllObjectives ? 'rotate-180' : ''}`} size={11} />
+              </button>
             </div>
 
             <Link
