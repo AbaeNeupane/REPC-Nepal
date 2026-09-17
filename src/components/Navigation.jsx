@@ -17,15 +17,9 @@ const navItems = [
   {
     en: 'Services', np: 'सेवाहरू', link: '/services',
     children: [
-      { en: 'Mediation',        np: 'मेलमिलाप',      link: '/services#mediation' },
-      { en: 'Arbitration',      np: 'मध्यस्थता',      link: '/services#arbitration' },
-      { en: 'Negotiation',      np: 'वार्ता',          link: '/services#negotiation' },
-      { en: 'Reconciliation and Dialogue', np: 'पुनर्मिलन तथा संवाद', link: '/services#reconciliation' },
-      { en: 'Community Peacebuilding', np: 'सामुदायिक शान्ति निर्माण', link: '/services#community-peacebuilding' },
-      { en: 'Rights and Legal Awareness', np: 'अधिकार तथा कानुनी सचेतना', link: '/services#rights-awareness' },
-      { en: 'Legal Aid and Access to Justice', np: 'कानुनी सहायता तथा न्यायमा पहुँच', link: '/services#legal-aid' },
-      { en: 'Legal Drafting', np: 'कानुनी मस्यौदा', link: '/services#legal-drafting' },
-      { en: 'All Services',     np: 'सबै सेवाहरू',    link: '/services' },
+      { en: 'Peace, Mediation, and Awareness',        np: 'शान्ति, मेलमिलाप तथा सचेतना',      link: '/services#mediation' },
+      { en: 'Legal, Training, Research, and Cooperation', np: 'कानुनी सेवा, तालिम, अनुसन्धान तथा सहकार्य', link: '/services#legal-aid' },
+      
     ],
   },
   { en: 'Programs', np: 'कार्यक्रमहरू', link: '/programs' },
