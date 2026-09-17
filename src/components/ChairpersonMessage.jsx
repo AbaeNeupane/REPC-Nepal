@@ -11,7 +11,7 @@ const ChairpersonMessage = () => {
       <div className="max-w-4xl mx-auto px-4">
         <div className="border-l-4 border-sky bg-slate-50 px-5 py-6 sm:px-8 sm:py-8">
           <FaQuoteLeft className="mb-4 text-sky/70" size={22} />
-          <p className={`text-lg leading-relaxed text-navy sm:text-xl ${lang === 'np' ? 'font-nepali' : ''}`}>
+          <p className={`text-justify text-lg leading-relaxed text-navy sm:text-xl ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t(
               'We believe that lasting peace begins when every person can live with dignity, understand their rights, and access justice. REPC-Nepal is committed to working with communities and institutions to advance human rights, equality, mediation, and peaceful solutions.',
               'दिगो शान्ति त्यतिबेला निर्माण हुन्छ, जब प्रत्येक व्यक्तिले मर्यादापूर्वक जीवनयापन गर्न, आफ्ना अधिकार बुझ्न र न्यायमा पहुँच प्राप्त गर्न सक्छ। मानव अधिकार, समानता, मेलमिलाप तथा शान्तिपूर्ण समाधानका लागि REPC-Nepal समुदाय र सम्बन्धित संस्थाहरूसँग सहकार्य गर्न प्रतिबद्ध छ।'

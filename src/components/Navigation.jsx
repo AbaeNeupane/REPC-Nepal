@@ -6,10 +6,8 @@ import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 const navItems = [
   { en: 'Home', np: 'गृह पृष्ठ', link: '/' },
   {
-    en: 'About Us', np: 'हाम्रोबारे', link: '/about',
+    en: 'Our Organization', np: 'हाम्रो संस्था', link: '/about',
     children: [
-      { en: 'Introduction',        np: 'परिचय',            link: '/about' },
-      { en: 'Mission & Vision',    np: 'लक्ष्य र दृष्टि',   link: '/about#mission' },
       { en: 'Executive Committee', np: 'कार्य समिति',       link: '/about#team' },
       { en: 'Organization Structure', np: 'संस्था संरचना',   link: '/about#structure' },
       { en: 'Organization Information',   np: 'संस्थागत जानकारी',    link: '/about#organization-info' },

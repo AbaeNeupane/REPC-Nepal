@@ -67,7 +67,7 @@ const HighlightsSection = () => {
                   <h3 className={`text-xl font-bold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
                     {lang === 'en' ? item.en : item.np}
                   </h3>
-                  <p className={`mt-3 text-sm leading-relaxed text-gray-600 ${lang === 'np' ? 'font-nepali' : ''}`}>
+                  <p className={`mt-3 text-justify text-sm leading-relaxed text-gray-600 ${lang === 'np' ? 'font-nepali' : ''}`}>
                     {lang === 'en' ? item.descEn : item.descNp}
                   </p>
                 </div>

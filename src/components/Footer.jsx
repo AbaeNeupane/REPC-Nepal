@@ -74,7 +74,7 @@ const Footer = () => {
           <ul className="space-y-2">
             {[
               { en: 'Home', np: 'गृह पृष्ठ', to: '/' },
-              { en: 'About Us', np: 'हाम्रोबारे', to: '/about' },
+              { en: 'Our Organization', np: 'हाम्रो संस्था', to: '/about' },
               { en: 'Our Services', np: 'हाम्रा सेवाहरू', to: '/services' },
               { en: 'Notices', np: 'सूचनाहरू', to: '/notices' },
               { en: 'Programs', np: 'कार्यक्रमहरू', to: '/programs' },

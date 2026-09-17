@@ -7,7 +7,7 @@ import { FaSearch, FaHandHoldingHeart, FaBars, FaTimes } from 'react-icons/fa';
 // Static pages + services + notices, searched by title in either language.
 const staticPages = [
   { titleEn: 'Home', titleNp: 'गृह पृष्ठ', link: '/' },
-  { titleEn: 'About Us', titleNp: 'हाम्रोबारे', link: '/about' },
+  { titleEn: 'Our Organization', titleNp: 'हाम्रो संस्था', link: '/about' },
   { titleEn: 'Services', titleNp: 'सेवाहरू', link: '/services' },
   { titleEn: 'Programs', titleNp: 'कार्यक्रमहरू', link: '/programs' },
   { titleEn: 'Notices', titleNp: 'सूचना', link: '/notices' },

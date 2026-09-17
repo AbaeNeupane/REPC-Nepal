@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
-import { about, team, siteInfo } from '../data/siteContent';
-import { FaUserCircle, FaPhone, FaEnvelope, FaBullseye, FaEye, FaBuilding, FaTimes } from 'react-icons/fa';
+import { team, siteInfo } from '../data/siteContent';
+import { FaUserCircle, FaPhone, FaEnvelope, FaTimes } from 'react-icons/fa';
 
 const PageBanner = ({ titleEn, titleNp }) => {
   const { lang } = useLang();
@@ -88,7 +88,7 @@ const TeamBioModal = ({ member, position, onClose }) => {
 
           <div className="mt-5 pt-5 border-t border-gray-100 text-left">
             {bio ? (
-              <p className={`text-gray-600 text-sm leading-relaxed ${lang === 'np' ? 'font-nepali text-base' : ''}`}>
+              <p className={`text-justify text-gray-600 text-sm leading-relaxed ${lang === 'np' ? 'font-nepali text-base' : ''}`}>
                 {bio}
               </p>
             ) : (
@@ -132,100 +132,9 @@ const About = () => {
 
   return (
     <div>
-      <PageBanner titleEn="About Us" titleNp="हाम्रोबारे" />
+      <PageBanner titleEn="Our Organization" titleNp="हाम्रो संस्था" />
 
       <div className="max-w-7xl mx-auto px-4 py-10">
-
-        {/* Introduction */}
-        <section className="mb-12">
-          <h2 className={`text-xl font-bold text-navy mb-4 flex items-center gap-2 ${lang === 'np' ? 'font-nepali' : ''}`}>
-            <FaBuilding className="text-sky" /> {t('Introduction', 'परिचय')}
-          </h2>
-          <div className="bg-white border border-gray-200 rounded-sm shadow-sm p-6">
-            <div className={`text-gray-700 leading-relaxed whitespace-pre-line ${lang === 'np' ? 'font-nepali text-base' : 'text-sm'}`}>
-              {lang === 'en' ? about.introEn : about.introNp}
-            </div>
-
-            {/* Key Info */}
-            <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-gray-100">
-              <div className="text-center">
-                <p className={`text-2xl font-bold text-sky ${lang === 'np' ? 'font-nepali' : ''}`}>
-                  {lang === 'np' ? toNepaliDigits(2083) : '2083'}
-                </p>
-                <p className={`text-sm text-gray-500 mt-1 ${lang === 'np' ? 'font-nepali' : ''}`}>{t('Established (B.S.)', 'स्थापना (वि.सं.)')}</p>
-              </div>
-              <div className="text-center">
-                <p className={`text-2xl font-bold text-sky ${lang === 'np' ? 'font-nepali' : ''}`}>
-                  {t('Kathmandu', 'काठमाडौं')}
-                </p>
-                <p className={`text-sm text-gray-500 mt-1 ${lang === 'np' ? 'font-nepali' : ''}`}>{t('Headquarters', 'मुख्यालय')}</p>
-              </div>
-              <div className="text-center">
-                <p className={`text-2xl font-bold text-sky ${lang === 'np' ? 'font-nepali' : ''}`}>
-                  {lang === 'np' ? toNepaliDigits(9) : '9'}
-                </p>
-                <p className={`text-sm text-gray-500 mt-1 ${lang === 'np' ? 'font-nepali' : ''}`}>{t('Executive Members', 'कार्य समिति सदस्य')}</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Mission & Vision */}
-        <section id="mission" className="mb-12 scroll-mt-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Mission */}
-            <div className="bg-white border border-gray-200 rounded-sm shadow-sm overflow-hidden">
-              <div className="bg-navy p-4 flex items-center gap-2">
-                <FaBullseye className="text-white" />
-                <h2 className={`text-white font-bold ${lang === 'np' ? 'font-nepali' : ''}`}>
-                  {t('Our Mission', 'हाम्रो लक्ष्य')}
-                </h2>
-              </div>
-              <div className="p-5">
-                <p className={`text-gray-700 leading-relaxed ${lang === 'np' ? 'font-nepali text-base' : 'text-sm'}`}>
-                  {lang === 'en' ? about.missionEn : about.missionNp}
-                </p>
-              </div>
-            </div>
-            {/* Vision */}
-            <div className="bg-white border border-gray-200 rounded-sm shadow-sm overflow-hidden">
-              <div className="bg-sky p-4 flex items-center gap-2">
-                <FaEye className="text-white" />
-                <h2 className={`text-white font-bold ${lang === 'np' ? 'font-nepali' : ''}`}>
-                  {t('Our Vision', 'हाम्रो दृष्टि')}
-                </h2>
-              </div>
-              <div className="p-5">
-                <p className={`text-gray-700 leading-relaxed ${lang === 'np' ? 'font-nepali text-base' : 'text-sm'}`}>
-                  {lang === 'en' ? about.visionEn : about.visionNp}
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Objectives */}
-        <section className="mb-12">
-          <h2 className={`text-xl font-bold text-navy mb-4 ${lang === 'np' ? 'font-nepali' : ''}`}>
-            {t('Our Objectives', 'हाम्रा उद्देश्यहरू')}
-          </h2>
-          <div className="bg-white border border-gray-200 rounded-sm shadow-sm p-6">
-            <ul className="list-disc pl-5 space-y-3">
-              {[
-                { en: 'To protect and promote human rights, child rights, the rights of older persons, and the rights of persons with disabilities.', np: 'मानव अधिकार, बाल अधिकार, ज्येष्ठ नागरिकका अधिकार तथा अपाङ्गता भएका व्यक्तिका अधिकारको संरक्षण र प्रवर्द्धन गर्ने।' },
-                { en: 'To provide legal consultation, mediation, and other legal services to economically disadvantaged groups.', np: 'आर्थिक रूपमा विपन्न समूहलाई कानुनी परामर्श, मेलमिलाप तथा अन्य कानुनी सेवा उपलब्ध गराउने।' },
-                { en: 'To conduct training programs on mediation, human rights, child justice, and cybersecurity.', np: 'मेलमिलाप, मानव अधिकार, बाल न्याय र साइबर सुरक्षासम्बन्धी तालिम कार्यक्रम सञ्चालन गर्ने।' },
-                { en: 'To study the effects of climate change on human life and work to reduce them.', np: 'मानव जीवनमा जलवायु परिवर्तनका प्रभावको अध्ययन गरी तिनको न्यूनीकरणका लागि काम गर्ने।' },
-                { en: 'To expand peace and reconciliation campaigns from the local level to the provincial and national levels.', np: 'शान्ति तथा पुनर्मिलन अभियानलाई स्थानीय तहदेखि प्रदेश र राष्ट्रिय तहसम्म विस्तार गर्ने।' },
-                { en: 'To produce and distribute awareness materials on rights, mediation, child justice, and cybersecurity through appropriate media.', np: 'अधिकार, मेलमिलाप, बाल न्याय र साइबर सुरक्षासम्बन्धी सचेतनामूलक सामग्री तयार गरी उपयुक्त सञ्चार माध्यमबाट वितरण गर्ने।' },
-              ].map((obj, i) => (
-                <li key={i} className={`text-gray-700 text-sm leading-relaxed ${lang === 'np' ? 'font-nepali text-base' : ''}`}>
-                  {lang === 'en' ? obj.en : obj.np}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
 
         {/* Executive Committee */}
         <section id="team" className="mb-12 scroll-mt-20">

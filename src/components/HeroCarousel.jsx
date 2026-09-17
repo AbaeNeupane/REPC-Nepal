@@ -84,7 +84,7 @@ const HeroCarousel = () => {
                   to="/about"
                   className="inline-flex items-center justify-center border border-white/40 bg-white/5 text-white hover:bg-white/10 text-xs sm:text-sm font-semibold px-4 sm:px-6 py-2.5 sm:py-3 rounded-full backdrop-blur-sm transition-all"
                 >
-                  {lang === 'en' ? 'Learn More' : 'थप जान्नुहोस्'}
+                  {lang === 'en' ? 'Our Organization' : 'हाम्रो संस्था'}
                 </Link>
               </div>
 

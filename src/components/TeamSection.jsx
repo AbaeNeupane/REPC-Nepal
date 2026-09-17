@@ -68,7 +68,7 @@ const TeamSection = () => {
           href="/about#team"
           className={`text-xs font-semibold text-navy hover:text-sky transition-colors ${lang === 'np' ? 'font-nepali' : ''}`}
         >
-          {t('View All Members →', 'सबै सदस्यहरू हेर्नुहोस् →')}
+          {t('View Executive Committee →', 'कार्य समिति हेर्नुहोस् →')}
         </a>
       </div>
     </div>
