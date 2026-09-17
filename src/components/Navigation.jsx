@@ -148,20 +148,6 @@ const Navigation = ({ mobileOpen, setMobileOpen }) => {
             </li>
           ))}
         </ul>
-
-        {/* ── Mobile toggle ──────────────────────────────── */}
-        <div className="hidden lg:flex items-center justify-end py-3">
-          <button
-            onClick={() => setMobileOpen(o => !o)}
-            className="text-white p-2.5 rounded-md hover:bg-white/10 transition-colors"
-            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={mobileOpen}
-          >
-            {mobileOpen
-              ? <FaTimes size={18} className="animate-scaleIn" />
-              : <FaBars size={18} />}
-          </button>
-        </div>
       </div>
 
       {/* ── Mobile menu overlay ────────────────────────── */}
