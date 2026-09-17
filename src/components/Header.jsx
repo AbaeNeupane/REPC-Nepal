@@ -125,7 +125,7 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
         </div>
       )}
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-5 lg:px-4 py-3 sm:py-2.5 flex items-center justify-between gap-3 relative z-10">
+      <div className="w-full px-4 sm:px-6 lg:px-8 py-3 sm:py-2.5 flex items-center justify-between gap-3 relative z-10">
 
         {/* Left: Emblem + Org Name */}
         <Link to="/" className="flex items-center gap-2 sm:gap-3 min-w-0">
@@ -136,7 +136,7 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
               key={lang} // CRITICAL: Forces React to reset the image element when language changes
               src={lang === 'np' ? '/emblem.png' : '/emblem.jpeg'}
               alt="REPC-Nepal Logo"
-              className="w-full h-full object-contain"
+              className="w-full h-full object-contain scale-[1.24]"
               onError={(e) => {
                 // Fallback emblem if image not found
                 e.target.style.display = 'none';
