@@ -42,7 +42,7 @@ const programs = [
   {
     titleEn: 'Legal Aid Clinics',
     titleNp: 'कानुनी सहायता क्लिनिक',
-    descEn: 'Regular legal counselling sessions for vulnerable groups, including women, children, older persons, and persons with disabilities.',
+    descEn: 'Regular legal counselling sessions for vulnerable groups, including women, children, older persons, and differently abled person.',
     descNp: 'महिला, बालबालिका, ज्येष्ठ नागरिक र अपाङ्गता भएका व्यक्तिलगायत कमजोर समूहका लागि नियमित कानुनी परामर्श सत्रहरू।',
     statusEn: 'Ongoing',
     statusNp: 'जारी',
@@ -84,11 +84,11 @@ const Programs = () => {
     <div>
       <PageBanner titleEn="Programs & Activities" titleNp="कार्यक्रम तथा गतिविधिहरू" />
 
-      <div className="max-w-7xl mx-auto px-4 py-10">
+      <div className="max-w-7xl mx-auto px-10 py-10 text-justify">
         <p className={`text-gray-600 mb-8 leading-relaxed max-w-3xl ${lang === 'np' ? 'font-nepali text-base' : 'text-sm'}`}>
           {t(
-            'REPC-Nepal runs a variety of programs designed to promote human rights, provide legal aid, train mediators, and build peace at the community and national level.',
-            'REPC-Nepal ले मानव अधिकारको प्रवर्धन, कानुनी सहायता, मेलमिलापकर्ताको तालिम र समुदाय तथा राष्ट्रिय स्तरमा शान्ति निर्माणका लागि विभिन्न कार्यक्रमहरू सञ्चालन गर्दछ।'
+            'At REPC-Nepal, we drive integrated programs dedicated to empowering communities through human rights advocacy, accessible legal counsel, mediator training, and sustainable peacebuilding at both the grassroots and national levels.',
+            'REPC-Nepal ले तृणमूल र राष्ट्रिय दुवै स्तरमा समुदायको सशक्तीकरणलाई केन्द्रविन्दुमा राखी एकीकृत कार्यक्रमहरू सञ्चालन गरिरहेको छ, जसअन्तर्गत मानव अधिकारको वकालत, सुलभ कानुनी परामर्श, मेलमिलापकर्ताहरूको क्षमता अभिवृद्धि र दिगो शान्ति निर्माणका कार्यहरू समावेश छन्।'
           )}
         </p>
 
