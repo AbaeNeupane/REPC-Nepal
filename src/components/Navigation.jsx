@@ -86,11 +86,13 @@ const Navigation = ({ mobileOpen, setMobileOpen }) => {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  /* Lock body scroll when mobile menu open */
+  /* Lock body scroll when mobile menu open 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [mobileOpen]);
+
+  */
 
   const isActive = (item) => {
     const path = location.pathname;

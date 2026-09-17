@@ -56,7 +56,7 @@ export const heroSlides = [
     accent: '#0EA5E9',
   },
   {
-    titleEn: 'Alternative ways of Dispute Resolution',
+    titleEn: 'Alternative Dispute Resolution',
     titleNp: 'विवाद समाधानका वैकल्पिक उपाय',
     subtitleEn: 'We help individuals and communities resolve disputes through dialogue, mediation, reconciliation, and access to justice.',
     subtitleNp: 'संवाद, मेलमिलाप, पुनर्मिलन र न्यायमा पहुँचमार्फत व्यक्ति तथा समुदायका विवाद समाधान गर्न हामी सहयोग गर्छौं।',

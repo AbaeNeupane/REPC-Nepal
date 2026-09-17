@@ -130,7 +130,7 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
         {/* Left: Emblem + Org Name */}
         <Link to="/" className="flex items-center gap-2 sm:gap-3 min-w-0">
           {/* Emblem placeholder — replace public/emblem.png with real logo */}
-          <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-28 md:h-28 shrink-0 flex items-center justify-center">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 shrink-0 flex items-center justify-center">
             <img
               src="/emblem.png"
               alt="REPC-Nepal Logo"
@@ -143,7 +143,7 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
             />
             {/* SVG Fallback Emblem */}
             <div
-              className="w-14 h-14 sm:w-16 sm:h-16 md:w-28 md:h-28 rounded-full border-4 border-navy bg-navy hidden items-center justify-center"
+              className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full border-4 border-navy bg-navy hidden items-center justify-center"
               aria-label="REPC-Nepal Logo Placeholder"
             >
               <span className="text-white font-bold text-xs text-center leading-tight px-1 select-none">
@@ -154,12 +154,12 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
 
           {/* Org Name Block */}
           <div className="min-w-0">
+            <p className={`block text-sky italic text-[10px] sm:text-xs md:text-sm font-medium leading-none mb-1 ${lang === 'np' ? 'font-nepali' : ''}`}>
+              “{t(siteInfo.mottoEn, siteInfo.mottoNp)}”
+            </p>
             <h1 className={`font-bold leading-tight text-navy ${lang === 'np' ? 'font-nepali text-sm sm:text-base md:text-3xl' : 'text-sm sm:text-base md:text-2xl'}`}>
               {t(siteInfo.nameEn, siteInfo.nameNp)}
             </h1>
-            <p className={`text-sky text-xs sm:text-sm md:text-base font-medium mt-1 ${lang === 'np' ? 'font-nepali' : ''}`}>
-              {t(siteInfo.mottoEn, siteInfo.mottoNp)}
-            </p>
           </div>
         </Link>
 
