@@ -56,8 +56,8 @@ export const heroSlides = [
     accent: '#0EA5E9',
   },
   {
-    titleEn: 'Peaceful Resolution Through Mediation',
-    titleNp: 'मेलमिलापमार्फत शान्तिपूर्ण समाधान',
+    titleEn: 'Alternative ways of Dispute Resolution',
+    titleNp: 'विवाद समाधानका वैकल्पिक उपाय',
     subtitleEn: 'We help individuals and communities resolve disputes through dialogue, mediation, reconciliation, and access to justice.',
     subtitleNp: 'संवाद, मेलमिलाप, पुनर्मिलन र न्यायमा पहुँचमार्फत व्यक्ति तथा समुदायका विवाद समाधान गर्न हामी सहयोग गर्छौं।',
     ctaEn: 'Mediation Services',
@@ -69,7 +69,7 @@ export const heroSlides = [
   {
     titleEn: 'Legal Support for Vulnerable Communities',
     titleNp: 'कमजोर समुदायका लागि कानुनी सहयोग',
-    subtitleEn: 'We provide legal consultation, awareness, and support for women, children, older persons, persons with disabilities, and other disadvantaged groups.',
+    subtitleEn: 'We provide legal consultation, awareness, and support for women, children, older persons, differently abled person, and other disadvantaged groups.',
     subtitleNp: 'महिला, बालबालिका, ज्येष्ठ नागरिक, अपाङ्गता भएका व्यक्ति तथा अन्य विपन्न समूहलाई कानुनी परामर्श, सचेतना र सहयोग प्रदान गर्छौं।',
     ctaEn: 'Legal Aid',
     ctaNp: 'कानुनी सहायता',
