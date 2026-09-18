@@ -64,6 +64,11 @@ const Membership = () => {
                 <p className={`mt-3 text-sm leading-relaxed text-gray-600 ${lang === 'np' ? 'font-nepali text-base' : ''}`}>
                   {lang === 'en' ? category.detailEn : category.detailNp}
                 </p>
+                {category.linkEn && category.linkNp && category.linkUrl && (
+                  <Link to={category.linkUrl} className={`mt-4 inline-flex items-center gap-2 text-sm font-semibold text-sky hover:text-sky-dark ${lang === 'np' ? 'font-nepali' : ''}`}>
+                    {lang === 'en' ? category.linkEn : category.linkNp} <FaArrowRight size={12} />
+                  </Link>
+                )}
               </article>
             ))}
           </div>

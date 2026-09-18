@@ -6,10 +6,7 @@ import { galleryItems as allGalleryItems } from '../pages/Gallery';
 const legacyGalleryItems = [
   { id: 1, src: '/images/gallery/milestone/cdo-registration.jpeg', altEn: 'Official Registration with CDO, 4 Bhadra 2083', altNp: 'जिल्ला प्रशासन कार्यालय काठमाडौंमा संस्था दर्ता गरे पश्चात...', color: 'bg-navy/80' },
   { id: 2, src: null, altEn: 'Mediation Workshop', altNp: 'मेलमिलाप कार्यशाला', color: 'bg-sky/80' },
-  { id: 3, src: null, altEn: 'Community Awareness Program', altNp: 'सामुदायिक सचेतना कार्यक्रम', color: 'bg-slate-600/80' },
-  { id: 4, src: null, altEn: 'Legal Aid Camp', altNp: 'कानुनी सहायता शिविर', color: 'bg-blue-600/80' },
-  { id: 5, src: null, altEn: 'Peace Campaign 2083', altNp: 'शान्ति अभियान २०८३', color: 'bg-cyan-700/80' },
-  { id: 6, src: null, altEn: 'Annual General Meeting', altNp: 'वार्षिक साधारण सभा', color: 'bg-blue-800/80' },
+  
 ].sort((a, b) => (b.src ? 1 : 0) - (a.src ? 1 : 0));
 
 // The homepage preview uses the main gallery source of truth, so every real
@@ -21,7 +18,7 @@ const GalleryPreview = () => {
 
   return (
     <section className="bg-slate-50 py-16">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-auto mx-auto px-4">
         <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className={`text-xs font-semibold uppercase tracking-[0.2em] text-sky ${lang === 'np' ? 'font-nepali' : ''}`}>
@@ -40,7 +37,7 @@ const GalleryPreview = () => {
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
           {galleryItems.map((item) => (
             <Link
               key={item.id}

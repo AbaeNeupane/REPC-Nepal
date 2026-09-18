@@ -24,19 +24,15 @@ const Home = () => {
         <ChairpersonMessage />
       </ScrollReveal>
 
+      {/** Main content */}
+      
       {/* Main two-column content */}
       <ScrollReveal delay={90}>
-        <div className="max-w-7xl mx-auto px-4 py-4 sm:py-6 grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
-        {/* Left: Notices (takes 2/3) */}
-        <div className="lg:col-span-2">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <NoticesSection />
-        </div>
-
-        {/* Right: Services (takes 1/3) */}
-        <div className="lg:col-span-1 flex flex-col gap-0">
           <ServicesSection />
         </div>
-        </div>
+        
       </ScrollReveal>
 
       {/* Full-width highlights */}

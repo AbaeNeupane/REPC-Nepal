@@ -131,7 +131,7 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
         <Link to="/" className="flex items-center gap-2 sm:gap-3 min-w-0">
           
           {/* UPDATED: Dynamic Emblem based on language */}
-          <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 shrink-0 flex items-center justify-center">
+          <div className="w-24 h-24 sm:w-20 sm:h-20 md:w-24 md:h-24 shrink-0 flex items-center justify-center">
             <img
               key={lang} // CRITICAL: Forces React to reset the image element when language changes
               src={lang === 'np' ? '/logoNp.png' : '/logoEn.png'}

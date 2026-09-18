@@ -92,7 +92,7 @@ const AboutIntro = () => {
 
   return (
     <section className="bg-gradient-to-b from-white to-slate-50 py-10 sm:py-12 lg:py-16">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-auto mx-auto px-4">
         <div className="mb-8 max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full bg-sky/10 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-sky">
             <FaCompass size={12} />
@@ -153,6 +153,7 @@ const AboutIntro = () => {
           </div>
         </div>
 
+        {/* Objectives */}
         <div className="mt-5 rounded-2xl sm:rounded-[30px] border border-slate-200 bg-white p-5 sm:p-6 md:p-8 shadow-[0_20px_60px_rgba(15,23,42,0.05)]">
           <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
             <div>
@@ -180,15 +181,15 @@ const AboutIntro = () => {
                   ? t('See less', 'थोरै')
                   : t('See more', 'थप हेर्नुहोस्')}
                 <FaChevronDown className={`transition-transform duration-300 ${showAllObjectives ? 'rotate-180' : ''}`} size={11} />
-              </button>
+              </button> <br/>
+             <Link
+               to="/about"
+               className={`inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-sky py-2  ${lang === 'np' ? 'font-nepali' : ''}`}
+             >
+               {t('Meet our team', 'हाम्रो टिमसँग भेट्नुहोस्')} <FaArrowRight size={11} />
+             </Link>
             </div>
 
-            <Link
-              to="/about"
-              className={`inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-sky ${lang === 'np' ? 'font-nepali' : ''}`}
-            >
-              {t('Meet our team', 'हाम्रो टिमसँग भेट्नुहोस्')} <FaArrowRight size={11} />
-            </Link>
           </div>
         </div>
       </div>

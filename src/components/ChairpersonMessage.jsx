@@ -9,7 +9,7 @@ const ChairpersonMessage = () => {
 
   return (
     <section className="bg-white py-12 sm:py-14">
-      <div className="max-w-4xl mx-auto px-4">
+      <div className="max-w-auto mx-auto px-4">
         <div className="border-l-4 border-sky bg-slate-50 px-5 py-6 sm:px-8 sm:py-8">
           <FaQuoteLeft className="mb-4 text-sky/70" size={22} />
           <p className={`text-justify text-lg leading-relaxed text-navy sm:text-xl ${lang === 'np' ? 'font-nepali' : ''}`}>
