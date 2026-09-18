@@ -134,7 +134,7 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
           <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 shrink-0 flex items-center justify-center">
             <img
               key={lang} // CRITICAL: Forces React to reset the image element when language changes
-              src={lang === 'np' ? '/emblem.png' : '/emblem.jpeg'}
+              src={lang === 'np' ? '/logoNp.png' : '/logoEn.png'}
               alt="REPC-Nepal Logo"
               className="w-full h-full object-contain scale-[1.24]"
               onError={(e) => {

@@ -88,7 +88,8 @@ const Support = () => {
             <FaFileInvoiceDollar className="text-sky" /> {t('Bank Transfer Details', 'बैंक स्थानान्तरण विवरण')}
           </h2>
           <div className="bg-white border border-gray-200 rounded-sm shadow-sm overflow-hidden">
-            <table className="w-full text-sm">
+            <div className="overflow-x-auto">
+            <table className="w-full min-w-[30rem] text-sm">
               <tbody>
                 {[
                   { labelEn: 'Bank Name', labelNp: 'बैंकको नाम', value: lang === 'en' ? donationInfo.bankNameEn : donationInfo.bankNameNp },
@@ -103,6 +104,7 @@ const Support = () => {
                 ))}
               </tbody>
             </table>
+            </div>
           </div>
           <p className={`text-gray-400 text-xs mt-2 ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t(

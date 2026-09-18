@@ -141,33 +141,33 @@ const About = () => {
           <h2 className={`text-xl font-bold text-navy mb-4 ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t('Executive Committee', 'कार्य समिति')}
           </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 gap-x-10 gap-y-9 sm:grid-cols-2 md:grid-cols-3">
             {team.map((member) => (
               <div
                 key={member.id}
-                className="relative min-w-0"
+                className={`relative mx-auto w-full max-w-[14rem] min-w-0 ${member.positionEn === 'Chairperson' ? 'sm:col-span-2 md:col-span-3' : ''}`}
               >
                 <div
                   onClick={event => openMemberBio(event, member)}
                   role="button"
                   tabIndex={0}
                   onKeyDown={event => event.key === 'Enter' && openMemberBio(event, member)}
-                  className="bg-white border border-gray-200 rounded-sm shadow-sm overflow-hidden hover:shadow-md hover:border-navy/30 transition-all cursor-pointer"
+                  className="overflow-hidden text-center transition-all cursor-pointer"
                 >
-                    <div className="bg-navy/5 p-5 flex justify-center">
+                    <div className="relative aspect-square overflow-hidden rounded-sm border border-gray-200 bg-white p-1 shadow-sm transition-shadow hover:shadow-md">
                       {member.photo ? (
                         <img src={member.photo} alt={member.nameEn}
-                          className="w-24 h-24 rounded-full object-cover border-4 border-white shadow"
+                          className="h-full w-full object-cover"
                           onError={e => { e.target.style.display='none'; e.target.nextSibling.style.display='flex'; }}
                         />
                       ) : null}
                       {(!member.photo) && (
-                        <div className="w-24 h-24 rounded-full bg-navy/20 flex items-center justify-center border-4 border-white shadow">
+                        <div className="h-full w-full bg-navy/10 flex items-center justify-center">
                           <FaUserCircle className="text-navy/50" size={52} />
                         </div>
                       )}
                     </div>
-                    <div className="p-6 text-center">
+                    <div className="px-2 pt-3 text-center">
                       <h3 className={`font-bold text-navy text-base ${lang === 'np' ? 'font-nepali' : ''}`}>
                         {lang === 'en' ? member.nameEn : member.nameNp}
                       </h3>
@@ -251,7 +251,8 @@ const About = () => {
                 )}
               </figcaption>
             </figure>
-            <table className="w-full text-sm">
+            <div className="overflow-x-auto">
+            <table className="w-full min-w-[34rem] text-sm">
               <tbody className="divide-y divide-gray-100">
                 {[
                   { labelEn: 'Organization Name', labelNp: 'संस्थाको नाम', valueEn: siteInfo.nameEn, valueNp: siteInfo.nameNp },
@@ -275,6 +276,7 @@ const About = () => {
                 ))}
               </tbody>
             </table>
+            </div>
           </div>
         </section>
 

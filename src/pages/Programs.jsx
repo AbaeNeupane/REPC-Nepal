@@ -84,7 +84,7 @@ const Programs = () => {
     <div>
       <PageBanner titleEn="Programs & Activities" titleNp="कार्यक्रम तथा गतिविधिहरू" />
 
-      <div className="max-w-7xl mx-auto px-10 py-10 text-justify">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-10 text-justify">
         <p className={`text-gray-600 mb-8 leading-relaxed max-w-3xl ${lang === 'np' ? 'font-nepali text-base' : 'text-sm'}`}>
           {t(
             'At REPC-Nepal, we drive integrated programs dedicated to empowering communities through human rights advocacy, accessible legal counsel, mediator training, and sustainable peacebuilding at both the grassroots and national levels.',

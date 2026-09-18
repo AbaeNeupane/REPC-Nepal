@@ -21,6 +21,7 @@ import Support      from './pages/Support';
 import Volunteer    from './pages/Volunteer';
 import Membership   from './pages/Membership';
 import Contact      from './pages/Contact';
+import ChairpersonAppeal from './pages/ChairpersonAppeal';
 
 /* ─────────────────────────────────────────────────────────────
    Hash Scroller
@@ -113,6 +114,7 @@ const PageTransition = () => {
         <Route path="/volunteer"    element={<Volunteer />}    />
         <Route path="/membership"   element={<Membership />}   />
         <Route path="/contact"      element={<Contact />}      />
+        <Route path="/chairperson-message" element={<ChairpersonAppeal />} />
         <Route path="*"             element={<NotFound />}     />
       </Routes>
     </div>
@@ -186,7 +188,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <TopBar />
+      {/* <TopBar /> */}
       <Header mobileOpen={mobileOpen} onMobileToggle={() => setMobileOpen(open => !open)} />
       <Navigation mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
       <main className="flex-1 bg-gray-50">

@@ -23,7 +23,8 @@ const PageBanner = ({ titleEn, titleNp }) => {
 };
 
 // Replace `src: null` with real image paths like '/images/gallery/img1.jpg'
-const galleryItems = [
+export const galleryItems = [
+  { id: 10, src: '/images/gallery/meetings/photo1.jpeg', altEn: 'A constructive discussion on the website outline, content, and future direction was held at the organization’s Thapathali office. The meeting was attended by senior advocate and mediation expert Dr. Kumar Sharma Acharya, Mediation Council member Advocate Chup Bahadur Thapa, Chairperson Advocate Sushila Singhkhada, and organization officials. Held on 1 Ashoj 2083 B.S., Wednesday.', altNp: 'संस्थाकाे वेबसाइटको रूपरेखा, सामग्री तथा आगामी कार्यदिशाका सम्बन्धमा मेलमिलाप विज्ञ वरिष्ठ अधिवक्ता डा. कुमार शर्मा आचार्य र मेलमिलाप परिषद्का सदस्य अधिवक्ता चूप बहादुर थापाज्यू सहित संस्थाका अध्यक्ष अधिवक्ता शुसिला सिंखडा तथा पदाधिकारीहरुको उपस्थितिमा रचनात्मक छलफल संस्थाको थापाथलीस्थित कार्यालयमा सम्पन्न भयो। ईति संवत् २०८३ असाेज १ गते राेज ५ शुभम् ....।', color: 'from-sky to-sky-light', categoryEn: 'Meeting', categoryNp: 'बैठक' },
   { id: 1, src: '/images/gallery/milestone/cdo-registration.jpeg', altEn: 'Registered with the Chief District Officer, Kathmandu, on 4 Bhadra 2083. The registration certificate was issued by the District Administration Office.', altNp: 'जिल्ला प्रशासन कार्यालय काठमाडौंमा संस्था दर्ता गरेपश्चात् प्रमुख जिल्ला अधिकारी ईश्वर राज पौडेलबाट संस्था दर्ता प्रमाणपत्र ग्रहण गर्दै अधिकार, समता र शान्ति अभियान–नेपालकी अध्यक्ष अधिवक्ता शुशिला सिंखडा।', color: 'from-navy to-navy-light', categoryEn: 'Milestone', categoryNp: 'उपलब्धि' },
   { id: 2, src: null, altEn: 'Mediation Workshop 2083', altNp: 'मेलमिलाप कार्यशाला २०८३', color: 'from-sky to-sky-light', categoryEn: 'Workshop', categoryNp: 'कार्यशाला' },
   { id: 3, src: null, altEn: 'Community Awareness Program', altNp: 'सामुदायिक सचेतना कार्यक्रम', color: 'from-slate-600 to-slate-500', categoryEn: 'Awareness', categoryNp: 'सचेतना' },

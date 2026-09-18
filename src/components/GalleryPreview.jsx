@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import { FaImages } from 'react-icons/fa';
+import { galleryItems as allGalleryItems } from '../pages/Gallery';
 
-const galleryItems = [
+const legacyGalleryItems = [
   { id: 1, src: '/images/gallery/milestone/cdo-registration.jpeg', altEn: 'Official Registration with CDO, 4 Bhadra 2083', altNp: 'जिल्ला प्रशासन कार्यालय काठमाडौंमा संस्था दर्ता गरे पश्चात...', color: 'bg-navy/80' },
   { id: 2, src: null, altEn: 'Mediation Workshop', altNp: 'मेलमिलाप कार्यशाला', color: 'bg-sky/80' },
   { id: 3, src: null, altEn: 'Community Awareness Program', altNp: 'सामुदायिक सचेतना कार्यक्रम', color: 'bg-slate-600/80' },
@@ -10,6 +11,10 @@ const galleryItems = [
   { id: 5, src: null, altEn: 'Peace Campaign 2083', altNp: 'शान्ति अभियान २०८३', color: 'bg-cyan-700/80' },
   { id: 6, src: null, altEn: 'Annual General Meeting', altNp: 'वार्षिक साधारण सभा', color: 'bg-blue-800/80' },
 ].sort((a, b) => (b.src ? 1 : 0) - (a.src ? 1 : 0));
+
+// The homepage preview uses the main gallery source of truth, so every real
+// photo added there appears here automatically (up to six recent images).
+const galleryItems = allGalleryItems.filter(item => item.src).slice(0, 6);
 
 const GalleryPreview = () => {
   const { lang, t } = useLang();

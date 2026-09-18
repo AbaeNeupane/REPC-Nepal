@@ -65,7 +65,7 @@ const Notices = () => {
         {/* Notices List */}
         <div className="bg-white border border-gray-200 rounded-sm shadow-sm overflow-hidden">
           {/* Table Header */}
-          <div className="bg-navy text-white grid grid-cols-12 px-4 py-3 text-sm font-semibold">
+          <div className="hidden bg-navy text-white md:grid md:grid-cols-12 px-4 py-3 text-sm font-semibold">
             <div className={`col-span-1 ${lang === 'np' ? 'font-nepali' : ''}`}>{t('S.N.', 'क्र.सं.')}</div>
             <div className={`col-span-2 ${lang === 'np' ? 'font-nepali' : ''}`}>{t('Date', 'मिति')}</div>
             <div className={`col-span-7 ${lang === 'np' ? 'font-nepali' : ''}`}>{t('Title', 'शीर्षक')}</div>
@@ -81,20 +81,25 @@ const Notices = () => {
           ) : (
             items.map((item, i) => (
               <div key={item.id}
-                className={`grid grid-cols-12 px-4 py-3.5 items-center border-b border-gray-100 hover:bg-gray-50 transition-colors ${i % 2 === 0 ? '' : 'bg-gray-50/50'}`}>
-                <div className="col-span-1 text-gray-500 text-sm">{i + 1}</div>
-                <div className="col-span-2">
+                className={`grid grid-cols-1 gap-2 px-4 py-3.5 md:grid-cols-12 md:items-center md:gap-0 border-b border-gray-100 hover:bg-gray-50 transition-colors ${i % 2 === 0 ? '' : 'bg-gray-50/50'}`}>
+                <div className="text-gray-500 text-sm md:col-span-1">
+                  <span className="md:hidden mr-1 font-medium text-navy">{t('S.N.', 'क्र.सं.')}</span>{i + 1}
+                </div>
+                <div className="md:col-span-2">
+                  <span className={`mb-1 block text-xs font-medium text-navy md:hidden ${lang === 'np' ? 'font-nepali' : ''}`}>{t('Date', 'मिति')}</span>
                   <span className="flex items-center gap-1.5 text-xs text-gray-500">
                     <FaCalendarAlt className="text-sky" size={10} />
                     {lang === 'en' ? item.date : item.dateNp}
                   </span>
                 </div>
-                <div className="col-span-7">
+                <div className="md:col-span-7">
+                  <span className={`mb-1 block text-xs font-medium text-navy md:hidden ${lang === 'np' ? 'font-nepali' : ''}`}>{t('Title', 'शीर्षक')}</span>
                   <p className={`text-sm text-gray-700 leading-snug hover:text-navy cursor-pointer transition-colors ${lang === 'np' ? 'font-nepali text-base' : ''}`}>
                     {lang === 'en' ? item.titleEn : item.titleNp}
                   </p>
                 </div>
-                <div className="col-span-2 flex justify-center">
+                <div className="md:col-span-2 flex md:justify-center">
+                  <span className={`mr-2 text-xs font-medium text-navy md:hidden ${lang === 'np' ? 'font-nepali' : ''}`}>{t('Download', 'डाउनलोड')}</span>
                   {item.downloadUrl && item.downloadUrl !== '#' ? (
                     <a href={item.downloadUrl} target="_blank" rel="noopener noreferrer"
                       className="flex items-center gap-1 text-xs text-navy hover:text-sky transition-colors font-medium">

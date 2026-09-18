@@ -17,23 +17,35 @@ const Footer = () => {
   return (
     <footer className="bg-[#0a1628] text-white">
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 sm:gap-8 justify-items-center text-left sm:justify-items-stretch">
 
         {/* Column 1: Logo + About */}
-        <div>
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-12 rounded-full border-2 border-white/30 overflow-hidden flex items-center justify-center bg-navy shrink-0">
-              <img src="/emblem.png" alt="Logo" className="w-full h-full object-contain"
-                onError={e => { e.target.style.display='none'; e.target.nextSibling.style.display='flex'; }}
+        <div className="w-full max-w-xs py-7 first:pt-0 border-b border-white/10 sm:max-w-none sm:py-0 sm:border-b-0">
+          <div className="flex items-center justify-start gap-3 mb-4">
+            <div className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center bg-navy shrink-0 border-2 border-white/30">
+              <img
+                key={lang}
+                src={lang === 'np' ? '/logoNp.png' : '/logoEn.png'}
+                alt={lang === 'np' ? 'REPC नेपाल लोगो' : 'REPC Logo'}
+                className="w-full h-full object-cover rounded-full block"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  if (e.currentTarget.nextSibling) {
+                    e.currentTarget.nextSibling.style.display = 'flex';
+                  }
+                }}
               />
-              <span className="text-white text-xs font-bold hidden items-center justify-center">REPC</span>
+
+              <span className="text-white text-xs font-bold hidden items-center justify-center">
+                REPC
+              </span>
             </div>
             <div>
+              <p className={`text-white/60 text-xs italic ${lang === 'np' ? 'font-nepali' : ''}`}>
+                "{t(siteInfo.mottoEn, siteInfo.mottoNp)}"
+              </p>
               <p className={`font-bold text-sm leading-tight ${lang === 'np' ? 'font-nepali' : ''}`}>
                 {t('REPC-Nepal', 'REPC-नेपाल')}
-              </p>
-              <p className={`text-white/60 text-xs ${lang === 'np' ? 'font-nepali' : ''}`}>
-                {t(siteInfo.mottoEn, siteInfo.mottoNp)}
               </p>
             </div>
           </div>
@@ -46,7 +58,7 @@ const Footer = () => {
           </p>
 
           {/* Social links */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center justify-start gap-3">
             <a href={siteInfo.facebook} target="_blank" rel="noopener noreferrer"
                className="w-8 h-8 rounded-full bg-white/10 hover:bg-sky flex items-center justify-center transition-colors" aria-label="Facebook">
               <FaFacebook size={14} />
@@ -67,7 +79,7 @@ const Footer = () => {
         </div>
 
         {/* Column 2: Quick Links */}
-        <div>
+        <div className="w-full max-w-xs py-7 border-b border-white/10 sm:max-w-none sm:py-0 sm:border-b-0">
           <h3 className={`text-white font-bold text-sm mb-4 pb-2 border-b border-white/20 ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t('Quick Links', 'द्रुत लिंकहरू')}
           </h3>
@@ -87,7 +99,7 @@ const Footer = () => {
             ].map((l, i) => (
               <li key={i}>
                 <Link to={l.to}
-                  className={`text-white/70 hover:text-white text-xs flex items-center gap-1.5 transition-colors ${lang === 'np' ? 'font-nepali' : ''}`}>
+                  className={`text-white/70 hover:text-white text-xs flex items-center justify-start gap-1.5 transition-colors ${lang === 'np' ? 'font-nepali' : ''}`}>
                   <span className="text-sky">›</span> {lang === 'en' ? l.en : l.np}
                 </Link>
               </li>
@@ -96,7 +108,7 @@ const Footer = () => {
         </div>
 
         {/* Column 3: Important Links */}
-        <div>
+        <div className="w-full max-w-xs py-7 border-b border-white/10 sm:max-w-none sm:py-0 sm:border-b-0">
           <h3 className={`text-white font-bold text-sm mb-4 pb-2 border-b border-white/20 ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t('Important Links', 'महत्त्वपूर्ण लिंकहरू')}
           </h3>
@@ -104,7 +116,7 @@ const Footer = () => {
             {importantLinks.map((l, i) => (
               <li key={i}>
                 <a href={l.url} target="_blank" rel="noopener noreferrer"
-                  className={`text-white/70 hover:text-white text-xs flex items-start gap-1.5 transition-colors leading-snug ${lang === 'np' ? 'font-nepali' : ''}`}>
+                  className={`text-white/70 hover:text-white text-xs flex items-start justify-start gap-1.5 transition-colors leading-snug ${lang === 'np' ? 'font-nepali' : ''}`}>
                   <span className="text-sky shrink-0 mt-0.5">›</span>
                   {lang === 'en' ? l.en : l.np}
                 </a>
@@ -114,24 +126,24 @@ const Footer = () => {
         </div>
 
         {/* Column 4: Contact + Office Hours */}
-        <div>
+        <div className="w-full max-w-xs py-7 last:pb-0 sm:max-w-none sm:py-0">
           <h3 className={`text-white font-bold text-sm mb-4 pb-2 border-b border-white/20 ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t('Contact Us', 'सम्पर्क गर्नुहोस्')}
           </h3>
           <ul className="space-y-3">
-            <li className="flex items-start gap-2.5">
+            <li className="flex items-start justify-start gap-2.5">
               <FaMapMarkerAlt className="text-sky shrink-0 mt-0.5" size={12} />
               <span className={`text-white/70 text-xs leading-relaxed ${lang === 'np' ? 'font-nepali' : ''}`}>
                 {lang === 'en' ? siteInfo.addressEn : siteInfo.addressNp}
               </span>
             </li>
-            <li className="flex items-center gap-2.5">
+            <li className="flex items-center justify-start gap-2.5">
               <FaPhone className="text-sky shrink-0" size={11} />
               <a href={`tel:${siteInfo.phone}`} className="text-white/70 hover:text-white text-xs transition-colors">
                 {siteInfo.phone}
               </a>
             </li>
-            <li className="flex items-center gap-2.5">
+            <li className="flex items-center justify-start gap-2.5">
               <FaEnvelope className="text-sky shrink-0" size={11} />
               <a href={`mailto:${siteInfo.email}`} className="text-white/70 hover:text-white text-xs transition-colors">
                 {siteInfo.email}
@@ -141,7 +153,7 @@ const Footer = () => {
 
           {/* Office Hours */}
           <div className="mt-5 p-3 bg-white/5 rounded-sm border border-white/10">
-            <div className="flex items-center gap-2 mb-2">
+            <div className="flex items-center justify-start gap-2 mb-2">
               <FaClock className="text-sky" size={12} />
               <p className={`text-white text-xs font-semibold ${lang === 'np' ? 'font-nepali' : ''}`}>
                 {t('Office Hours', 'कार्यालय समय')}

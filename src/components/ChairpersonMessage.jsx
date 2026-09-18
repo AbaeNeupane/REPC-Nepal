@@ -1,6 +1,7 @@
 import { useLang } from '../context/LanguageContext';
+import { Link } from 'react-router-dom';
 import { team } from '../data/siteContent';
-import { FaQuoteLeft } from 'react-icons/fa';
+import { FaArrowRight, FaQuoteLeft } from 'react-icons/fa';
 
 const ChairpersonMessage = () => {
   const { lang, t } = useLang();
@@ -13,10 +14,13 @@ const ChairpersonMessage = () => {
           <FaQuoteLeft className="mb-4 text-sky/70" size={22} />
           <p className={`text-justify text-lg leading-relaxed text-navy sm:text-xl ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t(
-              'We believe that lasting peace begins when every person can live with dignity, understand their rights, and access justice. REPC-Nepal is committed to working with communities and institutions to advance human rights, equality, mediation, and peaceful solutions.',
-              'दिगो शान्ति त्यतिबेला निर्माण हुन्छ, जब प्रत्येक व्यक्तिले मर्यादापूर्वक जीवनयापन गर्न, आफ्ना अधिकार बुझ्न र न्यायमा पहुँच प्राप्त गर्न सक्छ। मानव अधिकार, समानता, मेलमिलाप तथा शान्तिपूर्ण समाधानका लागि REPC-Nepal समुदाय र सम्बन्धित संस्थाहरूसँग सहकार्य गर्न प्रतिबद्ध छ।'
+              'Nepal has reached its present circumstances after passing through many ups and downs in political, economic, and social change. These political changes created new ideas, possibilities, and foundations for transformation in Nepali society. Yet political, economic, and social transformation has not advanced at the pace citizens expected, deepening challenges such as social fragmentation, political instability, economic disorder, and family disruption. These challenges cannot be resolved through the efforts of state institutions alone. Genuine change also requires citizens’ awareness, participation, unity, and shared responsibility...',
+              'नेपालले राजनीतिक, आर्थिक तथा सामाजिक परिवर्तनका अनेकौँ आरोह–अवरोह पार गर्दै वर्तमान परिस्थितिमा आएको छ। वि.सं. २००७, २०४६, २०६३ तथा २०८२ का राजनीतिक परिवर्तनहरूले नेपाली समाजमा नयाँ सोच, सम्भावना र परिवर्तनका आधारहरू निर्माण गरेपनि नागरिकका अपेक्षा र चाहनाअनुरूप राजनीतिक, आर्थिक तथा सामाजिक रूपान्तरणले अपेक्षित गति लिन नसक्दा सामाजिक विखण्डन, राजनीतिक अस्थिरता, आर्थिक विशृङ्खलता र पारिवारिक विचलनजस्ता चुनौतीहरू अझै गहिरिँदै गएको अनुभूति भएको छ। यी समस्याहरूको समाधान राज्यका निकायहरूको मात्र प्रयासबाट सम्भव हुँदैन। परिवर्तनको वास्तविक आधार नागरिकको जागरूकता, सहभागिता, एकता र सामूहिक उत्तरदायित्वको पनि जरुरी छ। त्यसैले...',
             )}
           </p>
+          <Link to="/chairperson-message" className={`mt-5 inline-flex items-center gap-2 text-sm font-semibold text-sky hover:text-sky-dark ${lang === 'np' ? 'font-nepali' : ''}`}>
+            {t('Read Full Message', 'पूर्ण सन्देश पढ्नुहोस्')} <FaArrowRight size={12} />
+          </Link>
           <div className="mt-5 border-t border-slate-200 pt-4">
             <p className={`font-bold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
               {t('Message from the Chairperson', 'अध्यक्षको सन्देश')}
