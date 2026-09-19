@@ -10,7 +10,7 @@ import ScrollReveal from '../components/ScrollReveal';
 
 const Home = () => {
   return (
-    <div>
+    <div className="flex flex-col gap-12">
       {/* Hero */}
       <HeroCarousel />
 
@@ -28,7 +28,7 @@ const Home = () => {
       
       {/* Main two-column content */}
       <ScrollReveal delay={90}>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 px-8 py-12">
           <NoticesSection />
           <ServicesSection />
         </div>
