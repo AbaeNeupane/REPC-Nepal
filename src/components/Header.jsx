@@ -131,12 +131,12 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
         <Link to="/" className="flex items-center gap-2 sm:gap-3 min-w-0">
           
           {/* UPDATED: Dynamic Emblem based on language and Increase Logo Size*/}
-          <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-20 md:h-20 lg:w-20 lg:h-20 shrink-0 flex items-center justify-center">
+          <div className="w-20 h-20 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-26 lg:h-26 shrink-0 flex items-center justify-center">
             <img
               key={lang} // CRITICAL: Forces React to reset the image element when language changes
               src={lang === 'np' ? '/logoNp.png' : '/logoEn.png'}
               alt="REPC-Nepal Logo"
-              className="w-full h-full object-contain scale-[1.24]"
+              className="w-full h-full object-contain scale-[1.4] md:scale-[1.5] lg:scale-[1.5]"
               onError={(e) => {
                 // Fallback emblem if image not found
                 e.target.style.display = 'none';
