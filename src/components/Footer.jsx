@@ -27,7 +27,7 @@ const Footer = () => {
                 key={lang}
                 src={lang === 'np' ? '/logoNp.png' : '/logoEn.png'}
                 alt={lang === 'np' ? 'REPC नेपाल लोगो' : 'REPC Logo'}
-                className="w-full h-full object-cover rounded-full block"
+                className="w-full h-full object-cover rounded-full block scale-[1.24]"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                   if (e.currentTarget.nextSibling) {

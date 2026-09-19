@@ -23,12 +23,7 @@ import Membership   from './pages/Membership';
 import Contact      from './pages/Contact';
 import ChairpersonAppeal from './pages/ChairpersonAppeal';
 
-/* ─────────────────────────────────────────────────────────────
-   Hash Scroller
-   - Same-page hash  (#team while on /about)  → short delay, just scroll
-   - Cross-page hash (#team from /contact)    → longer delay to let
-     the enter animation finish first, then scroll
-───────────────────────────────────────────────────────────── */
+
 const HashScroller = () => {
   const location  = useLocation();
   const prevPath  = useRef(location.pathname);
@@ -176,7 +171,7 @@ const NotFound = () => (
     <div className="w-20 h-1 bg-sky mx-auto mb-8 rounded" />
     <h1 className="text-7xl font-bold text-navy mb-2">404</h1>
     <p className="text-gray-400 text-lg mb-8">Page not found</p>
-    <Link to="/" className="btn-primary">← Back to Home</Link>
+    <Link to="/" className="btn-primary">Back to Home</Link>
   </div>
 );
 
