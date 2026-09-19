@@ -10,7 +10,7 @@ import ScrollReveal from '../components/ScrollReveal';
 
 const Home = () => {
   return (
-    <div className="flex flex-col gap-12">
+    <div className=" flex flex-col gap-12">
       {/* Hero */}
       <HeroCarousel />
 

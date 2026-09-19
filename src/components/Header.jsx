@@ -72,7 +72,7 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
   };
 
   return (
-    <header className="bg-white border-b border-gray-200 shadow-sm relative z-50">
+    <header className="bg-[#F1F2F4] border-b border-gray-200 shadow-sm relative z-50">
       {searchOpen && (
         <div className="md:hidden fixed inset-0 bg-black/30 backdrop-blur-[1px] z-40" onClick={() => { setSearchOpen(false); setSearchQuery(''); }} aria-hidden="true" />
       )}
@@ -125,13 +125,13 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
         </div>
       )}
 
-      <div className="w-full px-4 sm:px-6 lg:px-8 py-3 sm:py-2.5 flex items-center justify-between gap-3 relative z-10">
+      <div className="w-full px-4 sm:px-6 lg:px-8 py-5 sm:py-4 flex items-center justify-between gap-3 relative z-10">
 
-        {/* Left: Emblem + Org Name */}
+        {/* Left: LOGO + Org Name */}
         <Link to="/" className="flex items-center gap-2 sm:gap-3 min-w-0">
           
-          {/* UPDATED: Dynamic Emblem based on language */}
-          <div className="w-24 h-24 sm:w-20 sm:h-20 md:w-24 md:h-24 shrink-0 flex items-center justify-center">
+          {/* UPDATED: Dynamic Emblem based on language and Increase Logo Size*/}
+          <div className="w-32 h-32 sm:w-24 sm:h-24 md:w-32 md:h-32 shrink-0 flex items-center justify-center">
             <img
               key={lang} // CRITICAL: Forces React to reset the image element when language changes
               src={lang === 'np' ? '/logoNp.png' : '/logoEn.png'}
@@ -147,7 +147,7 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
             />
             {/* Fallback Emblem */}
             <div
-              className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full border-4 border-navy bg-navy hidden items-center justify-center"
+              className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full border-4 border-navy bg-navy hidden items-center justify-center"
               aria-label="REPC-Nepal Logo Placeholder"
             >
               <span className="text-white font-bold text-xs text-center leading-tight px-1 select-none">
@@ -158,10 +158,10 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
 
           {/* Org Name Block */}
           <div className="min-w-0">
-            <p className={`block text-sky italic text-[10px] sm:text-xs md:text-sm font-medium leading-none mb-1 ${lang === 'np' ? 'font-nepali' : ''}`}>
+            <p className={`block text-sky italic text-xs sm:text-sm md:text-base font-medium leading-none mb-1.5 ${lang === 'np' ? 'font-nepali' : ''}`}>
               “{t(siteInfo.mottoEn, siteInfo.mottoNp)}”
             </p>
-            <h1 className={`font-bold leading-tight text-navy ${lang === 'np' ? 'font-nepali text-sm sm:text-base md:text-3xl' : 'text-sm sm:text-base md:text-2xl'}`}>
+            <h1 className={`font-bold leading-tight text-navy ${lang === 'np' ? 'font-nepali text-base sm:text-lg md:text-4xl' : 'text-base sm:text-lg md:text-3xl'}`}>
               {t(siteInfo.nameEn, siteInfo.nameNp)}
             </h1>
           </div>
@@ -173,9 +173,9 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
           {/* Support CTA */}
           <Link
             to="/support"
-            className="hidden md:inline-flex items-center gap-1.5 bg-sky hover:bg-sky-light text-white text-xs font-semibold px-3.5 py-2 rounded-sm transition-colors shadow-sm hover:shadow-md"
+            className="hidden md:inline-flex items-center gap-2 bg-sky hover:bg-sky-light text-white text-sm font-semibold px-4 py-2.5 rounded-sm transition-colors shadow-sm hover:shadow-md"
           >
-            <FaHandHoldingHeart size={12} />
+            <FaHandHoldingHeart size={14} />
             <span className={lang === 'np' ? 'font-nepali' : ''}>{t('Support Us', 'सहयोग गर्नुहोस्')}</span>
           </Link>
 
@@ -192,7 +192,7 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
                   value={searchQuery}
                   onChange={e => setSearchQuery(e.target.value)}
                   placeholder={t('Search...', 'खोज्नुहोस्...')}
-                  className="px-3 py-2 text-sm text-gray-700 placeholder:text-gray-400 outline-none w-28 lg:w-52"
+                  className="px-3 py-2.5 text-sm text-gray-700 placeholder:text-gray-400 outline-none w-32 lg:w-56"
                   onKeyDown={e => {
                     if (e.key === 'Escape') {
                       setSearchOpen(false);
@@ -202,10 +202,10 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
                 />
                 <button
                   type="submit"
-                  className="h-10 w-10 flex items-center justify-center bg-navy text-white hover:bg-navy/90 transition-colors border-l border-navy/20"
+                  className="h-11 w-11 flex items-center justify-center bg-navy text-white hover:bg-navy/90 transition-colors border-l border-navy/20"
                   aria-label={t('Search', 'खोज्नुहोस्')}
                 >
-                  <FaSearch size={13} />
+                  <FaSearch size={14} />
                 </button>
 
                 {matches.length > 0 && (
@@ -226,10 +226,10 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
             ) : (
               <button
                 onClick={() => setSearchOpen(true)}
-                className="h-10 w-10 sm:h-11 sm:w-11 flex items-center justify-center rounded-full border border-gray-200 text-navy hover:text-sky hover:bg-navy/5 transition-colors shadow-sm"
+                className="h-11 w-11 sm:h-12 sm:w-12 flex items-center justify-center rounded-full border border-gray-300 text-navy hover:text-sky hover:bg-navy/5 transition-colors shadow-sm"
                 aria-label={t('Open Search', 'खोज खोल्नुहोस्')}
               >
-                <FaSearch size={16} />
+                <FaSearch size={17} />
               </button>
             )}
           </div>
@@ -239,18 +239,18 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
             type="button"
             onClick={handleLanguageToggle}
             aria-label={t('Switch to Nepali', 'अंग्रेजीमा परिवर्तन गर्नुहोस्')}
-            className="h-10 w-12 sm:h-11 sm:w-14 lg:h-8 lg:w-auto lg:min-w-[3.8rem] lg:rounded rounded-full border border-navy bg-white px-1 text-[11px] font-semibold text-navy text-center outline-none transition-colors hover:bg-navy hover:text-white focus:ring-2 focus:ring-sky/30"
+            className="h-11 w-14 sm:h-12 sm:w-16 lg:h-9 lg:w-auto lg:min-w-[4.2rem] lg:rounded rounded-full border border-navy bg-white px-1 text-xs font-semibold text-navy text-center outline-none transition-colors hover:bg-navy hover:text-white focus:ring-2 focus:ring-sky/30"
           >
             {lang === 'en' ? 'EN' : 'NP'}
           </button>
 
           <button
             onClick={onMobileToggle}
-            className="lg:hidden h-10 w-10 sm:h-11 sm:w-11 flex items-center justify-center text-navy rounded-full hover:bg-navy/5 transition-colors"
+            className="lg:hidden h-11 w-11 sm:h-12 sm:w-12 flex items-center justify-center text-navy rounded-full hover:bg-navy/5 transition-colors"
             aria-label={mobileOpen ? t('Close menu', 'मेनु बन्द गर्नुहोस्') : t('Open menu', 'मेनु खोल्नुहोस्')}
             aria-expanded={mobileOpen}
           >
-            {mobileOpen ? <FaTimes size={25} /> : <FaBars size={25} />}
+            {mobileOpen ? <FaTimes size={26} /> : <FaBars size={26} />}
           </button>
         </div>
       </div>

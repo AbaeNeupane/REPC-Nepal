@@ -379,8 +379,8 @@ export const team = [
   },
   {
     id: 5,
-    nameEn: ' Sirjanshil Rajbhandari',
-    nameNp: ' सिर्जनशील राजभण्डारी',
+    nameEn: ' Srijanshil Rajbhandari',
+    nameNp: ' सृजनशील राजभण्डारी',
     positionEn: 'Member',
     positionNp: 'सदस्य',
     phone: '+977 9857833579',
