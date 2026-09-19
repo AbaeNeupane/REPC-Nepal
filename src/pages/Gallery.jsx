@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import { FaImages, FaTimes } from 'react-icons/fa';
+import useScrollLock from '../hooks/useScrollLock';
 
 const PageBanner = ({ titleEn, titleNp }) => {
   const { lang } = useLang();
@@ -32,6 +34,7 @@ export const galleryItems = [
 const Gallery = () => {
   const { lang, t } = useLang();
   const [lightbox, setLightbox] = useState(null);
+  useScrollLock(Boolean(lightbox)); 
 
   return (
     <div>
@@ -89,7 +92,7 @@ const Gallery = () => {
       </div>
 
       {/* Lightbox */}
-      {lightbox && (
+      {lightbox && createPortal(
         <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4" onClick={() => setLightbox(null)}>
           <button
             type="button"
@@ -120,7 +123,8 @@ const Gallery = () => {
               {lang === 'en' ? lightbox.altEn : lightbox.altNp}
             </p>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );

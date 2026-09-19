@@ -1,8 +1,11 @@
 import { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import { team, siteInfo } from '../data/siteContent';
 import { FaUserCircle, FaPhone, FaEnvelope, FaTimes } from 'react-icons/fa';
+import CertificateDocuments from '../components/CertificateViewer';
+import useScrollLock from '../hooks/useScrollLock';
 
 const PageBanner = ({ titleEn, titleNp }) => {
   const { lang } = useLang();
@@ -25,18 +28,18 @@ const PageBanner = ({ titleEn, titleNp }) => {
 
 const toNepaliDigits = value => String(value).replace(/[0-9]/g, digit => '०१२३४५६७८९'[digit]);
 
-const TeamBioModal = ({ member, position, onClose }) => {
+const TeamBioModal = ({ member, onClose }) => {
   const { lang, t } = useLang();
+  useScrollLock(true); // Lock scroll when modal is open
   const bio = lang === 'en' ? member.bioEn : member.bioNp;
 
-  return (
+  return createPortal(
     <div
-      className="absolute z-50 flex w-[min(40rem,calc(100vw-2rem))]"
-      style={{ top: `${position.top}px`, left: `${position.left}px` }}
+      className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-sm shadow-2xl w-full max-h-[calc(100vh-2rem)] overflow-y-auto animate-scaleIn"
+        className="bg-white rounded-sm shadow-2xl w-full max-w-lg max-h-[calc(100vh-2rem)] overflow-y-auto animate-scaleIn"
         onClick={event => event.stopPropagation()}
       >
         <div className="bg-navy px-5 py-4 flex items-center justify-between">
@@ -99,35 +102,16 @@ const TeamBioModal = ({ member, position, onClose }) => {
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 
 const About = () => {
   const { lang, t } = useLang();
   const [selectedMember, setSelectedMember] = useState(null);
-  const [modalPosition, setModalPosition] = useState({ top: 0, left: 0 });
 
-  const openMemberBio = (event, member) => {
-    const card = event.currentTarget.getBoundingClientRect();
-    const panelWidth = Math.min(640, window.innerWidth - 32);
-    const panelHeight = Math.min(560, window.innerHeight - 32);
-    const viewportLeft = Math.min(
-      Math.max(card.left + (card.width - panelWidth) / 2, 16),
-      window.innerWidth - panelWidth - 16,
-    );
-    const viewportTop = Math.min(
-      Math.max(card.top + (card.height - panelHeight) / 2, 16),
-      window.innerHeight - panelHeight - 16,
-    );
-
-    setModalPosition({
-      top: viewportTop - card.top,
-      left: viewportLeft - card.left,
-    });
-    setSelectedMember(member);
-  };
-
+  const openMemberBio = (member) => setSelectedMember(member);
   const closeMemberBio = () => setSelectedMember(null);
 
   return (
@@ -148,10 +132,10 @@ const About = () => {
                 className={`relative mx-auto w-full max-w-[14rem] min-w-0 ${member.positionEn === 'Chairperson' ? 'sm:col-span-2 md:col-span-3' : ''}`}
               >
                 <div
-                  onClick={event => openMemberBio(event, member)}
+                  onClick={() => openMemberBio(member)}
                   role="button"
                   tabIndex={0}
-                  onKeyDown={event => event.key === 'Enter' && openMemberBio(event, member)}
+                  onKeyDown={event => event.key === 'Enter' && openMemberBio(member)}
                   className="overflow-hidden text-center transition-all cursor-pointer"
                 >
                     <div className="relative aspect-square overflow-hidden rounded-sm border border-gray-200 bg-white p-1 shadow-sm transition-shadow hover:shadow-md">
@@ -188,9 +172,6 @@ const About = () => {
                       </div>
                     </div>
                 </div>
-                {selectedMember?.id === member.id && (
-                  <TeamBioModal member={member} position={modalPosition} onClose={closeMemberBio} />
-                )}
               </div>
             ))}
           </div>
@@ -280,14 +261,13 @@ const About = () => {
           </div>
         </section>
 
+        {/* Registration & Legal Documents */}
+        <CertificateDocuments />
+
       </div>
 
       {selectedMember && (
-        <div
-          className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm"
-          onClick={closeMemberBio}
-          aria-hidden="true"
-        />
+        <TeamBioModal member={selectedMember} onClose={closeMemberBio} />
       )}
 
     </div>
