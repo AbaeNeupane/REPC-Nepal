@@ -12,7 +12,7 @@ const TopBar = () => {
 
   return (
     <div className="bg-sky text-white text-xs py-1.5">
-      <div className="w-full px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
+      <div className="site-container flex items-center justify-between gap-4">
         {/* Notice Ticker */}
         <div className="flex items-center gap-2 flex-1 overflow-hidden">
           <span className="bg-white text-sky font-bold px-2 py-0.5 rounded text-xs shrink-0">

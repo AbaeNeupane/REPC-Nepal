@@ -18,7 +18,7 @@ const GalleryPreview = () => {
 
   return (
     <section className="bg-slate-50 py-16">
-      <div className="max-w-auto mx-auto px-4">
+      <div className="site-container">
         <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className={`text-xs font-semibold uppercase tracking-[0.2em] text-sky ${lang === 'np' ? 'font-nepali' : ''}`}>

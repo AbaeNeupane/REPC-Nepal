@@ -99,7 +99,7 @@ const Navigation = ({ mobileOpen, setMobileOpen }) => {
       ref={navRef}
       className={`lg:bg-navy lg:relative lg:z-[60] max-lg:fixed max-lg:inset-0 max-lg:z-[70] max-lg:pointer-events-none transition-shadow duration-300 ${scrolled ? 'lg:shadow-xl' : 'lg:shadow-md'}`}
     >
-      <div className="w-full px-4 sm:px-6 lg:px-8">
+      <div className="site-container">
 
         {/* ── Desktop nav ────────────────────────────────── */}
         <ul className="hidden lg:flex items-center">

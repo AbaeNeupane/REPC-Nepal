@@ -6,8 +6,8 @@ import { FaImages, FaTimes } from 'react-icons/fa';
 const PageBanner = ({ titleEn, titleNp }) => {
   const { lang } = useLang();
   return (
-    <div className="bg-navy text-white py-10 px-4">
-      <div className="max-w-7xl mx-auto">
+    <div className="bg-navy text-white py-10">
+      <div className="site-container">
         <div className="flex items-center gap-2 text-white/60 text-sm mb-2">
           <Link to="/" className="hover:text-white">Home</Link>
           <span>/</span>
@@ -37,7 +37,7 @@ const Gallery = () => {
     <div>
       <PageBanner titleEn="Photo Gallery" titleNp="फोटो ग्यालरी" />
 
-      <div className="max-w-7xl mx-auto px-4 py-10">
+      <div className="site-container py-10">
         <p className={`text-gray-500 text-sm mb-6 italic ${lang === 'np' ? 'font-nepali' : ''}`}>
           {t(
             'Photos from our programs, trainings, events, and campaigns across Nepal.',

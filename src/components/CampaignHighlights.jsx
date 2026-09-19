@@ -8,7 +8,7 @@ const CampaignHighlights = () => {
 
   return (
     <section className="bg-white py-16">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="site-container">
         <div className="mb-10 text-center">
           <div className="inline-flex items-center gap-2 rounded-full bg-sky/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-sky">
             <FaBullhorn size={12} />

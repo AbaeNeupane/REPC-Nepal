@@ -92,7 +92,7 @@ const AboutIntro = () => {
 
   return (
     <section className="bg-gradient-to-b from-white to-slate-50 py-10 sm:py-12 lg:py-16">
-      <div className="max-w-auto mx-auto px-4">
+      <div className="site-container">
         <div className="mb-8 max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full bg-sky/10 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-sky">
             <FaCompass size={12} />

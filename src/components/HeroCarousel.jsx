@@ -57,7 +57,7 @@ const HeroCarousel = () => {
       <div className="absolute inset-0 z-[2] bg-gradient-to-r from-[#07163d]/80 via-[#07163d]/35 to-transparent" />
 
       <div className="relative z-[3] h-full">
-        <div className="max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8">
+        <div className="site-container h-full">
           <div className="flex h-full items-center">
             <div className="max-w-2xl pt-4 sm:pt-6 md:pt-0" key={current} style={{ animation: 'fadeSlideIn 0.7s ease forwards' }}>
               <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1.5 text-[10px] md:text-xs font-semibold uppercase tracking-[0.18em] text-white/80 backdrop-blur-sm">

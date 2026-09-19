@@ -4,8 +4,8 @@ import { useLang } from '../context/LanguageContext';
 const PageBanner = ({ titleEn, titleNp }) => {
   const { lang } = useLang();
   return (
-    <div className="bg-navy text-white py-10 px-4">
-      <div className="max-w-7xl mx-auto">
+    <div className="bg-navy text-white py-10">
+      <div className="site-container">
         <div className="flex items-center gap-2 text-white/60 text-sm mb-2">
           <Link to="/" className="hover:text-white">Home</Link>
           <span>/</span>
@@ -84,8 +84,8 @@ const Programs = () => {
     <div>
       <PageBanner titleEn="Programs & Activities" titleNp="कार्यक्रम तथा गतिविधिहरू" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-10 text-justify">
-        <p className={`text-gray-600 mb-8 leading-relaxed max-w-auto ${lang === 'np' ? 'font-nepali text-base' : 'text-sm'}`}>
+      <div className="site-container py-10 text-justify">
+        <p className={`text-gray-600 mb-8 leading-relaxed ${lang === 'np' ? 'font-nepali text-base' : 'text-base'}`}>
           {t(
             'At REPC-Nepal, we drive integrated programs dedicated to empowering communities through human rights advocacy, accessible legal counsel, mediator training, and sustainable peacebuilding at both the grassroots and national levels.',
             'REPC-Nepal ले तृणमूल र राष्ट्रिय दुवै स्तरमा समुदायको सशक्तीकरणलाई केन्द्रविन्दुमा राखी एकीकृत कार्यक्रमहरू सञ्चालन गरिरहेको छ, जसअन्तर्गत मानव अधिकारको वकालत, सुलभ कानुनी परामर्श, मेलमिलापकर्ताहरूको क्षमता अभिवृद्धि र दिगो शान्ति निर्माणका कार्यहरू समावेश छन्।'
@@ -98,14 +98,14 @@ const Programs = () => {
               <div className={`${prog.color} h-2`} />
               <div className="p-5">
                 <div className="flex items-start justify-between gap-2 mb-3">
-                  <h3 className={`font-bold text-navy leading-snug ${lang === 'np' ? 'font-nepali text-base' : 'text-sm'}`}>
+                  <h3 className={`font-bold text-navy leading-snug ${lang === 'np' ? 'font-nepali text-base' : 'text-base'}`}>
                     {lang === 'en' ? prog.titleEn : prog.titleNp}
                   </h3>
                   <span className={`shrink-0 px-2 py-0.5 rounded text-xs font-semibold ${prog.statusEn === 'Ongoing' ? 'bg-green-100 text-green-700' : 'bg-sky-100 text-sky-700'} ${lang === 'np' ? 'font-nepali' : ''}`}>
                     {lang === 'en' ? prog.statusEn : prog.statusNp}
                   </span>
                 </div>
-                <p className={`text-gray-600 leading-relaxed ${lang === 'np' ? 'font-nepali text-sm' : 'text-xs'}`}>
+                <p className={`text-gray-600 leading-relaxed ${lang === 'np' ? 'font-nepali text-sm' : 'text-sm'}`}>
                   {lang === 'en' ? prog.descEn : prog.descNp}
                 </p>
               </div>

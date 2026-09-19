@@ -16,8 +16,8 @@
   body {
     @apply text-gray-800 bg-gray-50;
     font-family: 'Source Sans Pro', system-ui, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 17px;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -64,13 +64,13 @@
 
   /* Page copy uses a comfortable reading size; navigation and metadata keep their compact scale. */
   main .text-sm {
-    font-size: 1rem;
-    line-height: 1.65;
+    font-size: 1.05rem;
+    line-height: 1.7;
   }
 
   main .text-xs {
-    font-size: 0.875rem;
-    line-height: 1.5;
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 }
 
@@ -78,6 +78,46 @@
    COMPONENTS
 ───────────────────────────────────────────────────────────── */
 @layer components {
+
+  /* Shared desktop content rail. Full-width sections keep their background while
+     their content stays aligned at every desktop resolution. */
+  .site-container {
+    width: 100%;
+    max-width: 1680px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .site-container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .site-container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  .site-footer {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .site-footer .text-xs {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .site-footer .text-sm {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
 
   /* Page transitions — enter & exit */
   .page-enter {

@@ -7,8 +7,8 @@ import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaFacebook, FaTwitter, Fa
 const PageBanner = ({ titleEn, titleNp }) => {
   const { lang } = useLang();
   return (
-    <div className="bg-navy text-white py-10 px-4">
-      <div className="max-w-7xl mx-auto">
+    <div className="bg-navy text-white py-10">
+      <div className="site-container">
         <div className="flex items-center gap-2 text-white/60 text-sm mb-2">
           <Link to="/" className="hover:text-white">Home</Link>
           <span>/</span>
@@ -78,7 +78,7 @@ const Contact = () => {
     <div>
       <PageBanner titleEn="Contact Us" titleNp="सम्पर्क गर्नुहोस्" />
 
-      <div className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 lg:grid-cols-5 gap-8">
+      <div className="site-container py-10 grid grid-cols-1 lg:grid-cols-5 gap-8">
 
         {/* Left: Contact Info */}
         <div className="lg:col-span-2 space-y-5">

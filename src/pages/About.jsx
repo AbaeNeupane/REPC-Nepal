@@ -7,8 +7,8 @@ import { FaUserCircle, FaPhone, FaEnvelope, FaTimes } from 'react-icons/fa';
 const PageBanner = ({ titleEn, titleNp }) => {
   const { lang } = useLang();
   return (
-    <div className="bg-navy text-white py-10 px-4">
-      <div className="max-w-7xl mx-auto">
+    <div className="bg-navy text-white py-10">
+      <div className="site-container">
         <div className="flex items-center gap-2 text-white/60 text-sm mb-2">
           <Link to="/" className="hover:text-white transition-colors">Home</Link>
           <span>/</span>
@@ -134,7 +134,7 @@ const About = () => {
     <div>
       <PageBanner titleEn="Our Organization" titleNp="हाम्रो संस्था" />
 
-      <div className="max-w-7xl mx-auto px-4 py-10">
+      <div className="site-container py-10">
 
         {/* Executive Committee */}
         <section id="team" className="mb-12 scroll-mt-20">

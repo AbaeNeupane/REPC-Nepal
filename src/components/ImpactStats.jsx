@@ -14,7 +14,7 @@ const ImpactStats = () => {
 
   return (
     <section className="bg-[#07163d] py-14">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="site-container">
         <div className="mb-8 text-center">
           <p className={`text-xs font-semibold uppercase tracking-[0.2em] text-sky ${lang === 'np' ? 'font-nepali' : ''}`}>
             {lang === 'en' ? 'Our constitutional focus' : 'हाम्रो संवैधानिक कार्यक्षेत्र'}

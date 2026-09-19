@@ -6,8 +6,8 @@ import { FaBalanceScale, FaHandshake, FaUserShield, FaChild, FaExternalLinkAlt, 
 const PageBanner = ({ titleEn, titleNp }) => {
   const { lang } = useLang();
   return (
-    <div className="bg-navy text-white py-10 px-4">
-      <div className="max-w-7xl mx-auto">
+    <div className="bg-navy text-white py-10">
+      <div className="site-container">
         <div className="flex items-center gap-2 text-white/60 text-sm mb-2">
           <Link to="/" className="hover:text-white transition-colors">Home</Link>
           <span>/</span>
@@ -43,7 +43,7 @@ const LegalFramework = () => {
 
         {/* Intro */}
         <div className="bg-blue-50 border-l-4 border-navy p-5 rounded-sm mb-8">
-          <p className={`text-gray-700 leading-relaxed ${lang === 'np' ? 'font-nepali text-base' : 'text-sm'}`}>
+          <p className={`text-gray-700 leading-relaxed ${lang === 'np' ? 'font-nepali text-base' : 'text-base'}`}>
             {t(
               'REPC-Nepal\u2019s work in mediation, legal aid, and human rights protection is grounded in the following Nepali laws. This overview is for general awareness only.',
               'REPC-Nepal को मेलमिलाप, कानुनी सहायता र मानव अधिकार संरक्षणसम्बन्धी काम निम्न नेपाली कानूनहरूमा आधारित छ। यो विवरण सामान्य जानकारीका लागि मात्र हो।'
@@ -83,7 +83,7 @@ const LegalFramework = () => {
                         </a>
                       )}
                     </div>
-                    <p className={`text-gray-600 leading-relaxed ${lang === 'np' ? 'font-nepali text-base' : 'text-sm'}`}>
+                    <p className={`text-gray-600 leading-relaxed ${lang === 'np' ? 'font-nepali text-base' : 'text-base'}`}>
                       {lang === 'en' ? law.descEn : law.descNp}
                     </p>
                   </div>

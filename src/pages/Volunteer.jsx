@@ -10,8 +10,8 @@ import {
 const PageBanner = ({ titleEn, titleNp }) => {
   const { lang } = useLang();
   return (
-    <div className="bg-navy text-white py-10 px-4">
-      <div className="max-w-7xl mx-auto">
+    <div className="bg-navy text-white py-10">
+      <div className="site-container">
         <div className="flex items-center gap-2 text-white/60 text-sm mb-2">
           <Link to="/" className="hover:text-white transition-colors">Home</Link>
           <span>/</span>
@@ -81,7 +81,7 @@ const Volunteer = () => {
     <div>
       <PageBanner titleEn="Get Involved" titleNp="सहभागी हुनुहोस्" />
 
-      <div className="max-w-7xl mx-auto px-4 py-10">
+      <div className="site-container py-10">
 
         {/* Intro */}
         <section className="mb-12 text-center max-w-3xl mx-auto">
@@ -89,7 +89,7 @@ const Volunteer = () => {
           <h2 className={`text-xl font-bold text-navy mb-3 ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t('Volunteer With REPC-Nepal', 'REPC-नेपालसँग स्वयंसेवा गर्नुहोस्')}
           </h2>
-          <p className={`text-gray-600 leading-relaxed ${lang === 'np' ? 'font-nepali text-base' : 'text-sm'}`}>
+          <p className={`text-gray-600 leading-relaxed ${lang === 'np' ? 'font-nepali text-base' : 'text-base'}`}>
             {t(
               'Whether you have a few hours a month or a professional skill to share, there is a place for you at REPC-Nepal. Tell us how you would like to contribute, and we will follow up with the next steps.',
               'तपाईंसँग महिनामा केही घण्टा समय होस् वा साझा गर्न मिल्ने व्यावसायिक सीप, REPC-नेपालमा तपाईंका लागि योगदान गर्ने अवसर छ। तपाईं कुन क्षेत्रमा सहयोग गर्न चाहनुहुन्छ बताउनुहोस्; हामी आगामी प्रक्रियाबारे सम्पर्क गर्नेछौं।'

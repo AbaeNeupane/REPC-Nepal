@@ -125,13 +125,13 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
         </div>
       )}
 
-      <div className="w-full px-4 sm:px-6 lg:px-8 py-5 sm:py-4 flex items-center justify-between gap-3 relative z-10">
+      <div className="site-container py-5 sm:py-4 flex items-center justify-between gap-3 relative z-10">
 
         {/* Left: LOGO + Org Name */}
         <Link to="/" className="flex items-center gap-2 sm:gap-3 min-w-0">
           
           {/* UPDATED: Dynamic Emblem based on language and Increase Logo Size*/}
-          <div className="w-32 h-32 sm:w-24 sm:h-24 md:w-32 md:h-32 shrink-0 flex items-center justify-center">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-20 md:h-20 lg:w-20 lg:h-20 shrink-0 flex items-center justify-center">
             <img
               key={lang} // CRITICAL: Forces React to reset the image element when language changes
               src={lang === 'np' ? '/logoNp.png' : '/logoEn.png'}
@@ -147,7 +147,7 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
             />
             {/* Fallback Emblem */}
             <div
-              className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-full border-4 border-navy bg-navy hidden items-center justify-center"
+              className="w-14 h-14 sm:w-16 sm:h-16 md:w-[4.5rem] md:h-[4.5rem] lg:w-20 lg:h-20 rounded-full border-4 border-navy bg-navy hidden items-center justify-center"
               aria-label="REPC-Nepal Logo Placeholder"
             >
               <span className="text-white font-bold text-xs text-center leading-tight px-1 select-none">

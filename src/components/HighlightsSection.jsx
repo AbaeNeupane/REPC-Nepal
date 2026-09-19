@@ -42,7 +42,7 @@ const HighlightsSection = () => {
 
   return (
     <section className="bg-slate-50 py-16">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="site-container">
         <div className="mb-10 text-center">
           <p className={`text-xs font-semibold uppercase tracking-[0.2em] text-sky ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t('Our work', 'हाम्रो कार्यक्षेत्र')}

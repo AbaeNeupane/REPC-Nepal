@@ -15,9 +15,9 @@ const Footer = () => {
   const { lang, t } = useLang();
 
   return (
-    <footer className="bg-[#0a1628] text-white">
+    <footer className="site-footer bg-[#0a1628] text-white">
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 sm:gap-8 justify-items-center text-left sm:justify-items-stretch">
+      <div className="site-container py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 sm:gap-8 justify-items-center text-left sm:justify-items-stretch">
 
         {/* Column 1: Logo + About */}
         <div className="w-full max-w-xs py-7 first:pt-0 border-b border-white/10 sm:max-w-none sm:py-0 sm:border-b-0">
@@ -172,7 +172,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/10 py-4">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="site-container flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className={`text-white/50 text-xs ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t(
               `© 2083 Rights, Equity and Peace Campaign – Nepal. All rights reserved.`,

@@ -7,8 +7,8 @@ const PageBanner = ({ titleEn, titleNp }) => {
   const { lang } = useLang();
 
   return (
-    <div className="bg-navy px-4 py-10 text-white">
-      <div className="mx-auto max-w-7xl">
+    <div className="bg-navy py-10 text-white">
+      <div className="site-container">
         <div className="mb-2 flex items-center gap-2 text-sm text-white/60">
           <Link to="/" className="transition-colors hover:text-white">Home</Link>
           <span>/</span>
@@ -30,13 +30,13 @@ const Membership = () => {
     <div>
       <PageBanner titleEn="Membership" titleNp="सदस्यता" />
 
-      <div className="mx-auto max-w-7xl px-4 py-10">
+      <div className="site-container py-10">
         <section className="mx-auto mb-12 max-w-3xl text-center">
           <FaUsers className="mx-auto mb-4 text-sky" size={34} />
           <h2 className={`mb-3 text-xl font-bold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t('Join the REPC–NEPAL community', 'REPC–NEPAL समुदायमा जोडिनुहोस्')}
           </h2>
-          <p className={`leading-relaxed text-gray-600 ${lang === 'np' ? 'font-nepali text-base' : 'text-sm'}`}>
+          <p className={`leading-relaxed text-gray-600 ${lang === 'np' ? 'font-nepali text-base' : 'text-base'}`}>
             {lang === 'en' ? membershipInfo.introEn : membershipInfo.introNp}
           </p>
         </section>
@@ -78,7 +78,7 @@ const Membership = () => {
           <h2 className={`text-xl font-bold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t('How to apply', 'आवेदन गर्ने तरिका')}
           </h2>
-          <p className={`mt-3 max-w-3xl leading-relaxed text-gray-600 ${lang === 'np' ? 'font-nepali text-base' : 'text-sm'}`}>
+          <p className={`mt-3 max-w-3xl leading-relaxed text-gray-600 ${lang === 'np' ? 'font-nepali text-base' : 'text-base'}`}>
             {lang === 'en' ? membershipInfo.processEn : membershipInfo.processNp}
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">

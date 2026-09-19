@@ -5,8 +5,8 @@ import { FaFilePdf, FaFileWord, FaDownload } from 'react-icons/fa';
 const PageBanner = ({ titleEn, titleNp }) => {
   const { lang } = useLang();
   return (
-    <div className="bg-navy text-white py-10 px-4">
-      <div className="max-w-7xl mx-auto">
+    <div className="bg-navy text-white py-10">
+      <div className="site-container">
         <div className="flex items-center gap-2 text-white/60 text-sm mb-2">
           <Link to="/" className="hover:text-white">Home</Link>
           <span>/</span>
@@ -59,7 +59,7 @@ const Publications = () => {
     <div>
       <PageBanner titleEn="Publications & Downloads" titleNp="प्रकाशन तथा डाउनलोडहरू" />
 
-      <div id="downloads" className="max-w-7xl mx-auto px-4 py-10 space-y-10 scroll-mt-20">
+      <div id="downloads" className="site-container py-10 space-y-10 scroll-mt-20">
         {publications.map((section, si) => (
           <div key={si} id={['annual', 'legal', 'training', 'research'][si]} className="scroll-mt-20">
             <h2 className={`text-lg font-bold text-navy mb-4 flex items-center gap-2 ${lang === 'np' ? 'font-nepali' : ''}`}>

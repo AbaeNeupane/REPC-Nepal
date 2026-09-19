@@ -23,8 +23,8 @@ const iconMap = {
 const PageBanner = ({ titleEn, titleNp }) => {
   const { lang } = useLang();
   return (
-    <div className="bg-navy text-white py-10 px-4">
-      <div className="max-w-7xl mx-auto">
+    <div className="bg-navy text-white py-10">
+      <div className="site-container">
         <div className="flex items-center gap-2 text-white/60 text-sm mb-2">
           <Link to="/" className="hover:text-white transition-colors">Home</Link>
           <span>/</span>
@@ -53,7 +53,7 @@ const ServiceCard = ({ svc, lang }) => {
         </h2>
       </div>
       <div className="p-5">
-        <p className={`text-gray-600 leading-relaxed ${lang === 'np' ? 'font-nepali text-base' : 'text-sm'}`}>
+        <p className={`text-gray-600 leading-relaxed ${lang === 'np' ? 'font-nepali text-base' : 'text-base'}`}>
           {lang === 'en' ? svc.descEn : svc.descNp}
         </p>
       </div>
@@ -70,11 +70,11 @@ const Services = () => {
     <div>
       <PageBanner titleEn="Our Services" titleNp="हाम्रा सेवाहरू" />
 
-      <div className="max-w-7xl mx-auto px-4 py-10">
+      <div className="site-container py-10">
 
         {/* Intro */}
         <div className="bg-blue-50 border-l-4 border-navy p-5 rounded-sm mb-10">
-          <p className={`text-gray-700 leading-relaxed ${lang === 'np' ? 'font-nepali text-base' : 'text-sm'}`}>
+          <p className={`text-gray-700 leading-relaxed ${lang === 'np' ? 'font-nepali text-base' : 'text-base'}`}>
             {t(
               'REPC-Nepal works to protect and promote human rights, improve access to justice, support vulnerable communities, and advance peaceful conflict resolution through mediation, legal support, awareness, training, research, and cooperation.',
               'REPC-Nepal ले मानव अधिकारको संरक्षण तथा प्रवर्द्धन, न्यायमा पहुँच सुधार, कमजोर समुदायको सहयोग तथा मेलमिलाप, कानुनी सहयोग, सचेतना, तालिम, अनुसन्धान र सहकार्यद्वारा द्वन्द्वको शान्तिपूर्ण समाधानमा काम गर्छ।'
