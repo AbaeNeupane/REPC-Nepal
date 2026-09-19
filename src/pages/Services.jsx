@@ -97,9 +97,12 @@ const Services = () => {
 
         {/* Legal, training, research, and cooperation */}
         <section className="mb-12">
-          <h2 className={`text-xl font-bold text-navy mb-5 ${lang === 'np' ? 'font-nepali' : ''}`}>
-            {t('Legal, Training, Research, and Cooperation', 'कानुनी सेवा, तालिम, अनुसन्धान तथा सहकार्य')}
-          </h2>
+          <div className="flex items-center gap-2 mb-5">
+            <FaBalanceScale className="text-black" size={20} />
+            <h2 className={`text-xl font-bold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
+              {t('Legal, Training, Research, and Cooperation', 'कानुनी सेवा, तालिम, अनुसन्धान तथा सहकार्य')}
+            </h2>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {legalServices.map((svc, i) => <ServiceCard key={i} svc={svc} lang={lang} />)}
           </div>
