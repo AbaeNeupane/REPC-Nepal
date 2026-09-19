@@ -28,7 +28,7 @@ const Home = () => {
       
       {/* Main two-column content */}
       <ScrollReveal delay={90}>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 px-8 py-12">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 px-4 py-12">
           <NoticesSection />
           <ServicesSection />
         </div>
