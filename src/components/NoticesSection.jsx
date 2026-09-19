@@ -94,7 +94,7 @@ const NoticesSection = () => {
           to="/notices"
           className={`inline-flex items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-sky ${lang === 'np' ? 'font-nepali' : ''}`}
         >
-          {t('View All', 'सबै हेर्नुहोस्')} <FaArrowRight size={10} />
+          {t('View All Updates', 'सबै अपडेटहरू')} <FaArrowRight size={10} />
         </Link>
       </div>
     </div>

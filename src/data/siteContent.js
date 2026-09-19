@@ -62,7 +62,7 @@ export const heroSlides = [
     subtitleNp: 'संवाद, मेलमिलाप, पुनर्मिलन र न्यायमा पहुँचमार्फत व्यक्ति तथा समुदायका विवाद समाधान गर्न हामी सहयोग गर्छौं।',
     ctaEn: 'Mediation Services',
     ctaNp: 'मेलमिलाप सेवा',
-    ctaLink: '/services',
+    ctaLink: '/services#mediation',
     gradient: 'from-slate-800 via-slate-700 to-slate-600',
     accent: '#38BDF8',
   },
@@ -73,7 +73,7 @@ export const heroSlides = [
     subtitleNp: 'महिला, बालबालिका, ज्येष्ठ नागरिक, अपाङ्गता भएका व्यक्ति तथा अन्य विपन्न समूहलाई कानुनी परामर्श, सचेतना र सहयोग प्रदान गर्छौं।',
     ctaEn: 'Legal Aid',
     ctaNp: 'कानुनी सहायता',
-    ctaLink: '/services',
+    ctaLink: '/services#legal-aid',
     gradient: 'from-blue-900 via-blue-800 to-sky-700',
     accent: '#0369A1',
   },
@@ -300,6 +300,14 @@ export const services = [
     descEn: 'Training on mediation, human rights, child justice, legal awareness, and related areas for communities and institutions.',
     descNp: 'समुदाय तथा संस्थाका लागि मेलमिलाप, मानव अधिकार, बाल न्याय, कानुनी सचेतना तथा सम्बन्धित विषयमा तालिम।',
     link: '/services#training',
+  },
+  {
+    icon: 'training', group: 'legal',
+    titleEn: 'Paralegal and Mediation Training',
+    titleNp: 'प्यारालीगल तथा मेलमिलाप तालिम',
+    descEn: 'Training programs for paralegals, community mediators, and other local actors to enhance legal awareness, mediation skills, and access to justice.',
+    descNp: 'प्यारालीगल, सामुदायिक मेलमिलापकर्ता तथा अन्य स्थानीय कार्यकर्ताका लागि कानुनी सचेतना, मेलमिलाप सीप र न्यायमा पहुँच अभिवृद्धि गर्ने तालिम कार्यक्रमहरू।',
+    link: '/services#paralegal-training',
   },
   {
     icon: 'training', group: 'legal',
@@ -540,12 +548,6 @@ export const campaigns = [
     descEn: 'Training community mediators and resolving local disputes without litigation.',
     descNp: 'सामुदायिक मेलमिलापकर्तालाई तालिम दिई मुद्दामामिला नगरी स्थानीय विवाद समाधानमा सहयोग।',
   },
-  {
-    id: 3, src: null, color: 'from-blue-700 to-sky',
-    titleEn: 'Community Rights Awareness Campaign', titleNp: 'सामुदायिक अधिकार सचेतना अभियान',
-    descEn: 'Outreach programs building awareness of rights and legal access in rural communities.',
-    descNp: 'ग्रामीण समुदायमा अधिकार र कानुनी पहुँचबारे सचेतना अभिवृद्धि गर्ने कार्यक्रमहरू।',
-  },
 ];
 
 export const about = {
@@ -580,7 +582,6 @@ export const donationInfo = {
   branchEn: 'To be added', branchNp: 'थप्न बाँकी',
   waysToGive: [
     { icon: 'bank', titleEn: 'Bank Transfer', titleNp: 'बैंक स्थानान्तरण', descEn: 'Direct deposit to our organizational bank account (details below).', descNp: 'हाम्रो संस्थागत बैंक खातामा प्रत्यक्ष जम्मा गर्नुहोस् (विवरण तल)।' },
-    { icon: 'wallet', titleEn: 'eSewa / Khalti', titleNp: 'eSewa / Khalti', descEn: 'Digital wallet transfer — contact us for our QR code and ID.', descNp: 'डिजिटल वालेट स्थानान्तरण — QR कोड र ID का लागि हामीलाई सम्पर्क गर्नुहोस्।' },
     { icon: 'member', titleEn: 'Become a Member', titleNp: 'सदस्य बन्नुहोस्', descEn: 'Support our work year-round with an annual membership contribution.', descNp: 'वार्षिक सदस्यता योगदानद्वारा वर्षभरि हाम्रो कामलाई सहयोग गर्नुहोस्।' },
     { icon: 'partner', titleEn: 'In-Kind & Partnership', titleNp: 'वस्तुगत सहयोग तथा साझेदारी', descEn: 'Offer equipment, venue space, or a program partnership instead of cash.', descNp: 'नगदको सट्टा उपकरण, स्थान, वा कार्यक्रम साझेदारी प्रदान गर्नुहोस्।' },
   ],

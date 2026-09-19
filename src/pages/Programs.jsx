@@ -26,8 +26,8 @@ const programs = [
     titleNp: 'आधारभूत मेलमिलाप तालिम कार्यक्रम',
     descEn: 'A foundational training program for individuals seeking to become certified mediators. Covers principles of mediation, communication skills, and practical exercises.',
     descNp: 'प्रमाणित मेलमिलापकर्ता बन्न चाहने व्यक्तिहरूका लागि आधारभूत तालिम कार्यक्रम। यसमा मेलमिलापका सिद्धान्त, सञ्चार सीप र व्यावहारिक अभ्यास समावेश छन्।',
-    statusEn: 'Ongoing',
-    statusNp: 'जारी',
+    statusEn: 'Planning',
+    statusNp: 'योजनामा',
     color: 'bg-navy',
   },
   {
@@ -35,8 +35,8 @@ const programs = [
     titleNp: 'मानव अधिकार सचेतना अभियान',
     descEn: 'Community-level campaigns to raise awareness about fundamental human rights, legal protections, and how to access justice.',
     descNp: 'मौलिक मानव अधिकार, कानुनी सुरक्षा र न्यायमा पहुँचबारे सचेतना अभिवृद्धि गर्ने समुदायस्तरीय अभियानहरू।',
-    statusEn: 'Ongoing',
-    statusNp: 'जारी',
+    statusEn: 'Planning',
+    statusNp: 'योजनामा',
     color: 'bg-sky',
   },
   {
@@ -44,8 +44,8 @@ const programs = [
     titleNp: 'कानुनी सहायता क्लिनिक',
     descEn: 'Regular legal counselling sessions for vulnerable groups, including women, children, older persons, and differently abled person.',
     descNp: 'महिला, बालबालिका, ज्येष्ठ नागरिक र अपाङ्गता भएका व्यक्तिलगायत कमजोर समूहका लागि नियमित कानुनी परामर्श सत्रहरू।',
-    statusEn: 'Ongoing',
-    statusNp: 'जारी',
+    statusEn: 'Planning',
+    statusNp: 'योजनामा',
     color: 'bg-cyan-700',
   },
   {
@@ -53,8 +53,8 @@ const programs = [
     titleNp: 'लैङ्गिक हिंसा रोकथाम कार्यक्रम',
     descEn: 'Educational programs targeting prevention of gender-based violence, supporting survivors, and connecting victims with legal resources.',
     descNp: 'लैङ्गिक हिंसा रोकथाम, पीडितलाई सहयोग तथा कानुनी स्रोतसँग जोड्ने शैक्षिक कार्यक्रमहरू।',
-    statusEn: 'Planned',
-    statusNp: 'योजनाबद्ध',
+    statusEn: 'Planning',
+    statusNp: 'योजनामा',
     color: 'bg-blue-600',
   },
   {
@@ -62,8 +62,8 @@ const programs = [
     titleNp: 'बाल अधिकार र बाल न्याय कार्यक्रम',
     descEn: 'Programs focusing on child rights awareness, protection from abuse and exploitation, and support for children in conflict with the law.',
     descNp: 'बाल अधिकार सचेतना, दुर्व्यवहार र शोषणबाट सुरक्षा र कानुनसँग द्वन्द्वमा रहेका बालबालिकालाई सहयोगमा केन्द्रित कार्यक्रमहरू।',
-    statusEn: 'Ongoing',
-    statusNp: 'जारी',
+    statusEn: 'Planning',
+    statusNp: 'योजनामा',
     color: 'bg-blue-800',
   },
   {
@@ -71,8 +71,8 @@ const programs = [
     titleNp: 'जलवायु परिवर्तन र मानव अधिकार अध्ययन',
     descEn: 'Research initiative studying the intersection of climate change and human rights in Nepal, with focus on vulnerable communities.',
     descNp: 'नेपालमा जलवायु परिवर्तन र मानव अधिकारबीचको सम्बन्धबारे कमजोर समुदायमा केन्द्रित अनुसन्धान पहल।',
-    statusEn: 'Planned',
-    statusNp: 'योजनाबद्ध',
+    statusEn: 'Planning',
+    statusNp: 'योजनामा',
     color: 'bg-sky-700',
   },
 ];
@@ -85,7 +85,7 @@ const Programs = () => {
       <PageBanner titleEn="Programs & Activities" titleNp="कार्यक्रम तथा गतिविधिहरू" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-10 text-justify">
-        <p className={`text-gray-600 mb-8 leading-relaxed max-w-3xl ${lang === 'np' ? 'font-nepali text-base' : 'text-sm'}`}>
+        <p className={`text-gray-600 mb-8 leading-relaxed max-w-auto ${lang === 'np' ? 'font-nepali text-base' : 'text-sm'}`}>
           {t(
             'At REPC-Nepal, we drive integrated programs dedicated to empowering communities through human rights advocacy, accessible legal counsel, mediator training, and sustainable peacebuilding at both the grassroots and national levels.',
             'REPC-Nepal ले तृणमूल र राष्ट्रिय दुवै स्तरमा समुदायको सशक्तीकरणलाई केन्द्रविन्दुमा राखी एकीकृत कार्यक्रमहरू सञ्चालन गरिरहेको छ, जसअन्तर्गत मानव अधिकारको वकालत, सुलभ कानुनी परामर्श, मेलमिलापकर्ताहरूको क्षमता अभिवृद्धि र दिगो शान्ति निर्माणका कार्यहरू समावेश छन्।'

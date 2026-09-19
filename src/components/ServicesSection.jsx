@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import { services } from '../data/siteContent';
 import {
-  FaHandshake, FaGavel, FaComments, FaExchangeAlt, FaBalanceScale,
+  FaHandshake, FaArrowRight, FaGavel, FaComments, FaExchangeAlt, FaBalanceScale,
   FaFileSignature, FaUserTie, FaUsersCog, FaChalkboardTeacher, FaSearch,
 } from 'react-icons/fa';
 
@@ -67,7 +67,7 @@ const ServicesSection = () => {
           to="/services"
           className={`inline-flex items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-sky ${lang === 'np' ? 'font-nepali' : ''}`}
         >
-          {t('View All Services', 'सबै सेवाहरू हेर्नुहोस्')}
+          {t('View All Services', 'सबै सेवाहरू')} <FaArrowRight size={10} />
         </Link>
       </div>
     </div>

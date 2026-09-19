@@ -1,18 +1,18 @@
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
-import { FaGavel, FaPeace, FaUsers, FaLeaf } from 'react-icons/fa';
+import { FaGavel, FaHandshake, FaUsers, FaLeaf } from 'react-icons/fa';
 
 const highlights = [
   {
     icon: FaGavel,
     en: 'Human Rights Protection',
     np: 'मानव अधिकार संरक्षण',
-    descEn: 'Protecting and promoting human rights, equality, dignity, and social justice.',
-    descNp: 'मानव अधिकार, समानता, मर्यादा तथा सामाजिक न्यायको संरक्षण र प्रवर्द्धन।',
+    descEn: 'Protecting and promoting the fundamental human rights like right to life, dignity, equality, liberty and access to justice for all individuals.',
+    descNp: 'जीवन, मर्यादा, समानता, स्वतन्त्रता र न्यायमा पहुँच जस्ता मौलिक मानव अधिकारको संरक्षण र प्रवर्द्धन।',
     color: 'bg-navy',
   },
   {
-    icon: FaPeace,
+    icon: FaHandshake,
     en: 'Mediation and Reconciliation',
     np: 'मेलमिलाप तथा पुनर्मिलन',
     descEn: 'Supporting dialogue, mediation, reconciliation, and peaceful conflict resolution.',
