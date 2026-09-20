@@ -232,13 +232,13 @@ const Footer = () => {
           md+   : copyright left, registration right */}
       <div className="border-t border-white/10 py-4 pb-24 md:pb-4 bg-black/20">
         <div className="site-container footer-bottom-bar flex flex-col md:flex-row items-center md:justify-between gap-1.5 md:gap-4 text-center md:text-left">
-          <p className={`text-white/50 text-[10px] md:text-xs ${np}`}>
+          <p className={`text-white/50 text-[13px] md:text-xs ${np}`}>
             {t(
               `© 2083 Rights, Equity and Peace Campaign – Nepal. All rights reserved.`,
               `© २०८३ अधिकार, समता र शान्ति अभियान–नेपाल। सर्वाधिकार सुरक्षित।`
             )}
           </p>
-          <p className={`text-white/40 text-xs md:text-right ${np}`}>
+          <p className={`text-white/40 text-[14px] md:text-xs md:text-right ${np}`}>
             {t(
               `Reg. No: ${siteInfo.registrationNo}`,
               `दर्ता नं: ${toNepaliDigits(siteInfo.registrationNo)}`
