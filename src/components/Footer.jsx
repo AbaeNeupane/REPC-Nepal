@@ -59,7 +59,7 @@ const FooterSection = ({ title, fontClass, defaultOpen = false, children, classN
 
 const socials = [
   { key: 'facebook', label: 'Facebook', Icon: FaFacebook, href: () => siteInfo.facebook, hover: 'hover:bg-sky' },
-  { key: 'twitter', label: 'Twitter', Icon: FaTwitter, href: () => siteInfo.twitter, hover: 'hover:bg-sky' },
+  // { key: 'twitter', label: 'Twitter', Icon: FaTwitter, href: () => siteInfo.twitter, hover: 'hover:bg-sky' },
   { key: 'youtube', label: 'YouTube', Icon: FaYoutube, href: () => siteInfo.youtube, hover: 'hover:bg-sky' },
   { key: 'whatsapp', label: 'WhatsApp', Icon: FaWhatsapp, href: () => `https://wa.me/${siteInfo.whatsapp}`, hover: 'hover:bg-green-500' },
 ];

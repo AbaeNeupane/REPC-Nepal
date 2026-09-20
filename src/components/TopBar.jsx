@@ -11,7 +11,7 @@ const TopBar = () => {
     .join('   ❖   ');
 
   return (
-    <div className="bg-sky text-white text-xs py-1.5">
+    <div className="bg-navy text-white text-xs py-1.5">
       <div className="site-container flex items-center justify-between gap-4">
         {/* Notice Ticker */}
         <div className="flex items-center gap-2 flex-1 overflow-hidden">
@@ -31,10 +31,10 @@ const TopBar = () => {
              className="hover:text-white/70 transition-colors" aria-label="Facebook">
             <FaFacebook size={13} />
           </a>
-          <a href={siteInfo.twitter} target="_blank" rel="noopener noreferrer"
+          {/* <a href={siteInfo.twitter} target="_blank" rel="noopener noreferrer"
              className="hover:text-white/70 transition-colors" aria-label="Twitter">
             <FaTwitter size={13} />
-          </a>
+          </a> */}
           <a href={siteInfo.youtube} target="_blank" rel="noopener noreferrer"
              className="hover:text-white/70 transition-colors" aria-label="YouTube">
             <FaYoutube size={13} />

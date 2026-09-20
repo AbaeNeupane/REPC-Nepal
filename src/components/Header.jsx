@@ -158,10 +158,14 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
 
           {/* Org Name Block */}
           <div className="min-w-0">
-            <p className={`block text-sky italic text-xs sm:text-sm md:text-base font-medium leading-none mb-1.5 ${lang === 'np' ? 'font-nepali' : ''}`}>
+            <p className={`block text-navy italic text-xs sm:text-sm md:text-base font-medium leading-none mb-1.5 ${lang === 'np' ? 'font-nepali' : ''}`}>
               “{t(siteInfo.mottoEn, siteInfo.mottoNp)}”
             </p>
-            <h1 className={`font-bold leading-tight text-navy ${lang === 'np' ? 'font-nepali text-base sm:text-lg md:text-4xl' : 'text-base sm:text-lg md:text-3xl'}`}>
+            <h1 className={`font-bold leading-tight text-navy outline-black ${lang === 'np' ? 'font-nepali text-base sm:text-lg md:text-4xl' : 'text-base sm:text-lg md:text-3xl'}`}
+              style={{
+                WebkitTextStroke: '1px #000',
+                paintOrder: 'stroke fill',
+              }}>
               {t(siteInfo.nameEn, siteInfo.nameNp)}
             </h1>
           </div>

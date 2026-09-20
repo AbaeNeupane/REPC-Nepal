@@ -19,7 +19,7 @@ export const siteInfo = {
   website: 'www.repcnepal.org.np',
   facebook: 'https://www.facebook.com/share/1DBHcrxqnP/', 
   twitter: 'https://twitter.com/repcnepal',    // ← UPDATE THIS
-  youtube: 'https://youtube.com/@repcnepal',   // ← UPDATE THIS
+  youtube: 'https://youtube.com/@repc-nepal?si=V_u-JKaj23xaS8Gx',   // ← UPDATE THIS
   officeHoursEn: 'Sunday – Friday: 10:00 AM – 5:00 PM',
   officeHoursNp: 'आइतबार – शुक्रबार: बिहान १०:०० – साँझ ५:००',
   registrationNo: 'CDO, 25/2083/084',
@@ -29,14 +29,6 @@ export const siteInfo = {
 
 // ─── TOP BAR NOTICES (scrolling ticker) ─────────────────────
 export const topNotices = [
-  {
-    en: 'Legal aid and mediation services available — contact us today.',
-    np: 'कानुनी सहायता तथा मेलमिलाप सेवा उपलब्ध छ — आज नै सम्पर्क गर्नुहोस्।',
-  },
-  {
-    en: 'Registration open for Human Rights Training Program 2081/82.',
-    np: 'मानव अधिकारसम्बन्धी तालिम कार्यक्रम २०८१/८२ का लागि दर्ता खुला छ।',
-  },
   {
     en: 'REPC-Nepal is affiliated with the Social Welfare Council and the Mediation Council of Nepal.',
     np: 'REPC-Nepal समाज कल्याण परिषद् तथा नेपाल मेलमिलाप परिषद्सँग आबद्ध छ।',
@@ -399,8 +391,8 @@ export const team = [
     phone: '+977 9861997464',
     email: 'abaeofficial@gmail.com',
     photo: '/images/team/abae.jpeg',
-    bioEn: 'As a member of the Executive Committee, he contributes to REPC-Nepal\u2019s strategic decisions and supports the organization\u2019s programs in human rights, mediation, and legal aid.',
-    bioNp: 'कार्यकारी समितिको सदस्यको हैसियतमा, उहाँले REPC-Nepal को रणनीतिक निर्णयमा योगदान पुर्‍याउनुहुन्छ र मानव अधिकार, मेलमिलाप र कानुनी सहायता सम्बन्धी संस्थाका कार्यक्रमहरूलाई सहयोग गर्नुहुन्छ।',
+    bioEn: 'Avishek Neupane is a founding member of REPC-Nepal with a background in information technology. He has developed and maintains the organization’s website, contributing to the effective digital presentation of its activities, objectives, and programs. As a founding member, he contributes to REPC-Nepal’s strategic decisions and supports the organization’s programs in human rights, mediation, and legal aid through technology.',
+    bioNp: 'अभिषेक न्यौपाने REPC-Nepal का संस्थापक सदस्य तथा सूचना प्रविधि क्षेत्रमा संलग्न युवा हुनुहुन्छ। उहाँले संस्थाको वेबसाइट विकास तथा व्यवस्थापन गर्दै संस्थाका गतिविधि, उद्देश्य र कार्यक्रमहरूलाई डिजिटल माध्यमबाट प्रभावकारी रूपमा प्रस्तुत गर्न योगदान पुर्‍याउँदै आउनुभएको छ। REPC-Nepal को संस्थापक सदस्यका रूपमा उहाँले संस्थाका रणनीतिक निर्णयहरूमा योगदान पुर्‍याउँदै मानव अधिकार, मध्यस्थता तथा कानुनी सहायता सम्बन्धी कार्यक्रमहरूलाई प्रविधिमार्फत सहयोग गर्दै आउनुभएको छ।',
   },
   {
     id: 7,
@@ -411,7 +403,7 @@ export const team = [
     phone: '+977 9851436436',
     email: 'binusim99@gmail.com',
     photo: '/images/team/binu.png',
-    bioEn: 'Binu Sinkhada is a permanent resident of Nilkantha Municipality–3, Dhading, and holds a B.Ed. in Education from Nilkantha Multiple Campus, Dhading. She has been working at Ganesh Himal Press as an Editor-in-Chief and Correspondent since 2079 B.S. Previously, she worked at Radio Dhading as a Correspondent and News Reader from 2078 to 2080 B.S., and at Divya Darshan Television as a Correspondent and News Reader from 2070 to 2075 B.S. As a member of the Executive Committee, she contributes to REPC-Nepal’s strategic decisions and supports the organization’s programs in human rights, mediation, and legal aid.',
+    bioEn: 'Binu Simkhada is a permanent resident of Nilkantha Municipality–3, Dhading, and holds a B.Ed. in Education from Nilkantha Multiple Campus, Dhading. She has been working at Ganesh Himal Press as an Editor-in-Chief and Correspondent since 2079 B.S. Previously, she worked at Radio Dhading as a Correspondent and News Reader from 2078 to 2080 B.S., and at Divya Darshan Television as a Correspondent and News Reader from 2070 to 2075 B.S. As a member of the Executive Committee, she contributes to REPC-Nepal’s strategic decisions and supports the organization’s programs in human rights, mediation, and legal aid.',
     bioNp: 'बिनु सिंखडा धादिङको नीलकण्ठ नगरपालिका–३ की स्थायी बासिन्दा तथा शिक्षाशास्त्रमा बी.एड. उत्तीर्ण हुनुहुन्छ। उहाँले नीलकण्ठ बहुमुखी क्याम्पस, धादिङबाट आफ्नो शिक्षा पूरा गर्नुभएको हो। उहाँले २०७९ सालदेखि हालसम्म गणेश हिमाल प्रेसमा प्रधानसम्पादक तथा संवाददाताका रूपमा कार्य गर्दै आउनुभएको छ। यसअघि उहाँले रेडियो धादिङमा २०७८–२०८० सम्म संवाददाता तथा समाचार वाचक र दिव्य दर्शन टेलिभिजनमा २०७०–२०७५ सम्म संवाददाता तथा समाचार वाचकका रूपमा कार्य गर्नुभएको थियो। REPC-Nepal को कार्यसमिति सदस्यका रूपमा उहाँले संस्थाका रणनीतिक निर्णयहरूमा योगदान पुर्‍याउँदै मानव अधिकार, मध्यस्थता तथा कानुनी सहायता सम्बन्धी कार्यक्रमहरूलाई सहयोग गर्दै आउनुभएको छ।',
   },
   {
@@ -422,8 +414,8 @@ export const team = [
     positionNp: 'सदस्य',
     phone: '+977 9841120928',
     email: '',
-    photo: 'null',
-    bioEn: 'Parbati Budhathoki is a permanent resident of Chandragiri–1, Dahachok. She holds a Master’s degree (M.A.) and an LL.B. As a member of the Executive Committee, she contributes to REPC-Nepal’s strategic decisions and supports the organization’s programs in human rights, mediation, and legal aid.',
+    photo: null,
+    bioEn: 'Parvati Budhathoki is a permanent resident of Chandragiri–1, Dahachok. She holds a Master’s degree (M.A.) and an LL.B. As a member of the Executive Committee, she contributes to REPC-Nepal’s strategic decisions and supports the organization’s programs in human rights, mediation, and legal aid.',
     bioNp: 'पार्वती बुढाथोकी चन्द्रागिरि–१, दहचोककी स्थायी बासिन्दा हुनुहुन्छ। उहाँले एम.ए. तथा एल.एल.बी. (LL.B.) उत्तीर्ण गर्नुभएको छ। REPC-Nepal को कार्यसमिति सदस्यका रूपमा उहाँले संस्थाका रणनीतिक निर्णयहरूमा योगदान पुर्‍याउँदै मानव अधिकार, मध्यस्थता तथा कानुनी सहायता सम्बन्धी कार्यक्रमहरूलाई सहयोग गर्दै आउनुभएको छ।',
   },
   {
@@ -435,8 +427,8 @@ export const team = [
     phone: '+977 9849770665',
     email: '',
     photo: null,
-    bioEn: 'As a member of the Executive Committee, she contributes to REPC-Nepal\u2019s strategic decisions and supports the organization\u2019s programs in human rights, mediation, and legal aid.',
-    bioNp: 'कार्यकारी समितिको सदस्यको हैसियतमा, उहाँले REPC-Nepal को रणनीतिक निर्णयमा योगदान पुर्‍याउनुहुन्छ र मानव अधिकार, मेलमिलाप र कानुनी सहायता सम्बन्धी संस्थाका कार्यक्रमहरूलाई सहयोग गर्नुहुन्छ।',
+    bioEn: 'Manu Adhikari is a permanent resident of Marpak–1, Dhading, and holds a B.Ed. degree. She currently resides in Panga, Kirtipur. As a member of the Executive Committee, she contributes to REPC-Nepal’s strategic decisions and supports the organization’s programs in human rights, mediation, and legal aid.',
+    bioNp: 'मनु अधिकारी धादिङ, मार्पाक–१ की स्थायी बासिन्दा हुनुहुन्छ र उहाँले बी.एड. (B.Ed.) उत्तीर्ण गर्नुभएको छ। हाल उहाँ कीर्तिपुर, पाँगा बस्दै आउनुभएको छ। REPC-Nepal को कार्यसमिति सदस्यका रूपमा उहाँले संस्थाका रणनीतिक निर्णयहरूमा योगदान पुर्‍याउँदै मानव अधिकार, मध्यस्थता तथा कानुनी सहायता सम्बन्धी कार्यक्रमहरूलाई सहयोग गर्दै आउनुभएको छ।',
   },
 ];
 

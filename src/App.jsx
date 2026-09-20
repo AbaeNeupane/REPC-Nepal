@@ -183,7 +183,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* <TopBar /> */}
+      <TopBar />
       <Header mobileOpen={mobileOpen} onMobileToggle={() => setMobileOpen(open => !open)} />
       <Navigation mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
       <main className="flex-1 bg-gray-50">
