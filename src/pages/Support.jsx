@@ -106,10 +106,10 @@ const Support = () => {
             </table>
             </div>
           </div>
-          <p className={`text-gray-400 text-xs mt-2 ${lang === 'np' ? 'font-nepali' : ''}`}>
+          <p className={`text-gray-400 text-xs mt-2 italic ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t(
-              'Bank details are being finalized — please contact us directly to confirm before transferring.',
-              'बैंक विवरण अन्तिम रूप दिइँदैछ — स्थानान्तरण गर्नुअघि कृपया पुष्टिका लागि हामीलाई सिधै सम्पर्क गर्नुहोस्।'
+              'Please include your name and contact information in the transfer notes so we can acknowledge your support.',
+              'कृपया हजुरको सहयोगप्रति आभार व्यक्त गर्न सकियोस् भन्नका लागि स्थानान्तरण विवरण मा हजुरको नाम तथा सम्पर्क विवरण उल्लेख गरिदिनुहोल।'
             )}
           </p>
         </section>

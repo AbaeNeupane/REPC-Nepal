@@ -26,6 +26,7 @@ export const siteInfo = {
   panNo: '624980586',
 };
 
+
 // ─── TOP BAR NOTICES (scrolling ticker) ─────────────────────
 export const topNotices = [
   {
@@ -574,12 +575,11 @@ export const impactStats = [
 ];
 
 // ─── SUPPORT / DONATE ───────────────────────────────────────────
-// ⚠ Bank/account fields are placeholders — fill in real details before launch.
 export const donationInfo = {
-  bankNameEn: 'To be added', bankNameNp: 'थप्न बाँकी',
-  accountNameEn: 'Rights, Equity and Peace Campaign–Nepal', accountNameNp: 'अधिकार, समता र शान्ति अभियान–नेपाल',
-  accountNo: 'To be added',
-  branchEn: 'To be added', branchNp: 'थप्न बाँकी',
+  bankNameEn: 'RASTRIYA BANIJYA BANK', bankNameNp: 'राष्ट्रिय वाणिज्य बैंक',
+  accountNameEn: 'ADHIKAR SAMATA RA SHANTI ABHIYAN NEPAL', accountNameNp: 'अधिकार समता र शान्ति अभियान नेपाल',
+  accountNo: '2222170021793442',
+  branchEn: 'Thapathali, Kathmandu', branchNp: 'थापाथली, काठमाडौं',
   waysToGive: [
     { icon: 'bank', titleEn: 'Bank Transfer', titleNp: 'बैंक स्थानान्तरण', descEn: 'Direct deposit to our organizational bank account (details below).', descNp: 'हाम्रो संस्थागत बैंक खातामा प्रत्यक्ष जम्मा गर्नुहोस् (विवरण तल)।' },
     { icon: 'member', titleEn: 'Become a Member', titleNp: 'सदस्य बन्नुहोस्', descEn: 'Support our work year-round with an annual membership contribution.', descNp: 'वार्षिक सदस्यता योगदानद्वारा वर्षभरि हाम्रो कामलाई सहयोग गर्नुहोस्।' },

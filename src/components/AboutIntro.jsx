@@ -123,13 +123,13 @@ const AboutIntro = () => {
                   {t('Access to justice', 'न्यायमा पहुँच')}
                 </p>
               </div>
-              <div className="rounded-2xl bg-slate-50 p-4">
-                <FaUsers className="text-navy" />
+              <div className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-navy px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:bg-navy-light hover:shadow-md sm:self-center">
+                <FaUsers className="text-white" />
                 <Link
                   to="/about"
-                  className={`inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-sky py-2  ${lang === 'np' ? 'font-nepali' : ''}`}
+                  className={`inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-sky py-2  ${lang === 'np' ? 'font-nepali' : ''}`}
                 >
-                  {t('Meet our team', 'हाम्रो टिमसँग भेट्नुहोस्')} <FaArrowRight size={11} />
+                  {t('Meet our team', 'हाम्रो टिमसँग भेट्नुहोस्')}
                 </Link>
               </div>
             </div>

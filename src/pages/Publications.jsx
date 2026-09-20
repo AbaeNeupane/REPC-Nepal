@@ -9,7 +9,6 @@ const PageBanner = ({ titleEn, titleNp }) => {
       <div className="site-container">
         <div className="flex items-center gap-2 text-white/60 text-sm mb-2">
           <Link to="/" className="hover:text-white">Home</Link>
-          <span>/</span>
           <span className="text-white">{lang === 'en' ? titleEn : titleNp}</span>
         </div>
         <h1 className={`text-2xl md:text-3xl font-bold ${lang === 'np' ? 'font-nepali' : ''}`}>
@@ -25,27 +24,27 @@ const publications = [
   {
     category: { en: 'Annual Reports', np: 'वार्षिक प्रतिवेदन' },
     items: [
-      { titleEn: 'Annual Progress Report 2082/83', titleNp: 'वार्षिक प्रगति प्रतिवेदन २०८२/८३', type: 'pdf', url: '#', dateEn: '2083', dateNp: '२०८३' },
+      // { titleEn: 'Annual Progress Report 2082/83', titleNp: 'वार्षिक प्रगति प्रतिवेदन २०८२/८३', type: 'pdf', url: '#', dateEn: '2083', dateNp: '२०८३' },
     ],
   },
   {
     category: { en: 'Legal Documents', np: 'कानुनी दस्तावेज' },
     items: [
-      { titleEn: 'Constitution of REPC-Nepal 2083', titleNp: 'REPC-Nepal को विधान २०८३', type: 'pdf', url: '#', dateEn: '2083', dateNp: '२०८३' },
-      { titleEn: 'Membership Application Form', titleNp: 'सदस्यता आवेदन फारम', type: 'word', url: '#', dateEn: '2083', dateNp: '२०८३' },
+      // { titleEn: 'Constitution of REPC-Nepal 2083', titleNp: 'REPC-Nepal को विधान २०८३', type: 'pdf', url: '#', dateEn: '2083', dateNp: '२०८३' },
+      // { titleEn: 'Membership Application Form', titleNp: 'सदस्यता आवेदन फारम', type: 'word', url: '#', dateEn: '2083', dateNp: '२०८३' },
     ],
   },
   {
     category: { en: 'Training Materials', np: 'तालिम सामग्री' },
     items: [
-      { titleEn: 'Basic Mediation Training Manual', titleNp: 'आधारभूत मेलमिलाप तालिम पुस्तिका', type: 'pdf', url: '#', dateEn: '2083', dateNp: '२०८३' },
-      { titleEn: 'Human Rights Handbook (Nepali)', titleNp: 'मानव अधिकार पुस्तिका (नेपाली)', type: 'pdf', url: '#', dateEn: '2083', dateNp: '२०८३' },
+      // { titleEn: 'Basic Mediation Training Manual', titleNp: 'आधारभूत मेलमिलाप तालिम पुस्तिका', type: 'pdf', url: '#', dateEn: '2083', dateNp: '२०८३' },
+      // { titleEn: 'Human Rights Handbook (Nepali)', titleNp: 'मानव अधिकार पुस्तिका (नेपाली)', type: 'pdf', url: '#', dateEn: '2083', dateNp: '२०८३' },
     ],
   },
   {
     category: { en: 'Research Reports', np: 'अनुसन्धान प्रतिवेदन' },
     items: [
-      { titleEn: 'Human Rights Situation Report Q1 2083', titleNp: 'मानव अधिकार अवस्था प्रतिवेदन पहिलो त्रैमास २०८३', type: 'pdf', url: '#', dateEn: '2083', dateNp: '२०८३' },
+      // { titleEn: 'Human Rights Situation Report Q1 2083', titleNp: 'मानव अधिकार अवस्था प्रतिवेदन पहिलो त्रैमास २०८३', type: 'pdf', url: '#', dateEn: '2083', dateNp: '२०८३' },
     ],
   },
 ];

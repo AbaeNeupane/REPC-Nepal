@@ -29,6 +29,25 @@ const Home = () => {
         <ChairpersonMessage />
       </ScrollReveal>
 
+
+      {/** Main content */}
+      
+      {/* Main two-column content */}
+      <ScrollReveal delay={90}>
+        <div className="site-container py-12">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <NoticesSection />
+            <ServicesSection />
+          </div>
+        </div>
+      </ScrollReveal>
+
+      {/* Full-width highlights */}
+      <ScrollReveal delay={120}>
+        <HighlightsSection />
+      </ScrollReveal>
+
+      
       {/* Registration / document trust link */}
       <ScrollReveal delay={75}>
         <section className="bg-white py-7 sm:py-8">
@@ -49,41 +68,23 @@ const Home = () => {
                     {t('View the organization’s registration documents and inspect them at full size.', 'संस्थाका दर्ता कागजातहरू हेर्नुहोस् र पूर्ण आकारमा निरीक्षण गर्नुहोस्।')}
                   </p>
                 </div>
+                
               </div>
-
               <Link
                 to="/about#registration-documents"
                 className={`inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-navy px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:bg-navy-light hover:shadow-md sm:self-center ${lang === 'np' ? 'font-nepali' : ''}`}
               >
                 {t('View documents', 'कागजात हेर्नुहोस्')}
-                <FaArrowRight size={12} />
               </Link>
             </div>
           </div>
         </section>
       </ScrollReveal>
 
-      {/** Main content */}
-      
-      {/* Main two-column content */}
-      <ScrollReveal delay={90}>
-        <div className="site-container py-12">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            <NoticesSection />
-            <ServicesSection />
-          </div>
-        </div>
-      </ScrollReveal>
-
-      {/* Full-width highlights */}
-      <ScrollReveal delay={120}>
-        <HighlightsSection />
-      </ScrollReveal>
-
       {/* Campaign highlights */}
-      <ScrollReveal delay={140}>
+      {/* <ScrollReveal delay={140}>
         <CampaignHighlights />
-      </ScrollReveal>
+      </ScrollReveal> */}
 
       {/* Gallery preview */}
       <ScrollReveal delay={160}>

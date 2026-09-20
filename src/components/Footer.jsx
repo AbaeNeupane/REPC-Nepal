@@ -152,7 +152,7 @@ const Footer = () => {
           </ul>
 
           {/* Office Hours */}
-          <div className="mt-5 p-3 bg-white/5 rounded-sm border border-white/10">
+          <div className="mt-5 p-3 max-w-xs bg-white/5 rounded-sm border border-white/10">
             <div className="flex items-center justify-start gap-2 mb-2">
               <FaClock className="text-sky" size={12} />
               <p className={`text-white text-xs font-semibold ${lang === 'np' ? 'font-nepali' : ''}`}>
