@@ -426,7 +426,7 @@ export const team = [
     positionNp: 'सदस्य',
     phone: '+977 9849770665',
     email: '',
-    photo: null,
+    photo: '/images/team/manu.jpeg',
     bioEn: 'Manu Adhikari is a permanent resident of Marpak–1, Dhading, and holds a B.Ed. degree. She currently resides in Panga, Kirtipur. As a member of the Executive Committee, she contributes to REPC-Nepal’s strategic decisions and supports the organization’s programs in human rights, mediation, and legal aid.',
     bioNp: 'मनु अधिकारी धादिङ, मार्पाक–१ की स्थायी बासिन्दा हुनुहुन्छ र उहाँले बी.एड. (B.Ed.) उत्तीर्ण गर्नुभएको छ। हाल उहाँ कीर्तिपुर, पाँगा बस्दै आउनुभएको छ। REPC-Nepal को कार्यसमिति सदस्यका रूपमा उहाँले संस्थाका रणनीतिक निर्णयहरूमा योगदान पुर्‍याउँदै मानव अधिकार, मध्यस्थता तथा कानुनी सहायता सम्बन्धी कार्यक्रमहरूलाई सहयोग गर्दै आउनुभएको छ।',
   },

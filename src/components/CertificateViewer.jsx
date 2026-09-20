@@ -56,18 +56,18 @@ const CertificateDocuments = ({ compact = false }) => {
       >
         <div className={compact ? 'site-container' : ''}>
           {!compact && (
-            <div className="mb-6 max-w-3xl">
+            <div className="mb-6 py-8 max-w-3xl">
               <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-sky/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.08em] text-sky">
                 <FaFileAlt size={12} />
                 {t('Registration & Legal Documents', 'दर्ता तथा कानुनी कागजात')}
               </div>
-              <h2 className={`text-2xl font-bold text-navy sm:text-3xl ${lang === 'np' ? 'font-nepali' : ''}`}>
+              <h2 className={`text-2xl py-4 font-bold text-navy sm:text-3xl ${lang === 'np' ? 'font-nepali' : ''}`}>
                 {t('Official Registration Documents', 'आधिकारिक दर्ता कागजातहरू')}
               </h2>
-              <p className={`mt-2 text-base leading-relaxed text-slate-600 ${lang === 'np' ? 'font-nepali' : ''}`}>
+              <p className={`mt-2 py-0 text-base leading-relaxed italic text-slate-600 ${lang === 'np' ? 'font-nepali' : ''}`}>
                 {t(
-                  'View the organization’s registration and official documents. Click any document to view it larger.',
-                  'संस्थाका दर्ता तथा आधिकारिक कागजातहरू हेर्नुहोस्। ठूलो आकारमा हेर्न कुनै पनि कागजातमा क्लिक गर्नुहोस्।'
+                  'View the organization’s documents by clicking it.',
+                  'कागजात हेर्न क्लिक गर्नुहोस्।'
                 )}
               </p>
             </div>
@@ -96,7 +96,7 @@ const CertificateDocuments = ({ compact = false }) => {
                     <h3 className={`text-base font-bold text-navy sm:text-lg ${lang === 'np' ? 'font-nepali' : ''}`}>
                       {title}
                     </h3>
-                    <p className="mt-1 text-sm text-slate-500">
+                    <p className="mt-1 text-[12px] italic text-slate-500">
                       {t('Official document · Click to view', 'आधिकारिक कागजात · हेर्न क्लिक गर्नुहोस्')}
                     </p>
                   </div>
