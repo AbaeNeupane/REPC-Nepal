@@ -176,7 +176,7 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
             className="hidden md:inline-flex items-center gap-2 bg-navy hover:bg-navy-light text-white text-sm font-semibold px-4 py-2.5 rounded-sm transition-colors shadow-sm hover:shadow-md"
           >
             <FaHandHoldingHeart size={14} />
-            <span className={lang === 'np' ? 'font-nepali' : ''}>{t('Donate Us', 'सहयोग गर्नुहोस्')}</span>
+            <span className={lang === 'np' ? 'font-nepali' : ''}>{t('Donate', 'सहयोग')}</span>
           </Link>
 
           {/* Search */}
