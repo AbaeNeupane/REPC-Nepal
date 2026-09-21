@@ -1,9 +1,10 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import { siteInfo, donationInfo } from '../data/siteContent';
 import {
   FaHandHoldingHeart, FaUniversity, FaMobileAlt, FaIdCard, FaHandshake,
-  FaWhatsapp, FaEnvelope, FaFileInvoiceDollar,
+  FaWhatsapp, FaEnvelope, FaFileInvoiceDollar, FaQrcode, FaCopy, FaCheck,
 } from 'react-icons/fa';
 
 const PageBanner = ({ titleEn, titleNp }) => {
@@ -34,6 +35,18 @@ const wayIconMap = {
 
 const Support = () => {
   const { lang, t } = useLang();
+  const isNp = lang === 'np';
+  const [copied, setCopied] = useState(false);
+
+  const copyAccount = async () => {
+    try {
+      await navigator.clipboard.writeText(donationInfo.accountNo);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // clipboard API unavailable — number is still visible on the page
+    }
+  };
 
   return (
     <div>
@@ -84,34 +97,39 @@ const Support = () => {
 
         {/* Bank details */}
         <section className="mb-12">
-          <h2 className={`text-xl font-bold text-navy mb-5 flex items-center gap-2 ${lang === 'np' ? 'font-nepali' : ''}`}>
-            <FaFileInvoiceDollar className="text-sky" /> {t('Bank Transfer Details', 'बैंक स्थानान्तरण विवरण')}
-          </h2>
-          <div className="bg-white border border-gray-200 rounded-sm shadow-sm overflow-hidden">
-            <div className="overflow-x-auto">
-            <table className="w-full min-w-[30rem] text-sm">
-              <tbody>
-                {[
-                  { labelEn: 'Bank Name', labelNp: 'बैंकको नाम', value: lang === 'en' ? donationInfo.bankNameEn : donationInfo.bankNameNp },
-                  { labelEn: 'Account Name', labelNp: 'खाता नाम', value: lang === 'en' ? donationInfo.accountNameEn : donationInfo.accountNameNp },
-                  { labelEn: 'Account Number', labelNp: 'खाता नम्बर', value: donationInfo.accountNo },
-                  { labelEn: 'Branch', labelNp: 'शाखा', value: lang === 'en' ? donationInfo.branchEn : donationInfo.branchNp },
-                ].map((row, i) => (
-                  <tr key={i} className="border-b border-gray-100 last:border-0">
-                    <td className={`px-5 py-3 text-gray-500 w-1/3 ${lang === 'np' ? 'font-nepali' : ''}`}>{lang === 'en' ? row.labelEn : row.labelNp}</td>
-                    <td className="px-5 py-3 font-semibold text-navy">{row.value}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="flex items-center gap-2">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-navy shadow-sm"><FaQrcode size={16} /></span>
+            <div>
+              <h3 className={`font-bold text-navy ${isNp ? 'font-nepali' : ''}`}>{t('Scan to contribute', 'QR स्क्यान गरेर सहयोग गर्नुहोस्')}</h3>
+              <p className={`text-xs text-slate-500 ${isNp ? 'font-nepali' : ''}`}>{t('Use Fonepay or a supported banking app', 'Fonepay वा समर्थित बैंकिङ एप प्रयोग गर्नुहोस्')}</p>
             </div>
           </div>
-          <p className={`text-gray-400 text-xs mt-2 italic ${lang === 'np' ? 'font-nepali' : ''}`}>
-            {t(
-              'Please include your name and contact information in the transfer notes so we can acknowledge your support.',
-              'कृपया हजुरको सहयोगप्रति आभार व्यक्त गर्न सकियोस् भन्नका लागि स्थानान्तरण विवरण मा हजुरको नाम तथा सम्पर्क विवरण उल्लेख गरिदिनुहोल।'
-            )}
-          </p>
+          <div className="mt-5 overflow-hidden rounded-2xl bg-white p-4 ring-1 ring-slate-200">
+            <img src={donationInfo.qrImage} alt={isNp ? donationInfo.qrAltNp : donationInfo.qrAltEn} className="mx-auto aspect-square max-w-[280px] object-contain" />
+          </div>
+
+          <div className="mt-6 border-t border-slate-200 pt-5">
+            <div className="flex items-center justify-between gap-3">
+              <h3 className={`font-bold text-navy ${isNp ? 'font-nepali' : ''}`}>{t('Or use bank transfer', 'वा बैंकमार्फत सहयोग गर्नुहोस्')}</h3>
+              <button type="button" onClick={copyAccount} className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-navy hover:border-sky" title={t('Copy account number', 'खाता नम्बर कपी गर्नुहोस्')}>
+                {copied ? <FaCheck className="text-green-600" size={11} /> : <FaCopy size={11} />}
+                {copied ? t('Copied', 'कपी भयो') : t('Copy', 'कपी')}
+              </button>
+            </div>
+            <dl className="mt-4 space-y-3 text-sm">
+              {[
+                [t('Bank', 'बैंक'), lang === 'en' ? donationInfo.bankNameEn : donationInfo.bankNameNp],
+                [t('Account name', 'खाता नाम'), lang === 'en' ? donationInfo.accountNameEn : donationInfo.accountNameNp],
+                [t('Account number', 'खाता नम्बर'), donationInfo.accountNo],
+                [t('Branch', 'शाखा'), lang === 'en' ? donationInfo.branchEn : donationInfo.branchNp],
+              ].map(([label, value]) => (
+                <div key={label} className="grid grid-cols-[92px_1fr] gap-3">
+                  <dt className={`font-semibold text-slate-500 ${isNp ? 'font-nepali' : ''}`}>{label}</dt>
+                  <dd className={`font-semibold text-slate-800 break-words ${isNp ? 'font-nepali' : ''}`}>{value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         </section>
 
         {/* CTA */}

@@ -367,9 +367,13 @@ export const team = [
     phone: '+977 9849575583',
     email: 'treasurer@repcnepal.org.np',
     photo: '/images/team/himal.png',
-    bioEn: 'Himal Rawal serves as Treasurer of REPC-Nepal. Education: He completed his Secondary Education Examination (SEE) at Nightingale International Secondary School and his higher secondary education (+2) at Nightingale College. He is currently studying in the fourth year of a B.A. LL.B. (Business Law) at Chakrabarti Habi Education Academy. Internship experience: He completed a six-month internship as a legal intern at Pioneer Law Associates, where he was involved in legal research, reviewing and preparing summaries of legal documents, translating documents, and assisting with various legal tasks. Professional experience: He is currently working at Barrister Nepal in Anamnagar, Kathmandu.',
-    bioNp: 'हिमाल रावल REPC-Nepal का कोषाध्यक्ष हुनुहुन्छ। शैक्षिक योग्यता: उहाँले नाइटिङ्गेल इन्टरनेशनल सेकेन्डरी स्कुलबाट माध्यमिक शिक्षा परीक्षा (SEE) र नाइटिङ्गेल कलेजबाट उच्च माध्यमिक शिक्षा (+2) पूरा गर्नुभएको छ। उहाँ चक्रवर्ती हाबी एजुकेशन एकेडेमीमा B.A. LL.B. (Business Law) को चौथो वर्षमा अध्ययनरत हुनुहुन्छ। इन्टर्नशिप अनुभव: उहाँले पायोनियर ल एसोसिएट्स (Pioneer Law Associates) मा ६ महिनासम्म कानुनी इन्टर्नका रूपमा काम गर्नुभएको छ। इन्टर्नशिपका क्रममा उहाँ कानुनी अनुसन्धान, कानुनी कागजातको अध्ययन तथा सारांश तयार गर्ने, कागजात अनुवाद गर्ने र विभिन्न कानुनी कार्यमा सहयोग गर्ने कार्यमा संलग्न हुनुहुन्थ्यो। कार्य अनुभव: उहाँ हाल अनामनगर, काठमाडौंस्थित Barrister Nepal मा कार्यरत हुनुहुन्छ।',
-  },
+    bioEn: [
+            'Himal Rawal serves as Treasurer of REPC-Nepal. Education: He completed his Secondary Education Examination (SEE) at Nightingale International Secondary School and his higher secondary education (+2) at Nightingale College. He is currently studying in the fourth year of a B.A. LL.B. (Business Law) at Chakrabarti Habi Education Academy. Internship experience: He completed a six-month internship as a legal intern at Pioneer Law Associates, where he was involved in legal research, reviewing and preparing summaries of legal documents, translating documents, and assisting with various legal tasks. Professional experience: He is currently working at Barrister Nepal in Anamnagar, Kathmandu.',
+          ],
+    bioNp: [
+            'हिमाल रावल REPC-Nepal का कोषाध्यक्ष हुनुहुन्छ। शैक्षिक योग्यता: उहाँले नाइटिङ्गेल इन्टरनेशनल सेकेन्डरी स्कुलबाट माध्यमिक शिक्षा परीक्षा (SEE) र नाइटिङ्गेल कलेजबाट उच्च माध्यमिक शिक्षा (+2) पूरा गर्नुभएको छ। उहाँ चक्रवर्ती हाबी एजुकेशन एकेडेमीमा B.A. LL.B. (Business Law) को चौथो वर्षमा अध्ययनरत हुनुहुन्छ। इन्टर्नशिप अनुभव: उहाँले पायोनियर ल एसोसिएट्स (Pioneer Law Associates) मा ६ महिनासम्म कानुनी इन्टर्नका रूपमा काम गर्नुभएको छ। इन्टर्नशिपका क्रममा उहाँ कानुनी अनुसन्धान, कानुनी कागजातको अध्ययन तथा सारांश तयार गर्ने, कागजात अनुवाद गर्ने र विभिन्न कानुनी कार्यमा सहयोग गर्ने कार्यमा संलग्न हुनुहुन्थ्यो। कार्य अनुभव: उहाँ हाल अनामनगर, काठमाडौंस्थित Barrister Nepal मा कार्यरत हुनुहुन्छ।',
+          ],
+  },      
   {
     id: 5,
     nameEn: ' Srijanshil Rajbhandari',
@@ -380,15 +384,14 @@ export const team = [
     email: '',
     photo: '/images/team/sirjansil.jpeg',
     bioEn: ['Srijanshil Rajbhandari is a legal professional from Pyuthan Municipality-4, Pyuthan. He holds a B.A. LL.B. degree from National Law College, Tribhuvan University. He gained professional experience in the field of human rights through an internship with the Strategic Plan Support Project (SPSP), UNDP.',
-
             'He has been practicing law as an Advocate since obtaining his Advocate’s License in 2022. His areas of interest include human rights, child and women’s rights, senior citizens welfare and access to justice.',
-
-            'As a member of the organization, he seeks to contribute his legal knowledge, professional experience, and expertise toward the protection and promotion of human rights, strengthening access to justice, and advancing social justice, legal awareness, and community welfare.',],
+            'As a member of the organization, he seeks to contribute his legal knowledge, professional experience, and expertise toward the protection and promotion of human rights, strengthening access to justice, and advancing social justice, legal awareness, and community welfare.',
+          ],
+    
     bioNp: ['सृजनशील राजभण्डारी प्यूठान न. पा. - ४, प्यूठानका कानुन व्यवसायी हुनुहुन्छ। उहाँले त्रिभुवन विश्वविद्यालय अन्तर्गत नेशनल ल कलेजबाट बी.ए. एलएल.बी. (B.A. LL.B.) उपाधि हासिल गर्नुभएको छ। उहाँले संयुक्त राष्ट्र विकास कार्यक्रम (UNDP) अन्तर्गतको Strategic Plan Support Project (SPSP) मा इन्टर्नका रूपमा कार्य गरी मानव अधिकारको क्षेत्रमा अनुभव हासिल गर्नुभएको छ।',
-
-            'उहाँले सन् २०२२ मा अधिवक्ताको प्रमाणपत्र प्राप्त गरेपछि अधिवक्ताका रूपमा कानुन व्यवसाय गर्दै आउनुभएको छ। उहाँका प्रमुख रुचिका क्षेत्रहरूमा मानव अधिकार, बालबालिका तथा महिलाका अधिकार, ज्येष्ठ नागरिकको संरक्षण तथा कल्याण र न्यायमा पहुँच रहेका छन्।',
-
-            'संस्थाको सदस्यका रूपमा उहाँले आफ्नो कानुनी ज्ञान, व्यावसायिक अनुभव तथा सीपमार्फत मानव अधिकारको संरक्षण तथा प्रवर्द्धन, न्यायमा पहुँचको अभिवृद्धि, कानुनी सचेतना तथा सामाजिक कल्याणका क्षेत्रमा योगदान पुर्‍याउने उद्देश्य राख्नुभएको छ।',],
+            'उहाँले सन् २०२२ मा अधिवक्ताको प्रमाणपत्र प्राप्त गरेपछि अधिवक्ताका रूपमा कानुन व्यवसाय गर्दै आउनुभएको छ। उहाँका प्रमुख रुचिका क्षेत्रहरूमा मानव अधिकार, बालबालिका तथा महिलाका अधिकार, ज्येष्ठ नागरिकको संरक्षण तथा कल्याण र न्यायमा पहुँच रहेका छन्।', 
+            'संस्थाको सदस्यका रूपमा उहाँले आफ्नो कानुनी ज्ञान, व्यावसायिक अनुभव तथा सीपमार्फत मानव अधिकारको संरक्षण तथा प्रवर्द्धन, न्यायमा पहुँचको अभिवृद्धि, कानुनी सचेतना तथा सामाजिक कल्याणका क्षेत्रमा योगदान पुर्‍याउने उद्देश्य राख्नुभएको छ।',
+          ],
   },
   {
     id: 6,
@@ -576,16 +579,55 @@ export const impactStats = [
 
 // ─── SUPPORT / DONATE ───────────────────────────────────────────
 export const donationInfo = {
-  bankNameEn: 'RASTRIYA BANIJYA BANK', bankNameNp: 'राष्ट्रिय वाणिज्य बैंक',
-  accountNameEn: 'ADHIKAR SAMATA RA SHANTI ABHIYAN NEPAL', accountNameNp: 'अधिकार समता र शान्ति अभियान नेपाल',
+  bankNameEn: 'RASTRIYA BANIJYA BANK',
+  bankNameNp: 'राष्ट्रिय वाणिज्य बैंक',
+  accountNameEn: 'ADHIKAR SAMATA RA SHANTI ABHIYAN NEPAL',
+  accountNameNp: 'अधिकार समता र शान्ति अभियान नेपाल',
   accountNo: '2222170021793442',
-  branchEn: 'Thapathali, Kathmandu', branchNp: 'थापाथली, काठमाडौं',
+  branchEn: 'Thapathali, Kathmandu',
+  branchNp: 'थापाथली, काठमाडौं',
+  qrImage: '/QR/rbb-fonepay.jpeg',
+  qrAltEn: 'REPC-Nepal donation QR code for Fonepay / supported banking apps.',
+  qrAltNp: 'Fonepay तथा समर्थित बैंकिङ एपमार्फत सहयोग गर्न REPC-नेपालको QR कोड।',
   waysToGive: [
     { icon: 'bank', titleEn: 'Bank Transfer', titleNp: 'बैंक स्थानान्तरण', descEn: 'Direct deposit to our organizational bank account (details below).', descNp: 'हाम्रो संस्थागत बैंक खातामा प्रत्यक्ष जम्मा गर्नुहोस् (विवरण तल)।' },
     { icon: 'member', titleEn: 'Become a Member', titleNp: 'सदस्य बन्नुहोस्', descEn: 'Support our work year-round with an annual membership contribution.', descNp: 'वार्षिक सदस्यता योगदानद्वारा वर्षभरि हाम्रो कामलाई सहयोग गर्नुहोस्।' },
     { icon: 'partner', titleEn: 'In-Kind & Partnership', titleNp: 'वस्तुगत सहयोग तथा साझेदारी', descEn: 'Offer equipment, venue space, or a program partnership instead of cash.', descNp: 'नगदको सट्टा उपकरण, स्थान, वा कार्यक्रम साझेदारी प्रदान गर्नुहोस्।' },
   ],
 };
+
+export const suggestedDonations = [500, 1000, 2500, 5000];
+
+export const donationUses = [
+  {
+    icon: 'legal',
+    titleEn: 'Program delivery',
+    titleNp: 'कार्यक्रम सञ्चालन',
+    bodyEn: 'Support for legal-awareness, consultation, mediation, training and community activities.',
+    bodyNp: 'कानुनी सचेतना, परामर्श, मेलमिलाप, तालिम तथा समुदायस्तरीय गतिविधिका लागि सहयोग।',
+  },
+  {
+    icon: 'outreach',
+    titleEn: 'Community outreach',
+    titleNp: 'समुदायसम्म पहुँच',
+    bodyEn: 'Resources that help the organization reach people, document needs and coordinate appropriate support.',
+    bodyNp: 'समुदायसम्म पुग्न, आवश्यकताहरू अभिलेख गर्न र उपयुक्त सहयोग समन्वय गर्न आवश्यक स्रोत।',
+  },
+  {
+    icon: 'capacity',
+    titleEn: 'Organizational capacity',
+    titleNp: 'संस्थागत क्षमता',
+    bodyEn: 'Core capacity needed to sustain responsible nonprofit work, documentation and public accountability.',
+    bodyNp: 'जिम्मेवार गैरनाफामूलक काम, अभिलेखीकरण र सार्वजनिक जवाफदेहितालाई निरन्तरता दिन आवश्यक संस्थागत क्षमता।',
+  },
+];
+
+export const donationSteps = [
+  { no: '01', titleEn: 'Choose an amount', titleNp: 'रकम छान्नुहोस्', bodyEn: 'Pick a suggested contribution or give another amount that fits your capacity.', bodyNp: 'दिइएका रकममध्ये छान्नुहोस् वा आफ्नो क्षमताअनुसार अर्को रकम सहयोग गर्नुहोस्।' },
+  { no: '02', titleEn: 'Transfer the contribution', titleNp: 'रकम पठाउनुहोस्', bodyEn: 'Scan the QR or transfer directly to the organizational bank account shown below.', bodyNp: 'QR स्क्यान गर्नुहोस् वा तल दिइएको संस्थागत बैंक खातामा सिधै रकम पठाउनुहोस्।' },
+  { no: '03', titleEn: 'Send the receipt', titleNp: 'रसीद पठाउनुहोस्', bodyEn: 'Send the payment receipt by WhatsApp or email so the organization can acknowledge and record the contribution.', bodyNp: 'सहयोगको रसीद WhatsApp वा इमेलमार्फत पठाउनुहोस् ताकि संस्था योगदानको अभिलेख राख्न र धन्यवाद दिन सकोस्।' },
+];
+
 
 // ─── MEMBERSHIP ───────────────────────────────────────────────
 // Fees and categories are based on the organization's constitution.
