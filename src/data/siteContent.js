@@ -379,8 +379,16 @@ export const team = [
     phone: '+977 9857833579',
     email: '',
     photo: '/images/team/sirjansil.jpeg',
-    bioEn: 'Srijanshil Rajbhandari is a legal professional from Pyuthan Municipality-4, Pyuthan. He holds a B.A. LL.B. degree from National Law College, Tribhuvan University. He gained professional experience in the field of human rights through an internship with the Strategic Plan Support Project (SPSP), UNDP. He has been practicing law as an Advocate since obtaining his Advocate’s License in 2022. His areas of interest include human rights, child and women’s rights, senior citizens welfare and access to justice. As a member of the organization, he seeks to contribute his legal knowledge, professional experience, and expertise toward the protection and promotion of human rights, strengthening access to justice, and advancing social justice, legal awareness, and community welfare.',
-    bioNp: 'सृजनशील राजभण्डारी प्यूठान न. पा. - ४, प्यूठानका कानुन व्यवसायी हुनुहुन्छ। उहाँले त्रिभुवन विश्वविद्यालय अन्तर्गत नेशनल ल कलेजबाट बी.ए. एलएल.बी. (B.A. LL.B.) उपाधि हासिल गर्नुभएको छ। उहाँले संयुक्त राष्ट्र विकास कार्यक्रम (UNDP) अन्तर्गतको Strategic Plan Support Project (SPSP) मा इन्टर्नका रूपमा कार्य गरी मानव अधिकारको क्षेत्रमा अनुभव हासिल गर्नुभएको छ। उहाँले सन् २०२२ मा अधिवक्ताको प्रमाणपत्र प्राप्त गरेपछि अधिवक्ताका रूपमा कानुन व्यवसाय गर्दै आउनुभएको छ। उहाँका प्रमुख रुचिका क्षेत्रहरूमा मानव अधिकार, बालबालिका तथा महिलाका अधिकार, ज्येष्ठ नागरिकको संरक्षण तथा कल्याण र न्यायमा पहुँच रहेका छन्। संस्थाको सदस्यका रूपमा उहाँले आफ्नो कानुनी ज्ञान, व्यावसायिक अनुभव तथा सीपमार्फत मानव अधिकारको संरक्षण तथा प्रवर्द्धन, न्यायमा पहुँचको अभिवृद्धि, कानुनी सचेतना तथा सामाजिक कल्याणका क्षेत्रमा योगदान पुर्‍याउने उद्देश्य राख्नुभएको छ।',
+    bioEn: ['Srijanshil Rajbhandari is a legal professional from Pyuthan Municipality-4, Pyuthan. He holds a B.A. LL.B. degree from National Law College, Tribhuvan University. He gained professional experience in the field of human rights through an internship with the Strategic Plan Support Project (SPSP), UNDP.',
+
+            'He has been practicing law as an Advocate since obtaining his Advocate’s License in 2022. His areas of interest include human rights, child and women’s rights, senior citizens welfare and access to justice.',
+
+            'As a member of the organization, he seeks to contribute his legal knowledge, professional experience, and expertise toward the protection and promotion of human rights, strengthening access to justice, and advancing social justice, legal awareness, and community welfare.',],
+    bioNp: ['सृजनशील राजभण्डारी प्यूठान न. पा. - ४, प्यूठानका कानुन व्यवसायी हुनुहुन्छ। उहाँले त्रिभुवन विश्वविद्यालय अन्तर्गत नेशनल ल कलेजबाट बी.ए. एलएल.बी. (B.A. LL.B.) उपाधि हासिल गर्नुभएको छ। उहाँले संयुक्त राष्ट्र विकास कार्यक्रम (UNDP) अन्तर्गतको Strategic Plan Support Project (SPSP) मा इन्टर्नका रूपमा कार्य गरी मानव अधिकारको क्षेत्रमा अनुभव हासिल गर्नुभएको छ।',
+
+            'उहाँले सन् २०२२ मा अधिवक्ताको प्रमाणपत्र प्राप्त गरेपछि अधिवक्ताका रूपमा कानुन व्यवसाय गर्दै आउनुभएको छ। उहाँका प्रमुख रुचिका क्षेत्रहरूमा मानव अधिकार, बालबालिका तथा महिलाका अधिकार, ज्येष्ठ नागरिकको संरक्षण तथा कल्याण र न्यायमा पहुँच रहेका छन्।',
+
+            'संस्थाको सदस्यका रूपमा उहाँले आफ्नो कानुनी ज्ञान, व्यावसायिक अनुभव तथा सीपमार्फत मानव अधिकारको संरक्षण तथा प्रवर्द्धन, न्यायमा पहुँचको अभिवृद्धि, कानुनी सचेतना तथा सामाजिक कल्याणका क्षेत्रमा योगदान पुर्‍याउने उद्देश्य राख्नुभएको छ।',],
   },
   {
     id: 6,
