@@ -379,8 +379,8 @@ export const team = [
     phone: '+977 9857833579',
     email: '',
     photo: '/images/team/sirjansil.jpeg',
-    bioEn: 'As a member of the Executive Committee, he contributes to REPC-Nepal\u2019s strategic decisions and supports the organization\u2019s programs in human rights, mediation, and legal aid.',
-    bioNp: 'कार्यकारी समितिको सदस्यको हैसियतमा, उहाँले REPC-Nepal को रणनीतिक निर्णयमा योगदान पुर्‍याउनुहुन्छ र मानव अधिकार, मेलमिलाप र कानुनी सहायता सम्बन्धी संस्थाका कार्यक्रमहरूलाई सहयोग गर्नुहुन्छ।',
+    bioEn: 'Srijanshil Rajbhandari is a permanent resident of Pyuthan Municipality–4, Pyuthan, and holds a B.A.LL.B. degree from National Law College, Tribhuvan University. As a member of Executive Comittee, he contributes his legal knowledge and supports the organization’s work in human rights, mediation, and legal aid.',
+    bioNp: 'सृजनशील राजभण्डारी प्युठान नगरपालिका–४, प्युठानका स्थायी बासिन्दा हुनुहुन्छ र उहाँले राष्ट्रिय ल कलेज, त्रिभुवन विश्वविद्यालयबाट बी.ए.एलएल.बी. (B.A.LL.B.) उत्तीर्ण गर्नुभएको छ। REPC-Nepal का कार्यसमिति सदस्यका रूपमा उहाँले आफ्नो कानुनी ज्ञान र अनुभवलाई संस्थाको मानव अधिकार, मध्यस्थता तथा कानुनी सहायता सम्बन्धी कार्यमा योगदान पुर्‍याउँदै आउनुभएको छ।',
   },
   {
     id: 6,
@@ -391,8 +391,8 @@ export const team = [
     phone: '+977 9861997464',
     email: 'abaeofficial@gmail.com',
     photo: '/images/team/abae.jpeg',
-    bioEn: 'Avishek Neupane is a founding member of REPC-Nepal with a background in information technology. He has developed and maintains the organization’s website, contributing to the effective digital presentation of its activities, objectives, and programs. As a founding member, he contributes to REPC-Nepal’s strategic decisions and supports the organization’s programs in human rights, mediation, and legal aid through technology.',
-    bioNp: 'अभिषेक न्यौपाने REPC-Nepal का संस्थापक सदस्य तथा सूचना प्रविधि क्षेत्रमा संलग्न युवा हुनुहुन्छ। उहाँले संस्थाको वेबसाइट विकास तथा व्यवस्थापन गर्दै संस्थाका गतिविधि, उद्देश्य र कार्यक्रमहरूलाई डिजिटल माध्यमबाट प्रभावकारी रूपमा प्रस्तुत गर्न योगदान पुर्‍याउँदै आउनुभएको छ। REPC-Nepal को संस्थापक सदस्यका रूपमा उहाँले संस्थाका रणनीतिक निर्णयहरूमा योगदान पुर्‍याउँदै मानव अधिकार, मध्यस्थता तथा कानुनी सहायता सम्बन्धी कार्यक्रमहरूलाई प्रविधिमार्फत सहयोग गर्दै आउनुभएको छ।',
+    bioEn: 'Avishek Neupane is a founding member of REPC-Nepal with a background in information technology. He has developed and maintains the organization’s website, contributing to the effective digital presentation of its activities, objectives, and programs. As a member of Executive Comittee, he contributes to REPC-Nepal’s strategic decisions and supports the organization’s programs in human rights, mediation, and legal aid through technology.',
+    bioNp: 'अभिषेक न्यौपाने REPC-Nepal का संस्थापक सदस्य हुनुहुन्छ र उहाँको पृष्ठभूमि सूचना प्रविधिमा आधारित छ। उहाँले संस्थाको वेबसाइट विकास गर्नुभएको छ र यसलाई मर्मतसम्भार गर्दै आउनुभएको छ, जसले संस्थाका गतिविधिहरू, उद्देश्यहरू र कार्यक्रमहरूको प्रभावकारी डिजिटल प्रस्तुतीकरणमा योगदान पुर्‍याएको छ। REPC-Nepal का कार्यसमिति सदस्यका रूपमा उहाँले REPC-Nepal का रणनीतिक निर्णयहरूमा योगदान पुर्‍याउँदै मानव अधिकार, मध्यस्थता तथा कानुनी सहायता सम्बन्धी कार्यक्रमहरूलाई प्रविधिको माध्यमबाट सहयोग गर्दै आउनुभएको छ।',
   },
   {
     id: 7,
