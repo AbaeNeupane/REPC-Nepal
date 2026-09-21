@@ -179,61 +179,6 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
             <span className={lang === 'np' ? 'font-nepali' : ''}>{t('Donate', 'सहयोग')}</span>
           </Link>
 
-          {/* Search */}
-          <div className="relative shrink-0 z-20">
-            {searchOpen ? (
-              <form
-                onSubmit={handleSearchSubmit}
-                className="hidden md:flex items-center border border-gray-300 bg-white rounded-md shadow-sm overflow-hidden transition-all focus-within:border-navy focus-within:ring-2 focus-within:ring-navy/10"
-              >
-                <input
-                  autoFocus
-                  type="text"
-                  value={searchQuery}
-                  onChange={e => setSearchQuery(e.target.value)}
-                  placeholder={t('Search...', 'खोज्नुहोस्...')}
-                  className="px-3 py-2.5 text-sm text-gray-700 placeholder:text-gray-400 outline-none w-32 lg:w-56"
-                  onKeyDown={e => {
-                    if (e.key === 'Escape') {
-                      setSearchOpen(false);
-                      setSearchQuery('');
-                    }
-                  }}
-                />
-                <button
-                  type="submit"
-                  className="h-11 w-11 flex items-center justify-center bg-navy text-white hover:bg-navy/90 transition-colors border-l border-navy/20"
-                  aria-label={t('Search', 'खोज्नुहोस्')}
-                >
-                  <FaSearch size={14} />
-                </button>
-
-                {matches.length > 0 && (
-                  <div className="absolute top-full left-0 right-0 mt-2 bg-white border border-gray-200 rounded-md shadow-xl overflow-hidden z-50">
-                    {matches.map((item, i) => (
-                      <button
-                        type="button"
-                        key={i}
-                        onClick={() => goToResult(item.link)}
-                        className={`block w-full text-left px-3 py-2.5 text-sm text-gray-700 hover:bg-navy/5 hover:text-navy transition-colors ${lang === 'np' ? 'font-nepali' : ''}`}
-                      >
-                        {lang === 'en' ? item.titleEn : item.titleNp}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </form>
-            ) : (
-              <button
-                onClick={() => setSearchOpen(true)}
-                className="h-11 w-11 sm:h-12 sm:w-12 flex items-center justify-center rounded-full border border-gray-300 text-navy hover:text-sky hover:bg-navy/5 transition-colors shadow-sm"
-                aria-label={t('Open Search', 'खोज खोल्नुहोस्')}
-              >
-                <FaSearch size={17} />
-              </button>
-            )}
-          </div>
-
           {/* Language Toggle */}
           <button
             type="button"
