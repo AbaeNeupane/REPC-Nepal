@@ -176,6 +176,7 @@ const Navigation = ({ mobileOpen, setMobileOpen }) => {
             <FaTimes size={16} />
           </button>
         </div>
+        <Link to="/support#donate" onClick={() => setMobileOpen(false)} className={`mb-2 flex items-center justify-center rounded-xl bg-sky px-4 py-3 text-sm font-bold text-white ${lang === 'np' ? 'font-nepali' : ''}`}>♥ {t('Donate now', 'अहिले सहयोग गर्नुहोस्')}</Link>
 
         <div className="h-[calc(100vh-72px)] overflow-y-auto">
           {navItems.map((item, i) => (

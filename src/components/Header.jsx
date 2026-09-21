@@ -173,10 +173,10 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
           {/* Support CTA */}
           <Link
             to="/support"
-            className="hidden md:inline-flex items-center gap-2 bg-sky hover:bg-sky-light text-white text-sm font-semibold px-4 py-2.5 rounded-sm transition-colors shadow-sm hover:shadow-md"
+            className="hidden md:inline-flex items-center gap-2 bg-navy hover:bg-navy-light text-white text-sm font-semibold px-4 py-2.5 rounded-sm transition-colors shadow-sm hover:shadow-md"
           >
             <FaHandHoldingHeart size={14} />
-            <span className={lang === 'np' ? 'font-nepali' : ''}>{t('Support Us', 'सहयोग गर्नुहोस्')}</span>
+            <span className={lang === 'np' ? 'font-nepali' : ''}>{t('Donate Us', 'सहयोग गर्नुहोस्')}</span>
           </Link>
 
           {/* Search */}
@@ -239,7 +239,7 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
             type="button"
             onClick={handleLanguageToggle}
             aria-label={t('Switch to Nepali', 'अंग्रेजीमा परिवर्तन गर्नुहोस्')}
-            className="h-11 w-14 sm:h-12 sm:w-16 lg:h-9 lg:w-auto lg:min-w-[4.2rem] lg:rounded rounded-full border border-navy bg-white px-1 text-xs font-semibold text-navy text-center outline-none transition-colors hover:bg-navy hover:text-white focus:ring-2 focus:ring-sky/30"
+            className=" h-10 items-center gap-2 px-3 text-xs font-bold text-navy hover:border-sky/40 hover:bg-slate-50 md:inline-flex"
           >
             {lang === 'en' ? 'EN' : 'NP'}
           </button>
