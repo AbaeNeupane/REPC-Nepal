@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { LanguageProvider } from './context/LanguageContext';
-import { FaWhatsapp, FaArrowUp } from 'react-icons/fa';
+import { LanguageProvider, useLang } from './context/LanguageContext';
+import { FaWhatsapp, FaArrowUp, FaHandHoldingHeart } from 'react-icons/fa';
 import { siteInfo } from './data/siteContent';
 
 import TopBar     from './components/TopBar';
@@ -164,6 +164,23 @@ const ScrollToTop = () => {
 };
 
 /* ─────────────────────────────────────────────────────────────
+   Mobile Donate Bar
+───────────────────────────────────────────────────────────── */
+const MobileDonateBar = () => {
+  const { lang, t } = useLang();
+  return (
+    <div
+      className="mobile-donate-bar fixed inset-x-0 bottom-0 z-40 border-t border-slate-200  px-3 pt-3 shadow-[0_-12px_35px_rgba(15,23,42,0.12)] backdrop-blur md:hidden no-print"
+      style={{ paddingBottom: 'calc(0.75rem + env(safe-area-inset-bottom, 0px))' }}
+    >
+      <Link to="/support" className={`flex items-center justify-center gap-2 rounded-xl bg-navy px-4 py-3 text-sm font-black text-white shadow-sm ${lang === 'np' ? 'font-nepali' : ''}`}>
+        <FaHandHoldingHeart size={14} /> {t('Donate to REPC-Nepal', 'REPC-नेपाललाई सहयोग गर्नुहोस्')}
+      </Link>
+    </div>
+  );
+};
+
+/* ─────────────────────────────────────────────────────────────
    404 page
 ───────────────────────────────────────────────────────────── */
 const NotFound = () => (
@@ -180,18 +197,21 @@ const NotFound = () => (
 ───────────────────────────────────────────────────────────── */
 const Layout = ({ children }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
+  const hideMobileDonateBar = location.pathname === '/support';
 
   return (
     <div className="flex flex-col min-h-screen">
       <TopBar />
       <Header mobileOpen={mobileOpen} onMobileToggle={() => setMobileOpen(open => !open)} />
       <Navigation mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
-      <main className="flex-1 bg-gray-50">
+      <main className={`flex-1 bg-gray-50 ${hideMobileDonateBar ? '' : 'pb-20 md:pb-0'}`}>
         {children}
       </main>
       <Footer />
       <FloatingWhatsApp />
       <ScrollToTop />
+      {!hideMobileDonateBar && <MobileDonateBar />}
     </div>
   );
 };
