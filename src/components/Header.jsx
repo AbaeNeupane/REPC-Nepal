@@ -73,58 +73,6 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
 
   return (
     <header className="bg-[#F1F2F4] border-b border-gray-200 shadow-sm relative z-50">
-      {searchOpen && (
-        <div className="md:hidden fixed inset-0 bg-black/30 backdrop-blur-[1px] z-40" onClick={() => { setSearchOpen(false); setSearchQuery(''); }} aria-hidden="true" />
-      )}
-
-      {searchOpen && (
-        <div className="md:hidden fixed inset-x-0 top-4 z-50 flex justify-center px-4 pointer-events-none">
-          <div ref={searchRef} className="pointer-events-auto w-full max-w-md">
-            <form
-              onSubmit={handleSearchSubmit}
-              className="relative flex items-center border border-gray-300 bg-white rounded-xl shadow-2xl overflow-hidden focus-within:border-navy focus-within:ring-2 focus-within:ring-navy/10"
-            >
-              <input
-                autoFocus
-                type="text"
-                value={searchQuery}
-                onChange={e => setSearchQuery(e.target.value)}
-                placeholder={t('Search...', 'खोज्नुहोस्...')}
-                className="px-4 py-3 text-sm text-gray-700 placeholder:text-gray-400 outline-none w-full"
-                onKeyDown={e => {
-                  if (e.key === 'Escape') {
-                    setSearchOpen(false);
-                    setSearchQuery('');
-                  }
-                }}
-              />
-              <button
-                type="submit"
-                className="h-12 w-12 flex items-center justify-center bg-navy text-white hover:bg-navy/90 transition-colors border-l border-navy/20"
-                aria-label={t('Search', 'खोज्नुहोस्')}
-              >
-                <FaSearch size={13} />
-              </button>
-
-              {matches.length > 0 && (
-                <div className="absolute left-0 right-0 top-full mt-2 bg-white border border-gray-200 rounded-lg shadow-xl overflow-hidden z-[60]">
-                  {matches.map((item, i) => (
-                    <button
-                      type="button"
-                      key={i}
-                      onClick={() => goToResult(item.link)}
-                      className={`block w-full text-left px-3 py-2.5 text-sm text-gray-700 hover:bg-navy/5 hover:text-navy transition-colors ${lang === 'np' ? 'font-nepali' : ''}`}
-                    >
-                      {lang === 'en' ? item.titleEn : item.titleNp}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </form>
-          </div>
-        </div>
-      )}
-
       <div className="site-container py-5 sm:py-4 flex items-center justify-between gap-3 relative z-10">
 
         {/* Left: LOGO + Org Name */}
@@ -158,9 +106,7 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
 
           {/* Org Name Block */}
           <div className="min-w-0">
-            <p className={`block text-navy italic text-xs sm:text-sm md:text-base font-medium leading-none mb-1.5 ${lang === 'np' ? 'font-nepali' : ''}`}>
-              “{t(siteInfo.mottoEn, siteInfo.mottoNp)}”
-            </p>
+            <p className={`mt-1 text-s italic text-navy sm:block ${isNp ? 'font-nepali text-sm' : ''}`}>“{t(siteInfo.mottoEn, siteInfo.mottoNp)}”</p>
             <h1 className={`font-bold leading-tight text-navy ${lang === 'np' ? 'font-nepali text-base sm:text-lg md:text-4xl' : 'text-base sm:text-lg md:text-3xl'}`}>
               {t(siteInfo.nameEn, siteInfo.nameNp)}
             </h1>
