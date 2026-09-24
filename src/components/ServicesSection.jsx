@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
-import { services } from '../data/siteContent';
+import { services } from '../data/content';
 import {
   FaHandshake, FaArrowRight, FaGavel, FaComments, FaExchangeAlt, FaBalanceScale,
   FaFileSignature, FaUserTie, FaUsersCog, FaChalkboardTeacher, FaSearch,

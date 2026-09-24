@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
-import { membershipInfo, siteInfo } from '../data/siteContent';
+import { membershipInfo } from '../data/engagement';
+import { siteInfo } from '../data/organization';
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaFacebook, FaTwitter, FaYoutube, FaPaperPlane, FaWhatsapp } from 'react-icons/fa';
 
 const PageBanner = ({ titleEn, titleNp }) => {

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
-import { membershipInfo, siteInfo } from '../data/siteContent';
+import { membershipInfo } from '../data/engagement';
+import { siteInfo } from '../data/organization';
 import { FaArrowRight, FaCheckCircle, FaIdCard, FaUsers } from 'react-icons/fa';
 
 const PageBanner = ({ titleEn, titleNp }) => {

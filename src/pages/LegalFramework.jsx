@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
-import { legalFramework } from '../data/siteContent';
+import { legalFramework } from '../data/content';
 import { FaBalanceScale, FaHandshake, FaUserShield, FaChild, FaExternalLinkAlt, FaExclamationTriangle } from 'react-icons/fa';
 
 const PageBanner = ({ titleEn, titleNp }) => {

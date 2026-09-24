@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
-import { notices, pressReleases, reports, activities } from '../data/siteContent';
+import { notices } from '../data/home';
+import { pressReleases, reports, activities } from '../data/content';
 import { FaDownload, FaCalendarAlt, FaArrowRight } from 'react-icons/fa';
 
 const tabs = [
@@ -22,17 +23,17 @@ const NoticeItem = ({ item }) => {
   const { lang } = useLang();
 
   return (
-    <div className="group rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-all duration-200 hover:border-navy/30 hover:bg-white hover:shadow-[0_12px_30px_rgba(15,23,42,0.06)]">
-      <div className="flex items-start gap-3">
-        <div className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-sky/10 text-sky">
-          <FaCalendarAlt size={12} />
+    <div className="group rounded-xl border border-slate-200 bg-slate-50 p-2.5 transition-all duration-200 hover:border-navy/30 hover:bg-white hover:shadow-sm sm:p-3">
+      <div className="flex items-center gap-2.5">
+        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-sky/10 text-sky">
+          <FaCalendarAlt size={10} />
         </div>
 
         <div className="min-w-0 flex-1">
-          <p className={`text-[11px] uppercase tracking-[0.14em] text-slate-500 ${lang === 'np' ? 'font-nepali' : ''}`}>
+          <p className={`text-[10px] uppercase tracking-[0.12em] text-slate-500 ${lang === 'np' ? 'font-nepali' : ''}`}>
             {lang === 'en' ? item.date : item.dateNp}
           </p>
-          <p className={`mt-1 text-sm font-medium leading-relaxed text-slate-700 transition-colors group-hover:text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
+          <p className={`mt-0.5 text-[13px] font-medium leading-snug text-slate-700 transition-colors group-hover:text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
             {lang === 'en' ? item.titleEn : item.titleNp}
           </p>
         </div>
@@ -46,7 +47,7 @@ const NoticeItem = ({ item }) => {
             aria-label="Download"
             onClick={e => e.stopPropagation()}
           >
-            <FaDownload size={12} />
+            <FaDownload size={10} />
           </a>
         )}
       </div>
@@ -57,17 +58,17 @@ const NoticeItem = ({ item }) => {
 const NoticesSection = () => {
   const { lang, t } = useLang();
   const [activeTab, setActiveTab] = useState('notices');
-  const items = dataMap[activeTab] || [];
+  const items = (dataMap[activeTab] || []).slice(0, 3);
 
   return (
     <div className="overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_20px_45px_rgba(15,23,42,0.04)]">
-      <div className="bg-[#07163d] px-5 py-4">
-        <h2 className={`text-lg font-bold text-white ${lang === 'np' ? 'font-nepali' : ''}`}>
+      <div className="bg-[#07163d] px-5 py-3">
+        <h2 className={`text-base font-bold text-white ${lang === 'np' ? 'font-nepali' : ''}`}>
           {t('Latest Updates', 'ताजा अपडेटहरू')}
         </h2>
       </div>
 
-      <div className="flex overflow-x-auto border-b border-slate-200 bg-slate-50 px-3 py-2">
+      <div className="flex overflow-x-auto border-b border-slate-200 bg-slate-50 px-2 py-1">
         {tabs.map(tab => (
           <button
             key={tab.key}
@@ -79,7 +80,7 @@ const NoticesSection = () => {
         ))}
       </div>
 
-      <div className="space-y-3 p-4">
+      <div className="space-y-2 p-3">
         {items.length === 0 ? (
           <p className="py-10 text-center text-sm text-gray-400">
             {t('No items found.', 'कुनै सामग्री फेला परेन।')}
@@ -89,7 +90,7 @@ const NoticesSection = () => {
         )}
       </div>
 
-      <div className="border-t border-slate-200 bg-slate-50 px-5 py-4">
+      <div className="border-t border-slate-200 bg-slate-50 px-4 py-3">
         <Link
           to="/notices"
           className={`inline-flex items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-sky ${lang === 'np' ? 'font-nepali' : ''}`}

@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
-import { siteInfo, importantLinks } from '../data/siteContent';
+import { siteInfo } from '../data/organization';
+import { importantLinks } from '../data/content';
 
 import {
   FaFacebook, FaTwitter, FaYoutube, FaWhatsapp,
@@ -13,7 +14,7 @@ const toNepaliDigits = value => String(value).replace(/[0-9]/g, digit => '०१
 
 const quickLinks = [
   { en: 'Home', np: 'गृह पृष्ठ', to: '/' },
-  { en: 'Our Organization', np: 'हाम्रो संस्था', to: '/about' },
+  { en: 'About Us', np: 'हाम्रो बारेमा', to: '/about' },
   { en: 'Our Services', np: 'हाम्रा सेवाहरू', to: '/services' },
   { en: 'Notices', np: 'सूचनाहरू', to: '/notices' },
   { en: 'Programs', np: 'कार्यक्रमहरू', to: '/programs' },

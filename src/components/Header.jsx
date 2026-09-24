@@ -1,13 +1,15 @@
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
-import { siteInfo, services, notices } from '../data/siteContent';
+import { siteInfo } from '../data/organization';
+import { services } from '../data/content';
+import { notices } from '../data/home';
 import { FaSearch, FaHandHoldingHeart, FaBars, FaTimes } from 'react-icons/fa';
 
 // Static pages + services + notices, searched by title in either language.
 const staticPages = [
   { titleEn: 'Home', titleNp: 'गृह पृष्ठ', link: '/' },
-  { titleEn: 'Our Organization', titleNp: 'हाम्रो संस्था', link: '/about' },
+  { titleEn: 'About Us', titleNp: 'हाम्रो बारेमा', link: '/about' },
   { titleEn: 'Services', titleNp: 'सेवाहरू', link: '/services' },
   { titleEn: 'Programs', titleNp: 'कार्यक्रमहरू', link: '/programs' },
   { titleEn: 'Notices', titleNp: 'सूचना', link: '/notices' },

@@ -1,7 +1,7 @@
 import { useLang } from '../context/LanguageContext';
-import { topNotices } from '../data/siteContent';
+import { topNotices } from '../data/home';
 import { FaFacebook, FaTwitter, FaYoutube, FaEnvelope, FaWhatsapp } from 'react-icons/fa';
-import { siteInfo } from '../data/siteContent';
+import { siteInfo } from '../data/organization';
 
 const TopBar = () => {
   const { lang, t } = useLang();

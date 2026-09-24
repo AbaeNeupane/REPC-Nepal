@@ -1,15 +1,15 @@
 import HeroCarousel from '../components/HeroCarousel';
 import AboutIntro from '../components/AboutIntro';
 import ChairpersonMessage from '../components/ChairpersonMessage';
+import LeadershipGovernance from '../components/LeadershipGovernance';
 import NoticesSection from '../components/NoticesSection';
 import ServicesSection from '../components/ServicesSection';
 import HighlightsSection from '../components/HighlightsSection';
-import CampaignHighlights from '../components/CampaignHighlights';
 import GalleryPreview from '../components/GalleryPreview';
 import ScrollReveal from '../components/ScrollReveal';
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
-import { FaArrowRight, FaShieldAlt } from 'react-icons/fa';
+import { FaShieldAlt } from 'react-icons/fa';
 
 const Home = () => {
   const { lang, t } = useLang();
@@ -24,8 +24,13 @@ const Home = () => {
         <AboutIntro />
       </ScrollReveal>
 
-      {/* Chairperson's message */}
+      {/* Leadership & Governance */}
       <ScrollReveal delay={60}>
+        <LeadershipGovernance />
+      </ScrollReveal>
+
+      {/* Chairperson's message */}
+      <ScrollReveal delay={80}>
         <ChairpersonMessage />
       </ScrollReveal>
 
@@ -33,7 +38,7 @@ const Home = () => {
       {/** Main content */}
       
       {/* Main two-column content */}
-      <ScrollReveal delay={90}>
+      <ScrollReveal delay={100}>
         <div className="site-container py-12">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <NoticesSection />

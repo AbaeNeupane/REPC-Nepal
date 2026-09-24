@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
-import { siteInfo, volunteerAreas } from '../data/siteContent';
+import { siteInfo } from '../data/organization';
+import { volunteerAreas } from '../data/engagement';
 import {
   FaHandsHelping, FaBalanceScale, FaHandshake, FaBullhorn,
   FaClipboardList, FaBriefcase, FaPaperPlane, FaCheckCircle,

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
-import { campaigns } from '../data/siteContent';
+import { campaigns } from '../data/content';
 import { FaBullhorn, FaImage } from 'react-icons/fa';
 
 const CampaignHighlights = () => {

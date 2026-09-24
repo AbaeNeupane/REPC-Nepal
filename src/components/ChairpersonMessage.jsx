@@ -1,6 +1,6 @@
 import { useLang } from '../context/LanguageContext';
 import { Link } from 'react-router-dom';
-import { team } from '../data/siteContent';
+import { team } from '../data/team';
 import { FaArrowRight, FaQuoteLeft } from 'react-icons/fa';
 
 const ChairpersonMessage = () => {

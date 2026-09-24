@@ -1,5 +1,5 @@
 import { useLang } from '../context/LanguageContext';
-import { impactStats } from '../data/siteContent';
+import { impactStats } from '../data/organization';
 import { FaBalanceScale, FaHandshake, FaChalkboardTeacher, FaUsers } from 'react-icons/fa';
 
 const iconMap = {

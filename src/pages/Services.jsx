@@ -1,5 +1,5 @@
 import { useLang } from '../context/LanguageContext';
-import { services } from '../data/siteContent';
+import { services } from '../data/content';
 import { Link } from 'react-router-dom';
 import {
   FaHandshake, FaGavel, FaComments, FaExchangeAlt, FaBalanceScale,

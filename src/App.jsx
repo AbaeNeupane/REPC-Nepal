@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { LanguageProvider, useLang } from './context/LanguageContext';
 import { FaWhatsapp, FaArrowUp, FaHandHoldingHeart } from 'react-icons/fa';
-import { siteInfo } from './data/siteContent';
+import { siteInfo } from './data/organization';
 
 import TopBar     from './components/TopBar';
 import Header     from './components/Header';

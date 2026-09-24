@@ -1,5 +1,5 @@
 import { useLang } from '../context/LanguageContext';
-import { team } from '../data/siteContent';
+import { team } from '../data/team';
 import { FaUserCircle, FaPhone, FaEnvelope } from 'react-icons/fa';
 
 const TeamSection = () => {

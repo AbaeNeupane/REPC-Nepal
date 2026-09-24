@@ -1,3 +1,5 @@
+// Donation and supporter information.
+
 export const donationInfo = {
   bankNameEn: 'RASTRIYA BANIJYA BANK',
   bankNameNp: 'राष्ट्रिय वाणिज्य बैंक',
@@ -9,6 +11,11 @@ export const donationInfo = {
   qrImage: '/QR/rbb-fonepay.jpeg',
   qrAltEn: 'REPC-Nepal donation QR code for Fonepay / supported banking apps.',
   qrAltNp: 'Fonepay तथा समर्थित बैंकिङ एपमार्फत सहयोग गर्न REPC-नेपालको QR कोड।',
+  waysToGive: [
+    { icon: 'bank', titleEn: 'Bank Transfer', titleNp: 'बैंक स्थानान्तरण', descEn: 'Direct deposit to our organizational bank account (details below).', descNp: 'हाम्रो संस्थागत बैंक खातामा प्रत्यक्ष जम्मा गर्नुहोस् (विवरण तल)।' },
+    { icon: 'member', titleEn: 'Become a Member', titleNp: 'सदस्य बन्नुहोस्', descEn: 'Support our work year-round with an annual membership contribution.', descNp: 'वार्षिक सदस्यता योगदानद्वारा वर्षभरि हाम्रो कामलाई सहयोग गर्नुहोस्।' },
+    { icon: 'partner', titleEn: 'In-Kind & Partnership', titleNp: 'वस्तुगत सहयोग तथा साझेदारी', descEn: 'Offer equipment, venue space, or a program partnership instead of cash.', descNp: 'नगदको सट्टा उपकरण, स्थान, वा कार्यक्रम साझेदारी प्रदान गर्नुहोस्।' },
+  ],
 };
 
 export const suggestedDonations = [500, 1000, 2500, 5000];

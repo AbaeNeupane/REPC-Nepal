@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
-import { notices, pressReleases, reports, activities } from '../data/siteContent';
+import { notices } from '../data/home';
+import { pressReleases, reports, activities } from '../data/content';
 import { FaDownload, FaCalendarAlt, FaFilter } from 'react-icons/fa';
 
 const tabs = [
