@@ -44,40 +44,5 @@ export const heroSlides = [
 ];
 
 export const notices = [
-  {
-    id: 1,
-    date: '2083-05-15',
-    dateNp: '२०८३ भदौ १५',
-    titleEn: 'Registration Open: Basic Mediation Training Program',
-    titleNp: 'दर्ता खुला: आधारभूत मेलमिलाप तालिम कार्यक्रम',
-    type: 'notice',
-    downloadUrl: '#',
-  },
-  {
-    id: 2,
-    date: '2083-05-10',
-    dateNp: '२०८३ भदौ १०',
-    titleEn: 'Legal Aid Camp — Thapathali, Kathmandu',
-    titleNp: 'कानुनी सहायता शिविर — थापाथली, काठमाडौं',
-    type: 'notice',
-    downloadUrl: '#',
-  },
-  {
-    id: 3,
-    date: '2083-04-28',
-    dateNp: '२०८३ साउन २८',
-    titleEn: 'Annual General Meeting Notice 2083',
-    titleNp: 'वार्षिक साधारण सभा सूचना २०८३',
-    type: 'notice',
-    downloadUrl: '#',
-  },
-  {
-    id: 4,
-    date: '2083-04-20',
-    dateNp: '२०८३ साउन २०',
-    titleEn: 'Workshop on Child Rights and Juvenile Justice',
-    titleNp: 'बाल अधिकार र बाल न्यायसम्बन्धी कार्यशाला',
-    type: 'notice',
-    downloadUrl: '#',
-  },
+
 ];

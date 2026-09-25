@@ -1,76 +1,17 @@
 // Programs, notices, publications, legal, and reference content.
 
 export const pressReleases = [
-  {
-    id: 1,
-    date: '2083-05-12',
-    dateNp: '२०८३ भदौ १२',
-    titleEn: 'REPC-Nepal Statement on International Day of Peace',
-    titleNp: 'अन्तर्राष्ट्रिय शान्ति दिवसमा REPC-Nepal को वक्तव्य',
-    type: 'press',
-    downloadUrl: '#',
-  },
-  {
-    id: 2,
-    date: '2083-04-15',
-    dateNp: '२०८३ साउन १५',
-    titleEn: 'Press Release: Community Mediation Center Launched in Ward 11',
-    titleNp: 'प्रेस विज्ञप्ति: वडा ११ मा सामुदायिक मेलमिलाप केन्द्र सुरुवात',
-    type: 'press',
-    downloadUrl: '#',
-  },
+  
 ];
 
 export const reports = [
-  {
-    id: 1,
-    date: '2083-04-01',
-    dateNp: '२०८३ साउन १',
-    titleEn: 'Annual Progress Report 2082/83',
-    titleNp: 'वार्षिक प्रगति प्रतिवेदन २०८२/८३',
-    type: 'report',
-    downloadUrl: '#',
-  },
-  {
-    id: 2,
-    date: '2083-02-15',
-    dateNp: '२०८३ जेठ १५',
-    titleEn: 'Human Rights Situation Report — Q1 2083',
-    titleNp: 'मानव अधिकार अवस्था प्रतिवेदन — पहिलो त्रैमास २०८३',
-    type: 'report',
-    downloadUrl: '#',
-  },
+  
 ];
 
 export const activities = [
-  {
-    id: 1,
-    date: '2083-05-08',
-    dateNp: '२०८३ भदौ ८',
-    titleEn: 'International Day of the World\'s Indigenous Peoples — Event',
-    titleNp: 'विश्व आदिवासी दिवस — कार्यक्रम सम्पन्न',
-    type: 'activity',
-    downloadUrl: '#',
-  },
-  {
-    id: 2,
-    date: '2083-05-01',
-    dateNp: '२०८३ भदौ १',
-    titleEn: 'Gender-Based Violence Awareness Campaign — Kathmandu',
-    titleNp: 'लैङ्गिक हिंसा सचेतना अभियान — काठमाडौं',
-    type: 'activity',
-    downloadUrl: '#',
-  },
-  {
-    id: 3,
-    date: '2083-04-10',
-    dateNp: '२०८३ साउन १०',
-    titleEn: 'Capacity Building Training for Local Government Officials',
-    titleNp: 'स्थानीय सरकारी अधिकारीहरूलाई क्षमता विकास तालिम',
-    type: 'activity',
-    downloadUrl: '#',
-  },
+  
 ];
+
 
 export const services = [
   // ── Peace, mediation, and awareness ───────────────────────
@@ -165,8 +106,8 @@ export const services = [
   },
   {
     icon: 'drafting', group: 'legal',
-    titleEn: 'Legislative Draft Consulting',
-    titleNp: 'कानुन मस्यौदा परामर्श',
+    titleEn: 'Legislative Drafting and Consulting',
+    titleNp: 'कानुन मस्यौदा लेखन तथा परामर्श',
     descEn: 'Preparation and review of petitions, agreements, applications, and other legal documents.',
     descNp: 'निवेदन, सम्झौता, आवेदन तथा अन्य कानुनी कागजातको मस्यौदा तयार गर्ने र समीक्षा गर्ने सेवा।',
     link: '/services#legislative-drafting',
