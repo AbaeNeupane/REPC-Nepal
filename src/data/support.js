@@ -12,6 +12,7 @@ export const donationInfo = {
   qrAltEn: 'REPC-Nepal donation QR code for Fonepay / supported banking apps.',
   qrAltNp: 'Fonepay तथा समर्थित बैंकिङ एपमार्फत सहयोग गर्न REPC-नेपालको QR कोड।',
   waysToGive: [
+    {icon: 'qrcode', titleEn: 'Fonepay Qr Scan', titleNp: 'Qr Scan', descEn: 'Scan the fonepay Qr for direct deposit to our organization bank account.', descNp: 'हाम्रो संस्थागत fonepay Qr मा प्रत्यक्ष जम्मा गर्नुहोस्' },
     { icon: 'bank', titleEn: 'Bank Transfer', titleNp: 'बैंक स्थानान्तरण', descEn: 'Direct deposit to our organizational bank account (details below).', descNp: 'हाम्रो संस्थागत बैंक खातामा प्रत्यक्ष जम्मा गर्नुहोस् (विवरण तल)।' },
     { icon: 'member', titleEn: 'Become a Member', titleNp: 'सदस्य बन्नुहोस्', descEn: 'Support our work year-round with an annual membership contribution.', descNp: 'वार्षिक सदस्यता योगदानद्वारा वर्षभरि हाम्रो कामलाई सहयोग गर्नुहोस्।' },
     { icon: 'partner', titleEn: 'In-Kind & Partnership', titleNp: 'वस्तुगत सहयोग तथा साझेदारी', descEn: 'Offer equipment, venue space, or a program partnership instead of cash.', descNp: 'नगदको सट्टा उपकरण, स्थान, वा कार्यक्रम साझेदारी प्रदान गर्नुहोस्।' },

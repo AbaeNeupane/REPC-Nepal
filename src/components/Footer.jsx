@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import { siteInfo } from '../data/organization';
 import { importantLinks } from '../data/content';
+import NewsletterSignup from './NewsletterSignup';
 
 import {
   FaFacebook, FaTwitter, FaYoutube, FaWhatsapp,
@@ -135,6 +136,8 @@ const Footer = () => {
               ))}
             </div>
           </div>
+
+          <NewsletterSignup className="mt-6 md:mt-5 max-w-sm" />
         </div>
 
         {/* Quick Links */}
@@ -238,6 +241,10 @@ const Footer = () => {
               `© 2083 Rights, Equity and Peace Campaign – Nepal. All rights reserved.`,
               `© २०८३ अधिकार, समता र शान्ति अभियान–नेपाल। सर्वाधिकार सुरक्षित।`
             )}
+            <span className="mx-2 opacity-50">|</span>
+            <Link to="/privacy" className="hover:text-white transition-colors">
+              {t('Privacy Policy', 'गोपनीयता नीति')}
+            </Link>
           </p>
           <p className={`text-white/40 text-[14px] md:text-xs md:text-right ${np}`}>
             {t(

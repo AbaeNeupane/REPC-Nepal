@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
+import SEO from '../components/SEO';
 
 const PageBanner = ({ titleEn, titleNp }) => {
   const { lang } = useLang();
@@ -82,6 +83,13 @@ const Programs = () => {
 
   return (
     <div>
+      <SEO
+        titleEn="Programs & Activities"
+        titleNp="कार्यक्रम तथा गतिविधिहरू"
+        descriptionEn="Integrated programs from REPC-Nepal for human rights advocacy, legal counsel, mediator training, and peacebuilding."
+        descriptionNp="मानव अधिकार वकालत, कानुनी परामर्श, मेलमिलापकर्ता तालिम र शान्ति निर्माणका लागि REPC-नेपालका कार्यक्रमहरू।"
+        path="/programs"
+      />
       <PageBanner titleEn="Programs & Activities" titleNp="कार्यक्रम तथा गतिविधिहरू" />
 
       <div className="site-container py-10 text-justify">

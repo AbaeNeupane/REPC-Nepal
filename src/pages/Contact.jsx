@@ -4,6 +4,7 @@ import { useLang } from '../context/LanguageContext';
 import { membershipInfo } from '../data/engagement';
 import { siteInfo } from '../data/organization';
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaFacebook, FaTwitter, FaYoutube, FaPaperPlane, FaWhatsapp } from 'react-icons/fa';
+import SEO from '../components/SEO';
 
 const PageBanner = ({ titleEn, titleNp }) => {
   const { lang } = useLang();
@@ -77,6 +78,13 @@ const Contact = () => {
 
   return (
     <div>
+      <SEO
+        titleEn="Contact Us"
+        titleNp="सम्पर्क गर्नुहोस्"
+        descriptionEn="Get in touch with REPC-Nepal — office address, phone, email, and WhatsApp in Thapathali, Kathmandu."
+        descriptionNp="REPC-नेपालसँग सम्पर्क गर्नुहोस् — ठेगाना, फोन, इमेल र व्हाट्सएप, थापाथली, काठमाडौं।"
+        path="/contact"
+      />
       <PageBanner titleEn="Contact Us" titleNp="सम्पर्क गर्नुहोस्" />
 
       <div className="site-container py-10 grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -186,14 +194,6 @@ const Contact = () => {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
-            <a
-              href="https://maps.google.com/?q=Thapathali+Kathmandu+Nepal"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`absolute bottom-2 right-2 bg-white text-xs text-navy hover:text-sky border border-gray-200 shadow px-2 py-1 rounded transition-colors ${lang === 'np' ? 'font-nepali' : ''}`}
-            >
-              {t('Open in Google Maps ↗', 'गुगल म्यापमा खोल्नुहोस् ↗')}
-            </a>
           </div>
         </div>
 

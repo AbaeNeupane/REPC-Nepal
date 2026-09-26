@@ -44,5 +44,8 @@ export const heroSlides = [
 ];
 
 export const notices = [
-
+  {
+    en: 'REPC-Nepal is affiliated with the Social Welfare Council and the Mediation Council of Nepal.',
+    np: 'REPC-Nepal समाज कल्याण परिषद् तथा नेपाल मेलमिलाप परिषद्सँग आबद्ध छ।',
+  },
 ];

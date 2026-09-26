@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import { legalFramework } from '../data/content';
 import { FaBalanceScale, FaHandshake, FaUserShield, FaChild, FaExternalLinkAlt, FaExclamationTriangle } from 'react-icons/fa';
+import SEO from '../components/SEO';
 
 const PageBanner = ({ titleEn, titleNp }) => {
   const { lang } = useLang();
@@ -37,6 +38,13 @@ const LegalFramework = () => {
 
   return (
     <div>
+      <SEO
+        titleEn="Legal Framework"
+        titleNp="कानुनी संरचना"
+        descriptionEn="The laws and legal foundations guiding REPC-Nepal's work in mediation, legal aid, rights, and protection of vulnerable groups."
+        descriptionNp="मेलमिलाप, कानुनी सहायता, अधिकार र कमजोर समूहको संरक्षणमा REPC-नेपालको कार्यलाई मार्गदर्शन गर्ने कानुनी आधारहरू।"
+        path="/legal-framework"
+      />
       <PageBanner titleEn="Legal Framework" titleNp="कानुनी संरचना" />
 
       <div className="max-w-5xl mx-auto px-4 py-10">

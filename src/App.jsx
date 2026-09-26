@@ -11,6 +11,7 @@ import Footer     from './components/Footer';
 
 import Home         from './pages/Home';
 import About        from './pages/About';
+import FoundingMembers from './pages/FoundingMembers';
 import Services     from './pages/Services';
 import Notices      from './pages/Notices';
 import Programs     from './pages/Programs';
@@ -21,6 +22,7 @@ import Support      from './pages/Support';
 import Volunteer    from './pages/Volunteer';
 import Membership   from './pages/Membership';
 import Contact      from './pages/Contact';
+import Privacy      from './pages/Privacy';
 import ChairpersonAppeal from './pages/ChairpersonAppeal';
 
 
@@ -99,6 +101,7 @@ const PageTransition = () => {
       <Routes location={displayLoc}>
         <Route path="/"             element={<Home />}         />
         <Route path="/about"        element={<About />}        />
+        <Route path="/founding-members" element={<FoundingMembers />} />
         <Route path="/services"     element={<Services />}     />
         <Route path="/notices"      element={<Notices />}      />
         <Route path="/programs"     element={<Programs />}     />
@@ -109,6 +112,7 @@ const PageTransition = () => {
         <Route path="/volunteer"    element={<Volunteer />}    />
         <Route path="/membership"   element={<Membership />}   />
         <Route path="/contact"      element={<Contact />}      />
+        <Route path="/privacy"      element={<Privacy />}      />
         <Route path="/chairperson-message" element={<ChairpersonAppeal />} />
         <Route path="*"             element={<NotFound />}     />
       </Routes>

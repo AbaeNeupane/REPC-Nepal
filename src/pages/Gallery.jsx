@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import { FaImages, FaTimes } from 'react-icons/fa';
 import useScrollLock from '../hooks/useScrollLock';
+import SEO from '../components/SEO';
 
 const PageBanner = ({ titleEn, titleNp }) => {
   const { lang } = useLang();
@@ -38,6 +39,13 @@ const Gallery = () => {
 
   return (
     <div>
+      <SEO
+        titleEn="Photo Gallery"
+        titleNp="फोटो ग्यालरी"
+        descriptionEn="Photos from REPC-Nepal's meetings, milestones, and community activities."
+        descriptionNp="REPC-नेपालका बैठक, उपलब्धि र सामुदायिक गतिविधिहरूका तस्बिरहरू।"
+        path="/gallery"
+      />
       <PageBanner titleEn="Photo Gallery" titleNp="फोटो ग्यालरी" />
 
       <div className="site-container py-10">

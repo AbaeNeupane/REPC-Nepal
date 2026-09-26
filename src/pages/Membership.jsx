@@ -3,6 +3,7 @@ import { useLang } from '../context/LanguageContext';
 import { membershipInfo } from '../data/engagement';
 import { siteInfo } from '../data/organization';
 import { FaArrowRight, FaCheckCircle, FaIdCard, FaUsers } from 'react-icons/fa';
+import SEO from '../components/SEO';
 
 const PageBanner = ({ titleEn, titleNp }) => {
   const { lang } = useLang();
@@ -29,6 +30,13 @@ const Membership = () => {
 
   return (
     <div>
+      <SEO
+        titleEn="Membership"
+        titleNp="सदस्यता"
+        descriptionEn="Become a member of REPC-Nepal and join the campaign for rights, equity, and peace."
+        descriptionNp="REPC-नेपालको सदस्य बन्नुहोस् र अधिकार, समता र शान्तिको अभियानमा सामेल हुनुहोस्।"
+        path="/membership"
+      />
       <PageBanner titleEn="Membership" titleNp="सदस्यता" />
 
       <div className="site-container py-10">

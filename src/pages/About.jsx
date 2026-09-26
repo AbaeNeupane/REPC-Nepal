@@ -4,10 +4,12 @@ import { useLang } from '../context/LanguageContext';
 import { siteInfo } from '../data/organization';
 import CertificateDocuments from '../components/CertificateViewer';
 import PurposeSection from '../components/PurposeSection';
-import FoundingMembersSection from '../components/FoundingMembersSection';
+import WhoWeAreSection from '../components/WhoWeAreSection';
 import ExecutiveCommitteeSection from '../components/ExecutiveCommitteeSection';
 import OrganizationStructureSection from '../components/OrganizationStructureSection';
 import TeamBioModal from '../components/TeamBioModal';
+import SEO from '../components/SEO';
+import { FaUsers, FaArrowRight } from 'react-icons/fa';
 
 const PageBanner = ({ titleEn, titleNp }) => {
   const { lang } = useLang();
@@ -39,15 +41,50 @@ const About = () => {
 
   return (
     <div>
+      <SEO
+        titleEn="About Us"
+        titleNp="हाम्रो बारेमा"
+        descriptionEn="Learn about REPC-Nepal's mission, executive committee, founding members, and organizational structure — a registered NGO working on legal aid, mediation, and human rights in Nepal."
+        descriptionNp="REPC-नेपालको उद्देश्य, कार्य समिति, संस्थापक सदस्य र संगठनात्मक संरचनाको बारेमा जान्नुहोस्।"
+        path="/about"
+      />
       <PageBanner titleEn="About Us" titleNp="हाम्रो बारेमा" />
 
       <div className="site-container py-10">
+
+        <WhoWeAreSection />
 
         <PurposeSection />
 
         <ExecutiveCommitteeSection onMemberClick={openMemberBio} className="mb-12" />
 
-        <FoundingMembersSection onMemberClick={openMemberBio} />
+        {/* Founding Members — full profiles now live on their own page */}
+        <section className="mb-12">
+          <div className="flex flex-col gap-4 rounded-2xl border border-sky/20 bg-gradient-to-r from-sky/5 via-white to-navy/[0.04] p-6 shadow-sm sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-start gap-4">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-navy text-white shadow-sm">
+                <FaUsers size={20} />
+              </div>
+              <div>
+                <h2 className={`text-lg font-bold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
+                  {t('Founding Members', 'संस्थापक सदस्यहरू')}
+                </h2>
+                <p className={`mt-1 text-sm text-slate-600 ${lang === 'np' ? 'font-nepali' : ''}`}>
+                  {t(
+                    'Meet the nine founding members of REPC-Nepal, who currently also serve as the Executive Committee.',
+                    'REPC-नेपालका नौ जना संस्थापक सदस्यहरूसँग परिचित हुनुहोस्, जो हाल कार्य समितिमा पनि सेवारत हुनुहुन्छ।'
+                  )}
+                </p>
+              </div>
+            </div>
+            <Link
+              to="/founding-members"
+              className={`inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-navy px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:bg-navy-light hover:shadow-md sm:self-center ${lang === 'np' ? 'font-nepali' : ''}`}
+            >
+              {t('View Founding Members', 'संस्थापक सदस्यहरू हेर्नुहोस्')} <FaArrowRight size={12} />
+            </Link>
+          </div>
+        </section>
 
         <OrganizationStructureSection className="mb-12" />
 

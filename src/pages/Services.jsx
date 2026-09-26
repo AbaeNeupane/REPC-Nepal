@@ -6,6 +6,7 @@ import {
   FaFileSignature, FaUserTie, FaUsersCog, FaChalkboardTeacher, FaSearch,
   FaDove, FaPhoneAlt,
 } from 'react-icons/fa';
+import SEO from '../components/SEO';
 
 const iconMap = {
   mediation: FaHandshake,
@@ -68,6 +69,13 @@ const Services = () => {
 
   return (
     <div>
+      <SEO
+        titleEn="Our Services"
+        titleNp="हाम्रा सेवाहरू"
+        descriptionEn="Peace, mediation, legal aid, training, research, and human rights services offered by REPC-Nepal."
+        descriptionNp="REPC-नेपालद्वारा प्रदान गरिने शान्ति, मेलमिलाप, कानुनी सहायता, तालिम, अनुसन्धान र मानव अधिकार सम्बन्धी सेवाहरू।"
+        path="/services"
+      />
       <PageBanner titleEn="Our Services" titleNp="हाम्रा सेवाहरू" />
 
       <div className="site-container py-10">

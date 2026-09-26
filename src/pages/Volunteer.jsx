@@ -7,6 +7,7 @@ import {
   FaHandsHelping, FaBalanceScale, FaHandshake, FaBullhorn,
   FaClipboardList, FaBriefcase, FaPaperPlane, FaCheckCircle,
 } from 'react-icons/fa';
+import SEO from '../components/SEO';
 
 const PageBanner = ({ titleEn, titleNp }) => {
   const { lang } = useLang();
@@ -80,6 +81,13 @@ const Volunteer = () => {
 
   return (
     <div>
+      <SEO
+        titleEn="Volunteer & Get Involved"
+        titleNp="सहभागी हुनुहोस्"
+        descriptionEn="Volunteer with REPC-Nepal in mediation, legal aid, advocacy, or outreach and help build a more just and peaceful Nepal."
+        descriptionNp="मेलमिलाप, कानुनी सहायता, वकालत वा पहुँच विस्तारमा REPC-नेपालसँग स्वयंसेवा गर्नुहोस्।"
+        path="/volunteer"
+      />
       <PageBanner titleEn="Get Involved" titleNp="सहभागी हुनुहोस्" />
 
       <div className="site-container py-10">

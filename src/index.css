@@ -168,7 +168,7 @@
 
   /* ── Navigation dropdown (CSS-hover, animated) ─────────── */
   .nav-dropdown {
-    @apply absolute left-0 top-full z-50 min-w-[220px] bg-white shadow-xl border-t-2 border-sky;
+    @apply absolute left-0 top-full z-50 w-64 max-w-xs bg-white shadow-xl border-t-2 border-sky;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-6px);

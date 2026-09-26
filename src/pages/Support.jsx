@@ -5,8 +5,9 @@ import { siteInfo } from '../data/organization';
 import { donationInfo } from '../data/support';
 import {
   FaHandHoldingHeart, FaUniversity, FaMobileAlt, FaIdCard, FaHandshake,
-  FaWhatsapp, FaEnvelope, FaQrcode, FaCopy, FaCheck, FaArrowDown,
+  FaEnvelope, FaQrcode, FaCopy, FaCheck, FaArrowDown,
 } from 'react-icons/fa';
+import SEO from '../components/SEO';
 
 const PageBanner = ({ titleEn, titleNp }) => {
   const { lang } = useLang();
@@ -28,6 +29,7 @@ const PageBanner = ({ titleEn, titleNp }) => {
 };
 
 const wayIconMap = {
+  qrcode: FaQrcode,
   bank: FaUniversity,
   wallet: FaMobileAlt,
   member: FaIdCard,
@@ -51,6 +53,13 @@ const Support = () => {
 
   return (
     <div>
+      <SEO
+        titleEn="Support Us"
+        titleNp="हामीलाई सहयोग गर्नुहोस्"
+        descriptionEn="Support REPC-Nepal's work through donations via bank transfer, Fonepay, or in-kind contributions."
+        descriptionNp="बैंक स्थानान्तरण, फोनपे वा वस्तुगत सहयोगमार्फत REPC-नेपालको कार्यलाई सहयोग गर्नुहोस्।"
+        path="/support"
+      />
       <PageBanner titleEn="Support Us" titleNp="हामीलाई सहयोग गर्नुहोस्" />
 
       <main className="site-container py-10 sm:py-12">
@@ -89,10 +98,11 @@ const Support = () => {
             </a>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
             {donationInfo.waysToGive.map((way, i) => {
               const Icon = wayIconMap[way.icon] || FaHandshake;
               return (
+                // <a href='#payment'>
                 <div key={i} className="support-way-card">
                   <div className="support-way-card__icon">
                     <Icon size={18} />
@@ -106,25 +116,10 @@ const Support = () => {
                     </p>
                   </div>
                 </div>
+                // </a>
               );
             })}
-
-            <a href="#payment" className="support-way-card support-way-card--qr group">
-              <div className="support-way-card__qr">
-                <img src={donationInfo.qrImage} alt={isNp ? donationInfo.qrAltNp : donationInfo.qrAltEn} />
-              </div>
-              <div className="min-w-0">
-                <span className={`text-[11px] font-bold uppercase tracking-[0.12em] text-sky ${isNp ? 'font-nepali tracking-normal' : ''}`}>
-                  {t('Fonepay QR', 'Fonepay QR')}
-                </span>
-                <h3 className={`mt-1 text-sm font-bold text-navy ${isNp ? 'font-nepali' : ''}`}>
-                  {t('Scan and contribute', 'स्क्यान गरेर सहयोग गर्नुहोस्')}
-                </h3>
-                <p className={`mt-1 text-sm leading-relaxed text-slate-600 ${isNp ? 'font-nepali' : ''}`}>
-                  {t('Use Fonepay or a supported banking app to send your contribution.', 'Fonepay वा समर्थित बैंकिङ एपमार्फत सहयोग रकम पठाउनुहोस्।')}
-                </p>
-              </div>
-            </a>
+             
           </div>
         </section>
 
@@ -209,14 +204,6 @@ const Support = () => {
             <Link to="/membership" className="btn-primary bg-sky hover:bg-sky-dark">
               <FaIdCard size={13} /> {t('Become a Member', 'सदस्य बन्नुहोस्')}
             </Link>
-            <a
-              href={`https://wa.me/${siteInfo.whatsapp}?text=${encodeURIComponent('Hello REPC-Nepal, I would like to know more about supporting your work.')}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-outline border-white text-white hover:bg-white hover:text-navy"
-            >
-              <FaWhatsapp size={13} /> {t('WhatsApp Us', 'व्हाट्सएप गर्नुहोस्')}
-            </a>
             <a href={`mailto:${siteInfo.email}`} className="btn-outline border-white text-white hover:bg-white hover:text-navy">
               <FaEnvelope size={13} /> {t('Email Us', 'इमेल गर्नुहोस्')}
             </a>

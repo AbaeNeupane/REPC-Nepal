@@ -30,7 +30,7 @@ export const membershipInfo = {
       titleEn: 'Founding Member', titleNp: 'संस्थापक सदस्य',
       detailEn: 'Recognizes the founding members of the organization.',
       detailNp: 'संस्थाका संस्थापक सदस्यलाई जनाउने सदस्यता।',
-      linkEn: 'Meet the founding members', linkNp: 'संस्थापक सदस्यहरूको सूची हेर्नुहोस्', linkUrl: '/about#founding-members',
+      linkEn: 'Meet the founding members', linkNp: 'संस्थापक सदस्यहरूको सूची हेर्नुहोस्', linkUrl: '/founding-members',
     },
   ],
   processEn: 'Please contact REPC–NEPAL for the application form, eligibility requirements, and current payment instructions before applying.',

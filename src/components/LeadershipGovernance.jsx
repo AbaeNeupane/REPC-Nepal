@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useLang } from '../context/LanguageContext';
 import ExecutiveCommitteeSection from './ExecutiveCommitteeSection';
-import OrganizationStructureSection from './OrganizationStructureSection';
 import TeamBioModal from './TeamBioModal';
 
 const LeadershipGovernance = () => {
@@ -26,8 +25,7 @@ const LeadershipGovernance = () => {
           </p>
         </div>
 
-        <ExecutiveCommitteeSection onMemberClick={setSelectedMember} className="mb-12" />
-        <OrganizationStructureSection />
+        <ExecutiveCommitteeSection onMemberClick={setSelectedMember} />
       </div>
 
       {selectedMember && (

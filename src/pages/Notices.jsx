@@ -4,6 +4,7 @@ import { useLang } from '../context/LanguageContext';
 import { notices } from '../data/home';
 import { pressReleases, reports, activities } from '../data/content';
 import { FaDownload, FaCalendarAlt, FaFilter } from 'react-icons/fa';
+import SEO from '../components/SEO';
 
 const tabs = [
   { en: 'All Notices', np: 'सबै सूचनाहरू', key: 'notices' },
@@ -47,6 +48,13 @@ const Notices = () => {
 
   return (
     <div>
+      <SEO
+        titleEn="Notices & Updates"
+        titleNp="सूचना तथा अपडेटहरू"
+        descriptionEn="Latest notices, press releases, reports, and activities from REPC-Nepal."
+        descriptionNp="REPC-नेपालका पछिल्ला सूचना, प्रेस विज्ञप्ति, प्रतिवेदन र गतिविधिहरू।"
+        path="/notices"
+      />
       <PageBanner titleEn="Notices & Updates" titleNp="सूचना तथा अपडेटहरू" />
 
       <div className="site-container py-8">

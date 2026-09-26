@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import { FaFilePdf, FaFileWord, FaDownload } from 'react-icons/fa';
+import SEO from '../components/SEO';
 
 const PageBanner = ({ titleEn, titleNp }) => {
   const { lang } = useLang();
@@ -56,6 +57,13 @@ const Publications = () => {
 
   return (
     <div>
+      <SEO
+        titleEn="Publications & Downloads"
+        titleNp="प्रकाशन तथा डाउनलोडहरू"
+        descriptionEn="Annual reports, legal documents, and downloadable publications from REPC-Nepal."
+        descriptionNp="REPC-नेपालका वार्षिक प्रतिवेदन, कानुनी दस्तावेज र डाउनलोड गर्न मिल्ने प्रकाशनहरू।"
+        path="/publications"
+      />
       <PageBanner titleEn="Publications & Downloads" titleNp="प्रकाशन तथा डाउनलोडहरू" />
 
       <div id="downloads" className="site-container py-10 space-y-10 scroll-mt-20">

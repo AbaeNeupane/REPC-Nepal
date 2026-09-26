@@ -16,7 +16,7 @@ export const siteInfo = {
   website: 'www.repcnepal.org.np',
   facebook: 'https://www.facebook.com/share/1DBHcrxqnP/', 
   twitter: 'https://twitter.com/repcnepal',    // ← UPDATE THIS
-  youtube: 'https://youtube.com/@repc-nepal?si=V_u-JKaj23xaS8Gx',   // ← UPDATE THIS
+  youtube: 'https://youtube.com/@repc-nepal?si=V_u-JKaj23xaS8Gx',
   officeHoursEn: 'Sunday – Friday: 10:00 AM – 5:00 PM',
   officeHoursNp: 'आइतबार – शुक्रबार: बिहान १०:०० – साँझ ५:००',
   registrationNo: 'CDO, 25/2083/084',

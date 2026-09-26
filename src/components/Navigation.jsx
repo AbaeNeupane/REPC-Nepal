@@ -9,17 +9,17 @@ const navItems = [
     en: 'About Us', np: 'हाम्रो बारेमा', link: '/about',
     children: [
       { en: 'Executive Committee', np: 'कार्य समिति',       link: '/about#team' },
+      { en: 'Founding Members', np: 'संस्थापक सदस्यहरू',    link: '/founding-members' },
       { en: 'Organization Structure', np: 'संस्था संरचना',   link: '/about#structure' },
-      { en: 'Organization Information',   np: 'संस्थागत जानकारी',    link: '/about#organization-info' },
-      { en: 'Legal Framework',     np: 'कानुनी संरचना',     link: '/legal-framework' },
+      { en: 'Registration & Documents',   np: 'दर्ता तथा कागजात',    link: '/about#organization-info' },
     ],
   },
   {
     en: 'Services', np: 'सेवाहरू', link: '/services',
     children: [
-      { en: 'Peace, Mediation, and Awareness',        np: 'शान्ति, मेलमिलाप तथा सचेतना',      link: '/services#mediation' },
-      { en: 'Legal, Training, Research, and Cooperation', np: 'कानुनी सेवा, तालिम, अनुसन्धान तथा सहकार्य', link: '/services#legal-aid' },
-      
+      { en: 'Peace & Mediation',      np: 'शान्ति तथा मेलमिलाप',      link: '/services#mediation' },
+      { en: 'Legal Aid & Training',   np: 'कानुनी सहायता तथा तालिम',  link: '/services#legal-aid' },
+      { en: 'Legal Framework',        np: 'कानुनी संरचना',            link: '/legal-framework' },
     ],
   },
   { en: 'Programs', np: 'कार्यक्रमहरू', link: '/programs' },
@@ -128,7 +128,7 @@ const Navigation = ({ mobileOpen, setMobileOpen }) => {
                     <Link
                       key={j}
                       to={child.link}
-                      className={`flex items-center px-4 py-2.5 text-sm text-gray-700
+                      className={`flex items-start px-4 py-2.5 text-sm leading-snug text-gray-700
                         hover:bg-navy hover:text-white
                         border-l-2 border-transparent hover:border-sky
                         transition-all duration-100
