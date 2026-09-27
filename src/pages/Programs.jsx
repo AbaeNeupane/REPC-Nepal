@@ -38,7 +38,7 @@ const programs = [
     descNp: 'मौलिक मानव अधिकार, कानुनी सुरक्षा र न्यायमा पहुँचबारे सचेतना अभिवृद्धि गर्ने समुदायस्तरीय अभियानहरू।',
     statusEn: 'Planning',
     statusNp: 'योजनामा',
-    color: 'bg-sky',
+    color: 'bg-[#174a8a]',
   },
   {
     titleEn: 'Legal Aid Clinics',
@@ -47,7 +47,7 @@ const programs = [
     descNp: 'महिला, बालबालिका, ज्येष्ठ नागरिक र अपाङ्गता भएका व्यक्तिलगायत कमजोर समूहका लागि नियमित कानुनी परामर्श सत्रहरू।',
     statusEn: 'Planning',
     statusNp: 'योजनामा',
-    color: 'bg-cyan-700',
+    color: 'bg-[#2e629e]',
   },
   {
     titleEn: 'Gender-Based Violence Prevention Program',
@@ -56,7 +56,7 @@ const programs = [
     descNp: 'लैङ्गिक हिंसा रोकथाम, पीडितलाई सहयोग तथा कानुनी स्रोतसँग जोड्ने शैक्षिक कार्यक्रमहरू।',
     statusEn: 'Planning',
     statusNp: 'योजनामा',
-    color: 'bg-blue-600',
+    color: 'bg-[#2456a6]',
   },
   {
     titleEn: 'Child Rights and Juvenile Justice Program',
@@ -65,7 +65,7 @@ const programs = [
     descNp: 'बाल अधिकार सचेतना, दुर्व्यवहार र शोषणबाट सुरक्षा र कानुनसँग द्वन्द्वमा रहेका बालबालिकालाई सहयोगमा केन्द्रित कार्यक्रमहरू।',
     statusEn: 'Planning',
     statusNp: 'योजनामा',
-    color: 'bg-blue-800',
+    color: 'bg-[#123e76]',
   },
   {
     titleEn: 'Climate Change & Human Rights Study',
@@ -74,7 +74,7 @@ const programs = [
     descNp: 'नेपालमा जलवायु परिवर्तन र मानव अधिकारबीचको सम्बन्धबारे कमजोर समुदायमा केन्द्रित अनुसन्धान पहल।',
     statusEn: 'Planning',
     statusNp: 'योजनामा',
-    color: 'bg-sky-700',
+    color: 'bg-[#1d4f91]',
   },
 ];
 
@@ -102,14 +102,14 @@ const Programs = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {programs.map((prog, i) => (
-            <div key={i} className="bg-white border border-gray-200 rounded-sm shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+            <div key={i} className="site-card overflow-hidden rounded-2xl">
               <div className={`${prog.color} h-2`} />
               <div className="p-5">
                 <div className="flex items-start justify-between gap-2 mb-3">
                   <h3 className={`font-bold text-navy leading-snug ${lang === 'np' ? 'font-nepali text-base' : 'text-base'}`}>
                     {lang === 'en' ? prog.titleEn : prog.titleNp}
                   </h3>
-                  <span className={`shrink-0 px-2 py-0.5 rounded text-xs font-semibold ${prog.statusEn === 'Ongoing' ? 'bg-green-100 text-green-700' : 'bg-sky-100 text-sky-700'} ${lang === 'np' ? 'font-nepali' : ''}`}>
+                  <span className={`shrink-0 px-2 py-0.5 rounded text-xs font-semibold ${prog.statusEn === 'Ongoing' ? 'bg-[#e7f0fb] text-[#174a8a]' : 'bg-[#edf4fd] text-[#2456a6]'} ${lang === 'np' ? 'font-nepali' : ''}`}>
                     {lang === 'en' ? prog.statusEn : prog.statusNp}
                   </span>
                 </div>
@@ -121,7 +121,7 @@ const Programs = () => {
           ))}
         </div>
 
-        <div className="mt-10 bg-blue-50 border border-blue-100 rounded-sm p-6 text-center">
+        <div className="mt-10 rounded-2xl border border-[#d6e4f5] bg-[#eef5ff] p-6 text-center">
           <p className={`text-navy font-semibold mb-3 ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t('Interested in participating in our programs?', 'हाम्रा कार्यक्रमहरूमा सहभागी हुन इच्छुक हुनुहुन्छ?')}
           </p>

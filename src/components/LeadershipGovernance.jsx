@@ -14,9 +14,6 @@ const LeadershipGovernance = () => {
           <p className={`text-xs font-bold uppercase tracking-[0.16em] text-sky ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t('Leadership & Governance', 'नेतृत्व तथा सुशासन')}
           </p>
-          <h2 className={`mt-1 text-2xl font-black text-navy sm:text-3xl ${lang === 'np' ? 'font-nepali' : ''}`}>
-            {t('Executive Committee', 'कार्य समिति')}
-          </h2>
           <p className={`mt-3 max-w-3xl text-base leading-relaxed text-slate-600 ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t(
               'REPC-Nepal is governed through its Executive Committee. The current Executive Committee has nine members: Chairperson, Vice Chairperson, Secretary, Treasurer, and five Members.',

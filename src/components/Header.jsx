@@ -2,7 +2,7 @@ import { useState, useMemo, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import { siteInfo } from '../data/organization';
-import { services } from '../data/content';
+import { coreServices, otherServices } from '../data/work';
 import { notices } from '../data/home';
 import { FaSearch, FaHandHoldingHeart, FaBars, FaTimes } from 'react-icons/fa';
 
@@ -53,16 +53,18 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
   const searchIndex = useMemo(
     () => [
       ...staticPages,
-      ...services.map((s) => ({
-        titleEn: s.titleEn,
-        titleNp: s.titleNp,
-        link: s.link,
-      })),
-      ...notices.map((n) => ({
-        titleEn: n.titleEn,
-        titleNp: n.titleNp,
+      ...[...coreServices, ...otherServices]
+        .filter(Boolean)
+        .map((s) => ({
+          titleEn: s.titleEn || '',
+          titleNp: s.titleNp || '',
+          link: s.link || '/our-work',
+        })),
+      ...((notices || []).filter(Boolean).map((n) => ({
+        titleEn: n.titleEn || '',
+        titleNp: n.titleNp || '',
         link: '/notices',
-      })),
+      }))),
     ],
     []
   );
@@ -75,8 +77,8 @@ const Header = ({ mobileOpen, onMobileToggle }) => {
     return searchIndex
       .filter(
         (item) =>
-          item.titleEn.toLowerCase().includes(q) ||
-          item.titleNp.includes(searchQuery.trim())
+          (item.titleEn || '').toLowerCase().includes(q) ||
+          (item.titleNp || '').includes(searchQuery.trim())
       )
       .slice(0, 6);
   }, [searchQuery, searchIndex]);

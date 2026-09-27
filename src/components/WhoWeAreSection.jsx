@@ -7,7 +7,7 @@ const WhoWeAreSection = () => {
 
   return (
     <section className="mb-12">
-      <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:rounded-[28px] sm:p-6 md:p-8">
+      <div className="site-card rounded-2xl p-5 sm:rounded-[24px] sm:p-6 md:p-8">
         <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-sky/10 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-sky">
           <FaCompass size={12} />
           {t('Who We Are', 'हामी को हौं')}

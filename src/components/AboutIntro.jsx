@@ -20,20 +20,20 @@ const AboutIntro = () => {
         </div>
 
         <div className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">
-          <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_20px_50px_rgba(15,23,42,0.05)] sm:rounded-[30px] sm:p-6 md:p-8">
+          <div className="site-card rounded-2xl p-5 sm:rounded-[24px] sm:p-6 md:p-8">
             <p className={`text-justify text-base leading-relaxed text-gray-700 md:text-lg ${lang === 'np' ? 'font-nepali' : ''}`}>
               {lang === 'en' ? about.introEn : about.introNp}
             </p>
 
             <div className="mt-7 grid gap-3 sm:grid-cols-3">
-              <div className="rounded-2xl bg-slate-50 p-4">
+              <div className="rounded-xl border border-blue-100 bg-[#eef5fc] p-4">
                 <FaHeart className="text-sky" />
                 <p className={`mt-3 text-sm font-semibold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
                   {t('Human rights protection', 'मानव अधिकार संरक्षण')}
                 </p>
               </div>
 
-              <div className="rounded-2xl bg-slate-50 p-4">
+              <div className="rounded-xl border border-blue-100 bg-[#eef5fc] p-4">
                 <FaGavel className="text-navy" />
                 <p className={`mt-3 text-sm font-semibold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
                   {t('Access to justice', 'न्यायमा पहुँच')}

@@ -91,7 +91,7 @@ const Contact = () => {
 
         {/* Left: Contact Info */}
         <div className="lg:col-span-2 space-y-5">
-          <div className="bg-white border border-gray-200 rounded-sm shadow-sm overflow-hidden">
+          <div className="site-card overflow-hidden rounded-2xl">
             <div className="bg-navy px-5 py-4">
               <h2 className={`text-white font-bold ${lang === 'np' ? 'font-nepali' : ''}`}>
                 {t('Contact Information', 'सम्पर्क जानकारी')}
@@ -199,7 +199,7 @@ const Contact = () => {
 
         {/* Right: Contact Form */}
         <div className="lg:col-span-3">
-          <div className="bg-white border border-gray-200 rounded-sm shadow-sm overflow-hidden">
+          <div className="site-card overflow-hidden rounded-2xl">
             <div className="bg-sky px-5 py-4">
               <h2 className={`text-white font-bold ${lang === 'np' ? 'font-nepali' : ''}`}>
                 {t('Send Us a Message', 'हामीलाई सन्देश पठाउनुहोस्')}

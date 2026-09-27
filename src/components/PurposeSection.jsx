@@ -38,7 +38,7 @@ const PurposeSection = () => {
   return (
     <section className="mb-12">
       <div className="grid gap-5 lg:grid-cols-2">
-        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm sm:rounded-[28px]">
+        <div className="site-card overflow-hidden rounded-2xl sm:rounded-[24px]">
           <div className="flex items-center gap-2 bg-navy p-4">
             <FaBullseye className="text-white" />
             <h2 className={`font-bold text-white ${lang === 'np' ? 'font-nepali' : ''}`}>
@@ -50,7 +50,7 @@ const PurposeSection = () => {
           </p>
         </div>
 
-        <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm sm:rounded-[28px]">
+        <div className="site-card overflow-hidden rounded-2xl sm:rounded-[24px]">
           <div className="flex items-center gap-2 bg-sky p-4">
             <FaEye className="text-white" />
             <h2 className={`font-bold text-white ${lang === 'np' ? 'font-nepali' : ''}`}>
@@ -63,7 +63,7 @@ const PurposeSection = () => {
         </div>
       </div>
 
-      <div className="mt-5 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:rounded-[28px] sm:p-6 md:p-8">
+      <div className="site-card mt-5 rounded-2xl p-5 sm:rounded-[24px] sm:p-6 md:p-8">
         <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
           <div className="w-full">
             <h2 className={`text-xl font-bold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>

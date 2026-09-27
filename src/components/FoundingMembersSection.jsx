@@ -27,9 +27,9 @@ const FoundingMembersSection = ({ onMemberClick }) => {
             key={member.id}
             type="button"
             onClick={() => onMemberClick?.(member)}
-            className="group rounded-sm border border-gray-200 bg-white p-3 text-center shadow-sm transition-all hover:-translate-y-0.5 hover:border-sky/40 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-sky/40"
+            className="member-card group p-3 text-center focus:outline-none focus:ring-2 focus:ring-sky/40"
           >
-            <div className="mx-auto aspect-square w-full max-w-[9rem] overflow-hidden rounded-sm border border-gray-100 bg-gray-50 p-1">
+            <div className="member-photo-frame mx-auto aspect-square w-full max-w-[10rem] overflow-hidden rounded-xl border p-1">
               {member.photo ? (
                 <img
                   src={member.photo}
@@ -42,7 +42,7 @@ const FoundingMembersSection = ({ onMemberClick }) => {
                 />
               ) : null}
               <div
-                className={`${member.photo ? 'hidden' : 'flex'} h-full w-full items-center justify-center bg-navy/10`}
+                className={`${member.photo ? 'hidden' : 'flex'} h-full w-full items-center justify-center bg-[#dbe9f7]`}
               >
                 <FaUserCircle className="text-navy/40" size={44} />
               </div>

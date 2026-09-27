@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { FaFileAlt, FaTimes } from 'react-icons/fa';
 import { useLang } from '../context/LanguageContext';
@@ -10,13 +10,20 @@ import useScrollLock from '../hooks/useScrollLock';
 const CertificateLightbox = ({ certificate, onClose }) => {
   const { lang } = useLang();
   useScrollLock(Boolean(certificate));
+
+  useEffect(() => {
+    if (!certificate) return undefined;
+    document.body.classList.add('overlay-open');
+    return () => document.body.classList.remove('overlay-open');
+  }, [certificate]);
+
   if (!certificate) return null;
 
   const title = lang === 'en' ? certificate.titleEn : certificate.titleNp;
 
   return createPortal(
     <div
-      className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4"
       onClick={onClose}
     >
       <button
@@ -54,7 +61,7 @@ const CertificateDocuments = ({ compact = false }) => {
         id={compact ? undefined : 'registration-documents'}
         className={compact ? 'py-8' : 'scroll-mt-28 py-2'}
       >
-        <div className={compact ? 'site-container' : ''}>
+        <div>
           {!compact && (
             <div className="mb-6 py-8 max-w-3xl">
               <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-sky/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.08em] text-sky">
@@ -81,9 +88,9 @@ const CertificateDocuments = ({ compact = false }) => {
                 <article
                   key={certificate.id}
                   onClick={() => setActive(certificate)}
-                  className="group cursor-pointer overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
+                  className="site-card group cursor-pointer overflow-hidden rounded-2xl"
                 >
-                  <div className="flex aspect-[4/3] items-center justify-center overflow-hidden bg-slate-100 p-3">
+                  <div className="flex aspect-[4/3] items-center justify-center overflow-hidden bg-[#eef5ff] p-3">
                     <img
                       src={certificate.image}
                       alt={title}

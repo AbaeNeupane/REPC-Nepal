@@ -1,5 +1,9 @@
 // Programs, notices, publications, legal, and reference content.
 
+export const notice = [
+
+];
+
 export const pressReleases = [
   
 ];
@@ -13,138 +17,7 @@ export const activities = [
 ];
 
 
-export const services = [
-  // ── Peace, mediation, and awareness ───────────────────────
-  {
-    icon: 'mediation', group: 'peace',
-    titleEn: 'Mediation',
-    titleNp: 'मेलमिलाप',
-    descEn: 'Mediation that helps parties resolve disputes through dialogue, cooperation, and mutually acceptable agreements.',
-    descNp: 'संवाद, सहकार्य र आपसी सहमतिका माध्यमबाट विवाद समाधान गर्न प्रदान गरिने मेलमिलाप सेवा।',
-    link: '/services#mediation',
-  },
-  {
-    icon: 'arbitration', group: 'peace',
-    titleEn: 'Arbitration',
-    titleNp: 'मध्यस्थता',
-    descEn: 'Neutral third-party dispute resolution and mediation support for eligible disputes, subject to applicable law and approvals.',
-    descNp: 'प्रचलित कानून र आवश्यक स्वीकृतिको अधीनमा योग्य विवादका लागि प्रदान गरिने तटस्थ तेस्रो पक्षीय विवाद समाधान तथा मध्यस्थता सेवा।',
-    link: '/services#arbitration',
-  },
-  {
-    icon: 'negotiation', group: 'peace',
-    titleEn: 'Negotiation',
-    titleNp: 'वार्ता',
-    descEn: 'Guided dialogue that helps parties communicate directly, address disagreements, and reach practical agreements.',
-    descNp: 'पक्षहरूलाई प्रत्यक्ष संवाद, असहमति सम्बोधन तथा व्यावहारिक सहमतिमा पुग्न सहयोग गर्ने मार्गदर्शित वार्ता।',
-    link: '/services#negotiation',
-  },
-  {
-    icon: 'arbitration', group: 'peace',
-    titleEn: 'Reconciliation and Dialogue',
-    titleNp: 'पुनर्मिलन तथा संवाद',
-    descEn: 'Dialogue and reconciliation that address grievances, rebuild relationships, and promote peaceful coexistence.',
-    descNp: 'गुनासा सम्बोधन, सम्बन्ध सुधार तथा शान्तिपूर्ण सहअस्तित्व प्रवर्द्धन गर्ने संवाद र पुनर्मिलन।',
-    link: '/services#reconciliation',
-  },
-  {
-    icon: 'compromise', group: 'peace',
-    titleEn: 'Community Peacebuilding',
-    titleNp: 'सामुदायिक शान्ति निर्माण',
-    descEn: 'Community-based initiatives that promote sustainable peace, social harmony, coexistence, reconciliation, and peaceful conflict resolution.',
-    descNp: 'दिगो शान्ति, सामाजिक सद्भाव, सहअस्तित्व, पुनर्मिलन तथा द्वन्द्वको शान्तिपूर्ण समाधान प्रवर्द्धन गर्ने समुदायमा आधारित पहलहरू।',
-    link: '/services#community-peacebuilding',
-  },
-  {
-    icon: 'negotiation', group: 'peace',
-    titleEn: 'Rights and Legal Awareness',
-    titleNp: 'अधिकार तथा कानुनी सचेतना',
-    descEn: 'Rights and legal awareness programs for communities, institutions, and vulnerable groups.',
-    descNp: 'समुदाय, संस्था तथा जोखिममा रहेका वर्ग र समूहका लागि अधिकार तथा कानुनी सचेतना कार्यक्रम।',
-    link: '/services#rights-awareness',
-  },
-  {
-    icon: 'judicial', group: 'legal',
-    titleEn: 'Legal Aid and Access to Justice',
-    titleNp: 'कानुनी सहायता तथा न्यायमा पहुँच',
-    descEn: 'Legal consultation, mediation, arbitration, and legal services for people who are economically disadvantaged or otherwise in need.',
-    descNp: 'आर्थिक रूपमा विपन्न तथा आवश्यकतामा रहेका व्यक्तिका लागि कानुनी परामर्श, मेलमिलाप, मध्यस्थता तथा कानुनी सेवा।',
-    link: '/services#legal-aid',
-  },
-  // ── Legal, training, research, and cooperation ────────────
-  {
-    icon: 'drafting', group: 'legal',
-    titleEn: 'Legal Consultation and Documentation',
-    titleNp: 'कानुनी परामर्श तथा दस्तावेजीकरण',
-    descEn: 'Legal consultation, document preparation, and rights-based guidance for individuals, communities, and institutions.',
-    descNp: 'व्यक्ति, समुदाय तथा संस्थाका लागि कानुनी परामर्श, कागजात तयारी तथा अधिकारमा आधारित मार्गदर्शन।',
-    link: '/services#legal-consultation',
-  },
-  {
-    icon: 'advisory', group: 'legal',
-    titleEn: 'Human Rights Advocacy',
-    titleNp: 'मानव अधिकारको वकालत',
-    descEn: 'Advocacy for the protection and promotion of human rights, equality, dignity, and social justice.',
-    descNp: 'मानव अधिकार, समानता, मर्यादा तथा सामाजिक न्यायको संरक्षण र प्रवर्द्धनका लागि वकालत।',
-    link: '/services#human-rights-advocacy',
-  },
-  {
-    icon: 'judicial', group: 'legal',
-    titleEn: 'Public Interest Litigation',
-    titleNp: 'सार्वजनिक हितको मुद्दा',
-    descEn: 'Legal representation and support for public interest cases, including filing petitions and advocating for systemic change.',
-    descNp: 'सार्वजनिक हितका मुद्दाहरूमा कानुनी प्रतिनिधित्व र सहयोग, जसमा निवेदन दर्ता गर्ने र प्रणालीगत परिवर्तनको लागि वकालत गर्ने कार्यहरू समावेश छन्।',
-    link: '/services#public-interest-litigation',
-  },
-  {
-    icon: 'drafting', group: 'legal',
-    titleEn: 'Legal Drafting',
-    titleNp: 'कानुनी मस्यौदा',
-    descEn: 'Preparation and review of petitions, agreements, applications, and other legal documents.',
-    descNp: 'निवेदन, सम्झौता, आवेदन तथा अन्य कानुनी कागजातको मस्यौदा तयार गर्ने र समीक्षा गर्ने सेवा।',
-    link: '/services#legal-drafting',
-  },
-  {
-    icon: 'drafting', group: 'legal',
-    titleEn: 'Legislative Drafting and Consulting',
-    titleNp: 'कानुन मस्यौदा लेखन तथा परामर्श',
-    descEn: 'Preparation and review of petitions, agreements, applications, and other legal documents.',
-    descNp: 'निवेदन, सम्झौता, आवेदन तथा अन्य कानुनी कागजातको मस्यौदा तयार गर्ने र समीक्षा गर्ने सेवा।',
-    link: '/services#legislative-drafting',
-  },
-  {
-    icon: 'hr', group: 'legal',
-    titleEn: 'Training and Capacity Building',
-    titleNp: 'तालिम तथा क्षमता विकास',
-    descEn: 'Training on mediation, human rights, child justice, legal awareness, and related areas for communities and institutions.',
-    descNp: 'समुदाय तथा संस्थाका लागि मेलमिलाप, मानव अधिकार, बाल न्याय, कानुनी सचेतना तथा सम्बन्धित विषयमा तालिम।',
-    link: '/services#training',
-  },
-  {
-    icon: 'training', group: 'legal',
-    titleEn: 'Paralegal and Mediation Training',
-    titleNp: 'प्यारालीगल तथा मेलमिलाप तालिम',
-    descEn: 'Training programs for paralegals, community mediators, and other local actors to enhance legal awareness, mediation skills, and access to justice.',
-    descNp: 'प्यारालीगल, सामुदायिक मेलमिलापकर्ता तथा अन्य स्थानीय कार्यकर्ताका लागि कानुनी सचेतना, मेलमिलाप सीप र न्यायमा पहुँच अभिवृद्धि गर्ने तालिम कार्यक्रमहरू।',
-    link: '/services#paralegal-training',
-  },
-  {
-    icon: 'training', group: 'legal',
-    titleEn: 'Research and Documentation',
-    titleNp: 'अनुसन्धान तथा अभिलेखीकरण',
-    descEn: 'Research, reports, and documentation on human rights, mediation, justice, and community concerns.',
-    descNp: 'मानव अधिकार, मेलमिलाप, न्याय तथा समुदायका सरोकारसम्बन्धी अनुसन्धान, प्रतिवेदन र अभिलेखीकरण।',
-    link: '/services#research',
-  },
-  {
-    icon: 'research', group: 'legal',
-    titleEn: 'Institutional Cooperation and Coordination',
-    titleNp: 'संस्थागत सहकार्य तथा समन्वय',
-    descEn: 'Cooperation with relevant public bodies, civil society organizations, and communities to advance the organization’s objectives.',
-    descNp: 'संस्थाका उद्देश्य पूरा गर्न सम्बन्धित सार्वजनिक निकाय, नागरिक समाज तथा समुदायसँग सहकार्य र समन्वय।',
-    link: '/services#institutional-cooperation',
-  },
-];
+export { services } from './work.js';
 
 export const importantLinks = [
   { en: 'Office of Prime Minister and Council of Ministers', np: 'प्रधानमन्त्री तथा मन्त्रिपरिषद्को कार्यालय', url: 'https://opmcm.gov.np' },
@@ -152,7 +25,6 @@ export const importantLinks = [
   { en: 'National Human Rights Commission', np: 'राष्ट्रिय मानव अधिकार आयोग', url: 'https://nhrcnepal.org' },
   { en: 'Nepal Bar Association', np: 'नेपाल बार एसोसिएसन', url: 'https://www.nepalbar.org.np' },
   { en: 'Social Welfare Council', np: 'समाज कल्याण परिषद्', url: 'https://swc.org.np' },
-  { en: 'Mediation Council of Nepal', np: 'मेलमिलाप परिषद्', url: '#' },
 ];
 
 export const legalFramework = [
@@ -232,13 +104,13 @@ export const legalFramework = [
 
 export const campaigns = [
   {
-    id: 1, src: null, color: 'from-navy to-navy-light',
+    id: 1, src: null, color: 'from-[#0C2264] to-[#174a8a]',
     titleEn: 'Legal Aid Campaign', titleNp: 'कानुनी सहायता अभियान',
     descEn: 'Legal consultation and representation for vulnerable communities across Nepal.',
     descNp: 'नेपालभरका कमजोर तथा सीमान्तकृत समुदायका लागि कानुनी परामर्श र प्रतिनिधित्व।',
   },
   {
-    id: 2, src: null, color: 'from-sky to-sky-light',
+    id: 2, src: null, color: 'from-[#174a8a] to-[#3b73ad]',
     titleEn: 'Mediation & Peacebuilding Campaign', titleNp: 'मेलमिलाप तथा शान्ति निर्माण अभियान',
     descEn: 'Training community mediators and resolving local disputes without litigation.',
     descNp: 'सामुदायिक मेलमिलापकर्तालाई तालिम दिई मुद्दामामिला नगरी स्थानीय विवाद समाधानमा सहयोग।',

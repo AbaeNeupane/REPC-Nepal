@@ -16,14 +16,15 @@ const toNepaliDigits = value => String(value).replace(/[0-9]/g, digit => '०१
 const quickLinks = [
   { en: 'Home', np: 'गृह पृष्ठ', to: '/' },
   { en: 'About Us', np: 'हाम्रो बारेमा', to: '/about' },
-  { en: 'Our Services', np: 'हाम्रा सेवाहरू', to: '/services' },
+  { en: 'Our Work', np: 'हाम्रो कार्य', to: '/our-work' },
+  { en: 'Resources', np: 'स्रोत तथा कागजात', to: '/resources' },
   { en: 'Notices', np: 'सूचनाहरू', to: '/notices' },
   { en: 'Programs', np: 'कार्यक्रमहरू', to: '/programs' },
   { en: 'Publications', np: 'प्रकाशनहरू', to: '/publications' },
   { en: 'Legal Framework', np: 'कानुनी संरचना', to: '/legal-framework' },
   { en: 'Gallery', np: 'ग्यालरी', to: '/gallery' },
   { en: 'Volunteer', np: 'स्वयंसेवा', to: '/volunteer' },
-  { en: 'Support Us', np: 'सहयोग गर्नुहोस्', to: '/support' },
+  { en: 'Donate', np: 'सहयोग', to: '/support#donate' },
   { en: 'Contact Us', np: 'सम्पर्क', to: '/contact' },
 ];
 

@@ -115,7 +115,7 @@ const Volunteer = () => {
             {volunteerAreas.map((area) => {
               const Icon = areaIconMap[area.id] || FaHandsHelping;
               return (
-                <div key={area.id} className="bg-white border border-gray-200 rounded-sm shadow-sm p-5 hover:shadow-md transition-shadow">
+                <div key={area.id} className="site-card rounded-2xl p-5">
                   <Icon className="text-sky mb-3" size={20} />
                   <h3 className={`font-bold text-navy text-sm mb-1.5 ${lang === 'np' ? 'font-nepali' : ''}`}>
                     {lang === 'en' ? area.titleEn : area.titleNp}
@@ -131,7 +131,7 @@ const Volunteer = () => {
 
         {/* Form */}
         <section className="max-w-2xl mx-auto">
-          <div className="bg-white border border-gray-200 rounded-sm shadow-sm overflow-hidden">
+          <div className="site-card overflow-hidden rounded-2xl">
             <div className="bg-navy p-4">
               <h2 className={`text-white font-bold ${lang === 'np' ? 'font-nepali' : ''}`}>
                 {t('Volunteer Interest Form', 'स्वयंसेवा इच्छा फारम')}

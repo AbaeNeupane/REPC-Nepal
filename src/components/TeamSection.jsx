@@ -9,7 +9,7 @@ const TeamSection = () => {
   const featured = team.slice(0, 4);
 
   return (
-    <div className="bg-white border border-gray-200 rounded-sm shadow-sm mt-4">
+    <div className="site-card mt-4 overflow-hidden rounded-2xl">
       {/* Header */}
       <div className="bg-navy px-4 py-3">
         <h2 className={`text-white font-bold text-base ${lang === 'np' ? 'font-nepali' : ''}`}>
@@ -19,7 +19,7 @@ const TeamSection = () => {
 
       <div className="divide-y divide-gray-100">
         {featured.map((member) => (
-          <div key={member.id} className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors">
+          <div key={member.id} className="flex items-center gap-3 px-4 py-3 hover:bg-[#eef5ff] transition-colors">
             {/* Photo / Avatar */}
             <div className="shrink-0">
               {member.photo ? (
@@ -63,7 +63,7 @@ const TeamSection = () => {
       </div>
 
       {/* View All */}
-      <div className="px-4 py-3 border-t border-gray-100 bg-gray-50">
+      <div className="px-4 py-3 border-t border-[#dbe7f5] bg-[#edf4fc]">
         <a
           href="/about#team"
           className={`text-xs font-semibold text-navy hover:text-sky transition-colors ${lang === 'np' ? 'font-nepali' : ''}`}

@@ -9,7 +9,7 @@ const highlights = [
     np: 'मानव अधिकार संरक्षण',
     descEn: 'Protecting and promoting the fundamental human rights like right to life, dignity, equality, liberty and access to justice for all individuals.',
     descNp: 'जीवन, मर्यादा, समानता, स्वतन्त्रता र न्यायमा पहुँच जस्ता मौलिक मानव अधिकारको संरक्षण र प्रवर्द्धन।',
-    color: 'bg-navy',
+    color: 'bg-[#0C2264]',
   },
   {
     icon: FaHandshake,
@@ -17,7 +17,7 @@ const highlights = [
     np: 'मेलमिलाप तथा पुनर्मिलन',
     descEn: 'Supporting dialogue, mediation, reconciliation, and peaceful conflict resolution.',
     descNp: 'संवाद, मेलमिलाप, पुनर्मिलन तथा द्वन्द्वको शान्तिपूर्ण समाधानमा सहयोग।',
-    color: 'bg-sky',
+    color: 'bg-[#174a8a]',
   },
   {
     icon: FaUsers,
@@ -25,7 +25,7 @@ const highlights = [
     np: 'कानुनी सहायता तथा न्यायमा पहुँच',
     descEn: 'Improving access to legal consultation, assistance, and justice for disadvantaged and marginalized groups.',
     descNp: 'विपन्न तथा सीमान्तकृत समूहका लागि कानुनी परामर्श, सहायता तथा न्यायमा पहुँच सुधार।',
-    color: 'bg-blue-600',
+    color: 'bg-[#2456a6]',
   },
   {
     icon: FaLeaf,
@@ -33,7 +33,7 @@ const highlights = [
     np: 'सचेतना, तालिम तथा अनुसन्धान',
     descEn: 'Building knowledge through awareness, training, research, documentation, and institutional cooperation.',
     descNp: 'सचेतना, तालिम, अनुसन्धान, अभिलेखीकरण तथा संस्थागत सहकार्यद्वारा ज्ञान र क्षमता विकास।',
-    color: 'bg-cyan-700',
+    color: 'bg-[#2e629e]',
   },
 ];
 
@@ -41,7 +41,7 @@ const HighlightsSection = () => {
   const { lang, t } = useLang();
 
   return (
-    <section className="bg-slate-50 py-16">
+    <section className="bg-[#e9f2fb] py-16">
       <div className="site-container">
         <div className="mb-10 text-center">
           <p className={`text-xs font-semibold uppercase tracking-[0.2em] text-sky ${lang === 'np' ? 'font-nepali' : ''}`}>
@@ -56,7 +56,7 @@ const HighlightsSection = () => {
           {highlights.map((item, i) => {
             const Icon = item.icon;
             return (
-              <div key={i} className="group overflow-hidden rounded-[26px] border border-slate-200 bg-white p-0 shadow-[0_18px_40px_rgba(15,23,42,0.05)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_22px_45px_rgba(15,23,42,0.12)]">
+              <div key={i} className="site-card group overflow-hidden rounded-[22px] p-0">
                 <div className={`${item.color} flex items-center justify-between p-5`}>
                   <span className={`text-xs font-semibold uppercase tracking-[0.18em] text-white/80 ${lang === 'np' ? 'font-nepali' : ''}`}>
                     {t('Area of Work', 'कार्य क्षेत्र')}

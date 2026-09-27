@@ -9,7 +9,7 @@ const OrganizationStructureSection = ({ className = '' }) => {
         {t('Organization Structure', 'संगठन संरचना')}
       </h2>
 
-      <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm sm:rounded-[28px]">
+      <div className="site-card overflow-hidden rounded-2xl sm:rounded-[24px]">
         <div className="flex flex-col items-center p-6 sm:p-8">
           <div className="min-w-[220px] rounded-sm bg-navy px-8 py-3 text-center text-sm font-semibold text-white shadow">
             {t('General Assembly', 'साधारण सभा')}
@@ -27,7 +27,7 @@ const OrganizationStructureSection = ({ className = '' }) => {
             ))}
           </div>
           <div className="h-8 w-px bg-gray-300" />
-          <div className="min-w-[220px] rounded-sm border border-gray-300 bg-gray-100 px-8 py-3 text-center text-sm font-medium text-gray-700">
+          <div className="min-w-[220px] rounded-sm border border-[#c9dbee] bg-[#e6eff9] px-8 py-3 text-center text-sm font-medium text-gray-700">
             {t('Sub-Committees & Members', 'उपसमितिहरू र सदस्यहरू')}
           </div>
         </div>

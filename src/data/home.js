@@ -1,5 +1,8 @@
 // Homepage and public update content.
 
+// Compatibility export for components/pages that consume public notices.
+export { notice as notices } from './content.js';
+
 export const topNotices = [
   {
     en: 'REPC-Nepal is affiliated with the Social Welfare Council and the Mediation Council of Nepal.',
@@ -10,12 +13,12 @@ export const topNotices = [
 export const heroSlides = [
   {
     titleEn: 'Protecting Rights, Advancing Justice',
-    titleNp: 'अधिकारको संरक्षण, नयाँको परवर्धन',
+    titleNp: 'अधिकारको संरक्षण, न्यायको प्रवर्द्धन',
     subtitleEn: 'We advocate for human rights, equality, and social justice, with priority for vulnerable and marginalized communities.',
-    subtitleNp: 'हामी मानव अधिकार, समानता र सामाजिक न्यायका लागि वकालत गर्छौं तथा कमजोर र सीमान्तकृत समुदायलाई प्राथमिकता दिन्छौं।',
-    ctaEn: 'Our Services',
-    ctaNp: 'हाम्रा सेवाहरू',
-    ctaLink: '/services',
+    subtitleNp: 'मानव अधिकारको संरक्षण तथा प्रवर्द्धन, समानता र सामाजिक न्यायका लागि वकालत गर्दै जोखिममा रहेका तथा सीमान्तकृत वर्ग र समुदायका अधिकारको संरक्षण तथा सशक्तीकरणमा कार्य गर्दछौं।',
+    ctaEn: 'Our Work',
+    ctaNp: 'हाम्रो कार्य',
+    ctaLink: '/our-work',
     gradient: 'from-navy-dark via-navy to-navy-light',
     accent: '#0EA5E9',
   },
@@ -23,7 +26,7 @@ export const heroSlides = [
     titleEn: 'Alternative Dispute Resolution',
     titleNp: 'विवाद समाधानका वैकल्पिक उपाय',
     subtitleEn: 'We help individuals and communities resolve disputes through dialogue, mediation, reconciliation, and access to justice.',
-    subtitleNp: 'संवाद, मेलमिलाप, पुनर्मिलन र न्यायमा पहुँचमार्फत व्यक्ति तथा समुदायका विवाद समाधान गर्न हामी सहयोग गर्छौं।',
+    subtitleNp: 'संवाद, मेलमिलाप तथा पुनर्मिलनका माध्यमबाट व्यक्ति तथा समुदायमा उत्पन्न विवादको शान्तिपूर्ण समाधान तथा न्यायमा पहुँच अभिवृद्धिका लागि सहजीकरण गर्दछौं।',
     ctaEn: 'Mediation Services',
     ctaNp: 'मेलमिलाप सेवा',
     ctaLink: '/services#mediation',
@@ -32,9 +35,9 @@ export const heroSlides = [
   },
   {
     titleEn: 'Support for Marginalized Classes, Regions, and Communities',
-    titleNp: 'पछाडि परेका वर्ग, क्षेत्र र समुदायका लागि सहयोग',
+    titleNp: 'अवसरबाट वञ्चित वर्ग, क्षेत्र तथा समुदायका लागि सहयोग',
     subtitleEn: 'We provide support, resources, and opportunities for marginalized classes, regions, and communities left behind by development.',
-    subtitleNp: 'हामी विकासको मूल प्रवाहबाट पछाडि परेका वर्ग, क्षेत्र र समुदायहरूलाई, कानुनी परामर्श, सचेतना र सहयोग प्रदान गर्दछौँ।',
+    subtitleNp: 'अवसरबाट वञ्चित तथा जोखिममा रहेका वर्ग, क्षेत्र तथा समुदायका लागि कानुनी परामर्श, अधिकारसम्बन्धी सचेतना तथा आवश्यक सहयोग उपलब्ध गराउन कार्य गर्दछौं।',
     ctaEn: 'Legal Aid',
     ctaNp: 'कानुनी सहायता',
     ctaLink: '/services#legal-aid',
@@ -43,9 +46,3 @@ export const heroSlides = [
   },
 ];
 
-export const notices = [
-  {
-    en: 'REPC-Nepal is affiliated with the Social Welfare Council and the Mediation Council of Nepal.',
-    np: 'REPC-Nepal समाज कल्याण परिषद् तथा नेपाल मेलमिलाप परिषद्सँग आबद्ध छ।',
-  },
-];

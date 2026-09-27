@@ -8,9 +8,9 @@ const ChairpersonMessage = () => {
   const chairperson = team[0];
 
   return (
-    <section className="bg-white py-12 sm:py-14">
+    <section className="bg-[#edf4fb] py-12 sm:py-14">
       <div className="site-container">
-        <div className="border-l-4 border-sky bg-slate-50 px-5 py-6 sm:px-8 sm:py-8">
+        <div className="border-l-4 border-sky bg-[#e7f0fa] px-5 py-6 sm:px-8 sm:py-8">
           <FaQuoteLeft className="mb-4 text-sky/70" size={22} />
           <p className={`text-justify text-lg leading-relaxed text-navy sm:text-xl ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t(

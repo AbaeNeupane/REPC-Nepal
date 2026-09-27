@@ -75,7 +75,7 @@ const LegalFramework = () => {
               </div>
               <div className="space-y-4">
                 {laws.map((law, i) => (
-                  <div key={i} className="bg-white border border-gray-200 rounded-sm shadow-sm p-5">
+                  <div key={i} className="site-card rounded-2xl p-5">
                     <div className="flex items-start justify-between gap-3 mb-2">
                       <h3 className={`font-bold text-navy text-sm md:text-base ${lang === 'np' ? 'font-nepali' : ''}`}>
                         {lang === 'en' ? law.nameEn : law.nameNp}

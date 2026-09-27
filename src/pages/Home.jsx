@@ -15,7 +15,7 @@ const Home = () => {
   const { lang, t } = useLang();
 
   return (
-    <div className="flex flex-col">
+    <div className="home-page flex flex-col">
       <SEO
         titleEn="Home"
         titleNp="गृह पृष्ठ"
@@ -25,16 +25,18 @@ const Home = () => {
       />
 
       {/* Hero */}
-      <HeroCarousel />
+      <div className="home-hero relative z-0">
+        <HeroCarousel />
+      </div>
 
       {/* Need help right now? — the practical path, before the org-explaining sections */}
-      <section className="bg-navy py-5 sm:py-6">
+      <section className="home-help-strip bg-navy py-5 sm:py-6">
         <div className="site-container">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-3">
               <FaHandsHelping className="shrink-0 text-sky" size={22} />
               <p className={`text-sm font-semibold text-white sm:text-base ${lang === 'np' ? 'font-nepali' : ''}`}>
-                {t('Need free legal aid or mediation support?', 'निःशुल्क कानुनी सहायता वा मेलमिलाप चाहिन्छ?')}
+                {t('Need legal aid or mediation support?', 'कानुनी सहायता वा मेलमिलाप सहयोग चाहिन्छ?')}
               </p>
             </div>
             <div className="flex shrink-0 gap-3">
@@ -57,17 +59,23 @@ const Home = () => {
 
       {/* Abstract / Introduction */}
       <ScrollReveal>
-        <AboutIntro />
+        <div className="home-section home-intro-shell">
+          <AboutIntro />
+        </div>
       </ScrollReveal>
 
       {/* Leadership & Governance */}
       <ScrollReveal delay={60}>
-        <LeadershipGovernance />
+        <div className="home-section home-leadership-shell">
+          <LeadershipGovernance />
+        </div>
       </ScrollReveal>
 
       {/* Chairperson's message */}
       <ScrollReveal delay={80}>
-        <ChairpersonMessage />
+        <div className="home-section home-message-shell">
+          <ChairpersonMessage />
+        </div>
       </ScrollReveal>
 
 
@@ -75,7 +83,7 @@ const Home = () => {
       
       {/* Notices */}
       <ScrollReveal delay={100}>
-        <div className="site-container py-12">
+        <div className="home-updates-shell site-container py-12">
           <div className="mx-auto max-w-2xl">
             <NoticesSection />
           </div>
@@ -84,13 +92,15 @@ const Home = () => {
 
       {/* Full-width highlights */}
       <ScrollReveal delay={120}>
-        <HighlightsSection />
+        <div className="home-section home-highlights-shell">
+          <HighlightsSection />
+        </div>
       </ScrollReveal>
 
       
       {/* Registration / document trust link */}
       <ScrollReveal delay={75}>
-        <section className="bg-white py-7 sm:py-8">
+        <section className="home-trust-section bg-white py-7 sm:py-8">
           <div className="site-container">
             <div className="flex flex-col gap-5 rounded-2xl border border-sky/20 bg-gradient-to-r from-sky/5 via-white to-navy/[0.04] p-5 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:p-6">
               <div className="flex items-start gap-4">
@@ -99,19 +109,19 @@ const Home = () => {
                 </div>
                 <div>
                   <p className={`text-xs font-bold uppercase tracking-[0.08em] text-sky ${lang === 'np' ? 'font-nepali' : ''}`}>
-                    {t('Registration & Legal Documents', 'दर्ता तथा कानुनी कागजात')}
+                    {t('Organizational Trust', 'संस्थागत विश्वास')}
                   </p>
                   <h2 className={`mt-1 text-lg font-bold text-navy sm:text-xl ${lang === 'np' ? 'font-nepali' : ''}`}>
-                    {t('Official organizational documents', 'संस्थाका आधिकारिक कागजातहरू')}
+                    {t('Legal status and official documents', 'कानुनी हैसियत तथा आधिकारिक कागजात')}
                   </h2>
                   <p className={`mt-1 text-sm text-slate-600 sm:text-base ${lang === 'np' ? 'font-nepali' : ''}`}>
-                    {t('View the organization’s registration documents and inspect them at full size.', 'संस्थाका दर्ता कागजातहरू हेर्नुहोस् र पूर्ण आकारमा निरीक्षण गर्नुहोस्।')}
+                    {t('Review registration, affiliation, and other official documents in the Resources section.', 'दर्ता, आबद्धता तथा अन्य आधिकारिक कागजातहरू स्रोत तथा कागजात खण्डमा हेर्नुहोस्।')}
                   </p>
                 </div>
                 
               </div>
               <Link
-                to="/about#registration-documents"
+                to="/resources#organizational-documents"
                 className={`inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-navy px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:bg-navy-light hover:shadow-md sm:self-center ${lang === 'np' ? 'font-nepali' : ''}`}
               >
                 {t('View documents', 'कागजात हेर्नुहोस्')}
@@ -128,7 +138,9 @@ const Home = () => {
 
       {/* Gallery preview */}
       <ScrollReveal delay={160}>
-        <GalleryPreview />
+        <div className="home-section home-gallery-shell">
+          <GalleryPreview />
+        </div>
       </ScrollReveal>
     </div>
   );

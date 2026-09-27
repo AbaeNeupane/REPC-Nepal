@@ -23,7 +23,7 @@ const NoticeItem = ({ item }) => {
   const { lang } = useLang();
 
   return (
-    <div className="group rounded-xl border border-slate-200 bg-slate-50 p-2.5 transition-all duration-200 hover:border-navy/30 hover:bg-white hover:shadow-sm sm:p-3">
+    <div className="site-card group rounded-xl p-2.5 sm:p-3">
       <div className="flex items-center gap-2.5">
         <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-sky/10 text-sky">
           <FaCalendarAlt size={10} />
@@ -61,7 +61,7 @@ const NoticesSection = () => {
   const items = (dataMap[activeTab] || []).slice(0, 3);
 
   return (
-    <div className="overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_20px_45px_rgba(15,23,42,0.04)]">
+    <div className="site-card overflow-hidden rounded-[24px]">
       <div className="bg-[#07163d] px-5 py-3">
         <h2 className={`text-base font-bold text-white ${lang === 'np' ? 'font-nepali' : ''}`}>
           {t('Latest Updates', 'ताजा अपडेटहरू')}

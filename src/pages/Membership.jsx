@@ -60,7 +60,7 @@ const Membership = () => {
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
             {membershipInfo.categories.map(category => (
-              <article key={category.id} className="rounded-[22px] border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+              <article key={category.id} className="site-card rounded-[20px] p-6">
                 <div className="flex items-start justify-between gap-4">
                   <h3 className={`text-lg font-bold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
                     {lang === 'en' ? category.titleEn : category.titleNp}
@@ -83,7 +83,7 @@ const Membership = () => {
           </div>
         </section>
 
-        <section className="rounded-[24px] bg-slate-50 p-6 md:p-8">
+        <section className="rounded-[24px] border border-[#dbe7f5] bg-[#eef5ff] p-6 md:p-8">
           <h2 className={`text-xl font-bold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t('How to apply', 'आवेदन गर्ने तरिका')}
           </h2>

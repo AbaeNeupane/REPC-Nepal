@@ -72,7 +72,7 @@ const Notices = () => {
         </div>
 
         {/* Notices List */}
-        <div className="bg-white border border-gray-200 rounded-sm shadow-sm overflow-hidden">
+        <div className="site-card overflow-hidden rounded-2xl">
           {/* Table Header */}
           <div className="hidden bg-navy text-white md:grid md:grid-cols-12 px-4 py-3 text-sm font-semibold">
             <div className={`col-span-1 ${lang === 'np' ? 'font-nepali' : ''}`}>{t('S.N.', 'क्र.सं.')}</div>
@@ -90,7 +90,7 @@ const Notices = () => {
           ) : (
             items.map((item, i) => (
               <div key={item.id}
-                className={`grid grid-cols-1 gap-2 px-4 py-3.5 md:grid-cols-12 md:items-center md:gap-0 border-b border-gray-100 hover:bg-gray-50 transition-colors ${i % 2 === 0 ? '' : 'bg-gray-50/50'}`}>
+                className={`grid grid-cols-1 gap-2 px-4 py-3.5 md:grid-cols-12 md:items-center md:gap-0 border-b border-gray-100 hover:bg-[#eef5ff] transition-colors ${i % 2 === 0 ? 'bg-[#f8fbff]' : 'bg-[#e8f1fa]'}`}>
                 <div className="text-gray-500 text-sm md:col-span-1">
                   <span className="md:hidden mr-1 font-medium text-navy">{t('S.N.', 'क्र.सं.')}</span>{i + 1}
                 </div>

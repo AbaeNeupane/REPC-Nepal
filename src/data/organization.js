@@ -2,12 +2,12 @@
 
 export const siteInfo = {
   nameEn: 'Rights, Equity and Peace Campaign - Nepal',
-  nameNp: 'अधिकार, समता र शान्ति अभियान - नेपाल',
+  nameNp: 'अधिकार, समता र शान्ति अभियान–नेपाल',
   shortName: 'REPC–NEPAL',
   mottoEn: 'Respect in Equity, Life in Peace',
   mottoNp: 'समतामा सम्मान, शान्तिमा जीवन',
   parentEn: 'Non-Governmental Organization',
-  parentNp: 'गैर सरकारी संस्था',
+  parentNp: 'गैरसरकारी, गैरनाफामूलक संस्था',
   addressEn: 'Ward No. 11, Thapathali, Kathmandu, Nepal',
   addressNp: 'वडा नं. ११, थापाथली, काठमाडौं, नेपाल',
   phone: '+977 9768571643',
@@ -18,7 +18,7 @@ export const siteInfo = {
   twitter: 'https://twitter.com/repcnepal',    // ← UPDATE THIS
   youtube: 'https://youtube.com/@repc-nepal?si=V_u-JKaj23xaS8Gx',
   officeHoursEn: 'Sunday – Friday: 10:00 AM – 5:00 PM',
-  officeHoursNp: 'आइतबार – शुक्रबार: बिहान १०:०० – साँझ ५:००',
+  officeHoursNp: 'आइतबारदेखि शुक्रबार: बिहान १०:०० बजेदेखि साँझ ५:०० बजेसम्म',
   registrationNo: 'CDO, 25/2083/084',
   panNo: '624980586',
 };

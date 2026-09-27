@@ -2,14 +2,13 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import { siteInfo } from '../data/organization';
-import CertificateDocuments from '../components/CertificateViewer';
 import PurposeSection from '../components/PurposeSection';
 import WhoWeAreSection from '../components/WhoWeAreSection';
 import ExecutiveCommitteeSection from '../components/ExecutiveCommitteeSection';
 import OrganizationStructureSection from '../components/OrganizationStructureSection';
 import TeamBioModal from '../components/TeamBioModal';
 import SEO from '../components/SEO';
-import { FaUsers, FaArrowRight } from 'react-icons/fa';
+import { FaUsers, FaArrowRight, FaShieldAlt } from 'react-icons/fa';
 
 const PageBanner = ({ titleEn, titleNp }) => {
   const { lang } = useLang();
@@ -52,11 +51,76 @@ const About = () => {
 
       <div className="site-container py-10">
 
-        <WhoWeAreSection />
+        <div id="who-we-are" className="scroll-mt-28"><WhoWeAreSection /></div>
 
-        <PurposeSection />
+        <div id="purpose" className="scroll-mt-28"><PurposeSection /></div>
 
         <ExecutiveCommitteeSection onMemberClick={openMemberBio} className="mb-12" />
+
+        <section id="legal-status" className="mb-12 scroll-mt-28">
+          <div className="mb-5 flex items-center gap-3">
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy text-white">
+              <FaShieldAlt size={18} />
+            </div>
+            <div>
+              <p className={`text-xs font-bold uppercase tracking-[0.08em] text-sky ${lang === 'np' ? 'font-nepali' : ''}`}>
+                {t('Verification', 'प्रमाणीकरण')}
+              </p>
+              <h2 className={`text-xl font-bold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
+                {t('Legal Status & Affiliations', 'कानुनी हैसियत तथा आबद्धता')}
+              </h2>
+            </div>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                titleEn: 'Nonprofit Organization', titleNp: 'गैरनाफामूलक संस्था',
+                bodyEn: 'REPC-Nepal is established as a nonprofit, public-interest social organization.',
+                bodyNp: 'REPC-नेपाल गैरनाफामूलक, जनहितकारी सामाजिक संस्थाका रूपमा स्थापना भएको संस्था हो।',
+              },
+              {
+                titleEn: 'Registered Organization', titleNp: 'दर्ता भएको संस्था',
+                bodyEn: `Registration No. ${siteInfo.registrationNo}`,
+                bodyNp: `दर्ता नं. ${toNepaliDigits(siteInfo.registrationNo)}`,
+              },
+              {
+                titleEn: 'PAN Registered', titleNp: 'PAN दर्ता',
+                bodyEn: `PAN ${siteInfo.panNo}`,
+                bodyNp: `स्थायी लेखा नं. ${toNepaliDigits(siteInfo.panNo)}`,
+              },
+              {
+                titleEn: 'Social Welfare Council', titleNp: 'समाज कल्याण परिषद्',
+                bodyEn: 'Affiliated with the Social Welfare Council.',
+                bodyNp: 'समाज कल्याण परिषद्सँग आबद्ध।',
+              },
+              {
+                titleEn: 'Mediation Council', titleNp: 'मेलमिलाप परिषद्',
+                bodyEn: 'The organization’s constitutional framework provides for affiliation with the Mediation Council and other legally recognized bodies.',
+                bodyNp: 'संस्थाको विधानले मेलमिलाप परिषद् तथा कानुनी मान्यता प्राप्त अन्य निकायसँग आबद्ध हुन सक्ने व्यवस्था गरेको छ।',
+              },
+              {
+                titleEn: 'Public Documents', titleNp: 'सार्वजनिक कागजात',
+                bodyEn: 'View registration and affiliation documents in the Resources section.',
+                bodyNp: 'दर्ता तथा आबद्धताका कागजातहरू स्रोत तथा कागजात खण्डमा हेर्नुहोस्।',
+              },
+            ].map((item, i) => (
+              <div key={i} className="site-card rounded-2xl p-5">
+                <h3 className={`font-bold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
+                  {lang === 'en' ? item.titleEn : item.titleNp}
+                </h3>
+                <p className={`mt-2 text-sm leading-relaxed text-slate-600 ${lang === 'np' ? 'font-nepali' : ''}`}>
+                  {lang === 'en' ? item.bodyEn : item.bodyNp}
+                </p>
+              </div>
+            ))}
+          </div>
+          <Link
+            to="/resources#organizational-documents"
+            className={`mt-5 inline-flex items-center gap-2 text-sm font-bold text-sky hover:text-sky-dark ${lang === 'np' ? 'font-nepali' : ''}`}
+          >
+            {t('View organizational documents', 'संस्थागत कागजात हेर्नुहोस्')} <FaArrowRight size={11} />
+          </Link>
+        </section>
 
         {/* Founding Members — full profiles now live on their own page */}
         <section className="mb-12">
@@ -93,21 +157,7 @@ const About = () => {
           <h2 className={`text-xl font-bold text-navy mb-4 ${lang === 'np' ? 'font-nepali' : ''}`}>
             {t('Organizational Information', 'संस्थागत जानकारी')}
           </h2>
-          <div className="bg-white border border-gray-200 rounded-sm shadow-sm overflow-hidden">
-            {/* CDO Registration Photo */}
-            <figure className="border-b border-gray-100">
-              <img
-                src="/images/gallery/milestone/cdo-registration.jpeg"
-                alt="Registration with Chief District Officer — 4 Bhadra 2083"
-                className="w-full object-contain max-h-[520px] bg-gray-50"
-              />
-              <figcaption className={`text-center text-sm text-gray-500 py-3 px-4 bg-gray-50 ${lang === 'np' ? 'font-nepali' : ''}`}>
-                {t(
-                  'Registered with the Chief District Officer, Kathmandu, on 4 Bhadra 2083. The registration certificate was issued by the District Administration Office.',
-                  'जिल्ला प्रशासन कार्यालय काठमाडौंमा संस्था दर्ता गरेपश्चात् प्रमुख जिल्ला अधिकारी ईश्वर राज पौडेलबाट संस्था दर्ता प्रमाणपत्र ग्रहण गर्दै अधिकार, समता र शान्ति अभियान–नेपालकी अध्यक्ष अधिवक्ता शुशिला सिंखडा।'
-                )}
-              </figcaption>
-            </figure>
+          <div className="site-card overflow-hidden rounded-2xl">
             <div className="overflow-x-auto">
             <table className="w-full min-w-[34rem] text-sm">
               <tbody className="divide-y divide-gray-100">
@@ -122,7 +172,7 @@ const About = () => {
                   { labelEn: 'Email', labelNp: 'इमेल', valueEn: siteInfo.email, valueNp: siteInfo.email, preserveDigits: true },
                   { labelEn: 'Office Hours', labelNp: 'कार्यालय समय', valueEn: siteInfo.officeHoursEn, valueNp: siteInfo.officeHoursNp },
                 ].map((row, i) => (
-                  <tr key={i} className={i % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
+                  <tr key={i} className={i % 2 === 0 ? 'bg-[#e6eff9]' : 'bg-[#f2f7fd]'}>
                     <td className={`px-5 py-3 font-semibold text-navy w-1/3 ${lang === 'np' ? 'font-nepali' : ''}`}>
                       {lang === 'en' ? row.labelEn : row.labelNp}
                     </td>
@@ -137,8 +187,6 @@ const About = () => {
           </div>
         </section>
 
-        {/* Registration & Legal Documents */}
-        <CertificateDocuments />
 
       </div>
 

@@ -24,6 +24,7 @@ import Membership   from './pages/Membership';
 import Contact      from './pages/Contact';
 import Privacy      from './pages/Privacy';
 import ChairpersonAppeal from './pages/ChairpersonAppeal';
+import Resources from './pages/Resources';
 
 
 const HashScroller = () => {
@@ -101,7 +102,9 @@ const PageTransition = () => {
       <Routes location={displayLoc}>
         <Route path="/"             element={<Home />}         />
         <Route path="/about"        element={<About />}        />
+        <Route path="/resources"    element={<Resources />}     />
         <Route path="/founding-members" element={<FoundingMembers />} />
+        <Route path="/our-work"    element={<Services />}     />
         <Route path="/services"     element={<Services />}     />
         <Route path="/notices"      element={<Notices />}      />
         <Route path="/programs"     element={<Programs />}     />
@@ -209,7 +212,7 @@ const Layout = ({ children }) => {
       <TopBar />
       <Header mobileOpen={mobileOpen} onMobileToggle={() => setMobileOpen(open => !open)} />
       <Navigation mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
-      <main className={`flex-1 bg-gray-50 ${hideMobileDonateBar ? '' : 'pb-20 md:pb-0'}`}>
+      <main className={`flex-1 bg-[#eef4fb] ${hideMobileDonateBar ? '' : 'pb-20 md:pb-0'}`}>
         {children}
       </main>
       <Footer />

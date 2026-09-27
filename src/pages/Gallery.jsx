@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
-import { FaImages, FaTimes } from 'react-icons/fa';
+import { FaImages, FaTimes, FaYoutube } from 'react-icons/fa';
 import useScrollLock from '../hooks/useScrollLock';
 import SEO from '../components/SEO';
+import { galleryItems, getYouTubeVideoId, youtubeVideos } from '../data/gallery';
 
 const PageBanner = ({ titleEn, titleNp }) => {
   const { lang } = useLang();
@@ -25,17 +26,15 @@ const PageBanner = ({ titleEn, titleNp }) => {
   );
 };
 
-// Replace `src: null` with real image paths like '/images/gallery/img1.jpg'
-export const galleryItems = [
-  { id: 2, src: '/images/gallery/meetings/photo1.jpeg', altEn: 'A constructive discussion on the website outline, content, and future direction was held at the organization’s Thapathali office. The meeting was attended by senior advocate and mediation expert Dr. Kumar Sharma Acharya, Mediation Council member Advocate Chup Bahadur Thapa, Chairperson Advocate Sushila Singhkhada, and organization officials. Held on 1 Ashoj 2083 B.S., Wednesday.', altNp: 'संस्थाकाे वेबसाइटको रूपरेखा, सामग्री तथा आगामी कार्यदिशाका सम्बन्धमा मेलमिलाप विज्ञ वरिष्ठ अधिवक्ता डा. कुमार शर्मा आचार्य र मेलमिलाप परिषद्का सदस्य अधिवक्ता चूप बहादुर थापाज्यू सहित संस्थाका अध्यक्ष अधिवक्ता शुसिला सिंखडा तथा पदाधिकारीहरुको उपस्थितिमा रचनात्मक छलफल संस्थाको थापाथलीस्थित कार्यालयमा सम्पन्न भयो। ईति संवत् २०८३ असाेज १ गते राेज ५ शुभम् ....।', color: 'from-sky to-sky-light', categoryEn: 'Meeting', categoryNp: 'बैठक' },
-  { id: 1, src: '/images/gallery/milestone/cdo-registration.jpeg', altEn: 'Registered with the Chief District Officer on 4 Bhadra 2083 at District Administration Office, Kathmandu.', altNp: 'जिल्ला प्रशासन कार्यालय काठमाडौंमा संस्था दर्ता गरेपश्चात् प्रमुख जिल्ला अधिकारी ईश्वर राज पौडेलबाट संस्था दर्ता प्रमाणपत्र ग्रहण गर्दै अधिकार, समता र शान्ति अभियान–नेपालकी अध्यक्ष अधिवक्ता शुशिला सिंखडा।', color: 'from-navy to-navy-light', categoryEn: 'Milestone', categoryNp: 'उपलब्धि' },
-
-];
-
 const Gallery = () => {
   const { lang, t } = useLang();
   const [lightbox, setLightbox] = useState(null);
-  useScrollLock(Boolean(lightbox)); 
+  useScrollLock(Boolean(lightbox));
+
+  useEffect(() => {
+    document.body.classList.toggle('overlay-open', Boolean(lightbox));
+    return () => document.body.classList.remove('overlay-open');
+  }, [lightbox]);
 
   return (
     <div>
@@ -51,8 +50,8 @@ const Gallery = () => {
       <div className="site-container py-10">
         <p className={`text-gray-500 text-sm mb-6 italic ${lang === 'np' ? 'font-nepali' : ''}`}>
           {t(
-            'Photos from our programs, trainings, events, and campaigns across Nepal.',
-            'नेपालभर हाम्रा कार्यक्रम, तालिम, कार्यक्रम र अभियानहरूका फोटोहरू।'
+            "Photos from REPC-Nepal's programs, trainings, meetings, events, and campaigns.",
+            'REPC-नेपालका कार्यक्रम, तालिम, बैठक, कार्यक्रम तथा अभियानसम्बन्धी तस्बिरहरू।'
           )}
         </p>
 
@@ -85,23 +84,68 @@ const Gallery = () => {
           ))}
         </div>
 
-        {/* Upload prompt — shown only when all gallery items are placeholders */}
-        {galleryItems.every(item => !item.src) && (
-          <div className="mt-8 bg-gray-50 border border-gray-200 rounded-sm p-6 text-center">
-            <FaImages className="mx-auto text-gray-300 mb-3" size={32} />
-            <p className={`text-gray-500 text-sm ${lang === 'np' ? 'font-nepali' : ''}`}>
-              {t(
-                'Photos from our events and programs will appear here soon.',
-                'हाम्रा कार्यक्रम तथा गतिविधिहरूका फोटोहरू चाँडै यहाँ प्रकाशित हुनेछन्।'
-              )}
-            </p>
-          </div>
-        )}
       </div>
+
+      {youtubeVideos.length > 0 && (
+        <section className="border-t border-blue-100 bg-[#e9f2fb] py-12">
+          <div className="site-container">
+            <div className="mb-7 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p className={`text-xs font-semibold uppercase tracking-[0.2em] text-sky ${lang === 'np' ? 'font-nepali' : ''}`}>
+                  {t('Watch', 'दृश्य सामग्री')}
+                </p>
+                <h2 className={`mt-1 text-2xl font-bold text-navy sm:text-3xl ${lang === 'np' ? 'font-nepali' : ''}`}>
+                  {t('Video Gallery', 'भिडियो ग्यालरी')}
+                </h2>
+              </div>
+              <a
+                href="https://www.youtube.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-flex items-center gap-2 text-sm font-semibold text-navy transition-colors hover:text-sky ${lang === 'np' ? 'font-nepali' : ''}`}
+              >
+                <FaYoutube size={16} /> {t('YouTube', 'युट्युब')}
+              </a>
+            </div>
+
+            <div className="grid gap-6 lg:grid-cols-2">
+              {youtubeVideos.map((video) => {
+                const videoId = getYouTubeVideoId(video.source);
+                if (!videoId) return null;
+
+                return (
+                  <article key={video.id} className="site-card overflow-hidden rounded-2xl">
+                    <div className="aspect-video bg-slate-900">
+                      <iframe
+                        src={`https://www.youtube-nocookie.com/embed/${videoId}`}
+                        title={lang === 'np' ? (video.titleNp || video.titleEn || 'REPC-Nepal video') : (video.titleEn || 'REPC-Nepal video')}
+                        className="h-full w-full"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                      />
+                    </div>
+                    <div className="p-4 sm:p-5">
+                      <h3 className={`font-bold text-navy ${lang === 'np' ? 'font-nepali' : ''}`}>
+                        {lang === 'np' ? (video.titleNp || video.titleEn) : video.titleEn}
+                      </h3>
+                      {video.descriptionEn && (
+                        <p className={`mt-1.5 text-sm text-slate-600 ${lang === 'np' ? 'font-nepali' : ''}`}>
+                          {lang === 'np' ? video.descriptionNp : video.descriptionEn}
+                        </p>
+                      )}
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Lightbox */}
       {lightbox && createPortal(
-        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4" onClick={() => setLightbox(null)}>
+        <div className="fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4" onClick={() => setLightbox(null)}>
           <button
             type="button"
             onClick={() => setLightbox(null)}

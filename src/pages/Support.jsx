@@ -181,7 +181,7 @@ const Support = () => {
               <button
                 type="button"
                 onClick={copyAccount}
-                className="mt-5 inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3.5 py-2.5 text-xs font-bold text-navy transition hover:border-sky/40 hover:bg-white"
+                className="mt-5 inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-[#eaf2fa] px-3.5 py-2.5 text-xs font-bold text-navy transition hover:border-sky/40 hover:bg-[#f8fbff]"
               >
                 {copied ? <FaCheck className="text-green-600" size={11} /> : <FaCopy size={11} />}
                 {copied ? t('Copied', 'कपी भयो') : t('Copy account number', 'खाता नम्बर कपी गर्नुहोस्')}
@@ -204,7 +204,7 @@ const Support = () => {
             <Link to="/membership" className="btn-primary bg-sky hover:bg-sky-dark">
               <FaIdCard size={13} /> {t('Become a Member', 'सदस्य बन्नुहोस्')}
             </Link>
-            <a href={`mailto:${siteInfo.email}`} className="btn-outline border-white text-white hover:bg-white hover:text-navy">
+            <a href={`mailto:${siteInfo.email}`} className="btn-outline border-white text-white hover:bg-[#f8fbff] hover:text-navy">
               <FaEnvelope size={13} /> {t('Email Us', 'इमेल गर्नुहोस्')}
             </a>
           </div>

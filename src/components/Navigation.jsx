@@ -8,48 +8,42 @@ const navItems = [
   {
     en: 'About Us', np: 'हाम्रो बारेमा', link: '/about',
     children: [
-      { en: 'Executive Committee', np: 'कार्य समिति',       link: '/about#team' },
-      { en: 'Founding Members', np: 'संस्थापक सदस्यहरू',    link: '/founding-members' },
-      { en: 'Organization Structure', np: 'संस्था संरचना',   link: '/about#structure' },
-      { en: 'Registration & Documents',   np: 'दर्ता तथा कागजात',    link: '/about#organization-info' },
+      { en: 'Who We Are', np: 'हामी को हौं', link: '/about#who-we-are' },
+      { en: 'Mission & Vision', np: 'ध्येय तथा परिकल्पना', link: '/about#purpose' },
+      { en: 'Executive Committee', np: 'कार्य समिति', link: '/about#team' },
+      { en: 'Organization Structure', np: 'संस्था संरचना', link: '/about#structure' },
+      { en: 'Legal Status & Affiliations', np: 'कानुनी हैसियत तथा आबद्धता', link: '/about#legal-status' },
     ],
   },
   {
-    en: 'Services', np: 'सेवाहरू', link: '/services',
+    en: 'Our Work', np: 'हाम्रो कार्य', link: '/our-work',
     children: [
-      { en: 'Peace & Mediation',      np: 'शान्ति तथा मेलमिलाप',      link: '/services#mediation' },
-      { en: 'Legal Aid & Training',   np: 'कानुनी सहायता तथा तालिम',  link: '/services#legal-aid' },
-      { en: 'Legal Framework',        np: 'कानुनी संरचना',            link: '/legal-framework' },
-    ],
-  },
-  { en: 'Programs', np: 'कार्यक्रमहरू', link: '/programs' },
-  {
-    en: 'Notices', np: 'सूचना', link: '/notices',
-    children: [
-      { en: 'Notices',       np: 'सूचनाहरू',       link: '/notices' },
-      { en: 'Press Release', np: 'प्रेस विज्ञप्ति', link: '/notices?tab=press' },
-      { en: 'Reports',       np: 'प्रतिवेदनहरू',    link: '/notices?tab=reports' },
-      { en: 'Activities',    np: 'गतिविधिहरू',      link: '/notices?tab=activities' },
+      { en: 'Core Services', np: 'मुख्य सेवाहरू', link: '/our-work#core-services' },
+      { en: 'Other Services', np: 'अन्य सेवाहरू', link: '/our-work#other-services' },
+      { en: 'Areas of Focus', np: 'कार्यका प्राथमिकता क्षेत्र', link: '/our-work#areas-of-focus' },
+      { en: 'Programs', np: 'कार्यक्रमहरू', link: '/programs' },
+      { en: 'Legal Framework', np: 'कानुनी संरचना', link: '/legal-framework' },
     ],
   },
   {
-    en: 'Publications', np: 'प्रकाशनहरू', link: '/publications',
+    en: 'Resources', np: 'स्रोत तथा कागजात', link: '/resources',
     children: [
-      { en: 'Downloads',      np: 'डाउनलोडहरू',       link: '/publications#downloads' },
-      { en: 'Annual Reports', np: 'वार्षिक प्रतिवेदन', link: '/publications#annual' },
-      { en: 'Legal Documents',np: 'कानुनी दस्तावेज',   link: '/publications#legal' },
+      { en: 'Organizational Documents', np: 'संस्थागत कागजात', link: '/resources#organizational-documents' },
+      { en: 'Notices & Updates', np: 'सूचना तथा अपडेटहरू', link: '/notices' },
+      { en: 'Publications & Downloads', np: 'प्रकाशन तथा डाउनलोडहरू', link: '/publications' },
     ],
   },
   {
     en: 'Get Involved', np: 'सहभागी हुनुहोस्', link: '/volunteer',
     children: [
-      { en: 'Volunteer',   np: 'स्वयंसेवा',        link: '/volunteer' },
-      { en: 'Support Us',  np: 'सहयोग गर्नुहोस्',   link: '/support' },
-      { en: 'Membership',  np: 'सदस्यता',           link: '/membership' },
+      { en: 'Volunteer', np: 'स्वयंसेवा', link: '/volunteer' },
+      { en: 'Support Us', np: 'सहयोग गर्नुहोस्', link: '/support' },
+      { en: 'Membership', np: 'सदस्यता', link: '/membership' },
     ],
   },
   { en: 'Gallery', np: 'ग्यालरी', link: '/gallery' },
   { en: 'Contact', np: 'सम्पर्क', link: '/contact' },
+  { en: 'Donate', np: 'सहयोग', link: '/support#donate', isDonate: true },
 ];
 
 const Navigation = ({ mobileOpen, setMobileOpen }) => {
@@ -97,7 +91,7 @@ const Navigation = ({ mobileOpen, setMobileOpen }) => {
   return (
     <nav
       ref={navRef}
-      className={`lg:bg-navy lg:relative lg:z-[60] max-lg:fixed max-lg:inset-0 max-lg:z-[70] max-lg:pointer-events-none transition-shadow duration-300 ${scrolled ? 'lg:shadow-xl' : 'lg:shadow-md'}`}
+      className={`site-navigation lg:sticky lg:top-0 lg:bg-navy lg:z-[60] max-lg:fixed max-lg:inset-0 max-lg:z-[70] max-lg:pointer-events-none transition-shadow duration-300 ${scrolled ? 'lg:shadow-xl' : 'lg:shadow-md'}`}
     >
       <div className="site-container">
 
@@ -108,9 +102,11 @@ const Navigation = ({ mobileOpen, setMobileOpen }) => {
               <Link
                 to={item.link}
                 className={`flex items-center gap-1.5 px-3 py-4 text-sm font-medium transition-all duration-150 whitespace-nowrap
-                  ${isActive(item)
-                    ? 'bg-sky text-white'
-                    : 'text-white/90 hover:bg-white/10 hover:text-white'}
+                  ${item.isDonate
+                    ? 'my-2 ml-2 rounded-lg bg-sky px-5 py-2.5 font-bold text-white shadow-sm hover:bg-sky-light hover:shadow-md'
+                    : isActive(item)
+                      ? 'bg-sky text-white'
+                      : 'text-white/90 hover:bg-white/10 hover:text-white'}
                   ${lang === 'np' ? 'font-nepali text-base' : ''}`}
               >
                 {lang === 'en' ? item.en : item.np}

@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import { FaImages } from 'react-icons/fa';
-import { galleryItems as allGalleryItems } from '../pages/Gallery';
+import { galleryItems as allGalleryItems } from '../data/gallery';
 
 const legacyGalleryItems = [
   { id: 1, src: '/images/gallery/milestone/cdo-registration.jpeg', altEn: 'Official Registration with CDO, 4 Bhadra 2083', altNp: 'जिल्ला प्रशासन कार्यालय काठमाडौंमा संस्था दर्ता गरे पश्चात...', color: 'bg-navy/80' },
-  { id: 2, src: null, altEn: 'Mediation Workshop', altNp: 'मेलमिलाप कार्यशाला', color: 'bg-sky/80' },
+  { id: 2, src: null, altEn: 'Mediation Workshop', altNp: 'मेलमिलाप कार्यशाला', color: 'bg-[#2e629e]' },
   
 ].sort((a, b) => (b.src ? 1 : 0) - (a.src ? 1 : 0));
 
@@ -17,7 +17,7 @@ const GalleryPreview = () => {
   const { lang, t } = useLang();
 
   return (
-    <section className="bg-slate-50 py-16">
+    <section className="bg-[#e9f2fb] py-16">
       <div className="site-container">
         <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
@@ -42,7 +42,7 @@ const GalleryPreview = () => {
             <Link
               key={item.id}
               to="/gallery"
-              className="group relative aspect-square overflow-hidden rounded-[22px] border border-slate-200 bg-white shadow-[0_12px_28px_rgba(15,23,42,0.04)]"
+              className="site-card group relative aspect-square overflow-hidden rounded-[20px]"
             >
               {item.src ? (
                 <img
