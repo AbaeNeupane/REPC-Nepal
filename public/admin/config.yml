@@ -1,0 +1,148 @@
+# REPC-Nepal admin panel (Decap CMS).
+# Editors log in with GitHub; saving commits the change to the repo and Vercel redeploys.
+
+backend:
+  name: github
+  repo: AbaeNeupane/repcnepal        
+  branch: main                 # <-- the branch Vercel deploys from
+  base_url: https://repcnepal.org.np
+  auth_endpoint: api/auth      # served by api/auth.js
+  commit_messages:
+    create: 'Admin: add {{collection}} item'
+    update: 'Admin: update {{collection}}'
+    delete: 'Admin: remove {{collection}} item'
+    uploadMedia: 'Admin: upload {{path}}'
+    deleteMedia: 'Admin: delete {{path}}'
+
+publish_mode: simple
+site_url: https://repcnepal.org.np
+display_url: https://repcnepal.org.np
+logo_url: /logoEn.png
+
+# Fallback upload location (repo-root relative). Individual fields below override it.
+media_folder: public/images/uploads
+public_folder: /images/uploads
+
+collections:
+
+  # ───────────────────────── NOTICES ─────────────────────────
+  - name: notices
+    label: Notices & Updates
+    files:
+      - name: notices
+        label: Notices, Press Releases, Reports & Activities
+        file: src/data/notices.json
+        format: json
+        fields:
+          - label: All Notices
+            name: notices
+            widget: list
+            required: false
+            summary: '{{fields.date}} — {{fields.titleEn}}'
+            fields: &noticeFields
+              - { label: Title (English), name: titleEn, widget: string }
+              - { label: Title (Nepali), name: titleNp, widget: string }
+              - { label: Date (English), name: date, widget: string, hint: 'Shown on the site, e.g. 20 Oct 2026' }
+              - { label: Date (Nepali), name: dateNp, widget: string, hint: 'Shown on the site, e.g. २०८३ कार्तिक ३' }
+              - label: PDF / File
+                name: downloadUrl
+                widget: file
+                required: false
+                media_folder: /public/files/notices
+                public_folder: /files/notices
+                hint: 'Optional. Upload a PDF, or leave empty for a notice without a download.'
+          - { label: Press Releases, name: pressReleases, widget: list, required: false, summary: '{{fields.date}} — {{fields.titleEn}}', fields: *noticeFields }
+          - { label: Reports, name: reports, widget: list, required: false, summary: '{{fields.date}} — {{fields.titleEn}}', fields: *noticeFields }
+          - { label: Activities, name: activities, widget: list, required: false, summary: '{{fields.date}} — {{fields.titleEn}}', fields: *noticeFields }
+
+  # ───────────────────────── SERVICES ─────────────────────────
+  - name: services
+    label: Services & Work Areas
+    files:
+      - name: work
+        label: Services & Areas of Focus
+        file: src/data/work.json
+        format: json
+        fields:
+          - label: Core Services
+            name: coreServices
+            widget: list
+            required: false
+            summary: '{{fields.titleEn}}'
+            fields:
+              - { label: ID, name: id, widget: string, required: false, hint: 'Leave blank for a new service. Do not change on existing ones.' }
+              - label: Icon
+                name: icon
+                widget: select
+                options: [legal, mediation, awareness, training, research, coordination]
+                default: legal
+              - { label: Title (English), name: titleEn, widget: string }
+              - { label: Title (Nepali), name: titleNp, widget: string }
+              - { label: Description (English), name: bodyEn, widget: text }
+              - { label: Description (Nepali), name: bodyNp, widget: text }
+          - label: Other Services
+            name: otherServices
+            widget: list
+            required: false
+            summary: '{{fields.titleEn}}'
+            fields:
+              - { label: ID, name: id, widget: string, required: false, hint: 'Leave blank for a new service. Do not change on existing ones.' }
+              - label: Icon
+                name: icon
+                widget: select
+                options: [mediation, arbitration, negotiation, compromise, judicial, drafting, training, research]
+                default: arbitration
+              - { label: Title (English), name: titleEn, widget: string }
+              - { label: Title (Nepali), name: titleNp, widget: string }
+              - { label: Description (English), name: descEn, widget: text }
+              - { label: Description (Nepali), name: descNp, widget: text }
+          - label: Areas of Focus
+            name: areasOfFocus
+            widget: list
+            required: false
+            summary: '{{fields.titleEn}}'
+            fields:
+              - { label: ID, name: id, widget: string, required: false, hint: 'Leave blank for a new area. Do not change on existing ones (it picks the icon).' }
+              - { label: Title (English), name: titleEn, widget: string }
+              - { label: Title (Nepali), name: titleNp, widget: string }
+              - { label: Description (English), name: bodyEn, widget: text }
+              - { label: Description (Nepali), name: bodyNp, widget: text }
+
+  # ───────────────────────── GALLERY ─────────────────────────
+  - name: gallery
+    label: Gallery
+    files:
+      - name: gallery
+        label: Photos & Videos
+        file: src/data/gallery.json
+        format: json
+        fields:
+          - label: Photos
+            name: items
+            widget: list
+            required: false
+            summary: '{{fields.categoryEn}} — {{fields.altEn}}'
+            hint: 'Shown in this order. Drag the newest photo to the top.'
+            fields:
+              - label: Photo
+                name: src
+                widget: image
+                media_folder: /public/images/gallery
+                public_folder: /images/gallery
+                hint: 'Compress big phone photos first (under about 1 MB is ideal).'
+              - { label: Caption (English), name: altEn, widget: text }
+              - { label: Caption (Nepali), name: altNp, widget: text }
+              - { label: Category (English), name: categoryEn, widget: string, hint: 'e.g. Meeting, Training, Milestone' }
+              - { label: Category (Nepali), name: categoryNp, widget: string, hint: 'e.g. बैठक, तालिम, उपलब्धि' }
+          - label: YouTube Videos
+            name: videos
+            widget: list
+            required: false
+            summary: '{{fields.titleEn}}'
+            hint: 'Upload the video to YouTube first, then paste its link here.'
+            fields:
+              - { label: YouTube Link, name: source, widget: string, hint: 'e.g. https://www.youtube.com/watch?v=XXXXXXXXXXX' }
+              - { label: Title (English), name: titleEn, widget: string }
+              - { label: Title (Nepali), name: titleNp, widget: string, required: false }
+              - { label: Description (English), name: descriptionEn, widget: text, required: false }
+              - { label: Description (Nepali), name: descriptionNp, widget: text, required: false }

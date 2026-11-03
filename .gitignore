@@ -2,3 +2,8 @@ node_modules/
 dist/
 .env
 resources/
+
+.DS_Store
+.vscode/
+Code.gs
+.vercel/

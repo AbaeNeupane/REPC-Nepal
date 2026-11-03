@@ -3,8 +3,7 @@ import { useLang } from '../context/LanguageContext';
 
 const SITE_NAME_EN = 'REPC-Nepal';
 const SITE_NAME_NP = 'REPC-नेपाल';
-// TODO: swap to https://www.repcnepal.org.np once the custom domain is live
-const BASE_URL = 'https://repc-nepal.vercel.app';
+const BASE_URL = 'https://repcnepal.org.np';
 
 /**
  * Drop this at the top of any page component to set that page's

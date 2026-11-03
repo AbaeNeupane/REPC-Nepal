@@ -13,7 +13,7 @@ export const siteInfo = {
   phone: '+977 9768571643',
   whatsapp: '9779768571643',      
   email: 'repcnepal2083@gmail.com',
-  website: 'www.repcnepal.org.np',
+  website: 'repcnepal.org.np',
   facebook: 'https://www.facebook.com/share/1DBHcrxqnP/', 
   twitter: 'https://twitter.com/repcnepal',    // ← UPDATE THIS
   youtube: 'https://youtube.com/@repc-nepal?si=V_u-JKaj23xaS8Gx',

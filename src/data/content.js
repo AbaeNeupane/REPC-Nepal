@@ -1,21 +1,14 @@
 // Programs, notices, publications, legal, and reference content.
 
-export const notice = [
+import noticeData from './notices.json';
 
-];
+// Each list is edited through /admin. Items get a generated id for React keys.
+const withIds = (list, prefix) => (list || []).map((item, i) => ({ id: `${prefix}-${i + 1}`, ...item }));
 
-export const pressReleases = [
-  
-];
-
-export const reports = [
-  
-];
-
-export const activities = [
-  
-];
-
+export const notice = withIds(noticeData.notices, 'notice');
+export const pressReleases = withIds(noticeData.pressReleases, 'press');
+export const reports = withIds(noticeData.reports, 'report');
+export const activities = withIds(noticeData.activities, 'activity');
 
 export { services } from './work.js';
 
