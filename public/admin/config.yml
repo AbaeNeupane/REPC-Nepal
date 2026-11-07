@@ -3,7 +3,7 @@
 
 backend:
   name: github
-  repo: AbaeNeupane/repcnepal        
+  repo: AbaeNeupane/REPC-Nepal     
   branch: main                 # <-- the branch Vercel deploys from
   base_url: https://repcnepal.org.np
   auth_endpoint: api/auth      # served by api/auth.js
