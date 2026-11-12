@@ -1,0 +1,44 @@
+{
+  "donationInfo": {
+    "bankNameEn": "RASTRIYA BANIJYA BANK",
+    "bankNameNp": "राष्ट्रिय वाणिज्य बैंक",
+    "accountNameEn": "ADHIKAR SAMATA RA SHANTI ABHIYAN NEPAL",
+    "accountNameNp": "अधिकार समता र शान्ति अभियान नेपाल",
+    "accountNo": "2222170021793442",
+    "branchEn": "Thapathali, Kathmandu",
+    "branchNp": "थापाथली, काठमाडौं",
+    "qrImage": "/QR/rbb-fonepay.jpeg",
+    "qrAltEn": "REPC-Nepal donation QR code for Fonepay / supported banking apps.",
+    "qrAltNp": "Fonepay तथा समर्थित बैंकिङ एपमार्फत सहयोग गर्न REPC-नेपालको QR कोड।",
+    "waysToGive": [
+      {
+        "icon": "qrcode",
+        "titleEn": "Fonepay Qr Scan",
+        "titleNp": "QR मार्फत सहयोग",
+        "descEn": "Scan the fonepay Qr for direct deposit to our organization bank account.",
+        "descNp": "संस्थाको Fonepay QR स्क्यान गरी सहयोग रकम जम्मा गर्नुहोस्।"
+      },
+      {
+        "icon": "bank",
+        "titleEn": "Bank Transfer",
+        "titleNp": "बैंकमार्फत रकम जम्मा",
+        "descEn": "Direct deposit to our organizational bank account (details below).",
+        "descNp": "तल उल्लेखित संस्थागत बैंक खातामा सिधै सहयोग रकम जम्मा गर्नुहोस्।"
+      },
+      {
+        "icon": "member",
+        "titleEn": "Become a Member",
+        "titleNp": "सदस्य बन्नुहोस्",
+        "descEn": "Support our work year-round with an annual membership contribution.",
+        "descNp": "सदस्यता प्राप्त गरी संस्थाको उद्देश्य तथा कार्यक्रमलाई निरन्तर सहयोग पुर्‍याउनुहोस्।"
+      },
+      {
+        "icon": "partner",
+        "titleEn": "In-Kind & Partnership",
+        "titleNp": "वस्तुगत सहयोग तथा साझेदारी",
+        "descEn": "Offer equipment, venue space, or a program partnership instead of cash.",
+        "descNp": "उपकरण, कार्यक्रमस्थल वा कार्यक्रमगत साझेदारीमार्फत वस्तुगत तथा अन्य सहयोग पुर्‍याउनुहोस्।"
+      }
+    ]
+  }
+}

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import { FaFilePdf, FaFileWord, FaDownload } from 'react-icons/fa';
 import SEO from '../components/SEO';
+import { publications } from '../data/publications';
 
 const PageBanner = ({ titleEn, titleNp }) => {
   const { lang } = useLang();
@@ -21,29 +22,6 @@ const PageBanner = ({ titleEn, titleNp }) => {
   );
 };
 
-const publications = [
-  {
-    category: { en: 'Annual Reports', np: 'वार्षिक प्रतिवेदन' },
-    items: [
-    ],
-  },
-  {
-    category: { en: 'Legal Documents', np: 'कानुनी दस्तावेज' },
-    items: [
-    ],
-  },
-  {
-    category: { en: 'Training Materials', np: 'तालिम सामग्री' },
-    items: [
-    ],
-  },
-  {
-    category: { en: 'Research Reports', np: 'अनुसन्धान प्रतिवेदन' },
-    items: [
-    ],
-  },
-];
-
 const typeIcon = (type) => type === 'pdf' ? <FaFilePdf className="text-red-500" size={20} /> : <FaFileWord className="text-blue-500" size={20} />;
 
 const Publications = () => {
@@ -61,7 +39,17 @@ const Publications = () => {
       <PageBanner titleEn="Publications & Downloads" titleNp="प्रकाशन तथा डाउनलोडहरू" />
 
       <div id="downloads" className="site-container py-10 space-y-10 scroll-mt-20">
-        {publications.map((section, si) => (
+        {publications.every((section) => section.items.length === 0) && (
+          <div className="site-card rounded-2xl p-8 text-center">
+            <p className={`text-sm text-gray-600 ${lang === 'np' ? 'font-nepali text-base' : ''}`}>
+              {t(
+                'Publications and downloadable documents will be posted here soon.',
+                'प्रकाशन तथा डाउनलोड गर्न मिल्ने कागजातहरू यहाँ चाँडै राखिनेछ।'
+              )}
+            </p>
+          </div>
+        )}
+        {publications.map((section, si) => section.items.length === 0 ? null : (
           <div key={si} id={['annual', 'legal', 'training', 'research'][si]} className="scroll-mt-20">
             <h2 className={`text-lg font-bold text-navy mb-4 flex items-center gap-2 ${lang === 'np' ? 'font-nepali' : ''}`}>
               <span className="w-1 h-6 bg-sky rounded inline-block" />

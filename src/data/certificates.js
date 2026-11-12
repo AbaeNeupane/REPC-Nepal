@@ -1,28 +1,12 @@
 // Official registration / organizational documents shown on the website.
+// The list lives in certificates.json, which the /admin panel edits.
 
-export const certificates = [
-  {
-    id: 'ward-registration',
-    image: '/images/certificates/ngo-registration.jpeg',
-    titleEn: 'Ward Office Registration Certificate (Non-Profit Organization)',
-    titleNp: 'गैरनाफामूलक संस्था दर्ता प्रमाणपत्र (वडा कार्यालय)',
-  },
-  {
-    id: 'cdo-registration',
-    image: '/images/certificates/organization-registration.jpeg',
-    titleEn: 'District Administration Office Registration Certificate',
-    titleNp: 'जिल्ला प्रशासन कार्यालय दर्ता प्रमाणपत्र',
-  },
-  {
-    id: 'pan-registration',
-    image: '/images/certificates/organization-pan-registration.jpeg',
-    titleEn: 'PAN Registration Certificate',
-    titleNp: 'स्थायी लेखा नम्बर (PAN) दर्ता प्रमाणपत्र',
-  },
-  {
-    id: 'swc-affiliation',
-    image: '/images/certificates/social-wellfare-council-affiliation.jpeg',
-    titleEn: 'Social Welfare Council Affiliation Certificate',
-    titleNp: 'समाज कल्याण परिषद् आबद्धता प्रमाणपत्र',
-  },
-];
+import data from './certificates.json';
+
+const slugify = (text = '') =>
+  String(text).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+
+export const certificates = (data.certificates || []).map((item, i) => ({
+  id: slugify(item.titleEn).slice(0, 40) || `certificate-${i + 1}`,
+  ...item,
+}));

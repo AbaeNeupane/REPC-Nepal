@@ -1,0 +1,76 @@
+{
+  "laws": [
+    {
+      "category": "foundation",
+      "nameEn": "Constitution of Nepal, 2072 (2015)",
+      "nameNp": "नेपालको संविधान, २०७२ (२०१५)",
+      "descEn": "The supreme law of Nepal. Part 3 guarantees fundamental rights including equality (Art. 18), women’s rights (Art. 38), child rights (Art. 39), and senior citizens’ rights (Art. 41). Article 249 establishes the National Human Rights Commission.",
+      "descNp": "नेपालको सर्वोच्च कानून। भाग ३ ले समानता (धारा १८), महिला अधिकार (धारा ३८), बाल अधिकार (धारा ३९), र ज्येष्ठ नागरिकको अधिकार (धारा ४१) सहित मौलिक हकको ग्यारेन्टी गर्दछ। धारा २४९ ले राष्ट्रिय मानव अधिकार आयोगको स्थापना गर्दछ।",
+      "sourceUrl": "https://lawcommission.gov.np"
+    },
+    {
+      "category": "mediation",
+      "nameEn": "Mediation Act, 2068 (2011)",
+      "nameNp": "मेलमिलाप ऐन, २०६८ (२०११)",
+      "descEn": "The primary law governing mediation procedure in Nepal — mediator qualifications and conduct, how court-referred and out-of-court disputes may be settled through mediation, and the enforceability of mediated agreements.",
+      "descNp": "नेपालमा मेलमिलाप प्रक्रिया सञ्चालन गर्ने प्रमुख कानून — मेलमिलापकर्ताको योग्यता र आचरण, अदालतबाट प्रेषित र अदालतबाहिरका विवाद मेलमिलापद्वारा कसरी समाधान गर्ने, र मेलमिलापबाट भएको सम्झौताको कार्यान्वयनयोग्यता।",
+      "sourceUrl": "https://www.lawcommission.gov.np"
+    },
+    {
+      "category": "mediation",
+      "nameEn": "Local Government Operation Act, 2074 (2017)",
+      "nameNp": "स्थानीय सरकार सञ्चालन ऐन, २०७४ (२०१७)",
+      "descEn": "Authorizes local government bodies (municipalities, rural municipalities) to facilitate mediation for civil, family, and minor criminal matters at the community level.",
+      "descNp": "स्थानीय तहका निकायहरू (नगरपालिका, गाउँपालिका) लाई सामुदायिक तहमा देवानी, पारिवारिक र साना फौजदारी विषयमा मेलमिलाप सहजीकरण गर्ने अख्तियारी दिन्छ।",
+      "sourceUrl": "https://lawcommission.gov.np"
+    },
+    {
+      "category": "legal-aid",
+      "nameEn": "Legal Aid Act, 2054 (1997)",
+      "nameNp": "कानुनी सहायता ऐन, २०५४ (१९९७)",
+      "descEn": "Guarantees the right to legal aid — counselling, document drafting, and court representation — for people unable to protect their legal rights due to financial or social hardship.",
+      "descNp": "आर्थिक वा सामाजिक कठिनाइका कारण आफ्नो कानुनी अधिकार जोगाउन नसक्ने व्यक्तिका लागि कानुनी सहायता — परामर्श, कागजात मस्यौदा, र अदालती प्रतिनिधित्व — पाउने हकको ग्यारेन्टी गर्दछ।",
+      "sourceUrl": "https://lawcommission.gov.np"
+    },
+    {
+      "category": "rights",
+      "nameEn": "National Human Rights Commission Act, 2068 (2012)",
+      "nameNp": "राष्ट्रिय मानव अधिकार आयोग ऐन, २०६८ (२०१२)",
+      "descEn": "Defines the functions, duties and powers of the National Human Rights Commission — inspections, investigations, and recommendations to protect and promote human rights.",
+      "descNp": "राष्ट्रिय मानव अधिकार आयोगको काम, कर्तव्य र अधिकार — मानव अधिकार संरक्षण र प्रवर्धनका लागि निरीक्षण, अनुसन्धान र सिफारिस — तोक्दछ।",
+      "sourceUrl": "https://nhrcnepal.org"
+    },
+    {
+      "category": "vulnerable-groups",
+      "nameEn": "Domestic Violence (Offence and Punishment) Act, 2066 (2009)",
+      "nameNp": "घरेलु हिंसा (कसूर र सजाय) ऐन, २०६६ (२००९)",
+      "descEn": "Criminalizes physical, mental, sexual, and economic domestic violence and provides for victim protection orders and compensation.",
+      "descNp": "शारीरिक, मानसिक, यौनजन्य र आर्थिक घरेलु हिंसालाई अपराध ठहर्‍याई पीडित संरक्षण आदेश र क्षतिपूर्तिको व्यवस्था गर्दछ।",
+      "sourceUrl": "https://lawcommission.gov.np"
+    },
+    {
+      "category": "vulnerable-groups",
+      "nameEn": "Act Relating to Children, 2075 (2018)",
+      "nameNp": "बालबालिका सम्बन्धी ऐन, २०७५ (२०१८)",
+      "descEn": "Protects children’s right to dignity, care, and protection, and guarantees child-friendly justice — including confidentiality and compensation rights — for child victims.",
+      "descNp": "बालबालिकाको मर्यादा, स्याहार र संरक्षणको हक जोगाउँछ, र बाल पीडितका लागि गोपनीयता र क्षतिपूर्तिको हक सहित बालमैत्री न्यायको ग्यारेन्टी गर्दछ।",
+      "sourceUrl": "https://lawcommission.gov.np"
+    },
+    {
+      "category": "vulnerable-groups",
+      "nameEn": "Senior Citizens Act, 2063 (2006, amended 2079/2022)",
+      "nameNp": "ज्येष्ठ नागरिक ऐन, २०६३ (२००६, संशोधन २०७९/२०२२)",
+      "descEn": "Establishes protection, social security, and family care obligations toward senior citizens (age 60+), with local-level enforcement added by the 2079 amendment.",
+      "descNp": "ज्येष्ठ नागरिक (६० वर्ष माथि) प्रति संरक्षण, सामाजिक सुरक्षा, र पारिवारिक स्याहारको दायित्व स्थापना गर्दछ; २०७९ को संशोधनले स्थानीय तहको कार्यान्वयन थपेको छ।",
+      "sourceUrl": "https://lawcommission.gov.np"
+    },
+    {
+      "category": "vulnerable-groups",
+      "nameEn": "Act Relating to Rights for the differently abled person, 2074 (2017)",
+      "nameNp": "अपाङ्गता भएका व्यक्तिको अधिकार सम्बन्धी ऐन, २०७४ (२०१७)",
+      "descEn": "Guarantees civil, social, political, economic, and cultural rights for persons with disabilities and provides for disability identity cards and a rehabilitation fund.",
+      "descNp": "अपाङ्गता भएका व्यक्तिको नागरिक, सामाजिक, राजनीतिक, आर्थिक र सांस्कृतिक अधिकारको ग्यारेन्टी गर्दछ र अपाङ्गता परिचयपत्र तथा पुनर्स्थापना कोषको व्यवस्था गर्दछ।",
+      "sourceUrl": "https://lawcommission.gov.np"
+    }
+  ]
+}

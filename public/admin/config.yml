@@ -1,10 +1,13 @@
 # REPC-Nepal admin panel (Decap CMS).
-# Editors log in with GitHub; saving commits the change to the repo and Vercel redeploys.
+# Editors log in with GitHub; publishing commits the change to the repo and Vercel redeploys.
+#
+# IMPORTANT: Decap only saves the fields listed here. If you add a new field to a data file,
+# add it to this file too, or it will be dropped the next time someone saves in /admin.
 
 backend:
   name: github
-  repo: AbaeNeupane/REPC-Nepal     
-  branch: main                 # <-- the branch Vercel deploys from
+  repo: AbaeNeupane/repcnepal
+  branch: main
   base_url: https://repcnepal.org.np
   auth_endpoint: api/auth      # served by api/auth.js
   commit_messages:
@@ -28,15 +31,19 @@ collections:
   # ───────────────────────── NOTICES ─────────────────────────
   - name: notices
     label: Notices & Updates
+    description: 'Notices, press releases, reports and activities shown on the Notices page and the homepage.'
+    editor: { preview: false }
     files:
       - name: notices
         label: Notices, Press Releases, Reports & Activities
         file: src/data/notices.json
         format: json
         fields:
-          - label: All Notices
+          - label: Notices
             name: notices
             widget: list
+            label_singular: notice
+            add_to_top: true
             required: false
             summary: '{{fields.date}} — {{fields.titleEn}}'
             fields: &noticeFields
@@ -51,13 +58,176 @@ collections:
                 media_folder: /public/files/notices
                 public_folder: /files/notices
                 hint: 'Optional. Upload a PDF, or leave empty for a notice without a download.'
-          - { label: Press Releases, name: pressReleases, widget: list, required: false, summary: '{{fields.date}} — {{fields.titleEn}}', fields: *noticeFields }
-          - { label: Reports, name: reports, widget: list, required: false, summary: '{{fields.date}} — {{fields.titleEn}}', fields: *noticeFields }
-          - { label: Activities, name: activities, widget: list, required: false, summary: '{{fields.date}} — {{fields.titleEn}}', fields: *noticeFields }
+          - { label: Press Releases, name: pressReleases, widget: list, label_singular: press release, add_to_top: true, required: false, summary: '{{fields.date}} — {{fields.titleEn}}', fields: *noticeFields }
+          - { label: Reports, name: reports, widget: list, label_singular: report, add_to_top: true, required: false, summary: '{{fields.date}} — {{fields.titleEn}}', fields: *noticeFields }
+          - { label: Activities, name: activities, widget: list, label_singular: activity, add_to_top: true, required: false, summary: '{{fields.date}} — {{fields.titleEn}}', fields: *noticeFields }
+
+  # ───────────────────────── PUBLICATIONS ─────────────────────────
+  - name: publications
+    label: Publications & Downloads
+    description: 'Reports and documents people can download from the Publications page.'
+    editor: { preview: false }
+    files:
+      - name: publications
+        label: Publications
+        file: src/data/publications.json
+        format: json
+        fields:
+          - label: Categories
+            name: sections
+            widget: list
+            label_singular: category
+            summary: '{{fields.categoryEn}}'
+            fields:
+              - { label: Category name (English), name: categoryEn, widget: string }
+              - { label: Category name (Nepali), name: categoryNp, widget: string }
+              - label: Documents
+                name: items
+                widget: list
+                label_singular: document
+                add_to_top: true
+                required: false
+                summary: '{{fields.titleEn}}'
+                fields:
+                  - { label: Title (English), name: titleEn, widget: string }
+                  - { label: Title (Nepali), name: titleNp, widget: string }
+                  - { label: Date (English), name: dateEn, widget: string, hint: 'e.g. 12 Oct 2026 or FY 2082/83' }
+                  - { label: Date (Nepali), name: dateNp, widget: string }
+                  - label: Type
+                    name: type
+                    widget: select
+                    options: [{ label: PDF, value: pdf }, { label: Word document, value: docx }]
+                    default: pdf
+                  - label: File
+                    name: url
+                    widget: file
+                    media_folder: /public/files/publications
+                    public_folder: /files/publications
+                    hint: 'Upload the document, or paste a link to a file hosted elsewhere.'
+
+  # ───────────────────────── GALLERY ─────────────────────────
+  - name: gallery
+    label: Gallery
+    description: 'Photos and YouTube videos on the Gallery page.'
+    editor: { preview: false }
+    files:
+      - name: gallery
+        label: Photos & Videos
+        file: src/data/gallery.json
+        format: json
+        fields:
+          - label: Photos
+            name: items
+            widget: list
+            label_singular: photo
+            add_to_top: true
+            required: false
+            summary: '{{fields.categoryEn}} — {{fields.altEn}}'
+            hint: 'Shown in this order. New photos are added at the top.'
+            fields:
+              - label: Photo
+                name: src
+                widget: image
+                media_folder: /public/images/gallery
+                public_folder: /images/gallery
+                hint: 'Compress big phone photos first (under about 1 MB is ideal).'
+              - { label: Caption (English), name: altEn, widget: text }
+              - { label: Caption (Nepali), name: altNp, widget: text }
+              - { label: Category (English), name: categoryEn, widget: string, hint: 'e.g. Meeting, Training, Milestone' }
+              - { label: Category (Nepali), name: categoryNp, widget: string, hint: 'e.g. बैठक, तालिम, उपलब्धि' }
+          - label: YouTube Videos
+            name: videos
+            widget: list
+            label_singular: video
+            add_to_top: true
+            required: false
+            summary: '{{fields.titleEn}}'
+            hint: 'Upload the video to YouTube first, then paste its link here.'
+            fields:
+              - { label: YouTube Link, name: source, widget: string, hint: 'e.g. https://www.youtube.com/watch?v=XXXXXXXXXXX' }
+              - { label: Title (English), name: titleEn, widget: string }
+              - { label: Title (Nepali), name: titleNp, widget: string, required: false }
+              - { label: Description (English), name: descriptionEn, widget: text, required: false }
+              - { label: Description (Nepali), name: descriptionNp, widget: text, required: false }
+
+  # ───────────────────────── TEAM ─────────────────────────
+  - name: team
+    label: Team & Founding Members
+    description: 'People shown on the Executive Committee and Founding Members sections.'
+    editor: { preview: false }
+    files:
+      - name: team
+        label: Team Members
+        file: src/data/team.json
+        format: json
+        fields:
+          - label: People
+            name: members
+            widget: list
+            label_singular: person
+            summary: '{{fields.nameEn}} — {{fields.positionEn}}'
+            hint: 'The FIRST person is shown as the Chairperson in the homepage message. Drag to reorder.'
+            fields:
+              - { label: Name (English), name: nameEn, widget: string }
+              - { label: Name (Nepali), name: nameNp, widget: string }
+              - { label: Position (English), name: positionEn, widget: string }
+              - { label: Position (Nepali), name: positionNp, widget: string }
+              - { label: Phone, name: phone, widget: string, required: false }
+              - { label: Email, name: email, widget: string, required: false }
+              - label: Photo
+                name: photo
+                widget: image
+                required: false
+                media_folder: /public/images/team
+                public_folder: /images/team
+                hint: 'A square photo works best.'
+              - { label: Biography (English), name: bioEn, widget: text, required: false }
+              - { label: Biography (Nepali), name: bioNp, widget: text, required: false }
+
+  # ───────────────────────── HOMEPAGE ─────────────────────────
+  - name: homepage
+    label: Homepage
+    description: 'The big slides at the top of the homepage and the scrolling banner above the menu.'
+    editor: { preview: false }
+    files:
+      - name: home
+        label: Slides & Banner
+        file: src/data/home.json
+        format: json
+        fields:
+          - label: Top Banner Messages
+            name: topNotices
+            widget: list
+            label_singular: message
+            required: false
+            summary: '{{fields.en}}'
+            fields:
+              - { label: Message (English), name: en, widget: text }
+              - { label: Message (Nepali), name: np, widget: text }
+          - label: Hero Slides
+            name: slides
+            widget: list
+            label_singular: slide
+            summary: '{{fields.titleEn}}'
+            fields:
+              - { label: Title (English), name: titleEn, widget: string }
+              - { label: Title (Nepali), name: titleNp, widget: string }
+              - { label: Subtitle (English), name: subtitleEn, widget: text }
+              - { label: Subtitle (Nepali), name: subtitleNp, widget: text }
+              - { label: Button text (English), name: ctaEn, widget: string }
+              - { label: Button text (Nepali), name: ctaNp, widget: string }
+              - { label: Button link, name: ctaLink, widget: string, hint: 'A page on this site, e.g. /services, /contact or /services#legal-aid' }
+              - label: Colour
+                name: theme
+                widget: select
+                options: [{ label: Navy blue, value: navy }, { label: Slate grey, value: slate }, { label: Deep blue, value: blue }]
+                default: navy
 
   # ───────────────────────── SERVICES ─────────────────────────
   - name: services
     label: Services & Work Areas
+    description: 'The Services page and the Services menu.'
+    editor: { preview: false }
     files:
       - name: work
         label: Services & Areas of Focus
@@ -67,6 +237,7 @@ collections:
           - label: Core Services
             name: coreServices
             widget: list
+            label_singular: service
             required: false
             summary: '{{fields.titleEn}}'
             fields:
@@ -83,6 +254,7 @@ collections:
           - label: Other Services
             name: otherServices
             widget: list
+            label_singular: service
             required: false
             summary: '{{fields.titleEn}}'
             fields:
@@ -99,6 +271,7 @@ collections:
           - label: Areas of Focus
             name: areasOfFocus
             widget: list
+            label_singular: area
             required: false
             summary: '{{fields.titleEn}}'
             fields:
@@ -108,41 +281,205 @@ collections:
               - { label: Description (English), name: bodyEn, widget: text }
               - { label: Description (Nepali), name: bodyNp, widget: text }
 
-  # ───────────────────────── GALLERY ─────────────────────────
-  - name: gallery
-    label: Gallery
+  # ───────────────────────── MEMBERSHIP & VOLUNTEER ─────────────────────────
+  - name: engagement
+    label: Membership & Volunteering
+    description: 'Membership types and fees, and the ways people can volunteer.'
+    editor: { preview: false }
     files:
-      - name: gallery
-        label: Photos & Videos
-        file: src/data/gallery.json
+      - name: engagement
+        label: Membership & Volunteer Areas
+        file: src/data/engagement.json
         format: json
         fields:
-          - label: Photos
-            name: items
-            widget: list
-            required: false
-            summary: '{{fields.categoryEn}} — {{fields.altEn}}'
-            hint: 'Shown in this order. Drag the newest photo to the top.'
+          - label: Membership
+            name: membershipInfo
+            widget: object
             fields:
-              - label: Photo
-                name: src
-                widget: image
-                media_folder: /public/images/gallery
-                public_folder: /images/gallery
-                hint: 'Compress big phone photos first (under about 1 MB is ideal).'
-              - { label: Caption (English), name: altEn, widget: text }
-              - { label: Caption (Nepali), name: altNp, widget: text }
-              - { label: Category (English), name: categoryEn, widget: string, hint: 'e.g. Meeting, Training, Milestone' }
-              - { label: Category (Nepali), name: categoryNp, widget: string, hint: 'e.g. बैठक, तालिम, उपलब्धि' }
-          - label: YouTube Videos
-            name: videos
+              - { label: Introduction (English), name: introEn, widget: text }
+              - { label: Introduction (Nepali), name: introNp, widget: text }
+              - label: Membership Types
+                name: categories
+                widget: list
+                label_singular: membership type
+                summary: '{{fields.titleEn}}'
+                fields:
+                  - { label: ID, name: id, widget: string, required: false, hint: 'Leave blank for a new type. Do not change on existing ones.' }
+                  - { label: Name (English), name: titleEn, widget: string }
+                  - { label: Name (Nepali), name: titleNp, widget: string }
+                  - { label: Fee (English), name: feeEn, widget: string, required: false, hint: 'e.g. NPR 200 entrance fee + NPR 500 annual fee' }
+                  - { label: Fee (Nepali), name: feeNp, widget: string, required: false }
+                  - { label: Details (English), name: detailEn, widget: text }
+                  - { label: Details (Nepali), name: detailNp, widget: text }
+                  - { label: Link text (English), name: linkEn, widget: string, required: false }
+                  - { label: Link text (Nepali), name: linkNp, widget: string, required: false }
+                  - { label: Link address, name: linkUrl, widget: string, required: false, hint: 'e.g. /founding-members' }
+              - { label: How to apply (English), name: processEn, widget: text }
+              - { label: How to apply (Nepali), name: processNp, widget: text }
+          - label: Volunteer Areas
+            name: volunteerAreas
             widget: list
-            required: false
+            label_singular: volunteer area
             summary: '{{fields.titleEn}}'
-            hint: 'Upload the video to YouTube first, then paste its link here.'
             fields:
-              - { label: YouTube Link, name: source, widget: string, hint: 'e.g. https://www.youtube.com/watch?v=XXXXXXXXXXX' }
+              - { label: ID, name: id, widget: string, required: false, hint: 'Leave blank for a new area. Do not change on existing ones.' }
+              - { label: Name (English), name: titleEn, widget: string }
+              - { label: Name (Nepali), name: titleNp, widget: string }
+              - { label: Description (English), name: descEn, widget: text }
+              - { label: Description (Nepali), name: descNp, widget: text }
+
+  # ───────────────────────── DONATIONS ─────────────────────────
+  - name: support
+    label: Donations (Support Us page)
+    description: 'Bank details, the payment QR code and the ways to give. Double-check account numbers before publishing.'
+    editor: { preview: false }
+    files:
+      - name: support
+        label: Donation Details
+        file: src/data/support.json
+        format: json
+        fields:
+          - label: Donation Details
+            name: donationInfo
+            widget: object
+            fields:
+              - { label: Bank name (English), name: bankNameEn, widget: string }
+              - { label: Bank name (Nepali), name: bankNameNp, widget: string }
+              - { label: Account name (English), name: accountNameEn, widget: string }
+              - { label: Account name (Nepali), name: accountNameNp, widget: string }
+              - { label: Account number, name: accountNo, widget: string }
+              - { label: Branch (English), name: branchEn, widget: string }
+              - { label: Branch (Nepali), name: branchNp, widget: string }
+              - label: Payment QR code
+                name: qrImage
+                widget: image
+                media_folder: /public/QR
+                public_folder: /QR
+              - { label: QR description (English), name: qrAltEn, widget: string }
+              - { label: QR description (Nepali), name: qrAltNp, widget: string }
+              - label: Ways to Give
+                name: waysToGive
+                widget: list
+                label_singular: way to give
+                required: false
+                summary: '{{fields.titleEn}}'
+                fields:
+                  - label: Icon
+                    name: icon
+                    widget: select
+                    options: [qrcode, bank, wallet, member, partner]
+                    default: bank
+                  - { label: Title (English), name: titleEn, widget: string }
+                  - { label: Title (Nepali), name: titleNp, widget: string }
+                  - { label: Description (English), name: descEn, widget: text }
+                  - { label: Description (Nepali), name: descNp, widget: text }
+
+  # ───────────────────────── ORGANIZATION ─────────────────────────
+  - name: organization
+    label: Organization Info & About
+    description: 'Contact details, social links, registration numbers and the About page text.'
+    editor: { preview: false }
+    files:
+      - name: site
+        label: Contact Details & About Text
+        file: src/data/site.json
+        format: json
+        fields:
+          - label: Organization & Contact Details
+            name: info
+            widget: object
+            fields:
+              - { label: Organization name (English), name: nameEn, widget: string }
+              - { label: Organization name (Nepali), name: nameNp, widget: string }
+              - { label: Short name, name: shortName, widget: string }
+              - { label: Motto (English), name: mottoEn, widget: string }
+              - { label: Motto (Nepali), name: mottoNp, widget: string }
+              - { label: Organization type (English), name: parentEn, widget: string }
+              - { label: Organization type (Nepali), name: parentNp, widget: string }
+              - { label: Address (English), name: addressEn, widget: string }
+              - { label: Address (Nepali), name: addressNp, widget: string }
+              - { label: Phone, name: phone, widget: string }
+              - { label: WhatsApp number, name: whatsapp, widget: string, hint: 'Digits only with country code, e.g. 9779768571643' }
+              - { label: Email, name: email, widget: string }
+              - { label: Website, name: website, widget: string }
+              - { label: Facebook link, name: facebook, widget: string }
+              - { label: Twitter / X link, name: twitter, widget: string }
+              - { label: YouTube link, name: youtube, widget: string }
+              - { label: Office hours (English), name: officeHoursEn, widget: string }
+              - { label: Office hours (Nepali), name: officeHoursNp, widget: string }
+              - { label: Registration number, name: registrationNo, widget: string }
+              - { label: PAN number, name: panNo, widget: string }
+          - label: About Page Text
+            name: about
+            widget: object
+            fields:
+              - { label: Introduction (English), name: introEn, widget: text }
+              - { label: Introduction (Nepali), name: introNp, widget: text }
+              - { label: Mission (English), name: missionEn, widget: text }
+              - { label: Mission (Nepali), name: missionNp, widget: text }
+              - { label: Vision (English), name: visionEn, widget: text }
+              - { label: Vision (Nepali), name: visionNp, widget: text }
+
+  # ───────────────────────── DOCUMENTS & LINKS ─────────────────────────
+  - name: documents
+    label: Documents & Links
+    description: 'Registration certificates, useful external links and the laws listed on the Legal Framework page.'
+    editor: { preview: false }
+    files:
+      - name: certificates
+        label: Registration Certificates
+        file: src/data/certificates.json
+        format: json
+        fields:
+          - label: Certificates
+            name: certificates
+            widget: list
+            label_singular: certificate
+            summary: '{{fields.titleEn}}'
+            fields:
               - { label: Title (English), name: titleEn, widget: string }
-              - { label: Title (Nepali), name: titleNp, widget: string, required: false }
-              - { label: Description (English), name: descriptionEn, widget: text, required: false }
-              - { label: Description (Nepali), name: descriptionNp, widget: text, required: false }
+              - { label: Title (Nepali), name: titleNp, widget: string }
+              - label: Certificate image
+                name: image
+                widget: image
+                media_folder: /public/images/certificates
+                public_folder: /images/certificates
+      - name: links
+        label: Important Links (footer)
+        file: src/data/links.json
+        format: json
+        fields:
+          - label: Links
+            name: importantLinks
+            widget: list
+            label_singular: link
+            summary: '{{fields.en}}'
+            fields:
+              - { label: Name (English), name: en, widget: string }
+              - { label: Name (Nepali), name: np, widget: string }
+              - { label: Web address, name: url, widget: string, hint: 'Start with https://' }
+      - name: laws
+        label: Legal Framework (laws list)
+        file: src/data/laws.json
+        format: json
+        fields:
+          - label: Laws
+            name: laws
+            widget: list
+            label_singular: law
+            summary: '{{fields.nameEn}}'
+            fields:
+              - label: Group
+                name: category
+                widget: select
+                options:
+                  - { label: Foundation, value: foundation }
+                  - { label: Mediation, value: mediation }
+                  - { label: Legal aid, value: legal-aid }
+                  - { label: Rights, value: rights }
+                  - { label: Vulnerable groups, value: vulnerable-groups }
+              - { label: Name (English), name: nameEn, widget: string }
+              - { label: Name (Nepali), name: nameNp, widget: string }
+              - { label: Summary (English), name: descEn, widget: text }
+              - { label: Summary (Nepali), name: descNp, widget: text }
+              - { label: Source link, name: sourceUrl, widget: string, required: false, hint: 'Start with https://' }

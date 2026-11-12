@@ -1,0 +1,24 @@
+{
+  "sections": [
+    {
+      "categoryEn": "Annual Reports",
+      "categoryNp": "वार्षिक प्रतिवेदन",
+      "items": []
+    },
+    {
+      "categoryEn": "Legal Documents",
+      "categoryNp": "कानुनी दस्तावेज",
+      "items": []
+    },
+    {
+      "categoryEn": "Training Materials",
+      "categoryNp": "तालिम सामग्री",
+      "items": []
+    },
+    {
+      "categoryEn": "Research Reports",
+      "categoryNp": "अनुसन्धान प्रतिवेदन",
+      "items": []
+    }
+  ]
+}
