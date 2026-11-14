@@ -6,11 +6,19 @@
     <meta name="robots" content="noindex, nofollow" />
     <title>REPC-Nepal Admin</title>
     <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
+    <!-- Same fonts as the website (Nepali text looks much better in Noto Sans Devanagari). -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/admin/admin.css" />
   </head>
   <body>
     <!-- Decap CMS, pinned to an exact version. -->
     <script src="https://unpkg.com/decap-cms@3.10.0/dist/decap-cms.js"></script>
-    <!-- Confirm-before-publish prompts and the reminder bar (see admin.js). -->
+    <!-- Confirm-before-publish popup, help button and success message (see admin.js). -->
     <script src="/admin/admin.js"></script>
   </body>
 </html>
